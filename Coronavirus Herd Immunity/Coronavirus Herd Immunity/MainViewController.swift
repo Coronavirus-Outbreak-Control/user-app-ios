@@ -29,10 +29,6 @@ class MainViewController: UIViewController {
         self.interactionsTotal.text = StorageManager.shared.countTotalInteractions().description
     }
     
-    @IBAction func showInfoInteractionsDaily(_ sender: Any) {
-        
-    }
-    
     @IBAction func showHowCanIHelpMore(_ sender: Any) {
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let nextViewController = storyBoard.instantiateViewController(withIdentifier: "HelpMoreViewController") as! HelpMoreViewController

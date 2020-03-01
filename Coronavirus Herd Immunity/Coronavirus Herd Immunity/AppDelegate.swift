@@ -9,6 +9,7 @@
 import UIKit
 
 //background fetch: https://www.hackingwithswift.com/example-code/system/how-to-run-code-when-your-app-is-terminated
+// scrollview: https://fluffy.es/scrollview-storyboard-xcode-11/
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
