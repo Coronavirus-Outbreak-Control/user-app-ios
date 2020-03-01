@@ -309,8 +309,8 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m1B-bU-5iZ">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k3b-v3-QDL">
-                                        <rect key="frame" x="32" y="11" width="58.5" height="25.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k3b-v3-QDL">
+                                        <rect key="frame" x="32" y="11" width="64.5" height="25.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -321,17 +321,17 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bluetooth" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xpm-nY-OPq">
-                                        <rect key="frame" x="296" y="11" width="88" height="25.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bluetooth:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xpm-nY-OPq">
+                                        <rect key="frame" x="289" y="10.5" width="95" height="26"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="88" id="N4C-vQ-HmU"/>
+                                            <constraint firstAttribute="width" constant="95" id="N4C-vQ-HmU"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="not active" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Rl-VM-bRb">
-                                        <rect key="frame" x="273" y="44" width="111" height="26"/>
+                                        <rect key="frame" x="244" y="44" width="140" height="26"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -374,7 +374,7 @@
                                     <constraint firstItem="9Bd-AP-7Di" firstAttribute="leading" secondItem="3cy-fg-7C2" secondAttribute="leading" constant="84" id="QV6-wq-pb7"/>
                                     <constraint firstAttribute="bottom" secondItem="9Bd-AP-7Di" secondAttribute="bottom" constant="169" id="Sum-N2-qHm"/>
                                     <constraint firstAttribute="trailing" secondItem="xpm-nY-OPq" secondAttribute="trailing" constant="30" id="WPR-b8-9Kt"/>
-                                    <constraint firstItem="xpm-nY-OPq" firstAttribute="centerX" secondItem="1Rl-VM-bRb" secondAttribute="centerX" constant="11.5" id="ZIC-KZ-aZA"/>
+                                    <constraint firstItem="xpm-nY-OPq" firstAttribute="centerX" secondItem="1Rl-VM-bRb" secondAttribute="centerX" constant="22.5" id="ZIC-KZ-aZA"/>
                                     <constraint firstItem="k3b-v3-QDL" firstAttribute="leading" secondItem="zQq-MS-sPW" secondAttribute="leading" id="er3-o7-T07"/>
                                     <constraint firstItem="1Rl-VM-bRb" firstAttribute="top" secondItem="xpm-nY-OPq" secondAttribute="bottom" constant="7" id="jzz-zP-ADK"/>
                                     <constraint firstItem="k3b-v3-QDL" firstAttribute="top" secondItem="3cy-fg-7C2" secondAttribute="top" constant="11" id="r9i-ro-kKa"/>
@@ -407,6 +407,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cmj-kI-wp8"/>
                     </view>
+                    <connections>
+                        <outlet property="bluetoothStatus" destination="1Rl-VM-bRb" id="NvZ-PX-FuM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HIP-ST-AMH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
