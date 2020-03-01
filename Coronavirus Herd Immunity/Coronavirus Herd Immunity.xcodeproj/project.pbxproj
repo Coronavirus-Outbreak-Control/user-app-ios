@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		C80170582405D19F002FC397 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80170572405D19F002FC397 /* MainViewController.swift */; };
 		C842066F240BB23E00B8B45B /* Models.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C8A32570240A759300FF1620 /* Models.xcdatamodeld */; };
-		C88D06A52407123B0005E029 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88D06A42407123B0005E029 /* AccountViewController.swift */; };
 		C88D06A7240715080005E029 /* HelpMoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88D06A6240715080005E029 /* HelpMoreViewController.swift */; };
 		C8A32574240A767C00FF1620 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A32573240A767C00FF1620 /* StorageManager.swift */; };
 		C8A32576240A76F600FF1620 /* PeripheralDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A32575240A76F600FF1620 /* PeripheralDto.swift */; };
@@ -28,7 +27,6 @@
 
 /* Begin PBXFileReference section */
 		C80170572405D19F002FC397 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		C88D06A42407123B0005E029 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		C88D06A6240715080005E029 /* HelpMoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpMoreViewController.swift; sourceTree = "<group>"; };
 		C8A32571240A759300FF1620 /* Models.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Models.xcdatamodel; sourceTree = "<group>"; };
 		C8A32573240A767C00FF1620 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
@@ -94,7 +92,6 @@
 			isa = PBXGroup;
 			children = (
 				C8A892E8240866A7007EA317 /* Utils */,
-				C88D06A42407123B0005E029 /* AccountViewController.swift */,
 				C8B188D62402B14400CFEE98 /* AppDelegate.swift */,
 				C8A892E6240864E4007EA317 /* BluetoothOffViewController.swift */,
 				C88D06A6240715080005E029 /* HelpMoreViewController.swift */,
@@ -190,7 +187,6 @@
 				C8A32576240A76F600FF1620 /* PeripheralDto.swift in Sources */,
 				C8A892E7240864E4007EA317 /* BluetoothOffViewController.swift in Sources */,
 				C8A892EA240866CC007EA317 /* BluetoothManager.swift in Sources */,
-				C88D06A52407123B0005E029 /* AccountViewController.swift in Sources */,
 				C8B188D72402B14400CFEE98 /* AppDelegate.swift in Sources */,
 				C842066F240BB23E00B8B45B /* Models.xcdatamodeld in Sources */,
 				C8A892EE24087226007EA317 /* Costants.swift in Sources */,

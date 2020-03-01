@@ -13,9 +13,10 @@ class HelpMoreViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        print("ACCOUNT VIEW CONTROLLER")
+        print("HELP MORE VIEW CONTROLLER")
     }
-    @IBAction func goToWebsite(_ sender: Any) {
+    @IBAction func backToDashboard(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
     
 }

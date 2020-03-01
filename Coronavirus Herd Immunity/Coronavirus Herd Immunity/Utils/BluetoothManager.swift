@@ -32,12 +32,12 @@ class BluetoothManager: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate
         
         super.init()
         
-        if self.getPrmissionStatus() == .allowed{
+        if self.getPermissionStatus() == .allowed{
             self.centralManager = CBCentralManager(delegate: self, queue: nil)
         }
     }
     
-    func getPrmissionStatus() -> PermissionStatus{
+    func getPermissionStatus() -> PermissionStatus{
         if #available(iOS 13.1, *) {
             switch CBCentralManager.authorization {
             case .allowedAlways:
@@ -59,7 +59,26 @@ class BluetoothManager: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate
         self.centralManager = CBCentralManager(delegate: self, queue: nil)
     }
     
+    func getBluetoothStatus() -> Status{
+        if let manager = self.centralManager{
+            switch(manager.state){
+            case .poweredOff:
+                return .off
+            case .poweredOn:
+                return .on
+            case .resetting:
+                return .resetting
+            case .unauthorized:
+                return .unauthorized
+            default:
+                return .notAvailable
+            }
+        }
+        return .notAvailable
+    }
+    
     func centralManagerDidUpdateState(_ central: CBCentralManager) {
+        print("update bluetooth status")
         switch central.state {
             case .poweredOff:
                 print("poweredOff")

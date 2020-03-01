@@ -14,14 +14,17 @@ class BluetoothOffViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         print("BLUETOOTH OFF VIEW CONTROLLER")
+        self.run()
     }
     
     func run(){
         NotificationCenter.default.addObserver(self, selector: #selector(changedBluetoothStatus(notification:)), name: NSNotification.Name(Costants.Notification.bluetoothChangeStatus), object: nil)
         
-        switch BluetoothManager.shared.getPrmissionStatus() {
+        switch BluetoothManager.shared.getPermissionStatus() {
         case .allowed:
-            self.openMainViewController()
+            if BluetoothManager.shared.getBluetoothStatus() != .notAvailable && BluetoothManager.shared.getBluetoothStatus() != .unauthorized{
+                self.openMainViewController()
+            }
             break
         case .denied, .notDetermined:
             // we will wait for user to click on the button
@@ -33,6 +36,7 @@ class BluetoothOffViewController: UIViewController {
     }
     
     @objc func changedBluetoothStatus(notification: NSNotification){
+        print("change status notification received")
         if let status = notification.object as? BluetoothManager.Status{
             switch status {
             case .on, .off:
@@ -51,9 +55,13 @@ class BluetoothOffViewController: UIViewController {
     }
     
     @IBAction func openBluetoothAction(_ sender: Any) {
-        switch BluetoothManager.shared.getPrmissionStatus() {
+        switch BluetoothManager.shared.getPermissionStatus() {
         case .allowed:
-            self.openMainViewController()
+            if BluetoothManager.shared.getBluetoothStatus() != .notAvailable && BluetoothManager.shared.getBluetoothStatus() != .unauthorized{
+                self.openMainViewController()
+            }else{
+                self.bluetoothNotAvailable()
+            }
             break
         case .denied:
             let alert : UIAlertController = AlertManager.getAlert(title: NSLocalizedString("Bluetooth", comment: "bluetooth title alert"), message: NSLocalizedString("We need to access the bluetooth, please Open Settings -> Coronavirus Herd Immunity -> enable bluetooth access", comment: "bluetooth unavailable"))
@@ -70,16 +78,12 @@ class BluetoothOffViewController: UIViewController {
     }
     
     func openMainViewController(){
-        print("we shouldn't be here! XD")
-        
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: "MainViewController")
-        UIApplication.shared.windows.first?.rootViewController = controller
-        UIApplication.shared.windows.first?.makeKeyAndVisible()
+        print("dismissing view")
+        self.dismiss(animated: true, completion: nil)
     }
     
     func bluetoothNotAvailable(){
-        let alert : UIAlertController = AlertManager.getAlert(title: NSLocalizedString("Bluetooth", comment: "bluetooth title alert"), message: NSLocalizedString("The bluetooth seems to be unavailable on your devide", comment: "bluetooth unavailable"))
+        let alert : UIAlertController = AlertManager.getAlert(title: NSLocalizedString("Bluetooth", comment: "bluetooth title alert"), message: NSLocalizedString("The bluetooth seems to be unavailable on your device", comment: "bluetooth unavailable"))
         self.present(alert, animated: true)
     }
     
