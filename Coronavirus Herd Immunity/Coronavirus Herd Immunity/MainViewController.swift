@@ -47,8 +47,6 @@ class MainViewController: UIViewController {
                 return bluetoothAccessible()
             }else{
                 if BluetoothManager.shared.getBluetoothStatus() != .notAvailable {
-                    print("YY")
-                    
                     self.changeToBluetoothOffViewController()
                 }
             }
@@ -56,7 +54,10 @@ class MainViewController: UIViewController {
     }
     
     private func bluetoothAccessible(){
-        
+        // start device as IBeacon
+        if BluetoothManager.shared.isBluetoothUsable(){
+            IBeaconManager.shared.startAdvertiseDevice()
+        }
     }
     
     private func changeToBluetoothOffViewController(){
@@ -74,6 +75,8 @@ class MainViewController: UIViewController {
         if let status = notification.object as? BluetoothManager.Status{
             if status != .on{
                 self.changeToBluetoothOffViewController()
+            }else{
+                self.bluetoothAccessible()
             }
         }else{
             print("WTF?")

@@ -36,6 +36,11 @@ class BluetoothManager: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate
         }
     }
     
+    // check if permission is allowed and bluetooth is on
+    func isBluetoothUsable() -> Bool{
+        return self.getPermissionStatus() == .allowed && self.getBluetoothStatus() == .on
+    }
+    
     func getPermissionStatus() -> PermissionStatus{
         if #available(iOS 13.1, *) {
             switch CBCentralManager.authorization {
