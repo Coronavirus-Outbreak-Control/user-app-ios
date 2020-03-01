@@ -23,4 +23,13 @@ class Costants {
         
     }
     
+    class Setup{
+        public static let totalInteractionsKey = "chi.interactions.total"
+        public static let timeBlockKeyPreference = "chi.preference.timeBlock"
+        public static let scanTime : Double = 10
+        public static let minRSSIPower : Double = -60
+        public static let maxRSSIPower : Double = 100
+        public static let minCounterIdentifierToPush = 1
+    }
+    
 }

@@ -25,9 +25,12 @@ class MainViewController: UIViewController {
     
     private func run(){
 //        self.centralManager = CBCentralManager(delegate: self, queue: nil)
+        self.interactionsDaily.text = StorageManager.shared.countDailyInteractions().description
+        self.interactionsTotal.text = StorageManager.shared.countTotalInteractions().description
     }
     
     @IBAction func showInfoInteractionsDaily(_ sender: Any) {
+        
     }
     
     @IBAction func showHowCanIHelpMore(_ sender: Any) {

@@ -11,15 +11,17 @@ import Foundation
 class PeripheralDto{
     
     public var timestamp : Date
-    public var day : String
+    public var timeBlock : String
     public var identifier : String
-    public var rssi : Float
+    public var rssi : Double
+    public var counter : Int64
     
-    public init(identifier : String, rssi : Float, timestamp : Date, day : String){
+    public init(identifier : String, rssi : Double, timestamp : Date, timeBlock : String, counter: Int64){
         self.timestamp = timestamp
         self.identifier = identifier
         self.rssi = rssi
-        self.day = day
+        self.timeBlock = timeBlock
+        self.counter = counter
     }
     
 }
