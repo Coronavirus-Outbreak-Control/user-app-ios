@@ -9,6 +9,7 @@
 import CoreBluetooth
 import Foundation
 
+// https://developer.apple.com/documentation/corelocation/turning_an_ios_device_into_an_ibeacon_device
 class BluetoothManager: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate{
     
     enum PermissionStatus {
@@ -23,8 +24,6 @@ class BluetoothManager: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate
     private var centralManager: CBCentralManager?
     private var peripherals : [PeripheralDto]
     private var timeBlock : String?
-    private var interactionsDaily : InteractionsDto?
-    private var interactionsTotal : InteractionsDto?
     
     private override init(){
         self.peripherals = [PeripheralDto]()
@@ -53,6 +52,13 @@ class BluetoothManager: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate
             //TODO Fallback on earlier versions
             return .notAvailable
         }
+    }
+    
+    func getItendifier() -> String?{
+        if let manager = self.centralManager{
+            
+        }
+        return nil
     }
     
     func askUserPermission(){
@@ -113,15 +119,12 @@ class BluetoothManager: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate
         self.peripherals = [PeripheralDto]()
         self.timeBlock = Utils.getTimeBlock(Date())
         
-        if let daily = StorageManager.shared.readInteractions(self.timeBlock!){
-            self.interactionsDaily = daily
-        }else{
-            self.interactionsDaily = InteractionsDto(key: self.timeBlock!, count: 0)
-        }
-        if let total = StorageManager.shared.readInteractions(Costants.Setup.totalInteractionsKey){
-            self.interactionsTotal = total
-        }else{
-            self.interactionsTotal = InteractionsDto(key: Costants.Setup.totalInteractionsKey, count: 0)
+        if let lastBlock = StorageManager.shared.getTimeBlockUserDefatuls(){
+            if self.timeBlock != lastBlock{
+                // TODO lastBlock need to be pushed to server!!!
+            }else{
+                StorageManager.shared.setTimeBlockUserDefatuls(self.timeBlock!)
+            }
         }
         
         if let ps = StorageManager.shared.readPeripheralsByTimeBlock(self.timeBlock!){
@@ -134,13 +137,6 @@ class BluetoothManager: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate
             self.peripherals = [PeripheralDto]()
             self.centralManager?.stopScan()
         })
-    }
-    
-    private func incrementInteractions(){
-        self.interactionsDaily!.count += 1
-        self.interactionsTotal!.count += 1
-        StorageManager.shared.saveInteractions(interactionInput: self.interactionsDaily!)
-        StorageManager.shared.saveInteractions(interactionInput: self.interactionsTotal!)
     }
     
     func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
@@ -168,7 +164,6 @@ class BluetoothManager: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate
                     counter: 1)
                 StorageManager.shared.savePeripheral(peripheralInput: p)
             }
-            self.incrementInteractions()
         }
     
     }

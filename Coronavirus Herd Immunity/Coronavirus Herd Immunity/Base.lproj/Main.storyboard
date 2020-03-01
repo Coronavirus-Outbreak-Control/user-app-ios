@@ -144,7 +144,6 @@
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mpV-Ss-K66">
                                                 <rect key="frame" x="30" y="691" width="360" height="312"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" image="qrcode"/>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="active" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A2j-bU-12R">
                                                 <rect key="frame" x="301" y="42" width="89" height="26"/>
@@ -184,6 +183,7 @@
                     <connections>
                         <outlet property="interactionsDaily" destination="qef-dX-avt" id="OAV-Hq-K7v"/>
                         <outlet property="interactionsTotal" destination="dTn-L8-aor" id="F5i-WH-GrW"/>
+                        <outlet property="qrCodeButton" destination="mpV-Ss-K66" id="MYa-3d-KdO"/>
                         <outlet property="statusApp" destination="UWG-jN-ZHZ" id="IFC-C6-AkS"/>
                         <outlet property="statusBluetooth" destination="A2j-bU-12R" id="NLA-yM-OCz"/>
                     </connections>
@@ -418,6 +418,5 @@
     </scenes>
     <resources>
         <image name="f_logo_RGB-Black_58" width="154.5" height="155"/>
-        <image name="qrcode" width="900" height="780"/>
     </resources>
 </document>

@@ -15,6 +15,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var statusBluetooth: UILabel!
     @IBOutlet weak var interactionsDaily: UILabel!
     @IBOutlet weak var interactionsTotal: UILabel!
+    @IBOutlet weak var qrCodeButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +28,9 @@ class MainViewController: UIViewController {
     }
     
     private func run(){
-//        self.centralManager = CBCentralManager(delegate: self, queue: nil)
+        
+        self.qrCodeButton.setImage(Utils.generateQRCode(from: "CIAONECIAONE CIAONE CIAONE"), for: .normal)
+        
         self.interactionsDaily.text = StorageManager.shared.countDailyInteractions().description
         self.interactionsTotal.text = StorageManager.shared.countTotalInteractions().description
         
@@ -36,7 +39,22 @@ class MainViewController: UIViewController {
         if BluetoothManager.shared.getPermissionStatus() != .allowed{
             print("permission not allowed")
             self.changeToBluetoothOffViewController()
+        }else{
+            print("blt status main", BluetoothManager.shared.getBluetoothStatus())
+            if BluetoothManager.shared.getBluetoothStatus() == .on{
+                return bluetoothAccessible()
+            }else{
+                if BluetoothManager.shared.getBluetoothStatus() != .notAvailable {
+                    print("YY")
+                    
+                    self.changeToBluetoothOffViewController()
+                }
+            }
         }
+    }
+    
+    private func bluetoothAccessible(){
+        
     }
     
     private func changeToBluetoothOffViewController(){
@@ -55,14 +73,6 @@ class MainViewController: UIViewController {
             if status != .on{
                 self.changeToBluetoothOffViewController()
             }
-            
-//            switch status {
-//            case .notAvailable, .unauthorized:
-//                self.changeToBluetoothOffViewController()
-//                break
-//            default:
-//                print("new blt status", status)
-//            }
         }else{
             print("WTF?")
         }
