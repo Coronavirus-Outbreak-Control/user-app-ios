@@ -120,17 +120,18 @@
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xnn-rS-p0H">
                                                 <rect key="frame" x="30" y="319" width="89" height="89"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" image="f_logo_RGB-Black_58"/>
+                                                <state key="normal" image="f_logo_RGB-Blue_58"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ofF-bR-EF2">
                                                 <rect key="frame" x="301" y="319" width="89" height="89"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" image="f_logo_RGB-Black_58"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                <state key="normal" image="tray" catalog="system"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lFg-Fe-cfT">
                                                 <rect key="frame" x="163" y="319" width="89" height="89"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" image="f_logo_RGB-Black_58"/>
+                                                <state key="normal" image="Twitter_Logo_Blue"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zvD-sS-bu7">
                                                 <rect key="frame" x="113" y="613" width="195" height="38"/>
@@ -227,18 +228,21 @@
                                     <constraint firstAttribute="width" constant="81" id="CND-1D-RBh"/>
                                     <constraint firstAttribute="height" constant="81" id="fTF-6u-GEK"/>
                                 </constraints>
-                                <state key="normal" backgroundImage="f_logo_RGB-Black_58"/>
+                                <state key="normal" backgroundImage="f_logo_RGB-Blue_58"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vuZ-ya-Qwg">
                                 <rect key="frame" x="167" y="383" width="81" height="81"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="81" id="6Pz-Uu-ABw"/>
                                 </constraints>
-                                <state key="normal" backgroundImage="f_logo_RGB-Black_58"/>
+                                <state key="normal" backgroundImage="Twitter_Logo_Blue"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wsg-Pd-O7W">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wsg-Pd-O7W">
                                 <rect key="frame" x="313" y="383" width="81" height="81"/>
-                                <state key="normal" backgroundImage="f_logo_RGB-Black_58"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" image="tray" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                                </state>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cpE-VA-sUV">
                                 <rect key="frame" x="20" y="488" width="374" height="106"/>
@@ -417,6 +421,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="f_logo_RGB-Black_58" width="154.5" height="155"/>
+        <image name="Twitter_Logo_Blue" width="400" height="400"/>
+        <image name="f_logo_RGB-Blue_58" width="265" height="265"/>
+        <image name="tray" catalog="system" width="64" height="44"/>
     </resources>
 </document>

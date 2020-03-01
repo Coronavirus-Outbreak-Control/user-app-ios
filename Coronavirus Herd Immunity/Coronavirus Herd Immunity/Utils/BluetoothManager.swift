@@ -114,7 +114,7 @@ class BluetoothManager: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate
     }
     
     func scanForSids(){
-        self.centralManager?.scanForPeripherals(withServices: nil, options: [CBCentralManagerScanOptionAllowDuplicatesKey:true])
+        self.centralManager?.scanForPeripherals(withServices: nil, options: [CBCentralManagerScanOptionAllowDuplicatesKey:false])
         
         self.peripherals = [PeripheralDto]()
         self.timeBlock = Utils.getTimeBlock(Date())
@@ -149,6 +149,7 @@ class BluetoothManager: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate
         print("BLUETOOTH NAME", peripheral.name ?? "<NO-NAME>", peripheral.identifier, RSSI)
 
         if Costants.Setup.minRSSIPower <= RSSI.doubleValue && RSSI.doubleValue <= Costants.Setup.maxRSSIPower{
+            
             if let found = self.peripherals.first(where: {$0.identifier == peripheral.identifier.uuidString}) {
                // do something with foo
                 found.counter += 1

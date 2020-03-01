@@ -16,7 +16,6 @@ class ViewController: UIViewController {
         
         print("loaded view")
         
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {

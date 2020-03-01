@@ -28,8 +28,10 @@ class MainViewController: UIViewController {
     }
     
     private func run(){
-        
-        self.qrCodeButton.setImage(Utils.generateQRCode(from: "CIAONECIAONE CIAONE CIAONE"), for: .normal)
+        if let identifierDevice = StorageManager.shared.getIdentifierDevice(){
+            print("identifier device:", identifierDevice)
+            self.qrCodeButton.setImage(Utils.generateQRCode(from: identifierDevice), for: .normal)
+        }
         
         self.interactionsDaily.text = StorageManager.shared.countDailyInteractions().description
         self.interactionsTotal.text = StorageManager.shared.countTotalInteractions().description

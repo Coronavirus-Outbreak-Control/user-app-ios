@@ -203,6 +203,15 @@ class StorageManager{
         defaults.synchronize()
     }
     
+    public func getIdentifierDevice() -> String?{
+        return defaults.string(forKey: Costants.Setup.identifierDevice)
+    }
+    
+    public func setIdentifierDevice(_ identifierDevice : String){
+        defaults.set(identifierDevice, forKey: Costants.Setup.identifierDevice)
+        defaults.synchronize()
+    }
+    
     public func countDailyInteractions() -> Int{
         let d : Date = Calendar.current.date(bySettingHour: 0, minute: 0, second: 0, of: Date())!
         let predicate = NSPredicate(format: "(%K >= %@)", PeripheralEntity.timestampKey, d as NSDate)

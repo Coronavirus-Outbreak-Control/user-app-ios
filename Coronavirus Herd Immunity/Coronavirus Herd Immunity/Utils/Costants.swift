@@ -24,6 +24,7 @@ class Costants {
     }
     
     class Setup{
+        public static let identifierDevice = "chi.identifier.device"
         public static let totalInteractionsKey = "chi.interactions.total"
         public static let timeBlockKeyPreference = "chi.preference.timeBlock"
         public static let scanTime : Double = 10
