@@ -22,12 +22,22 @@ class AlertManager{
     }
 
     public static func getAlert(title: String, message: String ) -> UIAlertController{
-            let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
 
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-    //        alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
-    //        self.present(alert, animated: true)
-            return alert
-        }
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+//        alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
+//        self.present(alert, animated: true)
+        return alert
+    }
+    
+    public static func getAlertConfirmation(title: String, message: String, confirmAction: @escaping ((UIAlertAction) -> Void)) -> UIAlertController{
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+
+//        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: ))
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: confirmAction))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+//        self.present(alert, animated: true)
+        return alert
+    }
     
 }

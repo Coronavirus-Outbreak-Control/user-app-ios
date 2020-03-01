@@ -13,6 +13,10 @@ class BluetoothOffViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         print("BLUETOOTH OFF VIEW CONTROLLER")
         self.run()
     }
@@ -22,7 +26,7 @@ class BluetoothOffViewController: UIViewController {
         
         switch BluetoothManager.shared.getPermissionStatus() {
         case .allowed:
-            if BluetoothManager.shared.getBluetoothStatus() != .notAvailable && BluetoothManager.shared.getBluetoothStatus() != .unauthorized{
+            if BluetoothManager.shared.getBluetoothStatus() == .on{
                 self.openMainViewController()
             }
             break
@@ -38,34 +42,39 @@ class BluetoothOffViewController: UIViewController {
     @objc func changedBluetoothStatus(notification: NSNotification){
         print("change status notification received")
         if let status = notification.object as? BluetoothManager.Status{
-            switch status {
-            case .on, .off:
-                self.openMainViewController()
-                break
-            case .notAvailable:
-                break
-            case .resetting:
-                break
-            case .unauthorized:
-                break
-            }
+            return handleBluetoothStatus(status)
         }else{
             print("WTF?")
+        }
+    }
+    
+    private func handleBluetoothStatus(_ status : BluetoothManager.Status){
+        print("handling status: ", status)
+        switch status {
+        case .on:
+            self.openMainViewController()
+        case .off:
+            self.bluetoothOff()
+            break
+        case .resetting:
+            let alert : UIAlertController = AlertManager.getAlert(title: NSLocalizedString("Bluetooth", comment: "bluetooth title alert"), message: NSLocalizedString("The bluetooth seems to be resetting, please try later", comment: "bluetooth unavailable"))
+            self.present(alert, animated: true)
+            break
+        case .notAvailable:
+            self.bluetoothNotAvailable()
+            break
+        case .unauthorized:
+            self.bluetoothDeniedOrUnauthorized()
         }
     }
     
     @IBAction func openBluetoothAction(_ sender: Any) {
         switch BluetoothManager.shared.getPermissionStatus() {
         case .allowed:
-            if BluetoothManager.shared.getBluetoothStatus() != .notAvailable && BluetoothManager.shared.getBluetoothStatus() != .unauthorized{
-                self.openMainViewController()
-            }else{
-                self.bluetoothNotAvailable()
-            }
+            self.handleBluetoothStatus(BluetoothManager.shared.getBluetoothStatus())
             break
         case .denied:
-            let alert : UIAlertController = AlertManager.getAlert(title: NSLocalizedString("Bluetooth", comment: "bluetooth title alert"), message: NSLocalizedString("We need to access the bluetooth, please Open Settings -> Coronavirus Herd Immunity -> enable bluetooth access", comment: "bluetooth unavailable"))
-            self.present(alert, animated: true)
+            self.bluetoothDeniedOrUnauthorized()
             break
         case .notDetermined:
             // we will wait for user to click on the button
@@ -82,11 +91,41 @@ class BluetoothOffViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
+    func bluetoothOff(){
+        let alert = AlertManager.getAlertConfirmation(title: NSLocalizedString("Bluetooth", comment: "bluetooth title alert"), message: NSLocalizedString("You need to enable the bluetooth, please Open Settings -> Bluetooth -> enable bluetooth", comment: "bluetooth off"), confirmAction: {action in
+            
+            guard let settingsUrl = URL(string: "App-Prefs:root=General") else {
+                print("NO SETTINGS GENERAL URL")
+                return
+            }
+            if UIApplication.shared.canOpenURL(settingsUrl) {
+                UIApplication.shared.open(settingsUrl, completionHandler: { (success) in
+                    print("Settings general opened: \(success)") // Prints true
+                })
+            }
+        })
+        self.present(alert, animated: true)
+    }
+    
+    func bluetoothDeniedOrUnauthorized(){
+        let alert = AlertManager.getAlertConfirmation(title: NSLocalizedString("Bluetooth", comment: "bluetooth title alert"), message: NSLocalizedString("We need to access the bluetooth, please Open Settings -> Coronavirus Herd Immunity -> enable bluetooth access", comment: "bluetooth unavailable"), confirmAction: {action in
+            guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
+                print("NO SETTINGS URL")
+                return
+            }
+            if UIApplication.shared.canOpenURL(settingsUrl) {
+                UIApplication.shared.open(settingsUrl, completionHandler: { (success) in
+                    print("Settings opened: \(success)") // Prints true
+                })
+            }
+        })
+        self.present(alert, animated: true)
+    }
+    
     func bluetoothNotAvailable(){
         let alert : UIAlertController = AlertManager.getAlert(title: NSLocalizedString("Bluetooth", comment: "bluetooth title alert"), message: NSLocalizedString("The bluetooth seems to be unavailable on your device", comment: "bluetooth unavailable"))
         self.present(alert, animated: true)
     }
-    
     
     @IBAction func howCanIHelpMoreAction(_ sender: Any) {
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
