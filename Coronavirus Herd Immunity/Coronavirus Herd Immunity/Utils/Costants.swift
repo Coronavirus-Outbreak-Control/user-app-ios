@@ -13,6 +13,7 @@ class Costants {
     class Notification{
         
         public static let bluetoothChangeStatus = "bluetooth.changeStatus"
+        public static let locationChangeStatus = "location.changeStatus"
         
         public static let bluetoothPoweredOnPermissionStatus = "bluetooth.on"
         public static let bluetoothPoweredOffPermissionStatus = "bluetooth.off"
