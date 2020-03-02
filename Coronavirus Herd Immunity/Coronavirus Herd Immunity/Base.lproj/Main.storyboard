@@ -300,7 +300,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cz8-iU-ag3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1726" y="131"/>
+            <point key="canvasLocation" x="1716" y="-238"/>
         </scene>
         <!--Bluetooth Off View Controller-->
         <scene sceneID="r4l-64-WeV">
@@ -335,7 +335,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="not active" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Rl-VM-bRb">
-                                        <rect key="frame" x="244" y="44" width="140" height="26"/>
+                                        <rect key="frame" x="244" y="43.5" width="140" height="26"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -418,6 +418,123 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HIP-ST-AMH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="934.78260869565224" y="464.73214285714283"/>
+        </scene>
+        <!--Location View Controller-->
+        <scene sceneID="lmN-7w-QIJ">
+            <objects>
+                <viewController storyboardIdentifier="LocationViewController" id="XIH-VQ-Rht" customClass="LocationViewController" customModule="Coronavirus_Herd_Immunity" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MzB-gw-BTJ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jzt-Xi-eaX">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b73-NR-cyO">
+                                        <rect key="frame" x="32" y="11" width="64.5" height="25.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="not active" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R6T-mT-HNY">
+                                        <rect key="frame" x="32" y="45" width="113" height="26"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hvx-BR-0WX">
+                                        <rect key="frame" x="289" y="10.5" width="95" height="26"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="95" id="m2n-zp-irO"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="not active" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2m0-Ol-TM6">
+                                        <rect key="frame" x="244" y="43.5" width="140" height="26"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1fo-Aq-TRu">
+                                        <rect key="frame" x="86" y="158" width="243" height="193"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="193" id="DNf-He-jXq"/>
+                                        </constraints>
+                                        <state key="normal">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Enable Location">
+                                                    <attributes>
+                                                        <font key="NSFont" metaFont="system" size="46"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </state>
+                                        <connections>
+                                            <action selector="enableLocationAction:" destination="XIH-VQ-Rht" eventType="touchUpInside" id="Q6m-8v-f9r"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SCc-YR-fyK">
+                                        <rect key="frame" x="84" y="611" width="247" height="38"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                        <state key="normal" title="How can I help more?"/>
+                                        <connections>
+                                            <action selector="helpMoreAction:" destination="XIH-VQ-Rht" eventType="touchUpInside" id="c2R-hi-lAI"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="R6T-mT-HNY" firstAttribute="top" secondItem="b73-NR-cyO" secondAttribute="bottom" constant="8.5" id="5G8-fp-kxx"/>
+                                    <constraint firstItem="1fo-Aq-TRu" firstAttribute="centerX" secondItem="SCc-YR-fyK" secondAttribute="centerX" id="6ap-2H-JaX"/>
+                                    <constraint firstItem="b73-NR-cyO" firstAttribute="leading" secondItem="R6T-mT-HNY" secondAttribute="leading" id="6kz-FL-Y3h"/>
+                                    <constraint firstItem="NbQ-Bg-X52" firstAttribute="bottom" secondItem="SCc-YR-fyK" secondAttribute="bottom" constant="169" id="7Dq-Wp-LtD"/>
+                                    <constraint firstItem="hvx-BR-0WX" firstAttribute="centerX" secondItem="2m0-Ol-TM6" secondAttribute="centerX" constant="22.5" id="8Wf-n6-lke"/>
+                                    <constraint firstItem="b73-NR-cyO" firstAttribute="baseline" secondItem="hvx-BR-0WX" secondAttribute="baseline" id="JeN-QG-HHC"/>
+                                    <constraint firstItem="b73-NR-cyO" firstAttribute="leading" secondItem="NbQ-Bg-X52" secondAttribute="leading" constant="32" id="LHW-Zd-546"/>
+                                    <constraint firstItem="1fo-Aq-TRu" firstAttribute="centerX" secondItem="jzt-Xi-eaX" secondAttribute="centerX" id="NAB-ZZ-aXH"/>
+                                    <constraint firstAttribute="bottom" secondItem="SCc-YR-fyK" secondAttribute="bottom" constant="169" id="QJh-YS-vzU"/>
+                                    <constraint firstItem="2m0-Ol-TM6" firstAttribute="top" secondItem="hvx-BR-0WX" secondAttribute="bottom" constant="7" id="Tiz-7X-YrU"/>
+                                    <constraint firstItem="SCc-YR-fyK" firstAttribute="leading" secondItem="NbQ-Bg-X52" secondAttribute="leading" constant="84" id="UXH-uX-dg9"/>
+                                    <constraint firstAttribute="trailing" secondItem="hvx-BR-0WX" secondAttribute="trailing" constant="30" id="XY1-XX-Feo"/>
+                                    <constraint firstItem="NbQ-Bg-X52" firstAttribute="trailing" secondItem="hvx-BR-0WX" secondAttribute="trailing" constant="30" id="Zye-qV-suh"/>
+                                    <constraint firstItem="1fo-Aq-TRu" firstAttribute="leading" secondItem="NbQ-Bg-X52" secondAttribute="leading" constant="86" id="bgl-VC-7Bj"/>
+                                    <constraint firstItem="b73-NR-cyO" firstAttribute="top" secondItem="NbQ-Bg-X52" secondAttribute="top" constant="11" id="inY-s7-swV"/>
+                                    <constraint firstItem="1fo-Aq-TRu" firstAttribute="top" secondItem="R6T-mT-HNY" secondAttribute="bottom" constant="87.5" id="tAj-e8-Sdu"/>
+                                    <constraint firstItem="hvx-BR-0WX" firstAttribute="trailing" secondItem="2m0-Ol-TM6" secondAttribute="trailing" id="tEU-Dz-0sH"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="crs-5a-upE"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="NbQ-Bg-X52"/>
+                            </scrollView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mw7-6b-CIU">
+                                <rect key="frame" x="31" y="471" width="353" height="113"/>
+                                <string key="text">The more people have this app the safer you will be and the faster will be for your government to treat the spreading of the virus.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="jzt-Xi-eaX" firstAttribute="leading" secondItem="UTF-Ww-8a0" secondAttribute="leading" id="1dH-Za-xct"/>
+                            <constraint firstItem="Mw7-6b-CIU" firstAttribute="leading" secondItem="UTF-Ww-8a0" secondAttribute="leading" constant="31" id="6n1-uy-5md"/>
+                            <constraint firstItem="UTF-Ww-8a0" firstAttribute="bottom" secondItem="Mw7-6b-CIU" secondAttribute="bottom" constant="278" id="Dqs-qi-x8e"/>
+                            <constraint firstItem="jzt-Xi-eaX" firstAttribute="top" secondItem="UTF-Ww-8a0" secondAttribute="top" id="OaW-2w-3XL"/>
+                            <constraint firstItem="jzt-Xi-eaX" firstAttribute="centerX" secondItem="Mw7-6b-CIU" secondAttribute="centerX" id="PDR-KM-B5P"/>
+                            <constraint firstItem="Mw7-6b-CIU" firstAttribute="top" secondItem="UTF-Ww-8a0" secondAttribute="top" constant="427" id="WWC-DQ-4lF"/>
+                            <constraint firstItem="jzt-Xi-eaX" firstAttribute="bottom" secondItem="UTF-Ww-8a0" secondAttribute="bottom" id="mbc-WK-DTr"/>
+                            <constraint firstItem="jzt-Xi-eaX" firstAttribute="centerX" secondItem="MzB-gw-BTJ" secondAttribute="centerX" id="p9j-2t-hNG"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="UTF-Ww-8a0"/>
+                    </view>
+                    <connections>
+                        <outlet property="locationStatusLabel" destination="2m0-Ol-TM6" id="dVb-Mf-cXM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cxv-fK-FuM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1716" y="465"/>
         </scene>
     </scenes>
     <resources>

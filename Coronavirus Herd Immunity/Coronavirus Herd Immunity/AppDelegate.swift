@@ -20,11 +20,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        if StorageManager.shared.getIdentifierDevice() == nil{
-            StorageManager.shared.setIdentifierDevice(Utils.randomString(length: 32))
-        }
+        self.startup()
         
         return true
+    }
+    
+    private func startup(){
+        if StorageManager.shared.getIdentifierDevice() == nil{
+            print("generating new UUID")
+            StorageManager.shared.setIdentifierDevice(Utils.randomUUID())
+        }
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
