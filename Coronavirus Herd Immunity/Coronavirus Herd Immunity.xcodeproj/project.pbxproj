@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C80170582405D19F002FC397 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80170572405D19F002FC397 /* MainViewController.swift */; };
+		C81BA5D0240D969C00CFFA6F /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81BA5CF240D969C00CFFA6F /* LocationManager.swift */; };
 		C842066F240BB23E00B8B45B /* Models.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C8A32570240A759300FF1620 /* Models.xcdatamodeld */; };
 		C88D06A7240715080005E029 /* HelpMoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88D06A6240715080005E029 /* HelpMoreViewController.swift */; };
 		C8A32574240A767C00FF1620 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A32573240A767C00FF1620 /* StorageManager.swift */; };
@@ -22,12 +23,14 @@
 		C8B188DC2402B14400CFEE98 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8B188DA2402B14400CFEE98 /* Main.storyboard */; };
 		C8B188DE2402B14600CFEE98 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8B188DD2402B14600CFEE98 /* Assets.xcassets */; };
 		C8B188E12402B14600CFEE98 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8B188DF2402B14600CFEE98 /* LaunchScreen.storyboard */; };
+		C8B2CF42240D9BAF005248B8 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B2CF41240D9BAF005248B8 /* LocationViewController.swift */; };
 		C8B861E9240ABD0600B35CF2 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B861E8240ABD0600B35CF2 /* Utils.swift */; };
 		C8D61A24240C575800895DA9 /* IBeaconManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D61A23240C575800895DA9 /* IBeaconManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C80170572405D19F002FC397 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		C81BA5CF240D969C00CFFA6F /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		C88D06A6240715080005E029 /* HelpMoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpMoreViewController.swift; sourceTree = "<group>"; };
 		C8A32571240A759300FF1620 /* Models.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Models.xcdatamodel; sourceTree = "<group>"; };
 		C8A32573240A767C00FF1620 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
@@ -44,6 +47,7 @@
 		C8B188DD2402B14600CFEE98 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C8B188E02402B14600CFEE98 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C8B188E22402B14600CFEE98 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C8B2CF41240D9BAF005248B8 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		C8B861E8240ABD0600B35CF2 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		C8B861EA240ABD9C00B35CF2 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		C8D61A23240C575800895DA9 /* IBeaconManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBeaconManager.swift; sourceTree = "<group>"; };
@@ -67,6 +71,7 @@
 				C8A892E9240866CC007EA317 /* BluetoothManager.swift */,
 				C8A892ED24087226007EA317 /* Costants.swift */,
 				C8A32577240A81C300FF1620 /* InteractionsDto.swift */,
+				C81BA5CF240D969C00CFFA6F /* LocationManager.swift */,
 				C8A32575240A76F600FF1620 /* PeripheralDto.swift */,
 				C8A32573240A767C00FF1620 /* StorageManager.swift */,
 				C8B861E8240ABD0600B35CF2 /* Utils.swift */,
@@ -98,6 +103,7 @@
 				C8A892E6240864E4007EA317 /* BluetoothOffViewController.swift */,
 				C88D06A6240715080005E029 /* HelpMoreViewController.swift */,
 				C8D61A23240C575800895DA9 /* IBeaconManager.swift */,
+				C8B2CF41240D9BAF005248B8 /* LocationViewController.swift */,
 				C80170572405D19F002FC397 /* MainViewController.swift */,
 				C8B188D82402B14400CFEE98 /* ViewController.swift */,
 				C8B188DA2402B14400CFEE98 /* Main.storyboard */,
@@ -183,6 +189,7 @@
 			files = (
 				C8A892EC24086AC8007EA317 /* AlertManager.swift in Sources */,
 				C80170582405D19F002FC397 /* MainViewController.swift in Sources */,
+				C81BA5D0240D969C00CFFA6F /* LocationManager.swift in Sources */,
 				C8A32578240A81C300FF1620 /* InteractionsDto.swift in Sources */,
 				C8B861E9240ABD0600B35CF2 /* Utils.swift in Sources */,
 				C8A32574240A767C00FF1620 /* StorageManager.swift in Sources */,
@@ -195,6 +202,7 @@
 				C842066F240BB23E00B8B45B /* Models.xcdatamodeld in Sources */,
 				C8A892EE24087226007EA317 /* Costants.swift in Sources */,
 				C88D06A7240715080005E029 /* HelpMoreViewController.swift in Sources */,
+				C8B2CF42240D9BAF005248B8 /* LocationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

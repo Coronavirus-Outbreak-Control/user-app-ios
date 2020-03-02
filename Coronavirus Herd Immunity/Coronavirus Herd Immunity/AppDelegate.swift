@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import CoreLocation
 
 //background fetch: https://www.hackingwithswift.com/example-code/system/how-to-run-code-when-your-app-is-terminated
 // scrollview: https://fluffy.es/scrollview-storyboard-xcode-11/
@@ -31,11 +30,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print("generating new UUID")
             StorageManager.shared.setIdentifierDevice(Utils.randomUUID())
         }
-        
-//        var locationManager = CLLocationManager()
-////        locationManager.requestAlwaysAuthorization()
-//        locationManager.requestWhenInUseAuthorization()
-//        locationManager.startUpdatingLocation()
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

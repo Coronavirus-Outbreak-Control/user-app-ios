@@ -38,7 +38,6 @@ class Utils{
                 return UIImage(ciImage: output)
             }
         }
-
         return nil
     }
     
