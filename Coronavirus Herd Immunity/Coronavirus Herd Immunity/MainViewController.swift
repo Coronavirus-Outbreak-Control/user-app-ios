@@ -58,11 +58,10 @@ class MainViewController: UIViewController {
         // start device as IBeacon
         if BluetoothManager.shared.isBluetoothUsable(){
             // TODO:
-            IBeaconManager.shared.startAdvertiseDevice()
-            
             if LocationManager.shared.getPermessionStatus() == .allowedAlways{
                 //TODO: we are good
                 LocationManager.shared.requestAlwaysPermission()
+                IBeaconManager.shared.startAdvertiseDevice()
             }else{
                 self.changeToLocationViewController()
             }

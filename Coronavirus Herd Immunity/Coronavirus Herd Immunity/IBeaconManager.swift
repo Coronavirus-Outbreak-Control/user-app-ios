@@ -12,6 +12,7 @@ import CoreBluetooth
 
 // https://developer.apple.com/documentation/corelocation/turning_an_ios_device_into_an_ibeacon_device
 // https://www.hackingwithswift.com/example-code/location/how-to-detect-ibeacons
+// https://www.raywenderlich.com/632-ibeacon-tutorial-with-ios-and-swift
 
 class IBeaconManager: NSObject, CBPeripheralManagerDelegate, CLLocationManagerDelegate{
     
@@ -45,6 +46,7 @@ class IBeaconManager: NSObject, CBPeripheralManagerDelegate, CLLocationManagerDe
     public func startAdvertiseDevice(){
         print("asked to advertise")
         self.shouldAdvertise = true
+        self.advertiseDevice()
     }
     
     private func advertiseDevice() {
