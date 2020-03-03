@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ADFF2C67240DA88B00CBF065 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFF2C66240DA88B00CBF065 /* ApiManager.swift */; };
 		C80170582405D19F002FC397 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80170572405D19F002FC397 /* MainViewController.swift */; };
 		C81BA5D0240D969C00CFFA6F /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81BA5CF240D969C00CFFA6F /* LocationManager.swift */; };
 		C842066F240BB23E00B8B45B /* Models.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C8A32570240A759300FF1620 /* Models.xcdatamodeld */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		ADFF2C66240DA88B00CBF065 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		C80170572405D19F002FC397 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		C81BA5CF240D969C00CFFA6F /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		C88D06A6240715080005E029 /* HelpMoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpMoreViewController.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 				C8A892ED24087226007EA317 /* Costants.swift */,
 				C8A32577240A81C300FF1620 /* InteractionsDto.swift */,
 				C81BA5CF240D969C00CFFA6F /* LocationManager.swift */,
+				ADFF2C66240DA88B00CBF065 /* ApiManager.swift */,
 				C8A32575240A76F600FF1620 /* PeripheralDto.swift */,
 				C8A32573240A767C00FF1620 /* StorageManager.swift */,
 				C8B861E8240ABD0600B35CF2 /* Utils.swift */,
@@ -201,6 +204,7 @@
 				C8B188D72402B14400CFEE98 /* AppDelegate.swift in Sources */,
 				C842066F240BB23E00B8B45B /* Models.xcdatamodeld in Sources */,
 				C8A892EE24087226007EA317 /* Costants.swift in Sources */,
+				ADFF2C67240DA88B00CBF065 /* ApiManager.swift in Sources */,
 				C88D06A7240715080005E029 /* HelpMoreViewController.swift in Sources */,
 				C8B2CF42240D9BAF005248B8 /* LocationViewController.swift in Sources */,
 			);

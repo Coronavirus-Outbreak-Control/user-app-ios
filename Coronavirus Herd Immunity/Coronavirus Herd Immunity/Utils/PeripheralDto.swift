@@ -8,7 +8,7 @@
 
 import Foundation
 
-class PeripheralDto{
+class PeripheralDto: Codable {
     
     public var timestamp : Date
     public var timeBlock : String
