@@ -56,8 +56,8 @@ class ApiManager: NSObject, URLSessionDelegate {
         // https://medium.com/livefront/uploading-data-in-the-background-in-ios-f93722013c6a
         
         backgroundTask.earliestBeginDate = Date().addingTimeInterval(60 * 60)
-//        backgroundTask.countOfBytesClientExpectsToSend = 200
-//        backgroundTask.countOfBytesClientExpectsToReceive = 500 * 1024
+        //backgroundTask.countOfBytesClientExpectsToSend = 200
+        //backgroundTask.countOfBytesClientExpectsToReceive = 500 * 1024
         backgroundTask.resume()
     }
     
