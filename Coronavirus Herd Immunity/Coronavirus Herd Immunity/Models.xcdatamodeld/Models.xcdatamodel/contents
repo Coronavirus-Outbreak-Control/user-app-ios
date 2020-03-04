@@ -1,23 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="19B88" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Peripheral" representedClassName="Peripheral" syncable="YES" codeGenerationType="class">
+    <entity name="IBeacon" representedClassName="IBeacon" syncable="YES" codeGenerationType="class">
         <attribute name="counter" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="identifier" optional="YES" attributeType="String"/>
-        <attribute name="rssi" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
-        <attribute name="timeBlock" optional="YES" attributeType="String"/>
+        <attribute name="identifier" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="rssi" optional="YES" attributeType="Integer 64" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <fetchIndex name="identifier">
             <fetchIndexElement property="identifier" type="Binary" order="ascending"/>
         </fetchIndex>
-        <fetchIndex name="identifier2day">
-            <fetchIndexElement property="identifier" type="Binary" order="ascending"/>
-            <fetchIndexElement property="timeBlock" type="Binary" order="ascending"/>
+        <fetchIndex name="timestamp">
+            <fetchIndexElement property="timestamp" type="Binary" order="ascending"/>
         </fetchIndex>
-        <fetchIndex name="timeBlock">
-            <fetchIndexElement property="timeBlock" type="Binary" order="ascending"/>
+        <fetchIndex name="identifier2timestamp">
+            <fetchIndexElement property="identifier" type="Binary" order="ascending"/>
+            <fetchIndexElement property="timestamp" type="Binary" order="ascending"/>
         </fetchIndex>
     </entity>
     <elements>
-        <element name="Peripheral" positionX="-63" positionY="-18" width="128" height="118"/>
+        <element name="IBeacon" positionX="-63" positionY="-18" width="128" height="28"/>
     </elements>
 </model>

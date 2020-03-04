@@ -103,7 +103,7 @@ class BluetoothOffViewController: UIViewController {
     func bluetoothOff(){
         let alert = AlertManager.getAlertConfirmation(title: NSLocalizedString("Bluetooth", comment: "bluetooth title alert"), message: NSLocalizedString("You need to enable the bluetooth, please Open Settings -> Bluetooth -> enable bluetooth", comment: "bluetooth off"), confirmAction: {action in
             
-            guard let settingsUrl = URL(string: "App-Prefs:root=General") else {
+            guard let settingsUrl = URL(string: "App-Prefs:root=General&path=Bluetooth") else {
                 print("NO SETTINGS GENERAL URL")
                 return
             }
@@ -117,7 +117,7 @@ class BluetoothOffViewController: UIViewController {
     }
     
     func bluetoothDeniedOrUnauthorized(){
-        let alert = AlertManager.getAlertConfirmation(title: NSLocalizedString("Bluetooth", comment: "bluetooth title alert"), message: NSLocalizedString("We need to access the bluetooth, please Open Settings -> Coronavirus Herd Immunity -> enable bluetooth access", comment: "bluetooth unavailable"), confirmAction: {action in
+        let alert = AlertManager.getAlertConfirmation(title: NSLocalizedString("Bluetooth", comment: "bluetooth title alert"), message: NSLocalizedString("We need to access the bluetooth, please Open Settings -> Coronavirus Herd Immunity -> enable bluetooth access", comment: "bluetooth open app settings"), confirmAction: {action in
             guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
                 print("NO SETTINGS URL")
                 return

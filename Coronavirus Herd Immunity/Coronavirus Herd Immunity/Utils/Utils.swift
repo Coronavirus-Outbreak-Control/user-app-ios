@@ -41,13 +41,24 @@ class Utils{
         return nil
     }
     
-    public static func randomString(length: Int) -> String {
-        let letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
-        return String((0..<length).map{ _ in letters.randomElement()! })
-    }
-    
     public static func randomUUID() -> String {
         return UUID().uuidString
+    }
+    
+    public static func randomInt() -> Int{
+        return Int(arc4random_uniform(1000)) + 1
+    }
+    
+    public static func getMinorFromInt(_ value : Int) -> Int{
+        return Int(value / Costants.Setup.moduleMinorMajorVersion)
+    }
+    
+    public static func getMajorFromInt(_ value : Int) -> Int{
+        return Int(value % Costants.Setup.moduleMinorMajorVersion)
+    }
+    
+    public static func buildIdentifierBy(minor: Int, major: Int) -> Int64{
+        return Int64(minor * Costants.Setup.moduleMinorMajorVersion + major)
     }
     
 }

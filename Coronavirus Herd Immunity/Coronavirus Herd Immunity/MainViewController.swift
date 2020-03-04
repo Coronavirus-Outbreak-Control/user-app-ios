@@ -30,13 +30,14 @@ class MainViewController: UIViewController {
     private func run(){
         if let identifierDevice = StorageManager.shared.getIdentifierDevice(){
             print("identifier device:", identifierDevice)
-            self.qrCodeButton.setImage(Utils.generateQRCode(from: identifierDevice), for: .normal)
+            self.qrCodeButton.setImage(Utils.generateQRCode(from: identifierDevice.description), for: .normal)
         }
         
         self.interactionsDaily.text = StorageManager.shared.countDailyInteractions().description
         self.interactionsTotal.text = StorageManager.shared.countTotalInteractions().description
         
         NotificationCenter.default.addObserver(self, selector: #selector(handleBluetoothChangeStatus), name: NSNotification.Name(Costants.Notification.bluetoothChangeStatus), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleLocationChangeStatus(notification:)), name: NSNotification.Name(Costants.Notification.locationChangeStatus), object: nil)
         
         if BluetoothManager.shared.getPermissionStatus() != .allowed{
             print("permission not allowed")
@@ -56,8 +57,29 @@ class MainViewController: UIViewController {
     private func bluetoothAccessible(){
         // start device as IBeacon
         if BluetoothManager.shared.isBluetoothUsable(){
-            IBeaconManager.shared.startAdvertiseDevice()
+            // TODO:
+            if LocationManager.shared.getPermessionStatus() == .allowedAlways{
+                //TODO: we are good
+                LocationManager.shared.requestAlwaysPermission()
+                IBeaconManager.shared.startAdvertiseDevice()
+                IBeaconManager.shared.registerListener()
+            }else{
+                self.changeToLocationViewController()
+            }
+            
+        }else{
+            print("ERROR")
         }
+    }
+    
+    private func changeToLocationViewController(){
+        print("switching to location view controller")
+
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "LocationViewController") as! LocationViewController
+        nextViewController.modalPresentationStyle = .fullScreen
+        self.present(nextViewController, animated:true, completion:nil)
+        
     }
     
     private func changeToBluetoothOffViewController(){
@@ -68,6 +90,19 @@ class MainViewController: UIViewController {
         nextViewController.modalPresentationStyle = .fullScreen
         self.present(nextViewController, animated:true, completion:nil)
         
+    }
+    
+    @objc private func handleLocationChangeStatus(notification: NSNotification){
+        print("new location status notification", notification)
+        if let status = notification.object as? LocationManager.AuthorizationStatus{
+            if status != .allowedAlways{
+                self.changeToLocationViewController()
+            }else{
+                self.bluetoothAccessible()
+            }
+        }else{
+            print("WTF?")
+        }
     }
     
     @objc private func handleBluetoothChangeStatus(notification: NSNotification){

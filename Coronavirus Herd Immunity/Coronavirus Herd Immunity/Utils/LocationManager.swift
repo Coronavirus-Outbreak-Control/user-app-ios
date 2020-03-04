@@ -9,32 +9,29 @@
 import Foundation
 import CoreLocation
 
-
-
-//        var locationManager = CLLocationManager()
-////        locationManager.requestAlwaysAuthorization()
-//        locationManager.requestWhenInUseAuthorization()
-//        locationManager.startUpdatingLocation()
-
 class LocationManager : NSObject, CLLocationManagerDelegate{
 
-    enum PermissionStatus {
-        case allowed, denied, notDetermined, notAvailable
+    enum AuthorizationStatus {
+        case allowedAlways, allowedWhenInUse, denied, notDetermined, notAvailable
     }
     
-    public var shared = LocationManager()
+    public static var shared = LocationManager()
     let locationManager : CLLocationManager
     
     private override init(){
         self.locationManager = CLLocationManager()
         super.init()
         locationManager.delegate = self
+        self.requestAlwaysPermission()
     }
     
-    public func getPermessionStatus() -> PermissionStatus{
+    public func getPermessionStatus() -> AuthorizationStatus{
+        print("asking for location authorization status")
         switch (CLLocationManager.authorizationStatus()){
-            case .authorizedAlways, .authorizedWhenInUse:
-                return .allowed
+            case .authorizedAlways:
+                return .allowedAlways
+            case .authorizedWhenInUse:
+                return .allowedWhenInUse
             case .denied:
                 return .denied
             case .notDetermined:
@@ -50,7 +47,27 @@ class LocationManager : NSObject, CLLocationManagerDelegate{
     }
     
     public func requestAlwaysPermission(){
+        print("requesting always permission auth")
         self.locationManager.requestWhenInUseAuthorization()
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        print("location suthorizaion changed")
+        switch status {
+        case .authorizedAlways:
+            NotificationCenter.default.post(name: NSNotification.Name(Costants.Notification.locationChangeStatus), object: AuthorizationStatus.allowedAlways)
+            break
+        case .authorizedWhenInUse:
+            print("authorized in use :O")
+            NotificationCenter.default.post(name: NSNotification.Name(Costants.Notification.locationChangeStatus), object: AuthorizationStatus.allowedWhenInUse)
+            break
+        case .denied:
+            NotificationCenter.default.post(name: NSNotification.Name(Costants.Notification.locationChangeStatus), object: AuthorizationStatus.denied)
+            break
+        case .notDetermined, .restricted:
+            NotificationCenter.default.post(name: NSNotification.Name(Costants.Notification.locationChangeStatus), object: AuthorizationStatus.notDetermined)
+            break
+        }
     }
     
 }
