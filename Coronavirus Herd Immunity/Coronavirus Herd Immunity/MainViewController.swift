@@ -30,7 +30,7 @@ class MainViewController: UIViewController {
     private func run(){
         if let identifierDevice = StorageManager.shared.getIdentifierDevice(){
             print("identifier device:", identifierDevice)
-            self.qrCodeButton.setImage(Utils.generateQRCode(from: identifierDevice), for: .normal)
+            self.qrCodeButton.setImage(Utils.generateQRCode(from: identifierDevice.description), for: .normal)
         }
         
         self.interactionsDaily.text = StorageManager.shared.countDailyInteractions().description
@@ -62,6 +62,7 @@ class MainViewController: UIViewController {
                 //TODO: we are good
                 LocationManager.shared.requestAlwaysPermission()
                 IBeaconManager.shared.startAdvertiseDevice()
+                IBeaconManager.shared.registerListener()
             }else{
                 self.changeToLocationViewController()
             }

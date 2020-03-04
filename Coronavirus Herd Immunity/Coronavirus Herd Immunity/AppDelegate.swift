@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func startup(){
         if StorageManager.shared.getIdentifierDevice() == nil{
             print("generating new UUID")
-            StorageManager.shared.setIdentifierDevice(Utils.randomUUID())
+            StorageManager.shared.setIdentifierDevice(Utils.randomInt())
         }
     }
 
@@ -52,6 +52,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if BluetoothManager.shared.isBluetoothUsable() && LocationManager.shared.getPermessionStatus() == .allowedAlways{
             print("restarting ibeacon")
             IBeaconManager.shared.startAdvertiseDevice()
+            IBeaconManager.shared.registerListener()
         }
     }
 

@@ -8,19 +8,17 @@
 
 import Foundation
 
-class PeripheralDto{
+class IBeaconDto{
     
     public var timestamp : Date
-    public var timeBlock : String
-    public var identifier : String
-    public var rssi : Double
+    public var identifier : Int64
+    public var rssi : Int64
     public var counter : Int64
     
-    public init(identifier : String, rssi : Double, timestamp : Date, timeBlock : String, counter: Int64){
+    public init(identifier : Int64, timestamp : Date, counter: Int64, rssi: Int64){
         self.timestamp = timestamp
         self.identifier = identifier
         self.rssi = rssi
-        self.timeBlock = timeBlock
         self.counter = counter
     }
     

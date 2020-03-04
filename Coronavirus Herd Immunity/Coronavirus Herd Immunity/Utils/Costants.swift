@@ -25,6 +25,10 @@ class Costants {
     }
     
     class Setup{
+        
+        public static let uuidCHIdevice = "451720ea-5e62-11ea-bc55-0242ac130003"
+        public static let beaconCHIidentifier = "com.coronaherdimmunity.myDeviceRegion"
+        
         public static let identifierDevice = "chi.identifier.device"
         public static let totalInteractionsKey = "chi.interactions.total"
         public static let timeBlockKeyPreference = "chi.preference.timeBlock"
@@ -32,6 +36,8 @@ class Costants {
         public static let minRSSIPower : Double = -60
         public static let maxRSSIPower : Double = 100
         public static let minCounterIdentifierToPush = 1
+        
+        public static let moduleMinorMajorVersion : Int = 65536
     }
     
 }
