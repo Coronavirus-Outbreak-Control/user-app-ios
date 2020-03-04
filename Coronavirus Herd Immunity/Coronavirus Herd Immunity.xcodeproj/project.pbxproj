@@ -26,6 +26,7 @@
 		C8B861E9240ABD0600B35CF2 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B861E8240ABD0600B35CF2 /* Utils.swift */; };
 		C8C72E53241062210023797E /* CoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C72E52241062210023797E /* CoreManager.swift */; };
 		C8D61A24240C575800895DA9 /* IBeaconManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D61A23240C575800895DA9 /* IBeaconManager.swift */; };
+		C8F404E9241069A700441164 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F404E8241069A700441164 /* ApiManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		C8B861EA240ABD9C00B35CF2 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		C8C72E52241062210023797E /* CoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreManager.swift; sourceTree = "<group>"; };
 		C8D61A23240C575800895DA9 /* IBeaconManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBeaconManager.swift; sourceTree = "<group>"; };
+		C8F404E8241069A700441164 /* ApiManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 			isa = PBXGroup;
 			children = (
 				C8A892EB24086AC8007EA317 /* AlertManager.swift */,
+				C8F404E8241069A700441164 /* ApiManager.swift */,
 				C8A892E9240866CC007EA317 /* BluetoothManager.swift */,
 				C8C72E52241062210023797E /* CoreManager.swift */,
 				C8A892ED24087226007EA317 /* Costants.swift */,
@@ -201,6 +204,7 @@
 				C8B188D72402B14400CFEE98 /* AppDelegate.swift in Sources */,
 				C842066F240BB23E00B8B45B /* Models.xcdatamodeld in Sources */,
 				C8A892EE24087226007EA317 /* Costants.swift in Sources */,
+				C8F404E9241069A700441164 /* ApiManager.swift in Sources */,
 				C88D06A7240715080005E029 /* HelpMoreViewController.swift in Sources */,
 				C8B2CF42240D9BAF005248B8 /* LocationViewController.swift in Sources */,
 			);

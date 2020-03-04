@@ -96,10 +96,9 @@ class IBeaconManager: NSObject, CBPeripheralManagerDelegate, CLLocationManagerDe
     func registerListener() {
         print("registering region for iBeacon")
         if let identifierDevice = StorageManager.shared.getIdentifierDevice(){
-            let uuid = UUID(uuidString: "05F62A3D-F60F-44BC-B36E-2B80FD6C9679")!//UUID(uuidString: identifierDevice)!
+            let uuid = UUID(uuidString: Costants.Setup.uuidCHIdevice)!
             
-//            let beaconRegion = CLBeaconRegion(proximityUUID: uuid, major: 100, minor: 2, identifier: "id-region-identifier")
-            let beaconRegion = CLBeaconRegion(proximityUUID: uuid, identifier: "ciaone")
+            let beaconRegion = CLBeaconRegion(proximityUUID: uuid, identifier: Costants.Setup.beaconCHIidentifier)
 
             locationManager.startMonitoring(for: beaconRegion)
             locationManager.startRangingBeacons(in: beaconRegion)
@@ -142,6 +141,7 @@ class IBeaconManager: NSObject, CBPeripheralManagerDelegate, CLLocationManagerDe
             }
             if [CLProximity.far, CLProximity.near].contains(beacon.proximity){
                 //TODO: good ibeacon :D
+                CoreManager.addIBeacon(beacon)
             }
         }
     }
