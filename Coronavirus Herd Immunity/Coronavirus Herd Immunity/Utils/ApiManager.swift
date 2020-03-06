@@ -31,13 +31,13 @@ class ApiManager: NSObject, URLSessionDelegate {
         super.init()
     }
     
-    public func uploadInteractions(_ devices: [PeripheralDto]) -> Void {
+    public func uploadInteractions(_ devices: [IBeaconDto]) -> Void {
         // will need to schedule this using the task scheduler
         // https://developer.apple.com/documentation/backgroundtasks/bgtaskscheduler
         
         struct interaction: Codable {
             let deviceID: String
-            let peripherals: [PeripheralDto]
+            let beacons: [IBeaconDto]
         }
 
         let endpoint = URL(string: "\(endpoint_string)/upload/")
