@@ -11,6 +11,31 @@ import CoreLocation
 
 class CoreManager{
     
+    public static func pushInteractions(){
+        print("checking locations to push")
+        if let lastDatePush = StorageManager.shared.getLastTimePush(){
+            if lastDatePush.addingTimeInterval(Costants.Setup.secondsIntervalBetweenPushes) < Date(){
+                print("interval elapsed, time to push")
+                //push old interactions
+                if let ibeacons = StorageManager.shared.readIBeaconsNewerThanDate(lastDatePush){
+                    ApiManager.shared.uploadInteractions(ibeacons)
+                }
+                print("updating last time push")
+                StorageManager.shared.setLastTimePush(Date())
+            }else{
+                print("no need to push yet")
+            }
+        }else{
+            print("no last push found, gonna push everything")
+            if let ibeacons = StorageManager.shared.readAllIBeacons(){
+                ApiManager.shared.uploadInteractions(ibeacons)
+            }
+            print("setting last time push")
+            StorageManager.shared.setLastTimePush(Date())
+        }
+        // no interactions to push
+    }
+    
     public static func addIBeacon(_ iBeacon : CLBeacon){
         print("addIbeacon", iBeacon)
         let uuid = Utils.buildIdentifierBy(minor: iBeacon.minor.intValue, major: iBeacon.major.intValue)
@@ -20,6 +45,7 @@ class CoreManager{
             rssi: Int64(iBeacon.rssi))
         
         StorageManager.shared.saveIBeacon(ib)
+        
+        CoreManager.pushInteractions()
     }
-    
 }

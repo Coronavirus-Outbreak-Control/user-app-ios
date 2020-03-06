@@ -53,6 +53,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print("restarting ibeacon")
             IBeaconManager.shared.startAdvertiseDevice()
             IBeaconManager.shared.registerListener()
+            CoreManager.pushInteractions()
         }
     }
 
