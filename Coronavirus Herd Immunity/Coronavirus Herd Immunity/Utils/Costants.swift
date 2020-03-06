@@ -31,7 +31,10 @@ class Costants {
         
         public static let identifierDevice = "chi.identifier.device"
         public static let totalInteractionsKey = "chi.interactions.total"
-        public static let timeBlockKeyPreference = "chi.preference.timeBlock"
+        public static let lastDatePushPreference = "chi.preference.lastDatePush"
+        
+        public static let secondsIntervalBetweenPushes : TimeInterval = 3600 * 24
+        
         public static let scanTime : Double = 10
         public static let minRSSIPower : Double = -60
         public static let maxRSSIPower : Double = 100

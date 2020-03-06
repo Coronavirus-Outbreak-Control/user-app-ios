@@ -129,12 +129,21 @@ class StorageManager{
         return fetchIBeacons(predicate)
     }
     
-    public func getTimeBlockUserDefatuls() -> String?{
-        return defaults.string(forKey: Costants.Setup.timeBlockKeyPreference)
+    public func readIBeaconsNewerThanDate(_ date: Date) -> [IBeaconDto]?{
+        let predicate = NSPredicate(format: "(%k > %@)", IBeaconEntity.timestampKey, date as NSDate)
+        return fetchIBeacons(predicate)
     }
     
-    public func setTimeBlockUserDefatuls(_ timeBlock : String){
-        defaults.set(timeBlock, forKey: Costants.Setup.timeBlockKeyPreference)
+    public func getLastTimePush() -> Date?{
+        let i = defaults.double(forKey: Costants.Setup.lastDatePushPreference)
+        if i < 1{
+            return nil
+        }
+        return Date(timeIntervalSince1970: i)
+    }
+    
+    public func setLastTimePush(_ date : Date){
+        defaults.set(date.timeIntervalSince1970, forKey: Costants.Setup.lastDatePushPreference)
         defaults.synchronize()
     }
     

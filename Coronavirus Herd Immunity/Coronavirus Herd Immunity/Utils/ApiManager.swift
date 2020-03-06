@@ -25,7 +25,7 @@ class ApiManager: NSObject, URLSessionDelegate {
         return URLSession(configuration: config, delegate: self, delegateQueue: nil)
     }()
     
-    public var shared = ApiManager()
+    public static let shared = ApiManager()
     
     private override init(){
         super.init()
