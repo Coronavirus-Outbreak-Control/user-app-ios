@@ -22,7 +22,6 @@ class StorageManager{
         static let identifierKey = "identifier"
         static let rssiKey = "rssi"
         static let timestampKey = "timestamp"
-        static let counterKey = "counter"
     }
     
     public static var shared : StorageManager = StorageManager()
@@ -60,9 +59,8 @@ class StorageManager{
     private func buildIBeacon(_ object : NSManagedObject) -> IBeaconDto{
         return IBeaconDto(
             identifier: object.value(forKey: IBeaconEntity.identifierKey) as! Int64,
-            timestamp: object.value(forKey: IBeaconEntity.rssiKey) as! Date,
-            counter: object.value(forKey: IBeaconEntity.timestampKey) as! Int64,
-            rssi: object.value(forKey: IBeaconEntity.counterKey) as! Int64
+            timestamp: object.value(forKey: IBeaconEntity.timestampKey) as! Date,
+            rssi: object.value(forKey: IBeaconEntity.rssiKey) as! Int64
         )
     }
     
@@ -74,7 +72,6 @@ class StorageManager{
         ibeacon.setValue(iBeaconInput.identifier, forKeyPath: IBeaconEntity.identifierKey)
         ibeacon.setValue(iBeaconInput.rssi, forKeyPath: IBeaconEntity.rssiKey)
         ibeacon.setValue(iBeaconInput.timestamp, forKeyPath: IBeaconEntity.timestampKey)
-        ibeacon.setValue(iBeaconInput.counter, forKeyPath: IBeaconEntity.counterKey)
         
         do {
             try self.persistentContainer.viewContext.save()
