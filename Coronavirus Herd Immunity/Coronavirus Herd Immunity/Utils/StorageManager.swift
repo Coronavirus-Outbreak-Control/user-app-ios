@@ -130,7 +130,7 @@ class StorageManager{
     }
     
     public func readIBeaconsNewerThanDate(_ date: Date) -> [IBeaconDto]?{
-        let predicate = NSPredicate(format: "(%k > %@)", IBeaconEntity.timestampKey, date as NSDate)
+        let predicate = NSPredicate(format: "(%K > %@)", IBeaconEntity.timestampKey, date as NSDate)
         return fetchIBeacons(predicate)
     }
     

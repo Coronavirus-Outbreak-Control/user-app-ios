@@ -14,9 +14,9 @@
 
 import Foundation
 
-class ApiManager: NSObject, URLSessionDelegate {
+class ApiManager: NSObject, URLSessionDelegate, URLSessionTaskDelegate {
 
-    private let endpoint_string = "http://api.coronaviruscheck.org"
+    private let endpoint_string = "http://0.0.0.0:8080"
     
     private lazy var urlSession: URLSession = {
         let config = URLSessionConfiguration.background(withIdentifier: "coronavirus-app")
@@ -31,10 +31,84 @@ class ApiManager: NSObject, URLSessionDelegate {
         super.init()
     }
     
-    public func uploadInteractions(_ devices: [IBeaconDto], handler: @escaping () -> Void) -> Void {
-        // will need to schedule this using the task scheduler
-        // https://developer.apple.com/documentation/backgroundtasks/bgtaskscheduler
+    func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithError error: Error?) {
+        print("Data upload in background completed")
+        if let error = error {
+            // error handling
+            print(error)
+            return
+        }
+        else {
+            StorageManager.shared.setLastTimePush(Date())
+        }
+    }
     
+    public func uploadInteractionsInBackground(_ devices: [IBeaconDto]) -> Void {
+        // https://medium.com/livefront/uploading-data-in-the-background-in-ios-f93722013c6a
+        // We need to write to tempDir to make things work here
+        //
+
+        if devices.isEmpty {
+            print("Ending task. No interactions.")
+            return
+        }
+        
+        let endpoint = URL(string: "\(endpoint_string)/interaction/report")
+        var request = URLRequest(url: endpoint!)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        if let uploadData = generatePayload(devices) {
+        
+            let tempDir = FileManager.default.temporaryDirectory
+            let localURL = tempDir.appendingPathComponent("throwaway")
+            try? uploadData.write(to: localURL)
+
+            let backgroundTask = urlSession.uploadTask(with: request, fromFile: localURL)
+            //backgroundTask.earliestBeginDate = Date().addingTimeInterval(60 * 60)
+            //backgroundTask.countOfBytesClientExpectsToSend = 200
+            //backgroundTask.countOfBytesClientExpectsToReceive = 500 * 1024
+            backgroundTask.resume()
+        }
+    }
+    
+    public func uploadInteractions(_ devices: [IBeaconDto], handler: @escaping () -> Void) -> Void {
+        print("Upload called")
+
+        if devices.isEmpty {
+            print("Ending task. No interactions.")
+            handler()
+            return
+        }
+        
+        let endpoint = URL(string: "\(endpoint_string)/interaction/report")
+        var request = URLRequest(url: endpoint!)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        if let uploadData = generatePayload(devices) {
+            let task = URLSession.shared.uploadTask(with: request, from: uploadData) { data, response, error in
+                if let error = error {
+                    // error handling
+                    print(error)
+                    return
+                }
+                guard let httpResponse = response as? HTTPURLResponse,
+                    (200...299).contains(httpResponse.statusCode) else {
+                        // error handling
+                        print(response ?? "Unknown server error")
+                        return
+                }
+                handler()
+            }
+            //backgroundTask.earliestBeginDate = Date().addingTimeInterval(60 * 60)
+            //backgroundTask.countOfBytesClientExpectsToSend = 200
+            //backgroundTask.countOfBytesClientExpectsToReceive = 500 * 1024
+            task.resume()
+        }
+    }
+    
+    private func generatePayload(_ devices: [IBeaconDto]) -> Data? {
         struct Interaction: Codable {
             let i: Int64  // id of this device
             let o: Int64  // id of the interacted device
@@ -60,36 +134,13 @@ class ApiManager: NSObject, URLSessionDelegate {
             payload.append(interaction)
         }
         
-        let endpoint = URL(string: "\(endpoint_string)/interaction/report")
-        var request = URLRequest(url: endpoint!)
-        request.httpMethod = "POST"
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        
         guard let uploadData = try? JSONEncoder().encode(payload) else {
             print("Failed to encode interactions")
-            return
+            return nil
         }
         
-        // revisit if crashes because need to write data to a tempdir
-        // https://medium.com/livefront/uploading-data-in-the-background-in-ios-f93722013c6a
-        let backgroundTask = urlSession.uploadTask(with: request, from: uploadData) { data, response, error in
-            if let error = error {
-                // error handling
-                print(error)
-                return
-            }
-            guard let httpResponse = response as? HTTPURLResponse,
-                (200...299).contains(httpResponse.statusCode) else {
-                    // error handling
-                    print(response ?? "Unknown server error")
-                    return
-            }
-            handler()
-        }
-        //backgroundTask.earliestBeginDate = Date().addingTimeInterval(60 * 60)
-        //backgroundTask.countOfBytesClientExpectsToSend = 200
-        //backgroundTask.countOfBytesClientExpectsToReceive = 500 * 1024
-        backgroundTask.resume()
+        return uploadData
+        
     }
     
     public func getActiveInteractions(handler: @escaping (Int) -> Void) -> Void {
