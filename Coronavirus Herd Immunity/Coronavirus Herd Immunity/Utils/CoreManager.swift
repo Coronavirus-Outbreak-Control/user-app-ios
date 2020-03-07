@@ -9,7 +9,7 @@
 import Foundation
 import CoreLocation
 
-class CoreManager: NSObject, URLSessionTaskDelegate{
+class CoreManager {
     
     public static func pushInteractions(){
         print("checking locations to push")

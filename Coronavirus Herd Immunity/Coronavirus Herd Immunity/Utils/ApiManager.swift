@@ -74,7 +74,6 @@ class ApiManager: NSObject, URLSessionDelegate, URLSessionTaskDelegate {
     
     public func uploadInteractions(_ devices: [IBeaconDto], handler: @escaping () -> Void) -> Void {
         print("Upload called")
-        dump(devices)
 
         if devices.isEmpty {
             print("Ending task. No interactions.")

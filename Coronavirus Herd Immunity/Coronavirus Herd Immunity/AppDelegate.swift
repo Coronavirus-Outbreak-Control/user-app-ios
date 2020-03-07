@@ -15,7 +15,7 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var backgroundCompletionHandler: (()->Void)?
+//    var backgroundCompletionHandler: (()->Void)?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -41,7 +41,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //                     completionHandler: @escaping () -> Void) {
 //        backgroundCompletionHandler = completionHandler
 //    }
-//    
+//
 //    func urlSessionDidFinishEvents(forBackgroundURLSession session: URLSession) {
 //        DispatchQueue.main.async {
 //            guard let appDelegate = UIApplication.shared.delegate as? AppDelegate,
