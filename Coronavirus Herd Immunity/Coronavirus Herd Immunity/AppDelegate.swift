@@ -15,6 +15,7 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+//    var backgroundCompletionHandler: (()->Void)?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -27,10 +28,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     private func startup(){
         if StorageManager.shared.getIdentifierDevice() == nil{
-            print("generating new UUID")
+            print("generating new ID from server")
+//            ApiManager.shared.getNewDeviceId(id: DeviceInfoManager.getId(), model: DeviceInfoManager.getModel(), version: DeviceInfoManager.getVersion()) { deviceID in
+//                    StorageManager.shared.setIdentifierDevice(Int(deviceID))
+//            }
             StorageManager.shared.setIdentifierDevice(Utils.randomInt())
         }
     }
+    
+//    func application(_ application: UIApplication,
+//                     handleEventsForBackgroundURLSession identifier: String,
+//                     completionHandler: @escaping () -> Void) {
+//        backgroundCompletionHandler = completionHandler
+//    }
+//
+//    func urlSessionDidFinishEvents(forBackgroundURLSession session: URLSession) {
+//        DispatchQueue.main.async {
+//            guard let appDelegate = UIApplication.shared.delegate as? AppDelegate,
+//                let backgroundCompletionHandler =
+//                appDelegate.backgroundCompletionHandler else {
+//                    return
+//            }
+//            backgroundCompletionHandler()
+//        }
+//    }
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -53,8 +74,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print("restarting ibeacon")
             IBeaconManager.shared.startAdvertiseDevice()
             IBeaconManager.shared.registerListener()
-            CoreManager.pushInteractions()
         }
+        CoreManager.pushInteractions()
     }
 
     func applicationWillTerminate(_ application: UIApplication) {

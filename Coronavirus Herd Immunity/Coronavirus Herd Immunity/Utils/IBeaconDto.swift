@@ -8,8 +8,8 @@
 
 import Foundation
 
-class IBeaconDto : Codable{
-    
+
+class IBeaconDto: Codable {    
     public var timestamp : Date
     public var identifier : Int64
     public var rssi : Int64
