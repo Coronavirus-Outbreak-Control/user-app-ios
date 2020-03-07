@@ -16,22 +16,26 @@ class CoreManager{
         if let lastDatePush = StorageManager.shared.getLastTimePush(){
             if lastDatePush.addingTimeInterval(Costants.Setup.secondsIntervalBetweenPushes) < Date(){
                 print("interval elapsed, time to push")
+                let timeOfPush = Date()
                 //push old interactions
                 if let ibeacons = StorageManager.shared.readIBeaconsNewerThanDate(lastDatePush){
-                    ApiManager.shared.uploadInteractions(ibeacons)
+                    ApiManager.shared.uploadInteractions(ibeacons) {
+                        print("updating last time push")
+                        StorageManager.shared.setLastTimePush(timeOfPush)
+                    }
                 }
-                print("updating last time push")
-                StorageManager.shared.setLastTimePush(Date())
             }else{
                 print("no need to push yet")
             }
         }else{
             print("no last push found, gonna push everything")
+            let timeOfPush = Date()
             if let ibeacons = StorageManager.shared.readAllIBeacons(){
-                ApiManager.shared.uploadInteractions(ibeacons)
+                ApiManager.shared.uploadInteractions(ibeacons) {
+                    print("setting last time push")
+                    StorageManager.shared.setLastTimePush(timeOfPush)
+                }
             }
-            print("setting last time push")
-            StorageManager.shared.setLastTimePush(Date())
         }
         // no interactions to push
     }

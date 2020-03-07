@@ -27,7 +27,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     private func startup(){
         if StorageManager.shared.getIdentifierDevice() == nil{
-            print("generating new UUID")
+            print("generating new ID from server")
+//            ApiManager.shared.getNewDeviceId(id: DeviceInfoManager.getId(), model: DeviceInfoManager.getModel(), version: DeviceInfoManager.getVersion()) { deviceID in
+//                    StorageManager.shared.setIdentifierDevice(Int(deviceID))
+//            }
             StorageManager.shared.setIdentifierDevice(Utils.randomInt())
         }
     }
