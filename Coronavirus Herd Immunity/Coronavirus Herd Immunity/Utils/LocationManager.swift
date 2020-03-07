@@ -9,6 +9,8 @@
 import Foundation
 import CoreLocation
 
+// https://www.raywenderlich.com/5247-core-location-tutorial-for-ios-tracking-visited-locations
+
 class LocationManager : NSObject, CLLocationManagerDelegate{
 
     enum AuthorizationStatus {
@@ -22,7 +24,6 @@ class LocationManager : NSObject, CLLocationManagerDelegate{
         self.locationManager = CLLocationManager()
         super.init()
         locationManager.delegate = self
-        self.requestAlwaysPermission()
     }
     
     public func getPermessionStatus() -> AuthorizationStatus{
@@ -35,7 +36,7 @@ class LocationManager : NSObject, CLLocationManagerDelegate{
             case .denied:
                 return .denied
             case .notDetermined:
-                return .denied
+                return .notDetermined
             case .restricted:
                 return .notAvailable
             }
@@ -51,10 +52,17 @@ class LocationManager : NSObject, CLLocationManagerDelegate{
         self.locationManager.requestWhenInUseAuthorization()
     }
     
+    public func startMonitoring(){
+        LocationManager.shared.locationManager.allowsBackgroundLocationUpdates = true
+        LocationManager.shared.locationManager.startMonitoringSignificantLocationChanges()
+        LocationManager.shared.locationManager.startMonitoringVisits()
+    }
+    
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         print("location suthorizaion changed")
         switch status {
         case .authorizedAlways:
+            self.startMonitoring()
             NotificationCenter.default.post(name: NSNotification.Name(Costants.Notification.locationChangeStatus), object: AuthorizationStatus.allowedAlways)
             break
         case .authorizedWhenInUse:
@@ -68,6 +76,16 @@ class LocationManager : NSObject, CLLocationManagerDelegate{
             NotificationCenter.default.post(name: NSNotification.Name(Costants.Notification.locationChangeStatus), object: AuthorizationStatus.notDetermined)
             break
         }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didVisit visit: CLVisit) {
+      // create CLLocation from the coordinates of CLVisit
+//      let clLocation = CLLocation(latitude: visit.coordinate.latitude, longitude: visit.coordinate.longitude)
+        print("new visit received")
+    }
+
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        print("new location received")
     }
     
 }

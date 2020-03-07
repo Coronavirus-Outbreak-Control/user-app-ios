@@ -34,6 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //            }
             StorageManager.shared.setIdentifierDevice(Utils.randomInt())
         }
+        UIApplication.shared.setMinimumBackgroundFetchInterval(UIApplication.backgroundFetchIntervalMinimum)
     }
     
 //    func application(_ application: UIApplication,
@@ -52,6 +53,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //            backgroundCompletionHandler()
 //        }
 //    }
+    
+    func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        print("background fetchs")
+        if BluetoothManager.shared.isBluetoothUsable() && LocationManager.shared.getPermessionStatus() == .allowedAlways{
+            print("restarting ibeacon from background fetch")
+            IBeaconManager.shared.startAdvertiseDevice()
+            IBeaconManager.shared.registerListener()
+            LocationManager.shared.startMonitoring()
+        }
+        CoreManager.pushInteractionsInBackground()
+        completionHandler(.newData)
+    }
+    
+    func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+        print("will finish launch with options")
+        return true
+    }
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -74,6 +92,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print("restarting ibeacon")
             IBeaconManager.shared.startAdvertiseDevice()
             IBeaconManager.shared.registerListener()
+            LocationManager.shared.startMonitoring()
         }
         CoreManager.pushInteractions()
     }

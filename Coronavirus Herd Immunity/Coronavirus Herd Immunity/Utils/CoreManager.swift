@@ -12,7 +12,7 @@ import CoreLocation
 class CoreManager {
     
     public static func pushInteractions(){
-        print("checking locations to push")
+        print("checking interactions to push")
         if let lastDatePush = StorageManager.shared.getLastTimePush(){
             if lastDatePush.addingTimeInterval(Costants.Setup.secondsIntervalBetweenPushes) < Date(){
                 print("interval elapsed, time to push")
@@ -44,7 +44,7 @@ class CoreManager {
         // will need to schedule this using the task scheduler
         // https://developer.apple.com/documentation/backgroundtasks/bgtaskscheduler
         // In this case, delegate handles setting last push time - we don't want to update it if the upload fails
-        print("checking locations to push")
+        print("checking interactions to push")
         if let lastDatePush = StorageManager.shared.getLastTimePush(){
             if lastDatePush.addingTimeInterval(Costants.Setup.secondsIntervalBetweenPushes) < Date(){
                 print("interval elapsed, time to push")
