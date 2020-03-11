@@ -139,7 +139,7 @@ class IBeaconManager: NSObject, CBPeripheralManagerDelegate, CLLocationManagerDe
                 print("unknown")
                 break
             }
-            if [CLProximity.far, CLProximity.near].contains(beacon.proximity){
+            if [CLProximity.immediate, CLProximity.near].contains(beacon.proximity){
                 //TODO: good ibeacon :D
                 CoreManager.addIBeacon(beacon)
             }
