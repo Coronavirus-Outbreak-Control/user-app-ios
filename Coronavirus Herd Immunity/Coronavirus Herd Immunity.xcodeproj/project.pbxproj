@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AD47449C2419663400717E77 /* BluetoothTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD47449B2419663400717E77 /* BluetoothTableViewController.swift */; };
+		AD47449E241968D900717E77 /* Date+strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD47449D241968D900717E77 /* Date+strings.swift */; };
 		ADD969512413B13F00F08295 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD969502413B13F00F08295 /* ApiManager.swift */; };
 		ADD969532413B5F900F08295 /* DeviceInfoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD969522413B5F900F08295 /* DeviceInfoManager.swift */; };
 		C80170582405D19F002FC397 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80170572405D19F002FC397 /* MainViewController.swift */; };
@@ -31,6 +33,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AD47449B2419663400717E77 /* BluetoothTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothTableViewController.swift; sourceTree = "<group>"; };
+		AD47449D241968D900717E77 /* Date+strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+strings.swift"; sourceTree = "<group>"; };
 		ADD969502413B13F00F08295 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		ADD969522413B5F900F08295 /* DeviceInfoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfoManager.swift; sourceTree = "<group>"; };
 		C80170572405D19F002FC397 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -82,6 +86,7 @@
 				C8A32575240A76F600FF1620 /* IBeaconDto.swift */,
 				C8A32573240A767C00FF1620 /* StorageManager.swift */,
 				C8B861E8240ABD0600B35CF2 /* Utils.swift */,
+				AD47449D241968D900717E77 /* Date+strings.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -113,6 +118,7 @@
 				C80170572405D19F002FC397 /* MainViewController.swift */,
 				C8B188D82402B14400CFEE98 /* ViewController.swift */,
 				C8B188DA2402B14400CFEE98 /* Main.storyboard */,
+				AD47449B2419663400717E77 /* BluetoothTableViewController.swift */,
 				C8A32570240A759300FF1620 /* Models.xcdatamodeld */,
 				C8B188DD2402B14600CFEE98 /* Assets.xcassets */,
 				C8B188DF2402B14600CFEE98 /* LaunchScreen.storyboard */,
@@ -193,9 +199,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD47449E241968D900717E77 /* Date+strings.swift in Sources */,
 				C8C72E53241062210023797E /* CoreManager.swift in Sources */,
 				C8A892EC24086AC8007EA317 /* AlertManager.swift in Sources */,
 				C80170582405D19F002FC397 /* MainViewController.swift in Sources */,
+				AD47449C2419663400717E77 /* BluetoothTableViewController.swift in Sources */,
 				C81BA5D0240D969C00CFFA6F /* LocationManager.swift in Sources */,
 				C8B861E9240ABD0600B35CF2 /* Utils.swift in Sources */,
 				C8A32574240A767C00FF1620 /* StorageManager.swift in Sources */,

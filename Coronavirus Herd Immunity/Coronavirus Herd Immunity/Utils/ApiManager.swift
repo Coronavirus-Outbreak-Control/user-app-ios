@@ -16,7 +16,7 @@ import Foundation
 
 class ApiManager: NSObject, URLSessionDelegate, URLSessionTaskDelegate {
 
-    private let endpoint_string = "http://0.0.0.0:8080"
+    private let endpoint_string = "http://api.coronaviruscheck.org"
     
     private lazy var urlSession: URLSession = {
         let config = URLSessionConfiguration.background(withIdentifier: "coronavirus-app")
@@ -205,7 +205,7 @@ class ApiManager: NSObject, URLSessionDelegate, URLSessionTaskDelegate {
     
     // Shouldn't have to call this more than once, ever.
     public func getNewDeviceId(id: String, model: String, version: String, handler: @escaping (Int64) -> Void) -> Void {
-        let url = URL(string: "\(endpoint_string)/device/handshake/")!
+        let url = URL(string: "\(endpoint_string)/device/handshake")!
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -223,6 +223,11 @@ class ApiManager: NSObject, URLSessionDelegate, URLSessionTaskDelegate {
             let id: String // unique generated ID
             let device: DeviceModel
             let os: DeviceOS
+        }
+        
+        struct ApiResponse: Codable {
+            let cache: Bool
+            let id: Int64
         }
         
         let deviceModel = DeviceModel(manufacturer: "Apple", model: model)
@@ -248,16 +253,16 @@ class ApiManager: NSObject, URLSessionDelegate, URLSessionTaskDelegate {
                     print(response ?? "Unknown server error")
                     return
             }
-            if let data = data {
+            if let dataResponse = data {
                 DispatchQueue.main.async {
                     do{
-                        let jsonResponse = try JSONSerialization.jsonObject(with: data, options: [])
-                        print(jsonResponse)
-                        // will probably need some pre processing first
-                        handler(jsonResponse as! Int64)
+                        let response = try JSONDecoder().decode(ApiResponse.self, from: dataResponse)
+                        print(response)
+                        handler(response.id)
                       } catch let parsingError {
                          print("Error", parsingError)
                     }
+                    
                 }
             }
         }
