@@ -80,11 +80,12 @@ class LocationManager : NSObject, CLLocationManagerDelegate{
     
     func locationManager(_ manager: CLLocationManager, didVisit visit: CLVisit) {
       // create CLLocation from the coordinates of CLVisit
-//      let clLocation = CLLocation(latitude: visit.coordinate.latitude, longitude: visit.coordinate.longitude)
+        BackgroundManager.backroundOperations()
         print("new visit received")
     }
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        BackgroundManager.backroundOperations()
         print("new location received")
     }
     

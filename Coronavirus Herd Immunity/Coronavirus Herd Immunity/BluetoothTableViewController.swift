@@ -16,8 +16,7 @@ class BluetoothTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        beacons = StorageManager.shared.readAllIBeacons() ?? []
+        beacons = StorageManager.shared.readAllIBeacons(true) ?? []
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false

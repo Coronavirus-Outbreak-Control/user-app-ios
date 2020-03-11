@@ -80,10 +80,14 @@ class StorageManager{
         }
     }
     
-    private func fetchIBeacons(_ predicate : NSPredicate? = nil) -> [IBeaconDto]?{
+    private func fetchIBeacons(_ predicate : NSPredicate? = nil, sort : NSSortDescriptor? = nil) -> [IBeaconDto]?{
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: IBeaconEntity.entityName)
         if let p = predicate{
             fetchRequest.predicate = p
+        }
+        
+        if let s = sort{
+            fetchRequest.sortDescriptors = [s]
         }
         
         do {
@@ -119,8 +123,13 @@ class StorageManager{
         }
     }
     
-    public func readAllIBeacons() -> [IBeaconDto]?{
-        return fetchIBeacons()
+    public func readAllIBeacons(_ sortReverseTimestamp : Bool = false) -> [IBeaconDto]?{
+        var sort : NSSortDescriptor? = nil
+        if sortReverseTimestamp{
+            sort = NSSortDescriptor(key: IBeaconEntity.timestampKey, ascending: false)
+        }
+        
+        return fetchIBeacons(nil, sort: sort)
     }
     
     public func readIBeaconsByIdentifierToday(_ identifier : Int64) -> [IBeaconDto]?{

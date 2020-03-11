@@ -56,13 +56,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         print("background fetchs")
-        if BluetoothManager.shared.isBluetoothUsable() && LocationManager.shared.getPermessionStatus() == .allowedAlways{
-            print("restarting ibeacon from background fetch")
-            IBeaconManager.shared.startAdvertiseDevice()
-            IBeaconManager.shared.registerListener()
-            LocationManager.shared.startMonitoring()
-        }
-        CoreManager.pushInteractionsInBackground()
+        BackgroundManager.backroundOperations()
         completionHandler(.newData)
     }
     
