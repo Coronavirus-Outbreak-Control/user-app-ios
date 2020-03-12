@@ -42,10 +42,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func startup(){
         if StorageManager.shared.getIdentifierDevice() == nil{
             print("generating new ID from server")
-//            ApiManager.shared.getNewDeviceId(id: DeviceInfoManager.getId(), model: DeviceInfoManager.getModel(), version: DeviceInfoManager.getVersion()) { deviceID in
-//                    StorageManager.shared.setIdentifierDevice(Int(deviceID))
-//            }
-            StorageManager.shared.setIdentifierDevice(Utils.randomInt())
+            ApiManager.shared.getNewDeviceId(id: DeviceInfoManager.getId(), model: DeviceInfoManager.getModel(), version: DeviceInfoManager.getVersion()) { deviceID in
+                    StorageManager.shared.setIdentifierDevice(Int(deviceID))
+            }
+//            StorageManager.shared.setIdentifierDevice(Utils.randomInt())
         }
         UIApplication.shared.setMinimumBackgroundFetchInterval(UIApplication.backgroundFetchIntervalMinimum)
     }
@@ -69,13 +69,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         print("background fetchs")
-        if BluetoothManager.shared.isBluetoothUsable() && LocationManager.shared.getPermessionStatus() == .allowedAlways{
-            print("restarting ibeacon from background fetch")
-            IBeaconManager.shared.startAdvertiseDevice()
-            IBeaconManager.shared.registerListener()
-            LocationManager.shared.startMonitoring()
-        }
-        CoreManager.pushInteractionsInBackground()
+        BackgroundManager.backroundOperations()
         completionHandler(.newData)
     }
     
