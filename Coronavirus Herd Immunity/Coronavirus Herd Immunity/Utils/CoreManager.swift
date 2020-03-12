@@ -85,9 +85,7 @@ class CoreManager {
     }
     
     public static func pushInteractions(isBackground : Bool){
-        if let ibeacons = StorageManager.shared.readAllIBeacons(){
-            CoreManager.prepareAndPush(ibeacons, isBackground: isBackground)
-        }
+        
         print("checking interactions to push")
         if let lastDatePush = StorageManager.shared.getLastTimePush(){
             if lastDatePush.addingTimeInterval(Costants.Setup.secondsIntervalBetweenPushes) < Date(){
