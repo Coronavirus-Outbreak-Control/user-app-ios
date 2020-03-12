@@ -46,6 +46,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     StorageManager.shared.setIdentifierDevice(Int(deviceID))
             }
 //            StorageManager.shared.setIdentifierDevice(Utils.randomInt())
+        }else{
+            print("MY ID:", StorageManager.shared.getIdentifierDevice())
         }
         UIApplication.shared.setMinimumBackgroundFetchInterval(UIApplication.backgroundFetchIntervalMinimum)
     }
@@ -101,7 +103,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             IBeaconManager.shared.registerListener()
             LocationManager.shared.startMonitoring()
         }
-        CoreManager.pushInteractions()
+        CoreManager.pushInteractions(isBackground: false)
     }
 
     func applicationWillTerminate(_ application: UIApplication) {

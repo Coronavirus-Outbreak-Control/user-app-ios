@@ -39,6 +39,8 @@ class Costants {
         public static let minRSSIPower : Double = -60
         public static let maxRSSIPower : Double = 100
         public static let minCounterIdentifierToPush = 1
+        public static let timeAggregationIBeacons : TimeInterval = 300
+        public static let minimumIntervalTime : Double = 10
         
         public static let moduleMinorMajorVersion : Int = 65536
     }

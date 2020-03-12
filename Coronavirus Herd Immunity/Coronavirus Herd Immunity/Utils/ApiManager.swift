@@ -129,7 +129,7 @@ class ApiManager: NSObject, URLSessionDelegate, URLSessionTaskDelegate {
                 w: Int64(device.timestamp.timeIntervalSince1970),
                 y: nil,
                 x: nil,
-                t: 10,
+                t: Int(Int64(device.interval)),
                 r: device.rssi)
             payload.append(interaction)
         }

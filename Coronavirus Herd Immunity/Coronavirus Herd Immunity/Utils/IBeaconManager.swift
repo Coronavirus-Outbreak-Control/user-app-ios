@@ -123,7 +123,9 @@ class IBeaconManager: NSObject, CBPeripheralManagerDelegate, CLLocationManagerDe
     }
     
     func locationManager(_ manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], in region: CLBeaconRegion){
-        print("FOUND iBEACON!", beacons.count)
+        if beacons.count > 0{
+            print("FOUND iBEACON!", beacons.count)
+        }
         for beacon in beacons {
             print("BEACON", beacon.proximityUUID, beacon.accuracy, beacon.major, beacon.minor, beacon.accuracy, beacon.rssi)
             switch beacon.proximity {
@@ -140,7 +142,7 @@ class IBeaconManager: NSObject, CBPeripheralManagerDelegate, CLLocationManagerDe
                 print("unknown")
                 break
             }
-            if [CLProximity.immediate, CLProximity.near].contains(beacon.proximity){
+            if [CLProximity.immediate, CLProximity.near, CLProximity.far].contains(beacon.proximity){
                 //TODO: good ibeacon :D
                 CoreManager.addIBeacon(beacon)
             }
