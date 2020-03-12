@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Sentry
 
 //background fetch: https://www.hackingwithswift.com/example-code/system/how-to-run-code-when-your-app-is-terminated
 // scrollview: https://fluffy.es/scrollview-storyboard-xcode-11/
@@ -23,6 +24,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.startup()
         
+        do {
+            Client.shared = try Client(dsn: "https://2d08d421fc5e40f1ba4a04ee468b5898@sentry.io/4506990")
+            try Client.shared?.startCrashHandler()
+        } catch let error {
+            print("\(error)")
+        }
+        // Test send event sentry
+        /*
+        let event = Event(level: .debug)
+        event.message = "Test event"
+        Client.shared?.send(event: event)
+        */
         return true
     }
     

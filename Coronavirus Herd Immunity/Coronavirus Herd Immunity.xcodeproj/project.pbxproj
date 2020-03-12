@@ -3,13 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		ADD969512413B13F00F08295 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD969502413B13F00F08295 /* ApiManager.swift */; };
 		ADD969532413B5F900F08295 /* DeviceInfoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD969522413B5F900F08295 /* DeviceInfoManager.swift */; };
 		C80170582405D19F002FC397 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80170572405D19F002FC397 /* MainViewController.swift */; };
+		C80C3B37241AC9B70047B1DC /* Sentry in Frameworks */ = {isa = PBXBuildFile; productRef = C80C3B36241AC9B70047B1DC /* Sentry */; };
 		C81BA5D0240D969C00CFFA6F /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81BA5CF240D969C00CFFA6F /* LocationManager.swift */; };
 		C842066F240BB23E00B8B45B /* Models.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C8A32570240A759300FF1620 /* Models.xcdatamodeld */; };
 		C88D06A7240715080005E029 /* HelpMoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88D06A6240715080005E029 /* HelpMoreViewController.swift */; };
@@ -62,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C80C3B37241AC9B70047B1DC /* Sentry in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,12 +134,16 @@
 				C8B188CF2402B14400CFEE98 /* Sources */,
 				C8B188D02402B14400CFEE98 /* Frameworks */,
 				C8B188D12402B14400CFEE98 /* Resources */,
+				C80C3B38241ACBA80047B1DC /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = "Coronavirus Herd Immunity";
+			packageProductDependencies = (
+				C80C3B36241AC9B70047B1DC /* Sentry */,
+			);
 			productName = "Coronavirus Herd Immunity";
 			productReference = C8B188D32402B14400CFEE98 /* Coronavirus Herd Immunity.app */;
 			productType = "com.apple.product-type.application";
@@ -166,6 +172,9 @@
 				Base,
 			);
 			mainGroup = C8B188CA2402B14400CFEE98;
+			packageReferences = (
+				C80C3B35241AC9B70047B1DC /* XCRemoteSwiftPackageReference "sentry-cocoa" */,
+			);
 			productRefGroup = C8B188D42402B14400CFEE98 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -187,6 +196,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C80C3B38241ACBA80047B1DC /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${TARGET_NAME}",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which sentry-cli >/dev/null; then\nexport SENTRY_ORG=coronavirus-herd-immunity\nexport SENTRY_PROJECT=coronavirus-herd-immunity\nexport SENTRY_AUTH_TOKEN=a4ef67e276344189a4a4e0b44aef0e44a58d4411d79549cf845b134791672765\nERROR=$(sentry-cli upload-dif \"$DWARF_DSYM_FOLDER_PATH\" 2>&1 >/dev/null)\nif [ ! $? -eq 0 ]; then\necho \"warning: sentry-cli - $ERROR\"\nfi\nelse\necho \"warning: sentry-cli not installed, download from https://github.com/getsentry/sentry-cli/releases\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C8B188CF2402B14400CFEE98 /* Sources */ = {
@@ -418,6 +448,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C80C3B35241AC9B70047B1DC /* XCRemoteSwiftPackageReference "sentry-cocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/getsentry/sentry-cocoa.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.5.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C80C3B36241AC9B70047B1DC /* Sentry */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C80C3B35241AC9B70047B1DC /* XCRemoteSwiftPackageReference "sentry-cocoa" */;
+			productName = Sentry;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		C8A32570240A759300FF1620 /* Models.xcdatamodeld */ = {
