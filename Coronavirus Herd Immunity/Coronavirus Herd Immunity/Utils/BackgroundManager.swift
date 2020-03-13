@@ -17,7 +17,7 @@ class BackgroundManager{
             IBeaconManager.shared.registerListener()
             LocationManager.shared.startMonitoring()
         }
-        CoreManager.pushInteractionsInBackground()
+        CoreManager.pushInteractions(isBackground: true)
     }
     
 }
