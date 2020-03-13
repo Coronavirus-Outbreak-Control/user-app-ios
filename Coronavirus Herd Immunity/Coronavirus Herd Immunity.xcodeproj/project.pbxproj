@@ -14,6 +14,7 @@
 		C80170582405D19F002FC397 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80170572405D19F002FC397 /* MainViewController.swift */; };
 		C80C3B37241AC9B70047B1DC /* Sentry in Frameworks */ = {isa = PBXBuildFile; productRef = C80C3B36241AC9B70047B1DC /* Sentry */; };
 		C81BA5D0240D969C00CFFA6F /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81BA5CF240D969C00CFFA6F /* LocationManager.swift */; };
+		C827F82C241C0A390026CF05 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C827F82B241C0A390026CF05 /* RoundButton.swift */; };
 		C842066F240BB23E00B8B45B /* Models.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C8A32570240A759300FF1620 /* Models.xcdatamodeld */; };
 		C84DAEDF241990C30043A1E4 /* BackgroundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84DAEDE241990C30043A1E4 /* BackgroundManager.swift */; };
 		C88D06A7240715080005E029 /* HelpMoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88D06A6240715080005E029 /* HelpMoreViewController.swift */; };
@@ -41,6 +42,7 @@
 		ADD969522413B5F900F08295 /* DeviceInfoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfoManager.swift; sourceTree = "<group>"; };
 		C80170572405D19F002FC397 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		C81BA5CF240D969C00CFFA6F /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		C827F82B241C0A390026CF05 /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		C84DAEDE241990C30043A1E4 /* BackgroundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundManager.swift; sourceTree = "<group>"; };
 		C88D06A6240715080005E029 /* HelpMoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpMoreViewController.swift; sourceTree = "<group>"; };
 		C8A32571240A759300FF1620 /* Models.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Models.xcdatamodel; sourceTree = "<group>"; };
@@ -76,6 +78,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C827F82A241C0A150026CF05 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				C827F82B241C0A390026CF05 /* RoundButton.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
 		C8A892E8240866A7007EA317 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +125,7 @@
 		C8B188D52402B14400CFEE98 /* Coronavirus Herd Immunity */ = {
 			isa = PBXGroup;
 			children = (
+				C827F82A241C0A150026CF05 /* UI */,
 				C8A892E8240866A7007EA317 /* Utils */,
 				C8B188D62402B14400CFEE98 /* AppDelegate.swift */,
 				C8A892E6240864E4007EA317 /* BluetoothOffViewController.swift */,
@@ -236,6 +247,7 @@
 				C8C72E53241062210023797E /* CoreManager.swift in Sources */,
 				C8A892EC24086AC8007EA317 /* AlertManager.swift in Sources */,
 				C80170582405D19F002FC397 /* MainViewController.swift in Sources */,
+				C827F82C241C0A390026CF05 /* RoundButton.swift in Sources */,
 				AD47449C2419663400717E77 /* BluetoothTableViewController.swift in Sources */,
 				C81BA5D0240D969C00CFFA6F /* LocationManager.swift in Sources */,
 				C8B861E9240ABD0600B35CF2 /* Utils.swift in Sources */,

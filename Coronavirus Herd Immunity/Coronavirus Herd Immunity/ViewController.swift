@@ -19,11 +19,7 @@ class ViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-//        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-//        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "MainViewController") as! MainViewController
-//        self.navigationController?.pushViewController(nextViewController, animated: true)
-//        self.present(nextViewController, animated:true, completion:nil)
-        
+        return
         let timer = Timer.scheduledTimer(withTimeInterval: 0, repeats: false, block: { timer in
             
             let storyboard = UIStoryboard(name: "Main", bundle: nil)

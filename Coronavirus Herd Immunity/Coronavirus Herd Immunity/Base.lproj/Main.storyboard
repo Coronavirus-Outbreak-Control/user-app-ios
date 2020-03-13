@@ -16,20 +16,59 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Coronavirus Check" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PS2-ym-ib5">
-                                <rect key="frame" x="0.0" y="120" width="414" height="231"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome to anonymous" lineBreakMode="characterWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PS2-ym-ib5">
+                                <rect key="frame" x="35" y="117" width="300" height="135"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="70"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="55"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Loading" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RRb-jk-eYM">
-                                <rect key="frame" x="177" y="640" width="61" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="check 👋" lineBreakMode="characterWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fdy-am-YdY">
+                                <rect key="frame" x="35" y="318" width="300" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="55"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Coronavirus" lineBreakMode="characterWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eUK-o7-h5n">
+                                <rect key="frame" x="35" y="255" width="281" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="55"/>
+                                <color key="textColor" red="1" green="0.43137254901960786" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ABA-Kp-KZc">
+                                <rect key="frame" x="148" y="790" width="118" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="HOW IT WORKS?"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Together we can save lives and help people keeptheir jobs." lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Sh-UK-sVs">
+                                <rect key="frame" x="35" y="419" width="246" height="112"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kvT-Xi-KER" customClass="RoundButton" customModule="Coronavirus_Herd_Immunity" customModuleProvider="target">
+                                <rect key="frame" x="74" y="697" width="266" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.43137254901960786" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <state key="normal" title="LET'S GET STARTED">
+                                    <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -37,7 +76,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="112.5"/>
+            <point key="canvasLocation" x="-17" y="126"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="VZN-LA-QLD">
@@ -364,110 +403,49 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m1B-bU-5iZ">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k3b-v3-QDL">
-                                        <rect key="frame" x="32" y="11" width="64.5" height="25.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="not active" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zQq-MS-sPW">
-                                        <rect key="frame" x="32" y="45" width="113" height="26"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bluetooth:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xpm-nY-OPq">
-                                        <rect key="frame" x="289" y="10.5" width="95" height="26"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="95" id="N4C-vQ-HmU"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="not active" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Rl-VM-bRb">
-                                        <rect key="frame" x="244" y="43.5" width="140" height="26"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EtL-7T-Jil">
-                                        <rect key="frame" x="86" y="158" width="243" height="193"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="193" id="KdP-4Y-dkw"/>
-                                        </constraints>
-                                        <state key="normal">
-                                            <attributedString key="attributedTitle">
-                                                <fragment content="Open Bluetooth">
-                                                    <attributes>
-                                                        <font key="NSFont" metaFont="system" size="46"/>
-                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                    </attributes>
-                                                </fragment>
-                                            </attributedString>
-                                        </state>
-                                        <connections>
-                                            <action selector="openBluetoothAction:" destination="v5A-pM-8af" eventType="touchUpInside" id="mNK-W2-550"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Bd-AP-7Di">
-                                        <rect key="frame" x="84" y="611" width="247" height="38"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                        <state key="normal" title="How can I help more?"/>
-                                        <connections>
-                                            <action selector="howCanIHelpMoreAction:" destination="v5A-pM-8af" eventType="touchUpInside" id="HWE-ts-S7b"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="EtL-7T-Jil" firstAttribute="centerX" secondItem="m1B-bU-5iZ" secondAttribute="centerX" id="0JX-Vf-vNi"/>
-                                    <constraint firstItem="3cy-fg-7C2" firstAttribute="bottom" secondItem="9Bd-AP-7Di" secondAttribute="bottom" constant="169" id="26n-Eb-TxU"/>
-                                    <constraint firstItem="k3b-v3-QDL" firstAttribute="baseline" secondItem="xpm-nY-OPq" secondAttribute="baseline" id="8Hq-Ci-KvB"/>
-                                    <constraint firstItem="zQq-MS-sPW" firstAttribute="top" secondItem="k3b-v3-QDL" secondAttribute="bottom" constant="8.5" id="ESQ-l1-TH9"/>
-                                    <constraint firstItem="3cy-fg-7C2" firstAttribute="trailing" secondItem="xpm-nY-OPq" secondAttribute="trailing" constant="30" id="F83-2K-J83"/>
-                                    <constraint firstItem="k3b-v3-QDL" firstAttribute="leading" secondItem="3cy-fg-7C2" secondAttribute="leading" constant="32" id="Moz-ge-yia"/>
-                                    <constraint firstItem="9Bd-AP-7Di" firstAttribute="leading" secondItem="3cy-fg-7C2" secondAttribute="leading" constant="84" id="QV6-wq-pb7"/>
-                                    <constraint firstAttribute="bottom" secondItem="9Bd-AP-7Di" secondAttribute="bottom" constant="169" id="Sum-N2-qHm"/>
-                                    <constraint firstAttribute="trailing" secondItem="xpm-nY-OPq" secondAttribute="trailing" constant="30" id="WPR-b8-9Kt"/>
-                                    <constraint firstItem="xpm-nY-OPq" firstAttribute="centerX" secondItem="1Rl-VM-bRb" secondAttribute="centerX" constant="22.5" id="ZIC-KZ-aZA"/>
-                                    <constraint firstItem="k3b-v3-QDL" firstAttribute="leading" secondItem="zQq-MS-sPW" secondAttribute="leading" id="er3-o7-T07"/>
-                                    <constraint firstItem="1Rl-VM-bRb" firstAttribute="top" secondItem="xpm-nY-OPq" secondAttribute="bottom" constant="7" id="jzz-zP-ADK"/>
-                                    <constraint firstItem="k3b-v3-QDL" firstAttribute="top" secondItem="3cy-fg-7C2" secondAttribute="top" constant="11" id="r9i-ro-kKa"/>
-                                    <constraint firstItem="xpm-nY-OPq" firstAttribute="trailing" secondItem="1Rl-VM-bRb" secondAttribute="trailing" id="rHZ-4V-Jo7"/>
-                                    <constraint firstItem="EtL-7T-Jil" firstAttribute="top" secondItem="zQq-MS-sPW" secondAttribute="bottom" constant="87.5" id="tux-uh-4W2"/>
-                                    <constraint firstItem="EtL-7T-Jil" firstAttribute="leading" secondItem="3cy-fg-7C2" secondAttribute="leading" constant="86" id="uUg-tD-3Iy"/>
-                                    <constraint firstItem="EtL-7T-Jil" firstAttribute="centerX" secondItem="9Bd-AP-7Di" secondAttribute="centerX" id="zeF-83-B5z"/>
-                                </constraints>
-                                <viewLayoutGuide key="contentLayoutGuide" id="pbZ-eh-dXg"/>
-                                <viewLayoutGuide key="frameLayoutGuide" id="3cy-fg-7C2"/>
-                            </scrollView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zQ0-fp-UMM">
-                                <rect key="frame" x="31" y="471" width="353" height="113"/>
-                                <string key="text">The more people have this app the safer you will be and the faster will be for your government to treat the spreading of the virus.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N92-cX-c13">
+                                <rect key="frame" x="150" y="787" width="118" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="HOW IT WORKS?"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w8h-fK-fc9" customClass="RoundButton" customModule="Coronavirus_Herd_Immunity" customModuleProvider="target">
+                                <rect key="frame" x="77" y="694" width="266" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.43137254899999999" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="LET'S GET STARTED">
+                                    <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bluetooth" lineBreakMode="characterWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ip8-nl-Zg1">
+                                <rect key="frame" x="38" y="124" width="300" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="55"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="We need your permission to use bluetooth  to monitor your distance from other devices." lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XHF-cz-gHd">
+                                <rect key="frame" x="38" y="230" width="305" height="112"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="m1B-bU-5iZ" firstAttribute="top" secondItem="cmj-kI-wp8" secondAttribute="top" id="DE6-GO-k6d"/>
-                            <constraint firstItem="m1B-bU-5iZ" firstAttribute="centerX" secondItem="1vk-Hh-aXW" secondAttribute="centerX" id="F6D-97-wde"/>
-                            <constraint firstItem="zQ0-fp-UMM" firstAttribute="top" secondItem="cmj-kI-wp8" secondAttribute="top" constant="427" id="K3V-SH-hgV"/>
-                            <constraint firstItem="m1B-bU-5iZ" firstAttribute="leading" secondItem="cmj-kI-wp8" secondAttribute="leading" id="bqJ-HT-CsO"/>
-                            <constraint firstItem="zQ0-fp-UMM" firstAttribute="leading" secondItem="cmj-kI-wp8" secondAttribute="leading" constant="31" id="fIe-QX-Lxo"/>
-                            <constraint firstItem="m1B-bU-5iZ" firstAttribute="bottom" secondItem="cmj-kI-wp8" secondAttribute="bottom" id="hFS-O7-B4R"/>
-                            <constraint firstItem="cmj-kI-wp8" firstAttribute="bottom" secondItem="zQ0-fp-UMM" secondAttribute="bottom" constant="278" id="i91-LF-tZM"/>
-                            <constraint firstItem="m1B-bU-5iZ" firstAttribute="centerX" secondItem="zQ0-fp-UMM" secondAttribute="centerX" id="kX5-wN-rud"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="cmj-kI-wp8"/>
                     </view>
-                    <connections>
-                        <outlet property="bluetoothStatus" destination="1Rl-VM-bRb" id="NvZ-PX-FuM"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HIP-ST-AMH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
