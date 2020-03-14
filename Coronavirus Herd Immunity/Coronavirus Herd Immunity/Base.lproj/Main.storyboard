@@ -898,11 +898,9 @@ closer than 2 meters to you.</string>
                                                 </attributedString>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="93B-G2-0xj">
-                                                <rect key="frame" x="40" y="378" width="334" height="38"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="38" id="Ryd-sM-Znw"/>
-                                                </constraints>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="93B-G2-0xj">
+                                                <rect key="frame" x="40" y="396" width="334" height="38"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <attributedString key="attributedText">
                                                     <fragment>
                                                         <string key="content">You will be alerted when you’ve been close
@@ -921,12 +919,9 @@ to an infected person, up to 14 days back.</string>
                                                 </attributedString>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kxa-XW-UHe">
-                                                <rect key="frame" x="40" y="326" width="334" height="16"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="16" id="66M-qP-XTx"/>
-                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="16" id="d8Y-pa-mxV"/>
-                                                </constraints>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kxa-XW-UHe">
+                                                <rect key="frame" x="40" y="364" width="334" height="16"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <attributedString key="attributedText">
                                                     <fragment content="How do you keep me safe?">
                                                         <attributes>
@@ -943,11 +938,9 @@ to an infected person, up to 14 days back.</string>
                                                 </attributedString>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vhe-NL-BvZ">
-                                                <rect key="frame" x="40" y="504" width="334" height="56"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="56" id="O2l-Qx-VKB"/>
-                                                </constraints>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vhe-NL-BvZ">
+                                                <rect key="frame" x="40" y="540" width="334" height="56"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <attributedString key="attributedText">
                                                     <fragment>
                                                         <string key="content">Your status, and others in the network will
@@ -967,12 +960,9 @@ by scanning your accound ID.</string>
                                                 </attributedString>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HG9-eJ-uMN">
-                                                <rect key="frame" x="40" y="452" width="334" height="16"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="16" id="Jdq-gK-pWC"/>
-                                                    <constraint firstAttribute="height" constant="16" id="cdT-Rn-DBU"/>
-                                                </constraints>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HG9-eJ-uMN">
+                                                <rect key="frame" x="40" y="508" width="334" height="16"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <attributedString key="attributedText">
                                                     <fragment content="How do you keep me safe?">
                                                         <attributes>
@@ -989,30 +979,28 @@ by scanning your accound ID.</string>
                                                 </attributedString>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="az0-07-D3T">
+                                                <rect key="frame" x="40" y="326" width="334" height="2"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            </view>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WLS-yC-bv7">
+                                                <rect key="frame" x="40" y="470" width="334" height="2"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="ZL8-wh-Vyy" firstAttribute="top" secondItem="S39-xe-PEf" secondAttribute="top" constant="234" id="0SR-cj-jWL"/>
                                             <constraint firstAttribute="height" constant="700" id="1Hi-P8-wSh"/>
-                                            <constraint firstItem="HG9-eJ-uMN" firstAttribute="trailing" secondItem="93B-G2-0xj" secondAttribute="trailing" id="4t3-eV-a9h"/>
-                                            <constraint firstItem="HG9-eJ-uMN" firstAttribute="top" secondItem="93B-G2-0xj" secondAttribute="bottom" constant="36" id="7sQ-tj-zu8"/>
                                             <constraint firstItem="ZL8-wh-Vyy" firstAttribute="leading" secondItem="S39-xe-PEf" secondAttribute="leading" constant="40" id="9QK-kW-FIh"/>
-                                            <constraint firstItem="Kxa-XW-UHe" firstAttribute="trailing" secondItem="ZL8-wh-Vyy" secondAttribute="trailing" id="ARH-7n-bmX"/>
                                             <constraint firstItem="ZL8-wh-Vyy" firstAttribute="top" secondItem="ErR-NY-mIu" secondAttribute="bottom" constant="36" id="BSI-Ug-TIU"/>
                                             <constraint firstAttribute="trailing" secondItem="ZL8-wh-Vyy" secondAttribute="trailing" constant="40" id="EGn-pI-8HZ"/>
-                                            <constraint firstItem="93B-G2-0xj" firstAttribute="leading" secondItem="Kxa-XW-UHe" secondAttribute="leading" id="FdE-jp-Ope"/>
-                                            <constraint firstItem="Vhe-NL-BvZ" firstAttribute="top" secondItem="HG9-eJ-uMN" secondAttribute="bottom" constant="36" id="N6q-ZG-cml"/>
-                                            <constraint firstItem="Vhe-NL-BvZ" firstAttribute="trailing" secondItem="HG9-eJ-uMN" secondAttribute="trailing" id="NHf-t7-tDH"/>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="700" id="P5E-Gx-gSd"/>
-                                            <constraint firstItem="Kxa-XW-UHe" firstAttribute="top" secondItem="ZL8-wh-Vyy" secondAttribute="bottom" constant="36" id="PNI-cJ-eaN"/>
                                             <constraint firstItem="ErR-NY-mIu" firstAttribute="leading" secondItem="S39-xe-PEf" secondAttribute="leading" constant="40" id="RGf-Mf-tFZ"/>
-                                            <constraint firstItem="Vhe-NL-BvZ" firstAttribute="leading" secondItem="HG9-eJ-uMN" secondAttribute="leading" id="XNP-fR-bUu"/>
-                                            <constraint firstItem="Kxa-XW-UHe" firstAttribute="leading" secondItem="ZL8-wh-Vyy" secondAttribute="leading" id="a6P-mU-jC3"/>
                                             <constraint firstItem="ZL8-wh-Vyy" firstAttribute="leading" secondItem="ErR-NY-mIu" secondAttribute="leading" id="fOg-fq-cE2"/>
-                                            <constraint firstItem="HG9-eJ-uMN" firstAttribute="leading" secondItem="93B-G2-0xj" secondAttribute="leading" id="kAW-lz-8j1"/>
                                             <constraint firstAttribute="trailing" secondItem="ErR-NY-mIu" secondAttribute="trailing" constant="40" id="pxR-03-kEJ"/>
-                                            <constraint firstItem="93B-G2-0xj" firstAttribute="top" secondItem="Kxa-XW-UHe" secondAttribute="bottom" constant="36" id="wmd-z0-lsU"/>
-                                            <constraint firstItem="93B-G2-0xj" firstAttribute="trailing" secondItem="Kxa-XW-UHe" secondAttribute="trailing" id="zSB-6Y-yXx"/>
                                         </constraints>
                                     </view>
                                 </subviews>
