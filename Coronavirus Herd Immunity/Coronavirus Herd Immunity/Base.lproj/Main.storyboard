@@ -103,6 +103,9 @@ keep their jobs.</string>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NEs-MN-e2E" customClass="RoundButton" customModule="Coronavirus_Herd_Immunity" customModuleProvider="target">
                                 <rect key="frame" x="60" y="693" width="295" height="64"/>
                                 <color key="backgroundColor" red="1" green="0.43529411759999997" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="SXL-to-mAk"/>
+                                </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal">
                                     <attributedString key="attributedTitle">
@@ -131,7 +134,7 @@ keep their jobs.</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ABA-Kp-KZc">
-                                <rect key="frame" x="166" y="792" width="83" height="26"/>
+                                <rect key="frame" x="161" y="792" width="93" height="26"/>
                                 <state key="normal">
                                     <attributedString key="attributedTitle">
                                         <fragment content="HOW IT WORKS?">
@@ -148,21 +151,22 @@ keep their jobs.</string>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="ABA-Kp-KZc" firstAttribute="top" secondItem="NEs-MN-e2E" secondAttribute="bottom" constant="35" id="0GC-Uw-Qmj"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ABA-Kp-KZc" secondAttribute="bottom" constant="44" id="1b0-KQ-nJO"/>
                             <constraint firstItem="Fdy-am-YdY" firstAttribute="top" secondItem="eUK-o7-h5n" secondAttribute="bottom" constant="8" id="1gl-YZ-CpL"/>
+                            <constraint firstItem="NEs-MN-e2E" firstAttribute="centerX" secondItem="3Sh-UK-sVs" secondAttribute="centerX" id="1vj-Qw-uRR"/>
                             <constraint firstItem="3Sh-UK-sVs" firstAttribute="leading" secondItem="Fdy-am-YdY" secondAttribute="leading" id="2wh-yr-bPz"/>
-                            <constraint firstItem="ABA-Kp-KZc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="166" id="4BK-6a-cuv"/>
                             <constraint firstItem="3Sh-UK-sVs" firstAttribute="top" secondItem="Fdy-am-YdY" secondAttribute="bottom" constant="70" id="8ga-pc-z1M"/>
+                            <constraint firstItem="ABA-Kp-KZc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="161" id="Ds8-Tb-Szx"/>
                             <constraint firstItem="PS2-ym-ib5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="J0f-jY-22g"/>
+                            <constraint firstItem="NEs-MN-e2E" firstAttribute="centerX" secondItem="ABA-Kp-KZc" secondAttribute="centerX" id="JbS-GM-8hC"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eUK-o7-h5n" secondAttribute="trailing" constant="40" id="L8Q-B0-iCS"/>
-                            <constraint firstItem="ABA-Kp-KZc" firstAttribute="centerX" secondItem="NEs-MN-e2E" secondAttribute="centerX" id="ROH-li-3W1"/>
                             <constraint firstItem="3Sh-UK-sVs" firstAttribute="trailing" secondItem="Fdy-am-YdY" secondAttribute="trailing" id="Zhd-Lc-voO"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Fdy-am-YdY" secondAttribute="trailing" constant="40" id="e5S-oQ-mpX"/>
+                            <constraint firstItem="ABA-Kp-KZc" firstAttribute="top" secondItem="NEs-MN-e2E" secondAttribute="bottom" constant="35" id="gSM-PO-dUe"/>
                             <constraint firstItem="Fdy-am-YdY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="gyE-5F-rHG"/>
                             <constraint firstItem="PS2-ym-ib5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="hm0-iY-Z1F"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ABA-Kp-KZc" secondAttribute="bottom" constant="44" id="lyX-r3-icb"/>
                             <constraint firstItem="eUK-o7-h5n" firstAttribute="top" secondItem="PS2-ym-ib5" secondAttribute="bottom" constant="3" id="qf0-kk-WvP"/>
-                            <constraint firstItem="ABA-Kp-KZc" firstAttribute="centerX" secondItem="3Sh-UK-sVs" secondAttribute="centerX" id="rgp-q0-3lA"/>
+                            <constraint firstItem="NEs-MN-e2E" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="60" id="uaa-uk-hjy"/>
                             <constraint firstItem="eUK-o7-h5n" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="xOb-IP-5nF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -170,7 +174,7 @@ keep their jobs.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="119" y="465"/>
+            <point key="canvasLocation" x="118.84057971014494" y="464.73214285714283"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="VZN-LA-QLD">
@@ -707,7 +711,7 @@ distance from other devices.</string>
                                     <attributedString key="attributedTitle">
                                         <fragment content="GIVE LOCATION PERMISSION">
                                             <attributes>
-                                                <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <font key="NSFont" size="14" name="SFCompactDisplay-Regular"/>
                                                 <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                             </attributes>
@@ -1036,9 +1040,6 @@ by scanning your accound ID.</string>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="roF-M7-Pqe"/>
                     </view>
-                    <connections>
-                        <outlet property="title" destination="ErR-NY-mIu" id="ovY-kW-rhq"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bm2-BR-l11" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
