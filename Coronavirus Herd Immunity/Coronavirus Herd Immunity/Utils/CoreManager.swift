@@ -35,8 +35,11 @@ class CoreManager {
             rssis.append(beacon.rssi)
             lastDate = beacon.timestamp
         }
+        // add the minimum interval to take into account the last interaction
+        interval += Costants.Setup.minimumIntervalTime
+        
         let res = IBeaconDto(identifier: identifier, timestamp: ibeacons[0].timestamp,
-                             rssi: rssis.sorted(by: <)[rssis.count / 2], interval: min(interval, Costants.Setup.minimumIntervalTime))
+                             rssi: rssis.sorted(by: <)[rssis.count / 2], interval: max(interval, Costants.Setup.minimumIntervalTime))
 //        print("WILL RETURN", res)
         return res
     }
@@ -48,7 +51,7 @@ class CoreManager {
         
         for beacon in ibeacons{
             if id2list[beacon.identifier] != nil{
-                if let last = id2list[beacon.identifier]?.last{
+                if let last = id2list[beacon.identifier]?.first{
                     if abs(last.timestamp.timeIntervalSince(beacon.timestamp)) <= Costants.Setup.timeAggregationIBeacons{
                         id2list[beacon.identifier]?.append(beacon)
                     }else{
