@@ -135,6 +135,7 @@ class BluetoothOffViewController: StatusBarViewController {
     }
     
     @IBAction func howCanIHelpMoreAction(_ sender: Any) {
+        print("GONNA PRESENT HELP MORE FROM BLUETOOTH")
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let nextViewController = storyBoard.instantiateViewController(withIdentifier: "HelpMoreViewController") as! HelpMoreViewController
         self.present(nextViewController, animated:true, completion:nil)

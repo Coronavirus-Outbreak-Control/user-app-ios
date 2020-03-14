@@ -28,6 +28,10 @@ class MainViewController: StatusBarViewController {
         self.run()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        print("REAPPEARING")
+    }
+    
     private func run(){
         
         self.statusApp.text = "Active"
@@ -125,6 +129,7 @@ class MainViewController: StatusBarViewController {
     }
     
     @IBAction func showHowCanIHelpMore(_ sender: Any) {
+        print("GONNA PRESENT HELP MORE FROM MAIN")
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let nextViewController = storyBoard.instantiateViewController(withIdentifier: "HelpMoreViewController") as! HelpMoreViewController
         self.present(nextViewController, animated:true, completion:nil)

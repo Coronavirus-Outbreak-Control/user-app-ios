@@ -309,7 +309,6 @@ during your day, we'll let you know.</string>
                                                 </state>
                                                 <connections>
                                                     <action selector="howItWorks:" destination="xcS-4u-vjt" eventType="touchUpInside" id="Ids-ZG-cZO"/>
-                                                    <action selector="showHowCanIHelpMore:" destination="xcS-4u-vjt" eventType="touchUpInside" id="h9C-GX-jWz"/>
                                                 </connections>
                                             </button>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XLB-Hw-DJo">
@@ -597,20 +596,18 @@ distance from other devices.</string>
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iaE-IC-WIK" customClass="RoundButton" customModule="Coronavirus_Herd_Immunity" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iaE-IC-WIK" customClass="RoundButton" customModule="Coronavirus_Herd_Immunity" customModuleProvider="target">
                                 <rect key="frame" x="60" y="695" width="295" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.43529411759999997" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="64" id="e1Z-Eu-ZKH"/>
-                                </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal">
                                     <attributedString key="attributedTitle">
                                         <fragment content="GIVE BLUETOOTH PERMISSION">
                                             <attributes>
-                                                <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <font key="NSFont" size="14" name="SFMono-Regular"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                             </attributes>
                                         </fragment>
                                     </attributedString>
@@ -642,7 +639,7 @@ distance from other devices.</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xsn-mD-QxH">
-                                <rect key="frame" x="147" y="789" width="120" height="26"/>
+                                <rect key="frame" x="147" y="789" width="113" height="26"/>
                                 <state key="normal">
                                     <attributedString key="attributedTitle">
                                         <fragment content="SKIP TO NEXT STEP">
@@ -654,22 +651,22 @@ distance from other devices.</string>
                                     </attributedString>
                                 </state>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="illustration-bluetooth" translatesAutoresizingMaskIntoConstraints="NO" id="Uj9-uI-DYg">
+                                <rect key="frame" x="0.0" y="327" width="414" height="569"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="lPE-Da-ZjX" firstAttribute="top" secondItem="8GN-ww-2vw" secondAttribute="bottom" constant="1" id="6QN-JW-bhL"/>
-                            <constraint firstItem="xsn-mD-QxH" firstAttribute="top" secondItem="iaE-IC-WIK" secondAttribute="bottom" constant="30" id="H2D-df-ndj"/>
                             <constraint firstItem="iGW-XV-oQu" firstAttribute="leading" secondItem="cmj-kI-wp8" secondAttribute="leading" constant="40" id="Lfa-Wh-BL2"/>
                             <constraint firstItem="lPE-Da-ZjX" firstAttribute="leading" secondItem="8GN-ww-2vw" secondAttribute="leading" id="N29-tJ-MJR"/>
                             <constraint firstItem="Uvw-Cp-0an" firstAttribute="leading" secondItem="cmj-kI-wp8" secondAttribute="leading" constant="40" id="O9B-nt-8aV"/>
                             <constraint firstItem="lPE-Da-ZjX" firstAttribute="trailing" secondItem="8GN-ww-2vw" secondAttribute="trailing" id="UTn-uP-Mlm"/>
                             <constraint firstItem="Uvw-Cp-0an" firstAttribute="top" secondItem="iGW-XV-oQu" secondAttribute="bottom" constant="26" id="UdB-xU-5rA"/>
-                            <constraint firstItem="iaE-IC-WIK" firstAttribute="centerX" secondItem="lPE-Da-ZjX" secondAttribute="centerX" id="ZTv-UQ-ndW"/>
                             <constraint firstItem="8GN-ww-2vw" firstAttribute="leading" secondItem="cmj-kI-wp8" secondAttribute="leading" constant="40" id="blI-Mr-flk"/>
                             <constraint firstItem="xsn-mD-QxH" firstAttribute="leading" secondItem="cmj-kI-wp8" secondAttribute="leading" constant="147" id="g7R-BB-ibo"/>
-                            <constraint firstItem="iaE-IC-WIK" firstAttribute="centerX" secondItem="xsn-mD-QxH" secondAttribute="centerX" id="gP2-BJ-JSG"/>
                             <constraint firstItem="iGW-XV-oQu" firstAttribute="top" secondItem="cmj-kI-wp8" secondAttribute="top" constant="60" id="izc-8e-G0T"/>
-                            <constraint firstItem="iaE-IC-WIK" firstAttribute="leading" secondItem="cmj-kI-wp8" secondAttribute="leading" constant="60" id="qLN-fW-TCW"/>
                             <constraint firstItem="cmj-kI-wp8" firstAttribute="trailing" secondItem="8GN-ww-2vw" secondAttribute="trailing" constant="40" id="rvO-xI-kXW"/>
                             <constraint firstItem="cmj-kI-wp8" firstAttribute="bottom" secondItem="xsn-mD-QxH" secondAttribute="bottom" constant="47" id="uRe-2O-bvs"/>
                             <constraint firstItem="cmj-kI-wp8" firstAttribute="trailing" secondItem="Uvw-Cp-0an" secondAttribute="trailing" constant="40" id="we4-x6-Vxq"/>
@@ -680,7 +677,7 @@ distance from other devices.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HIP-ST-AMH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="886" y="465"/>
+            <point key="canvasLocation" x="885.50724637681162" y="464.73214285714283"/>
         </scene>
         <!--Location View Controller-->
         <scene sceneID="lmN-7w-QIJ">
@@ -690,32 +687,22 @@ distance from other devices.</string>
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FMk-EN-B47">
-                                <rect key="frame" x="158" y="778" width="121" height="26"/>
-                                <state key="normal">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="SKIP TO NEXT STEP">
-                                            <attributes>
-                                                <font key="NSFont" size="12" name="SFMono-Regular"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fd6-Na-JOe" customClass="RoundButton" customModule="Coronavirus_Herd_Immunity" customModuleProvider="target">
-                                <rect key="frame" x="71" y="684" width="295" height="64"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="illustration-location" translatesAutoresizingMaskIntoConstraints="NO" id="R4q-uu-z6X">
+                                <rect key="frame" x="0.0" y="440" width="414" height="456"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fd6-Na-JOe" customClass="RoundButton" customModule="Coronavirus_Herd_Immunity" customModuleProvider="target">
+                                <rect key="frame" x="60" y="685" width="295" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.43529411759999997" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="64" id="A7X-qo-dKl"/>
-                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal">
                                     <attributedString key="attributedTitle">
                                         <fragment content="GIVE LOCATION PERMISSION">
                                             <attributes>
                                                 <color key="NSColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <font key="NSFont" size="14" name="SFMono-Regular"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                             </attributes>
                                         </fragment>
                                     </attributedString>
@@ -734,6 +721,20 @@ distance from other devices.</string>
                                 <connections>
                                     <action selector="enableLocationAction:" destination="XIH-VQ-Rht" eventType="touchUpInside" id="zW2-xV-Kob"/>
                                 </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FMk-EN-B47">
+                                <rect key="frame" x="151" y="779" width="113" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="SKIP TO NEXT STEP">
+                                            <attributes>
+                                                <font key="NSFont" size="12" name="SFMono-Regular"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Olv-kI-5Pz">
                                 <rect key="frame" x="40" y="93" width="36" height="14"/>
@@ -810,30 +811,24 @@ distance from other devices.</string>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="fd6-Na-JOe" firstAttribute="centerX" secondItem="FMk-EN-B47" secondAttribute="centerX" id="2ih-Kb-8Qj"/>
                             <constraint firstItem="Olv-kI-5Pz" firstAttribute="top" secondItem="UTF-Ww-8a0" secondAttribute="top" constant="49" id="437-bo-BZI"/>
                             <constraint firstItem="vek-Pm-sYO" firstAttribute="leading" secondItem="UTF-Ww-8a0" secondAttribute="leading" constant="40" id="45k-nC-csy"/>
-                            <constraint firstItem="FMk-EN-B47" firstAttribute="top" secondItem="fd6-Na-JOe" secondAttribute="bottom" constant="30" id="Aet-1D-9p9"/>
                             <constraint firstItem="62D-qb-l2v" firstAttribute="leading" secondItem="G2h-W9-Xd9" secondAttribute="leading" id="Ev1-kD-Qim"/>
                             <constraint firstItem="62D-qb-l2v" firstAttribute="top" secondItem="G2h-W9-Xd9" secondAttribute="bottom" constant="70" id="GVl-Of-dW3"/>
                             <constraint firstItem="G2h-W9-Xd9" firstAttribute="leading" secondItem="Olv-kI-5Pz" secondAttribute="leading" id="Nxu-34-Lww"/>
                             <constraint firstItem="62D-qb-l2v" firstAttribute="trailing" secondItem="G2h-W9-Xd9" secondAttribute="trailing" id="Pm8-Tw-bD2"/>
-                            <constraint firstItem="UTF-Ww-8a0" firstAttribute="trailing" secondItem="fd6-Na-JOe" secondAttribute="trailing" constant="48" id="Qix-ek-dVU"/>
-                            <constraint firstItem="UTF-Ww-8a0" firstAttribute="bottom" secondItem="FMk-EN-B47" secondAttribute="bottom" constant="58" id="aae-91-oHV"/>
                             <constraint firstItem="vek-Pm-sYO" firstAttribute="top" secondItem="62D-qb-l2v" secondAttribute="bottom" constant="1" id="ebh-WC-0pW"/>
                             <constraint firstItem="G2h-W9-Xd9" firstAttribute="top" secondItem="Olv-kI-5Pz" secondAttribute="bottom" constant="26" id="h2T-aq-cKH"/>
                             <constraint firstItem="Olv-kI-5Pz" firstAttribute="leading" secondItem="UTF-Ww-8a0" secondAttribute="leading" constant="40" id="ibI-7W-IFk"/>
                             <constraint firstItem="UTF-Ww-8a0" firstAttribute="trailing" secondItem="vek-Pm-sYO" secondAttribute="trailing" constant="40" id="icY-Pc-huI"/>
                             <constraint firstItem="G2h-W9-Xd9" firstAttribute="centerX" secondItem="MzB-gw-BTJ" secondAttribute="centerX" id="n4d-Hp-mBV"/>
-                            <constraint firstItem="fd6-Na-JOe" firstAttribute="leading" secondItem="UTF-Ww-8a0" secondAttribute="leading" constant="71" id="uZV-3B-N9v"/>
-                            <constraint firstItem="FMk-EN-B47" firstAttribute="leading" secondItem="UTF-Ww-8a0" secondAttribute="leading" constant="158" id="yV3-91-DkJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="UTF-Ww-8a0"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cxv-fK-FuM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1986" y="465"/>
+            <point key="canvasLocation" x="1985.5072463768117" y="464.73214285714283"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="KM7-ns-woy">
@@ -1054,6 +1049,8 @@ by scanning your accound ID.</string>
     <resources>
         <image name="Twitter_Logo_Blue" width="400" height="400"/>
         <image name="f_logo_RGB-Blue_58" width="265" height="265"/>
+        <image name="illustration-bluetooth" width="375" height="514"/>
+        <image name="illustration-location" width="375" height="410"/>
         <image name="tray" catalog="system" width="64" height="44"/>
     </resources>
 </document>

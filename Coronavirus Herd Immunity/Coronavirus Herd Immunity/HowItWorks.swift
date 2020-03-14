@@ -13,10 +13,7 @@ class HowItWorksViewController: StatusBarViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        print("HELP MORE VIEW CONTROLLER")
-    }
-    @IBAction func backToDashboard(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        print("HOW IT WORKS CONTROLLER")
     }
     
 }

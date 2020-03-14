@@ -133,19 +133,19 @@
 				C8A892E8240866A7007EA317 /* Utils */,
 				C8B188D62402B14400CFEE98 /* AppDelegate.swift */,
 				C8A892E6240864E4007EA317 /* BluetoothOffViewController.swift */,
+				AD47449B2419663400717E77 /* BluetoothTableViewController.swift */,
 				C88D06A6240715080005E029 /* HelpMoreViewController.swift */,
 				C8368CC3241D303A000D32FB /* HowItWorks.swift */,
 				C8B2CF41240D9BAF005248B8 /* LocationViewController.swift */,
 				C80170572405D19F002FC397 /* MainViewController.swift */,
+				C8595876241D3C6B0060F2F3 /* StatusBarViewController.swift */,
 				C8B188D82402B14400CFEE98 /* ViewController.swift */,
 				C8B188DA2402B14400CFEE98 /* Main.storyboard */,
-				AD47449B2419663400717E77 /* BluetoothTableViewController.swift */,
 				C8A32570240A759300FF1620 /* Models.xcdatamodeld */,
 				C8B188DD2402B14600CFEE98 /* Assets.xcassets */,
 				C8B188DF2402B14600CFEE98 /* LaunchScreen.storyboard */,
 				C8B188E22402B14600CFEE98 /* Info.plist */,
 				C8B861EA240ABD9C00B35CF2 /* MyPlayground.playground */,
-				C8595876241D3C6B0060F2F3 /* StatusBarViewController.swift */,
 			);
 			path = "Coronavirus Herd Immunity";
 			sourceTree = "<group>";
