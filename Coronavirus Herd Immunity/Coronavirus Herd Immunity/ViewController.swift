@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: StatusBarViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,7 +19,6 @@ class ViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        
     }
 
     @IBAction func letsGetStarted(_ sender: Any) {
@@ -31,6 +30,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func howItWorks(_ sender: Any) {
+        
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let nextViewController = storyBoard.instantiateViewController(withIdentifier: "HowItWorksViewController") as! HowItWorksViewController
         self.present(nextViewController, animated:true, completion:nil)

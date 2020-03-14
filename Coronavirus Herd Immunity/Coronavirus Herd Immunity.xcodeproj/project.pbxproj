@@ -18,6 +18,7 @@
 		C8368CC4241D303A000D32FB /* HowItWorks.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8368CC3241D303A000D32FB /* HowItWorks.swift */; };
 		C842066F240BB23E00B8B45B /* Models.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C8A32570240A759300FF1620 /* Models.xcdatamodeld */; };
 		C84DAEDF241990C30043A1E4 /* BackgroundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84DAEDE241990C30043A1E4 /* BackgroundManager.swift */; };
+		C8595877241D3C6B0060F2F3 /* StatusBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8595876241D3C6B0060F2F3 /* StatusBarViewController.swift */; };
 		C88D06A7240715080005E029 /* HelpMoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88D06A6240715080005E029 /* HelpMoreViewController.swift */; };
 		C8A32574240A767C00FF1620 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A32573240A767C00FF1620 /* StorageManager.swift */; };
 		C8A32576240A76F600FF1620 /* IBeaconDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A32575240A76F600FF1620 /* IBeaconDto.swift */; };
@@ -46,6 +47,7 @@
 		C827F82B241C0A390026CF05 /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		C8368CC3241D303A000D32FB /* HowItWorks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowItWorks.swift; sourceTree = "<group>"; };
 		C84DAEDE241990C30043A1E4 /* BackgroundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundManager.swift; sourceTree = "<group>"; };
+		C8595876241D3C6B0060F2F3 /* StatusBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarViewController.swift; sourceTree = "<group>"; };
 		C88D06A6240715080005E029 /* HelpMoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpMoreViewController.swift; sourceTree = "<group>"; };
 		C8A32571240A759300FF1620 /* Models.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Models.xcdatamodel; sourceTree = "<group>"; };
 		C8A32573240A767C00FF1620 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 				C8B188DF2402B14600CFEE98 /* LaunchScreen.storyboard */,
 				C8B188E22402B14600CFEE98 /* Info.plist */,
 				C8B861EA240ABD9C00B35CF2 /* MyPlayground.playground */,
+				C8595876241D3C6B0060F2F3 /* StatusBarViewController.swift */,
 			);
 			path = "Coronavirus Herd Immunity";
 			sourceTree = "<group>";
@@ -254,6 +257,7 @@
 				AD47449C2419663400717E77 /* BluetoothTableViewController.swift in Sources */,
 				C81BA5D0240D969C00CFFA6F /* LocationManager.swift in Sources */,
 				C8B861E9240ABD0600B35CF2 /* Utils.swift in Sources */,
+				C8595877241D3C6B0060F2F3 /* StatusBarViewController.swift in Sources */,
 				C8A32574240A767C00FF1620 /* StorageManager.swift in Sources */,
 				C8D61A24240C575800895DA9 /* IBeaconManager.swift in Sources */,
 				ADD969532413B5F900F08295 /* DeviceInfoManager.swift in Sources */,

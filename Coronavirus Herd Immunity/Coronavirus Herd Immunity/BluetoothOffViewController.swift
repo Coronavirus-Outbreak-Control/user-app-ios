@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BluetoothOffViewController: UIViewController {
+class BluetoothOffViewController: StatusBarViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()

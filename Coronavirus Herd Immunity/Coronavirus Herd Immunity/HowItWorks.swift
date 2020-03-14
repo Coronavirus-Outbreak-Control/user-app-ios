@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HowItWorksViewController: UIViewController {
+class HowItWorksViewController: StatusBarViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()

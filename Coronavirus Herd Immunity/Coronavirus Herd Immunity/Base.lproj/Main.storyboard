@@ -17,9 +17,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PS2-ym-ib5">
-                                <rect key="frame" x="40" y="144" width="255" height="105"/>
+                                <rect key="frame" x="40" y="144" width="334" height="105"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="105" id="dyy-qO-emi"/>
+                                    <constraint firstAttribute="height" constant="105" id="NGJ-Gr-90d"/>
                                 </constraints>
                                 <attributedString key="attributedText">
                                     <fragment>
@@ -35,7 +35,7 @@ anonymous</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="characterWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fdy-am-YdY">
-                                <rect key="frame" x="40" y="302" width="281" height="42"/>
+                                <rect key="frame" x="40" y="302" width="334" height="42"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="42" id="c1Q-tX-o3M"/>
                                 </constraints>
@@ -58,9 +58,9 @@ anonymous</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="characterWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eUK-o7-h5n">
-                                <rect key="frame" x="40" y="252" width="281" height="42"/>
+                                <rect key="frame" x="40" y="252" width="334" height="42"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="42" id="BLc-cm-FFc"/>
+                                    <constraint firstAttribute="height" constant="42" id="edr-tH-CWD"/>
                                 </constraints>
                                 <attributedString key="attributedText">
                                     <fragment content="Coronavirus">
@@ -74,9 +74,9 @@ anonymous</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Sh-UK-sVs">
-                                <rect key="frame" x="40" y="414" width="255" height="74"/>
+                                <rect key="frame" x="40" y="414" width="334" height="74"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="74" id="Px7-vL-Ape"/>
+                                    <constraint firstAttribute="height" constant="74" id="Dhr-l8-PK6"/>
                                 </constraints>
                                 <attributedString key="attributedText">
                                     <fragment>
@@ -98,6 +98,7 @@ keep their jobs.</string>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="TB1-kG-TOi"/>
                                 </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal">
                                     <attributedString key="attributedTitle">
                                         <fragment content="LET'S GET STARTED">
@@ -141,24 +142,24 @@ keep their jobs.</string>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3Sh-UK-sVs" secondAttribute="trailing" constant="119" id="0oM-Be-uwl"/>
                             <constraint firstItem="kvT-Xi-KER" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="60" id="0qg-mG-krh"/>
+                            <constraint firstItem="Fdy-am-YdY" firstAttribute="top" secondItem="eUK-o7-h5n" secondAttribute="bottom" constant="8" id="1gl-YZ-CpL"/>
+                            <constraint firstItem="3Sh-UK-sVs" firstAttribute="leading" secondItem="Fdy-am-YdY" secondAttribute="leading" id="2wh-yr-bPz"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ABA-Kp-KZc" secondAttribute="bottom" constant="44" id="3Ii-Mj-xSb"/>
-                            <constraint firstItem="3Sh-UK-sVs" firstAttribute="top" secondItem="Fdy-am-YdY" secondAttribute="bottom" constant="70" id="CqF-tf-611"/>
-                            <constraint firstItem="eUK-o7-h5n" firstAttribute="top" secondItem="PS2-ym-ib5" secondAttribute="bottom" constant="3" id="HGe-WU-gYy"/>
-                            <constraint firstItem="Fdy-am-YdY" firstAttribute="leading" secondItem="3Sh-UK-sVs" secondAttribute="leading" id="KNP-F5-MAU"/>
+                            <constraint firstItem="3Sh-UK-sVs" firstAttribute="top" secondItem="Fdy-am-YdY" secondAttribute="bottom" constant="70" id="8ga-pc-z1M"/>
+                            <constraint firstItem="PS2-ym-ib5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="J0f-jY-22g"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eUK-o7-h5n" secondAttribute="trailing" constant="40" id="L8Q-B0-iCS"/>
                             <constraint firstItem="ABA-Kp-KZc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="147" id="LdV-2c-mZG"/>
                             <constraint firstItem="kvT-Xi-KER" firstAttribute="centerX" secondItem="ABA-Kp-KZc" secondAttribute="centerX" id="N0r-Op-8eT"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PS2-ym-ib5" secondAttribute="trailing" constant="119" id="OVS-gE-SD1"/>
-                            <constraint firstItem="eUK-o7-h5n" firstAttribute="leading" secondItem="Fdy-am-YdY" secondAttribute="leading" id="WM5-Qt-63i"/>
-                            <constraint firstItem="PS2-ym-ib5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="YPe-jQ-noc"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eUK-o7-h5n" secondAttribute="trailing" constant="93" id="Yy3-Dt-bFx"/>
-                            <constraint firstItem="PS2-ym-ib5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="Z9Y-h1-YB4"/>
-                            <constraint firstItem="Fdy-am-YdY" firstAttribute="top" secondItem="eUK-o7-h5n" secondAttribute="bottom" constant="8" id="Zr6-Oh-Pxe"/>
-                            <constraint firstItem="PS2-ym-ib5" firstAttribute="leading" secondItem="eUK-o7-h5n" secondAttribute="leading" id="cfb-6l-66w"/>
-                            <constraint firstItem="eUK-o7-h5n" firstAttribute="trailing" secondItem="Fdy-am-YdY" secondAttribute="trailing" id="gfU-WW-ave"/>
+                            <constraint firstItem="3Sh-UK-sVs" firstAttribute="trailing" secondItem="Fdy-am-YdY" secondAttribute="trailing" id="Zhd-Lc-voO"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Fdy-am-YdY" secondAttribute="trailing" constant="40" id="e5S-oQ-mpX"/>
+                            <constraint firstItem="Fdy-am-YdY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="gyE-5F-rHG"/>
+                            <constraint firstItem="PS2-ym-ib5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="hm0-iY-Z1F"/>
+                            <constraint firstItem="eUK-o7-h5n" firstAttribute="top" secondItem="PS2-ym-ib5" secondAttribute="bottom" constant="3" id="qf0-kk-WvP"/>
                             <constraint firstItem="kvT-Xi-KER" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rqr-tB-NQ7"/>
                             <constraint firstItem="ABA-Kp-KZc" firstAttribute="top" secondItem="kvT-Xi-KER" secondAttribute="bottom" constant="31" id="u7A-5i-tLh"/>
+                            <constraint firstItem="eUK-o7-h5n" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="xOb-IP-5nF"/>
+                            <constraint firstItem="PS2-ym-ib5" firstAttribute="centerX" secondItem="kvT-Xi-KER" secondAttribute="centerX" id="xfH-sj-ZZF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -170,7 +171,7 @@ keep their jobs.</string>
         <!--Main View Controller-->
         <scene sceneID="VZN-LA-QLD">
             <objects>
-                <viewController storyboardIdentifier="MainViewController" id="xcS-4u-vjt" customClass="MainViewController" customModule="Coronavirus_Herd_Immunity" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainViewController" interfaceStyle="dark" id="xcS-4u-vjt" customClass="MainViewController" customModule="Coronavirus_Herd_Immunity" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="U7Z-oe-xJF">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -246,8 +247,9 @@ during your day, we'll let you know.</string>
                                                 <rect key="frame" x="40" y="218" width="162" height="28"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <attributedString key="attributedText">
-                                                    <fragment content=" ">
+                                                    <fragment content="Active">
                                                         <attributes>
+                                                            <color key="NSColor" red="0.0" green="0.59607843137254901" blue="0.45490196078431372" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <font key="NSFont" size="28" name="SFMono-Bold"/>
                                                             <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                         </attributes>
@@ -256,10 +258,10 @@ during your day, we'll let you know.</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Nv-Ey-WFv">
-                                                <rect key="frame" x="210" y="218" width="100" height="28"/>
+                                                <rect key="frame" x="210" y="218" width="162" height="28"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <attributedString key="attributedText">
-                                                    <fragment content="0">
+                                                    <fragment content="-">
                                                         <attributes>
                                                             <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <color key="NSColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -315,12 +317,12 @@ during your day, we'll let you know.</string>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Kc-rB-N2o">
-                                                <rect key="frame" x="210" y="218" width="100" height="28"/>
+                                                <rect key="frame" x="210" y="218" width="162" height="28"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="tintColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal">
                                                     <attributedString key="attributedTitle">
-                                                        <fragment content="0">
+                                                        <fragment content="-">
                                                             <attributes>
                                                                 <color key="NSColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <font key="NSFont" size="28" name="SFMono-Bold"/>
@@ -334,7 +336,7 @@ during your day, we'll let you know.</string>
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="700" id="F1E-nU-s0B"/>
                                             <constraint firstAttribute="height" constant="700" id="aNM-HB-fqj"/>
@@ -352,7 +354,7 @@ during your day, we'll let you know.</string>
                                 <viewLayoutGuide key="frameLayoutGuide" id="f5d-Me-2j0"/>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Ifd-g6-Dke" firstAttribute="centerX" secondItem="U7Z-oe-xJF" secondAttribute="centerX" id="6El-Cd-0eu"/>
                             <constraint firstItem="Ifd-g6-Dke" firstAttribute="leading" secondItem="Q01-0W-deV" secondAttribute="leading" id="YuC-hU-8Cb"/>
@@ -484,7 +486,7 @@ during your day, we'll let you know.</string>
         <!--Known Bluetooth devices-->
         <scene sceneID="8F8-1i-4Zo">
             <objects>
-                <tableViewController id="gJf-Al-C2f" customClass="BluetoothTableViewController" customModule="Coronavirus_Herd_Immunity" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="BluetoothTableViewController" id="gJf-Al-C2f" customClass="BluetoothTableViewController" customModule="Coronavirus_Herd_Immunity" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="UuH-xN-t0r">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -529,15 +531,15 @@ during your day, we'll let you know.</string>
         <!--Bluetooth Off View Controller-->
         <scene sceneID="r4l-64-WeV">
             <objects>
-                <viewController storyboardIdentifier="BluetoothOffViewController" id="v5A-pM-8af" customClass="BluetoothOffViewController" customModule="Coronavirus_Herd_Immunity" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BluetoothOffViewController" interfaceStyle="dark" id="v5A-pM-8af" customClass="BluetoothOffViewController" customModule="Coronavirus_Herd_Immunity" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1vk-Hh-aXW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="characterWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uvw-Cp-0an">
-                                <rect key="frame" x="40" y="144" width="246" height="42"/>
+                                <rect key="frame" x="40" y="144" width="334" height="42"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="42" id="Pso-qE-sMY"/>
+                                    <constraint firstAttribute="height" constant="42" id="SbB-Ce-oI9"/>
                                 </constraints>
                                 <attributedString key="attributedText">
                                     <fragment content="Bluetooth">
@@ -551,9 +553,9 @@ during your day, we'll let you know.</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8GN-ww-2vw">
-                                <rect key="frame" x="40" y="256" width="303" height="74"/>
+                                <rect key="frame" x="40" y="256" width="334" height="74"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="74" id="3Vj-Fj-uns"/>
+                                    <constraint firstAttribute="height" constant="74" id="g8O-uE-dRZ"/>
                                 </constraints>
                                 <attributedString key="attributedText">
                                     <fragment>
@@ -575,9 +577,9 @@ distance from other devices.</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lPE-Da-ZjX">
-                                <rect key="frame" x="40" y="331" width="269" height="20"/>
+                                <rect key="frame" x="40" y="331" width="334" height="20"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="20" id="8ee-PP-2QV"/>
+                                    <constraint firstAttribute="height" constant="20" id="ALZ-XJ-Ck0"/>
                                 </constraints>
                                 <attributedString key="attributedText">
                                     <fragment content="It's anonymous.">
@@ -599,13 +601,14 @@ distance from other devices.</string>
                                 <rect key="frame" x="60" y="695" width="295" height="64"/>
                                 <color key="backgroundColor" red="1" green="0.43529411759999997" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="64" id="Qi3-kN-mqX"/>
+                                    <constraint firstAttribute="height" constant="64" id="e1Z-Eu-ZKH"/>
                                 </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal">
                                     <attributedString key="attributedTitle">
                                         <fragment content="GIVE BLUETOOTH PERMISSION">
                                             <attributes>
-                                                <color key="NSColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                 <font key="NSFont" size="14" name="SFMono-Regular"/>
                                                 <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                             </attributes>
@@ -638,7 +641,7 @@ distance from other devices.</string>
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xsn-mD-QxH">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xsn-mD-QxH">
                                 <rect key="frame" x="147" y="789" width="120" height="26"/>
                                 <state key="normal">
                                     <attributedString key="attributedTitle">
@@ -652,25 +655,25 @@ distance from other devices.</string>
                                 </state>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="lPE-Da-ZjX" firstAttribute="top" secondItem="8GN-ww-2vw" secondAttribute="bottom" constant="1" id="41J-hB-Rvv"/>
-                            <constraint firstItem="cmj-kI-wp8" firstAttribute="trailing" secondItem="8GN-ww-2vw" secondAttribute="trailing" constant="71" id="4Id-tP-qWQ"/>
+                            <constraint firstItem="lPE-Da-ZjX" firstAttribute="top" secondItem="8GN-ww-2vw" secondAttribute="bottom" constant="1" id="6QN-JW-bhL"/>
+                            <constraint firstItem="xsn-mD-QxH" firstAttribute="top" secondItem="iaE-IC-WIK" secondAttribute="bottom" constant="30" id="H2D-df-ndj"/>
                             <constraint firstItem="iGW-XV-oQu" firstAttribute="leading" secondItem="cmj-kI-wp8" secondAttribute="leading" constant="40" id="Lfa-Wh-BL2"/>
-                            <constraint firstItem="iGW-XV-oQu" firstAttribute="leading" secondItem="Uvw-Cp-0an" secondAttribute="leading" id="R6Q-El-zII"/>
-                            <constraint firstItem="iaE-IC-WIK" firstAttribute="centerX" secondItem="xsn-mD-QxH" secondAttribute="centerX" id="Zzl-nT-wOP"/>
-                            <constraint firstItem="Uvw-Cp-0an" firstAttribute="top" secondItem="iGW-XV-oQu" secondAttribute="bottom" constant="26" id="bgl-JJ-BpC"/>
+                            <constraint firstItem="lPE-Da-ZjX" firstAttribute="leading" secondItem="8GN-ww-2vw" secondAttribute="leading" id="N29-tJ-MJR"/>
+                            <constraint firstItem="Uvw-Cp-0an" firstAttribute="leading" secondItem="cmj-kI-wp8" secondAttribute="leading" constant="40" id="O9B-nt-8aV"/>
+                            <constraint firstItem="lPE-Da-ZjX" firstAttribute="trailing" secondItem="8GN-ww-2vw" secondAttribute="trailing" id="UTn-uP-Mlm"/>
+                            <constraint firstItem="Uvw-Cp-0an" firstAttribute="top" secondItem="iGW-XV-oQu" secondAttribute="bottom" constant="26" id="UdB-xU-5rA"/>
+                            <constraint firstItem="iaE-IC-WIK" firstAttribute="centerX" secondItem="lPE-Da-ZjX" secondAttribute="centerX" id="ZTv-UQ-ndW"/>
+                            <constraint firstItem="8GN-ww-2vw" firstAttribute="leading" secondItem="cmj-kI-wp8" secondAttribute="leading" constant="40" id="blI-Mr-flk"/>
                             <constraint firstItem="xsn-mD-QxH" firstAttribute="leading" secondItem="cmj-kI-wp8" secondAttribute="leading" constant="147" id="g7R-BB-ibo"/>
+                            <constraint firstItem="iaE-IC-WIK" firstAttribute="centerX" secondItem="xsn-mD-QxH" secondAttribute="centerX" id="gP2-BJ-JSG"/>
                             <constraint firstItem="iGW-XV-oQu" firstAttribute="top" secondItem="cmj-kI-wp8" secondAttribute="top" constant="60" id="izc-8e-G0T"/>
-                            <constraint firstItem="iaE-IC-WIK" firstAttribute="centerX" secondItem="1vk-Hh-aXW" secondAttribute="centerX" id="krg-Zc-tPv"/>
-                            <constraint firstItem="xsn-mD-QxH" firstAttribute="top" secondItem="iaE-IC-WIK" secondAttribute="bottom" constant="30" id="o2t-Kx-nZt"/>
-                            <constraint firstItem="cmj-kI-wp8" firstAttribute="trailing" secondItem="Uvw-Cp-0an" secondAttribute="trailing" constant="128" id="q0r-Zw-wJh"/>
-                            <constraint firstItem="iaE-IC-WIK" firstAttribute="leading" secondItem="cmj-kI-wp8" secondAttribute="leading" constant="60" id="qbu-bg-Tva"/>
-                            <constraint firstItem="Uvw-Cp-0an" firstAttribute="leading" secondItem="8GN-ww-2vw" secondAttribute="leading" id="sgS-50-AeC"/>
-                            <constraint firstItem="8GN-ww-2vw" firstAttribute="top" secondItem="Uvw-Cp-0an" secondAttribute="bottom" constant="70" id="taT-9u-oi2"/>
+                            <constraint firstItem="iaE-IC-WIK" firstAttribute="leading" secondItem="cmj-kI-wp8" secondAttribute="leading" constant="60" id="qLN-fW-TCW"/>
+                            <constraint firstItem="cmj-kI-wp8" firstAttribute="trailing" secondItem="8GN-ww-2vw" secondAttribute="trailing" constant="40" id="rvO-xI-kXW"/>
                             <constraint firstItem="cmj-kI-wp8" firstAttribute="bottom" secondItem="xsn-mD-QxH" secondAttribute="bottom" constant="47" id="uRe-2O-bvs"/>
-                            <constraint firstItem="cmj-kI-wp8" firstAttribute="trailing" secondItem="lPE-Da-ZjX" secondAttribute="trailing" constant="105" id="xXV-fA-uWh"/>
-                            <constraint firstItem="8GN-ww-2vw" firstAttribute="leading" secondItem="lPE-Da-ZjX" secondAttribute="leading" id="yNh-Pi-LT6"/>
+                            <constraint firstItem="cmj-kI-wp8" firstAttribute="trailing" secondItem="Uvw-Cp-0an" secondAttribute="trailing" constant="40" id="we4-x6-Vxq"/>
+                            <constraint firstItem="8GN-ww-2vw" firstAttribute="top" secondItem="Uvw-Cp-0an" secondAttribute="bottom" constant="70" id="yPu-cp-Dgv"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cmj-kI-wp8"/>
                     </view>
@@ -682,12 +685,12 @@ distance from other devices.</string>
         <!--Location View Controller-->
         <scene sceneID="lmN-7w-QIJ">
             <objects>
-                <viewController storyboardIdentifier="LocationViewController" id="XIH-VQ-Rht" customClass="LocationViewController" customModule="Coronavirus_Herd_Immunity" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LocationViewController" interfaceStyle="dark" id="XIH-VQ-Rht" customClass="LocationViewController" customModule="Coronavirus_Herd_Immunity" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MzB-gw-BTJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FMk-EN-B47">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FMk-EN-B47">
                                 <rect key="frame" x="158" y="778" width="121" height="26"/>
                                 <state key="normal">
                                     <attributedString key="attributedTitle">
@@ -744,9 +747,9 @@ distance from other devices.</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="characterWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G2h-W9-Xd9">
-                                <rect key="frame" x="40" y="133" width="246" height="42"/>
+                                <rect key="frame" x="40" y="133" width="334" height="42"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="42" id="NB7-9L-v8N"/>
+                                    <constraint firstAttribute="height" constant="42" id="1tk-Rj-JYd"/>
                                 </constraints>
                                 <attributedString key="attributedText">
                                     <fragment content="Location">
@@ -760,9 +763,9 @@ distance from other devices.</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="62D-qb-l2v">
-                                <rect key="frame" x="40" y="245" width="303" height="74"/>
+                                <rect key="frame" x="40" y="245" width="334" height="74"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="74" id="ELR-a9-5l7"/>
+                                    <constraint firstAttribute="height" constant="74" id="FSD-Mm-scx"/>
                                 </constraints>
                                 <attributedString key="attributedText">
                                     <fragment>
@@ -784,9 +787,9 @@ distance from other devices.</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vek-Pm-sYO">
-                                <rect key="frame" x="40" y="320" width="269" height="20"/>
+                                <rect key="frame" x="40" y="320" width="334" height="20"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="20" id="s4Y-Qd-40K"/>
+                                    <constraint firstAttribute="height" constant="20" id="Uqd-RF-afP"/>
                                 </constraints>
                                 <attributedString key="attributedText">
                                     <fragment content="It's anonymous.">
@@ -805,23 +808,23 @@ distance from other devices.</string>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="fd6-Na-JOe" firstAttribute="centerX" secondItem="FMk-EN-B47" secondAttribute="centerX" id="2ih-Kb-8Qj"/>
                             <constraint firstItem="Olv-kI-5Pz" firstAttribute="top" secondItem="UTF-Ww-8a0" secondAttribute="top" constant="49" id="437-bo-BZI"/>
-                            <constraint firstItem="62D-qb-l2v" firstAttribute="leading" secondItem="vek-Pm-sYO" secondAttribute="leading" id="7mP-Wh-dFg"/>
+                            <constraint firstItem="vek-Pm-sYO" firstAttribute="leading" secondItem="UTF-Ww-8a0" secondAttribute="leading" constant="40" id="45k-nC-csy"/>
                             <constraint firstItem="FMk-EN-B47" firstAttribute="top" secondItem="fd6-Na-JOe" secondAttribute="bottom" constant="30" id="Aet-1D-9p9"/>
-                            <constraint firstItem="G2h-W9-Xd9" firstAttribute="leading" secondItem="62D-qb-l2v" secondAttribute="leading" id="Ce3-Xg-7nJ"/>
-                            <constraint firstItem="62D-qb-l2v" firstAttribute="top" secondItem="G2h-W9-Xd9" secondAttribute="bottom" constant="70" id="Ghb-0s-3v1"/>
-                            <constraint firstItem="UTF-Ww-8a0" firstAttribute="trailing" secondItem="G2h-W9-Xd9" secondAttribute="trailing" constant="128" id="Liw-Mc-CO0"/>
-                            <constraint firstItem="G2h-W9-Xd9" firstAttribute="top" secondItem="Olv-kI-5Pz" secondAttribute="bottom" constant="26" id="ODb-Mk-a7Y"/>
+                            <constraint firstItem="62D-qb-l2v" firstAttribute="leading" secondItem="G2h-W9-Xd9" secondAttribute="leading" id="Ev1-kD-Qim"/>
+                            <constraint firstItem="62D-qb-l2v" firstAttribute="top" secondItem="G2h-W9-Xd9" secondAttribute="bottom" constant="70" id="GVl-Of-dW3"/>
+                            <constraint firstItem="G2h-W9-Xd9" firstAttribute="leading" secondItem="Olv-kI-5Pz" secondAttribute="leading" id="Nxu-34-Lww"/>
+                            <constraint firstItem="62D-qb-l2v" firstAttribute="trailing" secondItem="G2h-W9-Xd9" secondAttribute="trailing" id="Pm8-Tw-bD2"/>
                             <constraint firstItem="UTF-Ww-8a0" firstAttribute="trailing" secondItem="fd6-Na-JOe" secondAttribute="trailing" constant="48" id="Qix-ek-dVU"/>
-                            <constraint firstItem="UTF-Ww-8a0" firstAttribute="trailing" secondItem="62D-qb-l2v" secondAttribute="trailing" constant="71" id="QjD-2r-utk"/>
-                            <constraint firstItem="Olv-kI-5Pz" firstAttribute="leading" secondItem="G2h-W9-Xd9" secondAttribute="leading" id="aH1-0U-I2A"/>
                             <constraint firstItem="UTF-Ww-8a0" firstAttribute="bottom" secondItem="FMk-EN-B47" secondAttribute="bottom" constant="58" id="aae-91-oHV"/>
+                            <constraint firstItem="vek-Pm-sYO" firstAttribute="top" secondItem="62D-qb-l2v" secondAttribute="bottom" constant="1" id="ebh-WC-0pW"/>
+                            <constraint firstItem="G2h-W9-Xd9" firstAttribute="top" secondItem="Olv-kI-5Pz" secondAttribute="bottom" constant="26" id="h2T-aq-cKH"/>
                             <constraint firstItem="Olv-kI-5Pz" firstAttribute="leading" secondItem="UTF-Ww-8a0" secondAttribute="leading" constant="40" id="ibI-7W-IFk"/>
-                            <constraint firstItem="UTF-Ww-8a0" firstAttribute="trailing" secondItem="vek-Pm-sYO" secondAttribute="trailing" constant="105" id="o8L-YW-RGo"/>
-                            <constraint firstItem="vek-Pm-sYO" firstAttribute="top" secondItem="62D-qb-l2v" secondAttribute="bottom" constant="1" id="pTp-48-RhF"/>
+                            <constraint firstItem="UTF-Ww-8a0" firstAttribute="trailing" secondItem="vek-Pm-sYO" secondAttribute="trailing" constant="40" id="icY-Pc-huI"/>
+                            <constraint firstItem="G2h-W9-Xd9" firstAttribute="centerX" secondItem="MzB-gw-BTJ" secondAttribute="centerX" id="n4d-Hp-mBV"/>
                             <constraint firstItem="fd6-Na-JOe" firstAttribute="leading" secondItem="UTF-Ww-8a0" secondAttribute="leading" constant="71" id="uZV-3B-N9v"/>
                             <constraint firstItem="FMk-EN-B47" firstAttribute="leading" secondItem="UTF-Ww-8a0" secondAttribute="leading" constant="158" id="yV3-91-DkJ"/>
                         </constraints>
@@ -854,7 +857,7 @@ distance from other devices.</string>
         <!--How It Works View Controller-->
         <scene sceneID="2WZ-vg-hw9">
             <objects>
-                <viewController storyboardIdentifier="HowItWorksViewController" id="Tme-F0-vfY" customClass="HowItWorksViewController" customModule="Coronavirus_Herd_Immunity" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HowItWorksViewController" interfaceStyle="dark" id="Tme-F0-vfY" customClass="HowItWorksViewController" customModule="Coronavirus_Herd_Immunity" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iE6-aN-BkD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -865,8 +868,8 @@ distance from other devices.</string>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S39-xe-PEf" userLabel="Content View">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="700"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ErR-NY-mIu">
-                                                <rect key="frame" x="40" y="100" width="246" height="98"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ErR-NY-mIu">
+                                                <rect key="frame" x="40" y="100" width="334" height="98"/>
                                                 <attributedString key="attributedText">
                                                     <fragment>
                                                         <string key="content">How it
@@ -996,7 +999,7 @@ by scanning your accound ID.</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="ZL8-wh-Vyy" firstAttribute="top" secondItem="S39-xe-PEf" secondAttribute="top" constant="234" id="0SR-cj-jWL"/>
                                             <constraint firstAttribute="height" constant="700" id="1Hi-P8-wSh"/>
@@ -1011,10 +1014,12 @@ by scanning your accound ID.</string>
                                             <constraint firstItem="Vhe-NL-BvZ" firstAttribute="trailing" secondItem="HG9-eJ-uMN" secondAttribute="trailing" id="NHf-t7-tDH"/>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="700" id="P5E-Gx-gSd"/>
                                             <constraint firstItem="Kxa-XW-UHe" firstAttribute="top" secondItem="ZL8-wh-Vyy" secondAttribute="bottom" constant="36" id="PNI-cJ-eaN"/>
+                                            <constraint firstItem="ErR-NY-mIu" firstAttribute="leading" secondItem="S39-xe-PEf" secondAttribute="leading" constant="40" id="RGf-Mf-tFZ"/>
                                             <constraint firstItem="Vhe-NL-BvZ" firstAttribute="leading" secondItem="HG9-eJ-uMN" secondAttribute="leading" id="XNP-fR-bUu"/>
                                             <constraint firstItem="Kxa-XW-UHe" firstAttribute="leading" secondItem="ZL8-wh-Vyy" secondAttribute="leading" id="a6P-mU-jC3"/>
                                             <constraint firstItem="ZL8-wh-Vyy" firstAttribute="leading" secondItem="ErR-NY-mIu" secondAttribute="leading" id="fOg-fq-cE2"/>
                                             <constraint firstItem="HG9-eJ-uMN" firstAttribute="leading" secondItem="93B-G2-0xj" secondAttribute="leading" id="kAW-lz-8j1"/>
+                                            <constraint firstAttribute="trailing" secondItem="ErR-NY-mIu" secondAttribute="trailing" constant="40" id="pxR-03-kEJ"/>
                                             <constraint firstItem="93B-G2-0xj" firstAttribute="top" secondItem="Kxa-XW-UHe" secondAttribute="bottom" constant="36" id="wmd-z0-lsU"/>
                                             <constraint firstItem="93B-G2-0xj" firstAttribute="trailing" secondItem="Kxa-XW-UHe" secondAttribute="trailing" id="zSB-6Y-yXx"/>
                                         </constraints>
@@ -1031,7 +1036,7 @@ by scanning your accound ID.</string>
                                 <viewLayoutGuide key="frameLayoutGuide" id="gha-LX-MWM"/>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="2fz-i2-Uj1" firstAttribute="bottom" secondItem="roF-M7-Pqe" secondAttribute="bottom" id="4ov-Ru-LPf"/>
                             <constraint firstItem="2fz-i2-Uj1" firstAttribute="centerX" secondItem="iE6-aN-BkD" secondAttribute="centerX" id="p2a-be-Mjw"/>

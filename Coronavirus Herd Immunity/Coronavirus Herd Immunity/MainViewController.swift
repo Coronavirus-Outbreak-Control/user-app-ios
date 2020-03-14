@@ -9,7 +9,7 @@
 import UIKit
 import CoreBluetooth
 
-class MainViewController: UIViewController {
+class MainViewController: StatusBarViewController {
     
     @IBOutlet weak var statusApp: UILabel!
     @IBOutlet weak var interactionsTotal: UILabel!
@@ -37,8 +37,10 @@ class MainViewController: UIViewController {
             print("identifier device:", identifierDevice)
             self.qrCodeImage.image = Utils.generateQRCode(from: identifierDevice.description)
         }
-            
-        self.interactionsTotal.text = StorageManager.shared.countTotalInteractions().description
+        let countInteractions = StorageManager.shared.countTotalInteractions().description
+        self.interactionsTotal.text = countInteractions
+        print("TOTAL INTERACTIONS", countInteractions)
+        self.countTotalInteractionsButton.titleLabel?.text = countInteractions
 
         NotificationCenter.default.addObserver(self, selector: #selector(handleBluetoothChangeStatus), name: NSNotification.Name(Costants.Notification.bluetoothChangeStatus), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(handleLocationChangeStatus(notification:)), name: NSNotification.Name(Costants.Notification.locationChangeStatus), object: nil)
@@ -138,7 +140,9 @@ class MainViewController: UIViewController {
         self.counterHidden += 1
         print("counter is now at:", self.counterHidden)
         if(self.counterHidden > 10){
-            
+            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+            let nextViewController = storyBoard.instantiateViewController(withIdentifier: "BluetoothTableViewController") as! BluetoothTableViewController
+            self.present(nextViewController, animated:true, completion:nil)
         }
     }
 }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HelpMoreViewController: UIViewController {
+class HelpMoreViewController: StatusBarViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
