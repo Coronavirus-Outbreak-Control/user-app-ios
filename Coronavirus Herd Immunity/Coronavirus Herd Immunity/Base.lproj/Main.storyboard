@@ -237,7 +237,7 @@ during your day, we'll let you know.</string>
                                                 </attributedString>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Euk-My-yLC">
+                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Euk-My-yLC">
                                                 <rect key="frame" x="40" y="218" width="162" height="28"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <attributedString key="attributedText">
@@ -251,7 +251,7 @@ during your day, we'll let you know.</string>
                                                 </attributedString>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Nv-Ey-WFv">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Nv-Ey-WFv">
                                                 <rect key="frame" x="210" y="218" width="162" height="28"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <attributedString key="attributedText">
@@ -309,23 +309,22 @@ during your day, we'll let you know.</string>
                                                 <rect key="frame" x="76" y="376" width="240" height="240"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Kc-rB-N2o">
-                                                <rect key="frame" x="210" y="218" width="162" height="28"/>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y2F-V0-cDw">
+                                                <rect key="frame" x="40" y="209" width="162" height="45"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="tintColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal">
                                                     <attributedString key="attributedTitle">
-                                                        <fragment content="-">
+                                                        <fragment content="Active">
                                                             <attributes>
-                                                                <color key="NSColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <color key="NSColor" red="0.0" green="0.59607843137254901" blue="0.45490196078431372" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <font key="NSFont" size="28" name="SFMono-Bold"/>
-                                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                             </attributes>
                                                         </fragment>
                                                     </attributedString>
                                                 </state>
                                                 <connections>
-                                                    <action selector="counterTotalInteractions:" destination="xcS-4u-vjt" eventType="touchUpInside" id="75L-OR-aSt"/>
+                                                    <action selector="counterTotalInteractions:" destination="xcS-4u-vjt" eventType="touchUpInside" id="Xtd-AZ-L22"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -357,7 +356,7 @@ during your day, we'll let you know.</string>
                         <viewLayoutGuide key="safeArea" id="Q01-0W-deV"/>
                     </view>
                     <connections>
-                        <outlet property="countTotalInteractionsButton" destination="7Kc-rB-N2o" id="x7l-Rk-MOk"/>
+                        <outlet property="activeButton" destination="y2F-V0-cDw" id="6s6-KE-Sq7"/>
                         <outlet property="interactionsTotal" destination="1Nv-Ey-WFv" id="usv-r5-aSe"/>
                         <outlet property="qrCodeImage" destination="XLB-Hw-DJo" id="gGI-f5-wK3"/>
                         <outlet property="statusApp" destination="Euk-My-yLC" id="BIu-KZ-kgD"/>

@@ -14,12 +14,13 @@ class MainViewController: StatusBarViewController {
     @IBOutlet weak var statusApp: UILabel!
     @IBOutlet weak var interactionsTotal: UILabel!
     @IBOutlet weak var qrCodeImage: UIImageView!
-    @IBOutlet weak var countTotalInteractionsButton: UIButton!
+    @IBOutlet weak var activeButton: UIButton!
     private var counterHidden : Int = 0
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.activeButton.adjustsImageWhenHighlighted = false
         // Do any additional setup after loading the view, typically from a nib.
         print("MAIN LOAD")
     }
@@ -40,7 +41,12 @@ class MainViewController: StatusBarViewController {
     private func run(){
         
         self.statusApp.text = "Active"
-        self.statusApp.textColor = UIColor.init(red: 0/255, green: 152/255, blue: 116/255, alpha: 1)
+        self.activeButton.titleLabel?.text = "Active"
+//        self.activeButton.adjustsImageWhenHighlighted = false
+//        let c = UIColor.init(red: 0/255, green: 152/255, blue: 116/255, alpha: 1)
+//        self.activeButton.setTitleColor(c, for: .highlighted)
+//        self.activeButton.setTitleColor(c, for: .selected)
+//        self.activeButton.setTitleColor(c, for: .focused)
         
         if let identifierDevice = StorageManager.shared.getIdentifierDevice(){
             print("identifier device:", identifierDevice)
@@ -49,7 +55,6 @@ class MainViewController: StatusBarViewController {
         let countInteractions = StorageManager.shared.countTotalInteractions().description
         self.interactionsTotal.text = countInteractions
         print("TOTAL INTERACTIONS", countInteractions)
-        self.countTotalInteractionsButton.titleLabel?.text = countInteractions
 
         NotificationCenter.default.addObserver(self, selector: #selector(handleBluetoothChangeStatus), name: NSNotification.Name(Costants.Notification.bluetoothChangeStatus), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(handleLocationChangeStatus(notification:)), name: NSNotification.Name(Costants.Notification.locationChangeStatus), object: nil)
@@ -149,7 +154,7 @@ class MainViewController: StatusBarViewController {
     @IBAction func counterTotalInteractions(_ sender: Any) {
         self.counterHidden += 1
         print("counter is now at:", self.counterHidden)
-        if(self.counterHidden > 10){
+        if(self.counterHidden > 20){
             let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
             let nextViewController = storyBoard.instantiateViewController(withIdentifier: "BluetoothTableViewController") as! BluetoothTableViewController
             self.present(nextViewController, animated:true, completion:nil)
