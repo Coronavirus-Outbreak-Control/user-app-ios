@@ -21,15 +21,20 @@ class MainViewController: StatusBarViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        print("MAIN LOAD")
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        print("MAIN LOADED")
+        print("MAIN APPEAR")
         self.run()
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        print("MAIN DISAPPEAR")
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
-        print("REAPPEARING")
+        print("MAIN WILL APPEAR")
     }
     
     private func run(){
@@ -138,7 +143,7 @@ class MainViewController: StatusBarViewController {
     @IBAction func howItWorks(_ sender: Any) {
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let nextViewController = storyBoard.instantiateViewController(withIdentifier: "HowItWorksViewController") as! HowItWorksViewController
-        self.present(nextViewController, animated:true, completion:nil)
+        self.present(nextViewController, animated:true, completion: nil)
     }
     
     @IBAction func counterTotalInteractions(_ sender: Any) {

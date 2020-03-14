@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PS2-ym-ib5">
-                                <rect key="frame" x="40" y="144" width="334" height="105"/>
+                                <rect key="frame" x="40" y="144" width="222.5" height="105"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="105" id="NGJ-Gr-90d"/>
                                 </constraints>
@@ -92,19 +92,33 @@ keep their jobs.</string>
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kvT-Xi-KER" customClass="RoundButton" customModule="Coronavirus_Herd_Immunity" customModuleProvider="target">
-                                <rect key="frame" x="60" y="697" width="295" height="64"/>
-                                <color key="backgroundColor" red="1" green="0.43529411764705883" blue="0.38039215686274508" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="64" id="TB1-kG-TOi"/>
-                                </constraints>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ABA-Kp-KZc">
+                                <rect key="frame" x="147" y="792" width="97" height="26"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="HOW IT WORKS?">
+                                            <attributes>
+                                                <font key="NSFont" size="12" name="SFMono-Regular"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                                <connections>
+                                    <action selector="howItWorks:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hHu-Nf-3xG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NEs-MN-e2E" customClass="RoundButton" customModule="Coronavirus_Herd_Immunity" customModuleProvider="target">
+                                <rect key="frame" x="60" y="693" width="295" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.43529411759999997" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal">
                                     <attributedString key="attributedTitle">
                                         <fragment content="LET'S GET STARTED">
                                             <attributes>
-                                                <color key="NSColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                                <font key="NSFont" size="14" name="SFMono-Regular"/>
+                                                <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <font key="NSFont" size="14" name="SFMono-Bold"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                             </attributes>
                                         </fragment>
                                     </attributedString>
@@ -121,28 +135,12 @@ keep their jobs.</string>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="letsGetStarted:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oRM-rz-HXP"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ABA-Kp-KZc">
-                                <rect key="frame" x="147" y="792" width="120" height="26"/>
-                                <state key="normal">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="HOW IT WORKS?">
-                                            <attributes>
-                                                <font key="NSFont" size="12" name="SFMono-Regular"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                </state>
-                                <connections>
-                                    <action selector="howItWorks:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hHu-Nf-3xG"/>
+                                    <action selector="letsGetStarted:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7I0-A5-xHA"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="kvT-Xi-KER" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="60" id="0qg-mG-krh"/>
                             <constraint firstItem="Fdy-am-YdY" firstAttribute="top" secondItem="eUK-o7-h5n" secondAttribute="bottom" constant="8" id="1gl-YZ-CpL"/>
                             <constraint firstItem="3Sh-UK-sVs" firstAttribute="leading" secondItem="Fdy-am-YdY" secondAttribute="leading" id="2wh-yr-bPz"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ABA-Kp-KZc" secondAttribute="bottom" constant="44" id="3Ii-Mj-xSb"/>
@@ -150,23 +148,19 @@ keep their jobs.</string>
                             <constraint firstItem="PS2-ym-ib5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="J0f-jY-22g"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eUK-o7-h5n" secondAttribute="trailing" constant="40" id="L8Q-B0-iCS"/>
                             <constraint firstItem="ABA-Kp-KZc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="147" id="LdV-2c-mZG"/>
-                            <constraint firstItem="kvT-Xi-KER" firstAttribute="centerX" secondItem="ABA-Kp-KZc" secondAttribute="centerX" id="N0r-Op-8eT"/>
                             <constraint firstItem="3Sh-UK-sVs" firstAttribute="trailing" secondItem="Fdy-am-YdY" secondAttribute="trailing" id="Zhd-Lc-voO"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Fdy-am-YdY" secondAttribute="trailing" constant="40" id="e5S-oQ-mpX"/>
                             <constraint firstItem="Fdy-am-YdY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="gyE-5F-rHG"/>
                             <constraint firstItem="PS2-ym-ib5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="hm0-iY-Z1F"/>
                             <constraint firstItem="eUK-o7-h5n" firstAttribute="top" secondItem="PS2-ym-ib5" secondAttribute="bottom" constant="3" id="qf0-kk-WvP"/>
-                            <constraint firstItem="kvT-Xi-KER" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rqr-tB-NQ7"/>
-                            <constraint firstItem="ABA-Kp-KZc" firstAttribute="top" secondItem="kvT-Xi-KER" secondAttribute="bottom" constant="31" id="u7A-5i-tLh"/>
                             <constraint firstItem="eUK-o7-h5n" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="xOb-IP-5nF"/>
-                            <constraint firstItem="PS2-ym-ib5" firstAttribute="centerX" secondItem="kvT-Xi-KER" secondAttribute="centerX" id="xfH-sj-ZZF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-12" y="54"/>
+            <point key="canvasLocation" x="119" y="465"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="VZN-LA-QLD">
@@ -535,6 +529,10 @@ during your day, we'll let you know.</string>
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="illustration-bluetooth" translatesAutoresizingMaskIntoConstraints="NO" id="Uj9-uI-DYg">
+                                <rect key="frame" x="0.0" y="327" width="414" height="569"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="characterWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uvw-Cp-0an">
                                 <rect key="frame" x="40" y="144" width="334" height="42"/>
                                 <constraints>
@@ -651,10 +649,6 @@ distance from other devices.</string>
                                     </attributedString>
                                 </state>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="illustration-bluetooth" translatesAutoresizingMaskIntoConstraints="NO" id="Uj9-uI-DYg">
-                                <rect key="frame" x="0.0" y="327" width="414" height="569"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -674,6 +668,9 @@ distance from other devices.</string>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cmj-kI-wp8"/>
                     </view>
+                    <connections>
+                        <outlet property="image" destination="Uj9-uI-DYg" id="bs8-kk-v6v"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HIP-ST-AMH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -700,7 +697,7 @@ distance from other devices.</string>
                                     <attributedString key="attributedTitle">
                                         <fragment content="GIVE LOCATION PERMISSION">
                                             <attributes>
-                                                <color key="NSColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <font key="NSFont" size="14" name="SFMono-Regular"/>
                                                 <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                             </attributes>

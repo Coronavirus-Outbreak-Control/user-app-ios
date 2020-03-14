@@ -10,14 +10,17 @@ import UIKit
 
 class BluetoothOffViewController: StatusBarViewController {
     
+    @IBOutlet weak var image: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
+//        self.view.sendSubviewToBack(self.image)
         // Do any additional setup after loading the view, typically from a nib.
         
     }
     
     override func viewDidAppear(_ animated: Bool) {
         print("BLUETOOTH OFF VIEW CONTROLLER")
+        
         self.run()
     }
     

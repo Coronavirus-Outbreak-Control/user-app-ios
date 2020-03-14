@@ -19,6 +19,17 @@ class RoundButton: UIButton {
     }
     */
     
+    override var isEnabled: Bool {
+        didSet{
+            if self.isEnabled {
+                self.tintColor = UIColor.white
+            }
+            else{
+                self.tintColor = UIColor.white
+            }
+        }
+    }
+    
     @IBInspectable var cornerRadius: CGFloat = 10{
         didSet{
         self.layer.cornerRadius = cornerRadius
