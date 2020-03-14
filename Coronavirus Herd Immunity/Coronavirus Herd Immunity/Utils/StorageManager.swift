@@ -123,6 +123,37 @@ class StorageManager{
         }
     }
     
+    private func countDistinctInteractions(_ predicate : NSPredicate? = nil, distinctKey : String) -> Int?{
+
+        let fetchRequest = NSFetchRequest<NSDictionary>(entityName: IBeaconEntity.entityName)
+        fetchRequest.resultType = .dictionaryResultType
+        
+        if let p = predicate{
+            fetchRequest.predicate = p
+        }
+        
+        let countExpressionDesc = NSExpressionDescription()
+        countExpressionDesc.name = "returnValue"
+
+        //let expression = NSExpression(forKeyPath: #keyPath(C.product)) //right here
+        let expression = NSExpression(forKeyPath: distinctKey) //right here
+        countExpressionDesc.expression = NSExpression(forFunction: "count:", arguments: [expression])
+        countExpressionDesc.expressionResultType = .integer32AttributeType
+
+//        fetchRequest.predicate = predicate
+        fetchRequest.propertiesToGroupBy = [distinctKey]
+        fetchRequest.propertiesToFetch = [distinctKey, countExpressionDesc]
+
+        do {
+            let results = try self.persistentContainer.viewContext.fetch(fetchRequest)
+            print("RESULT COUNT", results)
+            return results.count
+        } catch {
+            print(error)
+            return nil
+        }
+    }
+    
     public func readAllIBeacons(_ sortReverseTimestamp : Bool = false) -> [IBeaconDto]?{
         var sort : NSSortDescriptor? = nil
         if sortReverseTimestamp{
@@ -170,14 +201,14 @@ class StorageManager{
         let d : Date = Calendar.current.date(bySettingHour: 0, minute: 0, second: 0, of: Date())!
         let predicate = NSPredicate(format: "(%K >= %@)", IBeaconEntity.timestampKey, d as NSDate)
         
-        if let c = countInteractions(predicate, distinctKey: IBeaconEntity.identifierKey){
+        if let c = countDistinctInteractions(predicate, distinctKey: IBeaconEntity.identifierKey){
             return c
         }
         return 0
     }
     
     public func countTotalInteractions() -> Int{
-        if let c = self.countInteractions(nil, distinctKey: IBeaconEntity.identifierKey){
+        if let c = self.countDistinctInteractions(nil, distinctKey: IBeaconEntity.identifierKey){
             return c
         }
         return 0
