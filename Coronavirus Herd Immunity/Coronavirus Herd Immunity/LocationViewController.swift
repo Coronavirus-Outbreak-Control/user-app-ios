@@ -12,8 +12,6 @@ import UIKit
 
 class LocationViewController : ViewController{
     
-    @IBOutlet weak var locationStatusLabel: UILabel!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -117,7 +115,7 @@ class LocationViewController : ViewController{
         case .allowedAlways:
             return self.openMainViewController()
         case .notAvailable:
-            self.locationStatusLabel.text = NSLocalizedString("not available", comment: "location hardware not available")
+//            self.locationStatusLabel.text = NSLocalizedString("not available", comment: "location hardware not available")
             break
         case .notDetermined, .denied, .allowedWhenInUse:
             print("not determined waiting for user")

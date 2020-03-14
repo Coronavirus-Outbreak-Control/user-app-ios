@@ -19,20 +19,22 @@ class ViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        return
-        let timer = Timer.scheduledTimer(withTimeInterval: 0, repeats: false, block: { timer in
-            
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let controller = storyboard.instantiateViewController(withIdentifier: "MainViewController")
-            UIApplication.shared.windows.first?.rootViewController = controller
-            UIApplication.shared.windows.first?.makeKeyAndVisible()
-            
-        })
-        
-        
         
     }
 
-
+    @IBAction func letsGetStarted(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "MainViewController")
+        UIApplication.shared.windows.first?.rootViewController = controller
+        UIApplication.shared.windows.first?.makeKeyAndVisible()
+        
+    }
+    
+    @IBAction func howItWorks(_ sender: Any) {
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "HowItWorksViewController") as! HowItWorksViewController
+        self.present(nextViewController, animated:true, completion:nil)
+    }
+    
 }
 

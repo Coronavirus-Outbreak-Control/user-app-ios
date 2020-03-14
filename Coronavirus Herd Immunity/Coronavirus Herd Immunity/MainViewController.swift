@@ -12,10 +12,11 @@ import CoreBluetooth
 class MainViewController: UIViewController {
     
     @IBOutlet weak var statusApp: UILabel!
-    @IBOutlet weak var statusBluetooth: UILabel!
-    @IBOutlet weak var interactionsDaily: UILabel!
     @IBOutlet weak var interactionsTotal: UILabel!
-    @IBOutlet weak var qrCodeButton: UIButton!
+    @IBOutlet weak var qrCodeImage: UIImageView!
+    @IBOutlet weak var countTotalInteractionsButton: UIButton!
+    private var counterHidden : Int = 0
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,17 +29,20 @@ class MainViewController: UIViewController {
     }
     
     private func run(){
+        
+        self.statusApp.text = "Active"
+        self.statusApp.textColor = UIColor.init(red: 0/255, green: 152/255, blue: 116/255, alpha: 1)
+        
         if let identifierDevice = StorageManager.shared.getIdentifierDevice(){
             print("identifier device:", identifierDevice)
-            self.qrCodeButton.setImage(Utils.generateQRCode(from: identifierDevice.description), for: .normal)
+            self.qrCodeImage.image = Utils.generateQRCode(from: identifierDevice.description)
         }
-        
-        self.interactionsDaily.text = StorageManager.shared.countDailyInteractions().description
+            
         self.interactionsTotal.text = StorageManager.shared.countTotalInteractions().description
-        
+
         NotificationCenter.default.addObserver(self, selector: #selector(handleBluetoothChangeStatus), name: NSNotification.Name(Costants.Notification.bluetoothChangeStatus), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(handleLocationChangeStatus(notification:)), name: NSNotification.Name(Costants.Notification.locationChangeStatus), object: nil)
-        
+
         if BluetoothManager.shared.getPermissionStatus() != .allowed{
             print("permission not allowed")
             self.changeToBluetoothOffViewController()
@@ -124,4 +128,17 @@ class MainViewController: UIViewController {
         self.present(nextViewController, animated:true, completion:nil)
     }
     
+    @IBAction func howItWorks(_ sender: Any) {
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "HowItWorksViewController") as! HowItWorksViewController
+        self.present(nextViewController, animated:true, completion:nil)
+    }
+    
+    @IBAction func counterTotalInteractions(_ sender: Any) {
+        self.counterHidden += 1
+        print("counter is now at:", self.counterHidden)
+        if(self.counterHidden > 10){
+            
+        }
+    }
 }

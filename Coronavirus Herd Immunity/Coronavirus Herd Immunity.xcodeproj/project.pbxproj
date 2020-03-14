@@ -15,6 +15,7 @@
 		C80C3B37241AC9B70047B1DC /* Sentry in Frameworks */ = {isa = PBXBuildFile; productRef = C80C3B36241AC9B70047B1DC /* Sentry */; };
 		C81BA5D0240D969C00CFFA6F /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81BA5CF240D969C00CFFA6F /* LocationManager.swift */; };
 		C827F82C241C0A390026CF05 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C827F82B241C0A390026CF05 /* RoundButton.swift */; };
+		C8368CC4241D303A000D32FB /* HowItWorks.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8368CC3241D303A000D32FB /* HowItWorks.swift */; };
 		C842066F240BB23E00B8B45B /* Models.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C8A32570240A759300FF1620 /* Models.xcdatamodeld */; };
 		C84DAEDF241990C30043A1E4 /* BackgroundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84DAEDE241990C30043A1E4 /* BackgroundManager.swift */; };
 		C88D06A7240715080005E029 /* HelpMoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88D06A6240715080005E029 /* HelpMoreViewController.swift */; };
@@ -43,6 +44,7 @@
 		C80170572405D19F002FC397 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		C81BA5CF240D969C00CFFA6F /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		C827F82B241C0A390026CF05 /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
+		C8368CC3241D303A000D32FB /* HowItWorks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowItWorks.swift; sourceTree = "<group>"; };
 		C84DAEDE241990C30043A1E4 /* BackgroundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundManager.swift; sourceTree = "<group>"; };
 		C88D06A6240715080005E029 /* HelpMoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpMoreViewController.swift; sourceTree = "<group>"; };
 		C8A32571240A759300FF1620 /* Models.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Models.xcdatamodel; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 				C8B188D62402B14400CFEE98 /* AppDelegate.swift */,
 				C8A892E6240864E4007EA317 /* BluetoothOffViewController.swift */,
 				C88D06A6240715080005E029 /* HelpMoreViewController.swift */,
+				C8368CC3241D303A000D32FB /* HowItWorks.swift */,
 				C8B2CF41240D9BAF005248B8 /* LocationViewController.swift */,
 				C80170572405D19F002FC397 /* MainViewController.swift */,
 				C8B188D82402B14400CFEE98 /* ViewController.swift */,
@@ -259,6 +262,7 @@
 				C8A892E7240864E4007EA317 /* BluetoothOffViewController.swift in Sources */,
 				C8A892EA240866CC007EA317 /* BluetoothManager.swift in Sources */,
 				C8B188D72402B14400CFEE98 /* AppDelegate.swift in Sources */,
+				C8368CC4241D303A000D32FB /* HowItWorks.swift in Sources */,
 				C84DAEDF241990C30043A1E4 /* BackgroundManager.swift in Sources */,
 				C842066F240BB23E00B8B45B /* Models.xcdatamodeld in Sources */,
 				C8A892EE24087226007EA317 /* Costants.swift in Sources */,

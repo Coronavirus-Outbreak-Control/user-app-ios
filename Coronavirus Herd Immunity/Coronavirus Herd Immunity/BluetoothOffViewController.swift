@@ -10,8 +10,6 @@ import UIKit
 
 class BluetoothOffViewController: UIViewController {
     
-    @IBOutlet weak var bluetoothStatus: UILabel!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -32,17 +30,17 @@ class BluetoothOffViewController: UIViewController {
                 self.openMainViewController()
             }
             if BluetoothManager.shared.getBluetoothStatus() == .off{
-                self.bluetoothStatus.text = NSLocalizedString("off", comment: "bluetooth switched off")
+//                self.bluetoothStatus.text = NSLocalizedString("off", comment: "bluetooth switched off")
             }
             if BluetoothManager.shared.getBluetoothStatus() == .resetting{
-                self.bluetoothStatus.text = NSLocalizedString("resetting", comment: "bluetooth resetting")
+//                self.bluetoothStatus.text = NSLocalizedString("resetting", comment: "bluetooth resetting")
             }
             break
         case .denied, .notDetermined:
             // we will wait for user to click on the button
             break
         case .notAvailable:
-            self.bluetoothStatus.text = NSLocalizedString("not available", comment: "bluetooth not available on the device")
+//            self.bluetoothStatus.text = NSLocalizedString("not available", comment: "bluetooth not available on the device")
             self.bluetoothNotAvailable()
             break
         }
