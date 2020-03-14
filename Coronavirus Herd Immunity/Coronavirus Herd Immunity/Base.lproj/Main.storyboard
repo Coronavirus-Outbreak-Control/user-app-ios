@@ -7,6 +7,14 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-Compact-Display-Bold.otf">
+            <string>SFCompactDisplay-Bold</string>
+        </array>
+        <array key="SF-Compact-Display-Regular.otf">
+            <string>SFCompactDisplay-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -17,7 +25,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PS2-ym-ib5">
-                                <rect key="frame" x="40" y="144" width="222.5" height="105"/>
+                                <rect key="frame" x="40" y="144" width="224" height="105"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="105" id="NGJ-Gr-90d"/>
                                 </constraints>
@@ -27,7 +35,7 @@
 anonymous</string>
                                         <attributes>
                                             <color key="NSColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="42" name="SFMono-Bold"/>
+                                            <font key="NSFont" size="42" name="SFCompactDisplay-Bold"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -43,7 +51,7 @@ anonymous</string>
                                     <fragment content="check ">
                                         <attributes>
                                             <color key="NSColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="42" name="SFMono-Bold"/>
+                                            <font key="NSFont" size="42" name="SFCompactDisplay-Bold"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -66,7 +74,7 @@ anonymous</string>
                                     <fragment content="Coronavirus">
                                         <attributes>
                                             <color key="NSColor" red="1" green="0.43529411764705883" blue="0.38039215686274508" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="42" name="SFMono-Bold"/>
+                                            <font key="NSFont" size="42" name="SFCompactDisplay-Bold"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -85,31 +93,15 @@ lives and help people
 keep their jobs.</string>
                                         <attributes>
                                             <color key="NSColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="20" name="SFMono-Regular"/>
+                                            <font key="NSFont" size="20" name="SFCompactDisplay-Regular"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ABA-Kp-KZc">
-                                <rect key="frame" x="147" y="792" width="97" height="26"/>
-                                <state key="normal">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="HOW IT WORKS?">
-                                            <attributes>
-                                                <font key="NSFont" size="12" name="SFMono-Regular"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                </state>
-                                <connections>
-                                    <action selector="howItWorks:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hHu-Nf-3xG"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NEs-MN-e2E" customClass="RoundButton" customModule="Coronavirus_Herd_Immunity" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NEs-MN-e2E" customClass="RoundButton" customModule="Coronavirus_Herd_Immunity" customModuleProvider="target">
                                 <rect key="frame" x="60" y="693" width="295" height="64"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.43529411759999997" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal">
@@ -117,7 +109,7 @@ keep their jobs.</string>
                                         <fragment content="LET'S GET STARTED">
                                             <attributes>
                                                 <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <font key="NSFont" size="14" name="SFMono-Bold"/>
+                                                <font key="NSFont" size="14" name="SFCompactDisplay-Regular"/>
                                                 <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                             </attributes>
                                         </fragment>
@@ -138,21 +130,39 @@ keep their jobs.</string>
                                     <action selector="letsGetStarted:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7I0-A5-xHA"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ABA-Kp-KZc">
+                                <rect key="frame" x="166" y="792" width="83" height="26"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="HOW IT WORKS?">
+                                            <attributes>
+                                                <font key="NSFont" size="12" name="SFCompactDisplay-Regular"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                                <connections>
+                                    <action selector="howItWorks:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hHu-Nf-3xG"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="ABA-Kp-KZc" firstAttribute="top" secondItem="NEs-MN-e2E" secondAttribute="bottom" constant="35" id="0GC-Uw-Qmj"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ABA-Kp-KZc" secondAttribute="bottom" constant="44" id="1b0-KQ-nJO"/>
                             <constraint firstItem="Fdy-am-YdY" firstAttribute="top" secondItem="eUK-o7-h5n" secondAttribute="bottom" constant="8" id="1gl-YZ-CpL"/>
                             <constraint firstItem="3Sh-UK-sVs" firstAttribute="leading" secondItem="Fdy-am-YdY" secondAttribute="leading" id="2wh-yr-bPz"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ABA-Kp-KZc" secondAttribute="bottom" constant="44" id="3Ii-Mj-xSb"/>
+                            <constraint firstItem="ABA-Kp-KZc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="166" id="4BK-6a-cuv"/>
                             <constraint firstItem="3Sh-UK-sVs" firstAttribute="top" secondItem="Fdy-am-YdY" secondAttribute="bottom" constant="70" id="8ga-pc-z1M"/>
                             <constraint firstItem="PS2-ym-ib5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="J0f-jY-22g"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eUK-o7-h5n" secondAttribute="trailing" constant="40" id="L8Q-B0-iCS"/>
-                            <constraint firstItem="ABA-Kp-KZc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="147" id="LdV-2c-mZG"/>
+                            <constraint firstItem="ABA-Kp-KZc" firstAttribute="centerX" secondItem="NEs-MN-e2E" secondAttribute="centerX" id="ROH-li-3W1"/>
                             <constraint firstItem="3Sh-UK-sVs" firstAttribute="trailing" secondItem="Fdy-am-YdY" secondAttribute="trailing" id="Zhd-Lc-voO"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Fdy-am-YdY" secondAttribute="trailing" constant="40" id="e5S-oQ-mpX"/>
                             <constraint firstItem="Fdy-am-YdY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="gyE-5F-rHG"/>
                             <constraint firstItem="PS2-ym-ib5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="hm0-iY-Z1F"/>
                             <constraint firstItem="eUK-o7-h5n" firstAttribute="top" secondItem="PS2-ym-ib5" secondAttribute="bottom" constant="3" id="qf0-kk-WvP"/>
+                            <constraint firstItem="ABA-Kp-KZc" firstAttribute="centerX" secondItem="3Sh-UK-sVs" secondAttribute="centerX" id="rgp-q0-3lA"/>
                             <constraint firstItem="eUK-o7-h5n" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="xOb-IP-5nF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -183,7 +193,7 @@ keep their jobs.</string>
                                                     <fragment content="All set ">
                                                         <attributes>
                                                             <color key="NSColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <font key="NSFont" size="42" name="SFMono-Bold"/>
+                                                            <font key="NSFont" size="42" name="SFCompactDisplay-Bold"/>
                                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                         </attributes>
                                                     </fragment>
@@ -207,7 +217,7 @@ during your day, we'll let you know.</string>
                                                         <attributes>
                                                             <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <color key="NSColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <font key="NSFont" size="16" name="SFMono-Bold"/>
+                                                            <font key="NSFont" size="16" name="SFCompactDisplay-Regular"/>
                                                             <real key="NSKern" value="0.0"/>
                                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
                                                                 <tabStops/>
@@ -226,7 +236,7 @@ during your day, we'll let you know.</string>
                                                         <attributes>
                                                             <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <color key="NSColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <font key="NSFont" size="12" name="SFMono-Bold"/>
+                                                            <font key="NSFont" size="12" name="SFCompactDisplay-Regular"/>
                                                             <real key="NSKern" value="0.0"/>
                                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
                                                                 <tabStops/>
@@ -244,7 +254,7 @@ during your day, we'll let you know.</string>
                                                     <fragment content="Active">
                                                         <attributes>
                                                             <color key="NSColor" red="0.0" green="0.59607843137254901" blue="0.45490196078431372" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <font key="NSFont" size="28" name="SFMono-Bold"/>
+                                                            <font key="NSFont" size="28" name="SFCompactDisplay-Bold"/>
                                                             <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                         </attributes>
                                                     </fragment>
@@ -259,7 +269,7 @@ during your day, we'll let you know.</string>
                                                         <attributes>
                                                             <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <color key="NSColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <font key="NSFont" size="28" name="SFMono-Bold"/>
+                                                            <font key="NSFont" size="28" name="SFCompactDisplay-Bold"/>
                                                             <real key="NSKern" value="0.0"/>
                                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
                                                                 <tabStops/>
@@ -278,7 +288,7 @@ during your day, we'll let you know.</string>
                                                         <attributes>
                                                             <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <color key="NSColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <font key="NSFont" size="12" name="SFMono-Bold"/>
+                                                            <font key="NSFont" size="12" name="SFCompactDisplay-Regular"/>
                                                             <real key="NSKern" value="0.0"/>
                                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
                                                                 <tabStops/>
@@ -296,7 +306,7 @@ during your day, we'll let you know.</string>
                                                     <attributedString key="attributedTitle">
                                                         <fragment content="HOW IT WORKS?">
                                                             <attributes>
-                                                                <font key="NSFont" size="12" name="SFMono-Regular"/>
+                                                                <font key="NSFont" size="12" name="SFCompactDisplay-Regular"/>
                                                             </attributes>
                                                         </fragment>
                                                     </attributedString>
@@ -317,7 +327,7 @@ during your day, we'll let you know.</string>
                                                         <fragment content="Active">
                                                             <attributes>
                                                                 <color key="NSColor" red="0.0" green="0.59607843137254901" blue="0.45490196078431372" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <font key="NSFont" size="28" name="SFMono-Bold"/>
+                                                                <font key="NSFont" size="28" name="SFCompactDisplay-Bold"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                             </attributes>
                                                         </fragment>
@@ -541,7 +551,7 @@ during your day, we'll let you know.</string>
                                     <fragment content="Bluetooth">
                                         <attributes>
                                             <color key="NSColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="42" name="SFMono-Bold"/>
+                                            <font key="NSFont" size="42" name="SFCompactDisplay-Bold"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -561,7 +571,7 @@ distance from other devices.</string>
                                         <attributes>
                                             <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="NSColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="20" name="SFMono-Regular"/>
+                                            <font key="NSFont" size="20" name="SFCompactDisplay-Regular"/>
                                             <real key="NSKern" value="0.0"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
                                                 <tabStops/>
@@ -582,7 +592,7 @@ distance from other devices.</string>
                                         <attributes>
                                             <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="NSColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="20" name="SFMono-Bold"/>
+                                            <font key="NSFont" size="20" name="SFCompactDisplay-Bold"/>
                                             <real key="NSKern" value="0.0"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
                                                 <tabStops/>
@@ -603,7 +613,7 @@ distance from other devices.</string>
                                         <fragment content="GIVE BLUETOOTH PERMISSION">
                                             <attributes>
                                                 <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <font key="NSFont" size="14" name="SFMono-Regular"/>
+                                                <font key="NSFont" size="14" name="SFCompactDisplay-Regular"/>
                                                 <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                             </attributes>
                                         </fragment>
@@ -625,11 +635,12 @@ distance from other devices.</string>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iGW-XV-oQu">
-                                <rect key="frame" x="40" y="104" width="36" height="14"/>
+                                <rect key="frame" x="40" y="104" width="31" height="14"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Step 1">
                                         <attributes>
-                                            <font key="NSFont" size="12" name="SFMono-Regular"/>
+                                            <color key="NSColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="12" name="SFCompactDisplay-Regular"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
@@ -696,8 +707,8 @@ distance from other devices.</string>
                                     <attributedString key="attributedTitle">
                                         <fragment content="GIVE LOCATION PERMISSION">
                                             <attributes>
-                                                <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <font key="NSFont" size="14" name="SFMono-Regular"/>
+                                                <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <font key="NSFont" size="14" name="SFCompactDisplay-Regular"/>
                                                 <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                             </attributes>
                                         </fragment>
@@ -719,13 +730,13 @@ distance from other devices.</string>
                                 </connections>
                             </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FMk-EN-B47">
-                                <rect key="frame" x="151" y="779" width="113" height="26"/>
+                                <rect key="frame" x="159" y="779" width="98" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal">
                                     <attributedString key="attributedTitle">
                                         <fragment content="SKIP TO NEXT STEP">
                                             <attributes>
-                                                <font key="NSFont" size="12" name="SFMono-Regular"/>
+                                                <font key="NSFont" size="12" name="SFCompactDisplay-Regular"/>
                                                 <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                             </attributes>
                                         </fragment>
@@ -733,11 +744,12 @@ distance from other devices.</string>
                                 </state>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Olv-kI-5Pz">
-                                <rect key="frame" x="40" y="93" width="36" height="14"/>
+                                <rect key="frame" x="40" y="93" width="33" height="14"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Step 2">
                                         <attributes>
-                                            <font key="NSFont" size="12" name="SFMono-Regular"/>
+                                            <color key="NSColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="12" name="SFCompactDisplay-Regular"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
@@ -752,7 +764,7 @@ distance from other devices.</string>
                                     <fragment content="Location">
                                         <attributes>
                                             <color key="NSColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="42" name="SFMono-Bold"/>
+                                            <font key="NSFont" size="42" name="SFCompactDisplay-Bold"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -772,7 +784,7 @@ distance from other devices.</string>
                                         <attributes>
                                             <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="NSColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="20" name="SFMono-Regular"/>
+                                            <font key="NSFont" size="20" name="SFCompactDisplay-Regular"/>
                                             <real key="NSKern" value="0.0"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
                                                 <tabStops/>
@@ -793,7 +805,7 @@ distance from other devices.</string>
                                         <attributes>
                                             <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="NSColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="20" name="SFMono-Bold"/>
+                                            <font key="NSFont" size="20" name="SFCompactDisplay-Bold"/>
                                             <real key="NSKern" value="0.0"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
                                                 <tabStops/>
@@ -860,14 +872,14 @@ distance from other devices.</string>
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="700"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ErR-NY-mIu">
-                                                <rect key="frame" x="40" y="100" width="334" height="98"/>
+                                                <rect key="frame" x="40" y="97.5" width="334" height="100.5"/>
                                                 <attributedString key="attributedText">
                                                     <fragment>
                                                         <string key="content">How it
 works?</string>
                                                         <attributes>
                                                             <color key="NSColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <font key="NSFont" size="42" name="SFMono-Bold"/>
+                                                            <font key="NSFont" size="42" name="SFCompactDisplay-Bold"/>
                                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                         </attributes>
                                                     </fragment>
@@ -887,7 +899,7 @@ closer than 2 meters to you.</string>
                                                         <attributes>
                                                             <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <color key="NSColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <font key="NSFont" size="16" name="SFMono-Bold"/>
+                                                            <font key="NSFont" size="16" name="SFCompactDisplay-Regular"/>
                                                             <real key="NSKern" value="0.0"/>
                                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
                                                                 <tabStops/>
@@ -899,7 +911,7 @@ closer than 2 meters to you.</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="93B-G2-0xj">
-                                                <rect key="frame" x="40" y="396" width="334" height="38"/>
+                                                <rect key="frame" x="40" y="396" width="334" height="40"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <attributedString key="attributedText">
                                                     <fragment>
@@ -908,7 +920,7 @@ to an infected person, up to 14 days back.</string>
                                                         <attributes>
                                                             <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <color key="NSColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <font key="NSFont" size="16" name="SFMono-Bold"/>
+                                                            <font key="NSFont" size="16" name="SFCompactDisplay-Regular"/>
                                                             <real key="NSKern" value="0.0"/>
                                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
                                                                 <tabStops/>
@@ -927,7 +939,7 @@ to an infected person, up to 14 days back.</string>
                                                         <attributes>
                                                             <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <color key="NSColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <font key="NSFont" size="16" name="SFMono-Bold"/>
+                                                            <font key="NSFont" size="16" name="SFCompactDisplay-Bold"/>
                                                             <real key="NSKern" value="0.0"/>
                                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
                                                                 <tabStops/>
@@ -939,7 +951,7 @@ to an infected person, up to 14 days back.</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vhe-NL-BvZ">
-                                                <rect key="frame" x="40" y="540" width="334" height="56"/>
+                                                <rect key="frame" x="40" y="540" width="334" height="42"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <attributedString key="attributedText">
                                                     <fragment>
@@ -949,7 +961,7 @@ by scanning your accound ID.</string>
                                                         <attributes>
                                                             <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <color key="NSColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <font key="NSFont" size="16" name="SFMono-Bold"/>
+                                                            <font key="NSFont" size="16" name="SFCompactDisplay-Regular"/>
                                                             <real key="NSKern" value="0.0"/>
                                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
                                                                 <tabStops/>
@@ -968,7 +980,7 @@ by scanning your accound ID.</string>
                                                         <attributes>
                                                             <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <color key="NSColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <font key="NSFont" size="16" name="SFMono-Bold"/>
+                                                            <font key="NSFont" size="16" name="SFCompactDisplay-Bold"/>
                                                             <real key="NSKern" value="0.0"/>
                                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
                                                                 <tabStops/>
@@ -1024,10 +1036,13 @@ by scanning your accound ID.</string>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="roF-M7-Pqe"/>
                     </view>
+                    <connections>
+                        <outlet property="title" destination="ErR-NY-mIu" id="ovY-kW-rhq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bm2-BR-l11" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-817.39130434782612" y="53.571428571428569"/>
+            <point key="canvasLocation" x="-668" y="22"/>
         </scene>
     </scenes>
     <resources>

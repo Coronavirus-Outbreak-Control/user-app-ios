@@ -16,6 +16,15 @@
 		C81BA5D0240D969C00CFFA6F /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81BA5CF240D969C00CFFA6F /* LocationManager.swift */; };
 		C827F82C241C0A390026CF05 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C827F82B241C0A390026CF05 /* RoundButton.swift */; };
 		C8368CC4241D303A000D32FB /* HowItWorks.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8368CC3241D303A000D32FB /* HowItWorks.swift */; };
+		C83CF025241D5E13005849D4 /* SF-Compact-Display-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = C83CF01D241D5E0D005849D4 /* SF-Compact-Display-Black.otf */; };
+		C83CF026241D5E13005849D4 /* SF-Compact-Display-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = C83CF020241D5E0D005849D4 /* SF-Compact-Display-Bold.otf */; };
+		C83CF027241D5E13005849D4 /* SF-Compact-Display-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = C83CF021241D5E0D005849D4 /* SF-Compact-Display-Heavy.otf */; };
+		C83CF028241D5E13005849D4 /* SF-Compact-Display-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = C83CF01C241D5E0D005849D4 /* SF-Compact-Display-Light.otf */; };
+		C83CF029241D5E13005849D4 /* SF-Compact-Display-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = C83CF023241D5E0D005849D4 /* SF-Compact-Display-Medium.otf */; };
+		C83CF02A241D5E13005849D4 /* SF-Compact-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = C83CF022241D5E0D005849D4 /* SF-Compact-Display-Regular.otf */; };
+		C83CF02B241D5E13005849D4 /* SF-Compact-Display-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = C83CF024241D5E0D005849D4 /* SF-Compact-Display-Semibold.otf */; };
+		C83CF02C241D5E13005849D4 /* SF-Compact-Display-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = C83CF01F241D5E0D005849D4 /* SF-Compact-Display-Thin.otf */; };
+		C83CF02D241D5E13005849D4 /* SF-Compact-Display-Ultralight.otf in Resources */ = {isa = PBXBuildFile; fileRef = C83CF01E241D5E0D005849D4 /* SF-Compact-Display-Ultralight.otf */; };
 		C842066F240BB23E00B8B45B /* Models.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C8A32570240A759300FF1620 /* Models.xcdatamodeld */; };
 		C84DAEDF241990C30043A1E4 /* BackgroundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84DAEDE241990C30043A1E4 /* BackgroundManager.swift */; };
 		C8595877241D3C6B0060F2F3 /* StatusBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8595876241D3C6B0060F2F3 /* StatusBarViewController.swift */; };
@@ -46,6 +55,15 @@
 		C81BA5CF240D969C00CFFA6F /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		C827F82B241C0A390026CF05 /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		C8368CC3241D303A000D32FB /* HowItWorks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowItWorks.swift; sourceTree = "<group>"; };
+		C83CF01C241D5E0D005849D4 /* SF-Compact-Display-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Compact-Display-Light.otf"; sourceTree = "<group>"; };
+		C83CF01D241D5E0D005849D4 /* SF-Compact-Display-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Compact-Display-Black.otf"; sourceTree = "<group>"; };
+		C83CF01E241D5E0D005849D4 /* SF-Compact-Display-Ultralight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Compact-Display-Ultralight.otf"; sourceTree = "<group>"; };
+		C83CF01F241D5E0D005849D4 /* SF-Compact-Display-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Compact-Display-Thin.otf"; sourceTree = "<group>"; };
+		C83CF020241D5E0D005849D4 /* SF-Compact-Display-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Compact-Display-Bold.otf"; sourceTree = "<group>"; };
+		C83CF021241D5E0D005849D4 /* SF-Compact-Display-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Compact-Display-Heavy.otf"; sourceTree = "<group>"; };
+		C83CF022241D5E0D005849D4 /* SF-Compact-Display-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Compact-Display-Regular.otf"; sourceTree = "<group>"; };
+		C83CF023241D5E0D005849D4 /* SF-Compact-Display-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Compact-Display-Medium.otf"; sourceTree = "<group>"; };
+		C83CF024241D5E0D005849D4 /* SF-Compact-Display-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Compact-Display-Semibold.otf"; sourceTree = "<group>"; };
 		C84DAEDE241990C30043A1E4 /* BackgroundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundManager.swift; sourceTree = "<group>"; };
 		C8595876241D3C6B0060F2F3 /* StatusBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarViewController.swift; sourceTree = "<group>"; };
 		C88D06A6240715080005E029 /* HelpMoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpMoreViewController.swift; sourceTree = "<group>"; };
@@ -90,6 +108,22 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
+		C83CF003241D5C8A005849D4 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				C83CF01D241D5E0D005849D4 /* SF-Compact-Display-Black.otf */,
+				C83CF020241D5E0D005849D4 /* SF-Compact-Display-Bold.otf */,
+				C83CF021241D5E0D005849D4 /* SF-Compact-Display-Heavy.otf */,
+				C83CF01C241D5E0D005849D4 /* SF-Compact-Display-Light.otf */,
+				C83CF023241D5E0D005849D4 /* SF-Compact-Display-Medium.otf */,
+				C83CF022241D5E0D005849D4 /* SF-Compact-Display-Regular.otf */,
+				C83CF024241D5E0D005849D4 /* SF-Compact-Display-Semibold.otf */,
+				C83CF01F241D5E0D005849D4 /* SF-Compact-Display-Thin.otf */,
+				C83CF01E241D5E0D005849D4 /* SF-Compact-Display-Ultralight.otf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
 		C8A892E8240866A7007EA317 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -129,6 +163,7 @@
 		C8B188D52402B14400CFEE98 /* Coronavirus Herd Immunity */ = {
 			isa = PBXGroup;
 			children = (
+				C83CF003241D5C8A005849D4 /* Font */,
 				C827F82A241C0A150026CF05 /* UI */,
 				C8A892E8240866A7007EA317 /* Utils */,
 				C8B188D62402B14400CFEE98 /* AppDelegate.swift */,
@@ -215,8 +250,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C83CF028241D5E13005849D4 /* SF-Compact-Display-Light.otf in Resources */,
+				C83CF02C241D5E13005849D4 /* SF-Compact-Display-Thin.otf in Resources */,
 				C8B188E12402B14600CFEE98 /* LaunchScreen.storyboard in Resources */,
+				C83CF029241D5E13005849D4 /* SF-Compact-Display-Medium.otf in Resources */,
+				C83CF027241D5E13005849D4 /* SF-Compact-Display-Heavy.otf in Resources */,
+				C83CF02B241D5E13005849D4 /* SF-Compact-Display-Semibold.otf in Resources */,
+				C83CF025241D5E13005849D4 /* SF-Compact-Display-Black.otf in Resources */,
+				C83CF02D241D5E13005849D4 /* SF-Compact-Display-Ultralight.otf in Resources */,
+				C83CF02A241D5E13005849D4 /* SF-Compact-Display-Regular.otf in Resources */,
 				C8B188DE2402B14600CFEE98 /* Assets.xcassets in Resources */,
+				C83CF026241D5E13005849D4 /* SF-Compact-Display-Bold.otf in Resources */,
 				C8B188DC2402B14400CFEE98 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

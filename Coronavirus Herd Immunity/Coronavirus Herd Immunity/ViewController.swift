@@ -14,8 +14,14 @@ class ViewController: StatusBarViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        print("loaded view")
-        
+        for family: String in UIFont.familyNames
+        {
+            print(family)
+            for names: String in UIFont.fontNames(forFamilyName: family)
+            {
+                print("== \(names)")
+            }
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
