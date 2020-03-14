@@ -154,7 +154,7 @@ class MainViewController: StatusBarViewController {
     @IBAction func counterTotalInteractions(_ sender: Any) {
         self.counterHidden += 1
         print("counter is now at:", self.counterHidden)
-        if(self.counterHidden > 20){
+        if(self.counterHidden > 10){
             let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
             let nextViewController = storyBoard.instantiateViewController(withIdentifier: "BluetoothTableViewController") as! BluetoothTableViewController
             self.present(nextViewController, animated:true, completion:nil)

@@ -16,6 +16,16 @@ class ViewController: StatusBarViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(handleBluetoothChangeStatus), name: NSNotification.Name(Costants.Notification.bluetoothChangeStatus), object: nil)
+        
+    }
+    
+    @objc private func handleBluetoothChangeStatus(notification: NSNotification){
+        if BluetoothManager.shared.isBluetoothUsable() && LocationManager.shared.getPermessionStatus() == .allowedAlways{
+            IBeaconManager.shared.startAdvertiseDevice()
+            IBeaconManager.shared.registerListener()
+        }
     }
 
     @IBAction func letsGetStarted(_ sender: Any) {
