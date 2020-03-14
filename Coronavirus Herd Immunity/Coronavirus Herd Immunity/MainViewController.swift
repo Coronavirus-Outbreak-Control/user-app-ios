@@ -20,33 +20,17 @@ class MainViewController: StatusBarViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.activeButton.adjustsImageWhenHighlighted = false
         // Do any additional setup after loading the view, typically from a nib.
-        print("MAIN LOAD")
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        print("MAIN APPEAR")
         self.run()
-    }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        print("MAIN DISAPPEAR")
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        print("MAIN WILL APPEAR")
     }
     
     private func run(){
         
         self.statusApp.text = "Active"
         self.activeButton.titleLabel?.text = "Active"
-//        self.activeButton.adjustsImageWhenHighlighted = false
-//        let c = UIColor.init(red: 0/255, green: 152/255, blue: 116/255, alpha: 1)
-//        self.activeButton.setTitleColor(c, for: .highlighted)
-//        self.activeButton.setTitleColor(c, for: .selected)
-//        self.activeButton.setTitleColor(c, for: .focused)
         
         if let identifierDevice = StorageManager.shared.getIdentifierDevice(){
             print("identifier device:", identifierDevice)

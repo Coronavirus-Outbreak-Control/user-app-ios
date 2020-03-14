@@ -10,10 +10,8 @@ import UIKit
 
 class BluetoothOffViewController: StatusBarViewController {
     
-    @IBOutlet weak var image: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.view.sendSubviewToBack(self.image)
         // Do any additional setup after loading the view, typically from a nib.
         
     }
@@ -33,17 +31,14 @@ class BluetoothOffViewController: StatusBarViewController {
                 self.openMainViewController()
             }
             if BluetoothManager.shared.getBluetoothStatus() == .off{
-//                self.bluetoothStatus.text = NSLocalizedString("off", comment: "bluetooth switched off")
             }
             if BluetoothManager.shared.getBluetoothStatus() == .resetting{
-//                self.bluetoothStatus.text = NSLocalizedString("resetting", comment: "bluetooth resetting")
             }
             break
         case .denied, .notDetermined:
             // we will wait for user to click on the button
             break
         case .notAvailable:
-//            self.bluetoothStatus.text = NSLocalizedString("not available", comment: "bluetooth not available on the device")
             self.bluetoothNotAvailable()
             break
         }
@@ -138,7 +133,6 @@ class BluetoothOffViewController: StatusBarViewController {
     }
     
     @IBAction func howCanIHelpMoreAction(_ sender: Any) {
-        print("GONNA PRESENT HELP MORE FROM BLUETOOTH")
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let nextViewController = storyBoard.instantiateViewController(withIdentifier: "HelpMoreViewController") as! HelpMoreViewController
         self.present(nextViewController, animated:true, completion:nil)

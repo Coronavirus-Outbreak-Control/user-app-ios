@@ -40,7 +40,6 @@ class LocationViewController : ViewController{
     }
     
     @IBAction func helpMoreAction(_ sender: Any) {
-        print("GONNA PRESENT HELP MORE FROM LOCATION")
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let nextViewController = storyBoard.instantiateViewController(withIdentifier: "HelpMoreViewController") as! HelpMoreViewController
         self.present(nextViewController, animated:true, completion:nil)
@@ -116,7 +115,6 @@ class LocationViewController : ViewController{
         case .allowedAlways:
             return self.openMainViewController()
         case .notAvailable:
-//            self.locationStatusLabel.text = NSLocalizedString("not available", comment: "location hardware not available")
             break
         case .notDetermined, .denied, .allowedWhenInUse:
             print("not determined waiting for user")
