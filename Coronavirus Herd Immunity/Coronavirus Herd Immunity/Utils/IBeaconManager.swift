@@ -32,13 +32,17 @@ class IBeaconManager: NSObject, CBPeripheralManagerDelegate, CLLocationManagerDe
 //        self.locationManager.requestAlwaysAuthorization()
     }
     
-    private func createBeaconRegion() -> CLBeaconRegion {
-        let proximityUUID = UUID(uuidString: Costants.Setup.uuidCHIdevice)
-        let major : CLBeaconMajorValue = 100
-        let minor : CLBeaconMinorValue = 1
-        let beaconID = Costants.Setup.beaconCHIidentifier
+    private func createBeaconRegion() -> CLBeaconRegion? {
+        if let idDevice = StorageManager.shared.getIdentifierDevice(){
             
-        return CLBeaconRegion(proximityUUID: proximityUUID!, major: major, minor: minor, identifier: beaconID)
+            let proximityUUID = UUID(uuidString: Costants.Setup.uuidCHIdevice)
+            let major : CLBeaconMajorValue = CLBeaconMajorValue(Utils.getMajorFromInt(idDevice))
+            let minor : CLBeaconMinorValue = CLBeaconMinorValue(Utils.getMinorFromInt(idDevice))
+            let beaconID = Costants.Setup.beaconCHIidentifier
+                
+            return CLBeaconRegion(proximityUUID: proximityUUID!, major: major, minor: minor, identifier: beaconID)
+        }
+        return nil
     }
     
     public func startAdvertiseDevice(){
@@ -61,11 +65,13 @@ class IBeaconManager: NSObject, CBPeripheralManagerDelegate, CLLocationManagerDe
             return
         }
 
-        let region = createBeaconRegion()
-        print("started advertise")
-        let peripheralData = region.peripheralData(withMeasuredPower: nil)
-        self.peripheralManager!.startAdvertising(((peripheralData as NSDictionary) as! [String : Any]))
-        
+        if let region = createBeaconRegion(){
+            print("started advertise")
+            let peripheralData = region.peripheralData(withMeasuredPower: nil)
+            self.peripheralManager!.startAdvertising(((peripheralData as NSDictionary) as! [String : Any]))
+        }else{
+            print("COULDN'T create a region!")
+        }
     }
     
     func peripheralManagerDidUpdateState(_ peripheral: CBPeripheralManager) {
