@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xcS-4u-vjt">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -400,15 +400,14 @@ keep their jobs.</string>
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ifd-g6-Dke">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cQa-30-gLF">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gez-cg-K8Q" userLabel="Content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="700"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="characterWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nkG-aq-zUe">
-                                                <rect key="frame" x="40" y="60" width="246" height="42"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="characterWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nkG-aq-zUe">
+                                                <rect key="frame" x="40" y="60" width="332" height="55.5"/>
                                                 <attributedString key="attributedText">
                                                     <fragment content="All set ">
                                                         <attributes>
@@ -427,9 +426,8 @@ keep their jobs.</string>
                                                 </attributedString>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mKP-li-ba4">
-                                                <rect key="frame" x="40" y="120" width="312" height="48"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mKP-li-ba4">
+                                                <rect key="frame" x="40" y="120" width="332" height="38.5"/>
                                                 <attributedString key="attributedText">
                                                     <fragment>
                                                         <string key="content">If you got close to an infected person
@@ -448,9 +446,8 @@ during your day, we'll let you know.</string>
                                                 </attributedString>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bB3-cj-dWM">
-                                                <rect key="frame" x="40" y="254" width="162" height="12"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bB3-cj-dWM">
+                                                <rect key="frame" x="40" y="254" width="160" height="14.5"/>
                                                 <attributedString key="attributedText">
                                                     <fragment content="STATUS">
                                                         <attributes>
@@ -467,9 +464,8 @@ during your day, we'll let you know.</string>
                                                 </attributedString>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Euk-My-yLC">
-                                                <rect key="frame" x="40" y="218" width="162" height="28"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Euk-My-yLC">
+                                                <rect key="frame" x="40" y="209" width="160" height="45"/>
                                                 <attributedString key="attributedText">
                                                     <fragment content="Active">
                                                         <attributes>
@@ -481,9 +477,8 @@ during your day, we'll let you know.</string>
                                                 </attributedString>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Nv-Ey-WFv">
-                                                <rect key="frame" x="210" y="218" width="162" height="28"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Nv-Ey-WFv">
+                                                <rect key="frame" x="212" y="218" width="160" height="33.5"/>
                                                 <attributedString key="attributedText">
                                                     <fragment content="-">
                                                         <attributes>
@@ -500,9 +495,8 @@ during your day, we'll let you know.</string>
                                                 </attributedString>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b6I-Y8-Xhw">
-                                                <rect key="frame" x="210" y="252" width="162" height="12"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b6I-Y8-Xhw">
+                                                <rect key="frame" x="212" y="254" width="160" height="14.5"/>
                                                 <attributedString key="attributedText">
                                                     <fragment content="DEVICES DETECTED">
                                                         <attributes>
@@ -519,9 +513,8 @@ during your day, we'll let you know.</string>
                                                 </attributedString>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oQD-6d-vjs">
-                                                <rect key="frame" x="136" y="310" width="120" height="26"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oQD-6d-vjs">
+                                                <rect key="frame" x="158.5" y="310" width="97" height="26"/>
                                                 <state key="normal">
                                                     <attributedString key="attributedTitle">
                                                         <fragment content="HOW IT WORKS?">
@@ -535,13 +528,15 @@ during your day, we'll let you know.</string>
                                                     <action selector="howItWorks:" destination="xcS-4u-vjt" eventType="touchUpInside" id="Ids-ZG-cZO"/>
                                                 </connections>
                                             </button>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XLB-Hw-DJo">
-                                                <rect key="frame" x="76" y="376" width="240" height="240"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XLB-Hw-DJo">
+                                                <rect key="frame" x="87" y="376" width="240" height="240"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="240" id="MMP-as-V8g"/>
+                                                    <constraint firstAttribute="width" constant="240" id="hIp-zl-esy"/>
+                                                </constraints>
                                             </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y2F-V0-cDw">
-                                                <rect key="frame" x="40" y="209" width="162" height="45"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y2F-V0-cDw">
+                                                <rect key="frame" x="40" y="209" width="160" height="45"/>
                                                 <state key="normal">
                                                     <attributedString key="attributedTitle">
                                                         <fragment content="Active">
@@ -560,28 +555,54 @@ during your day, we'll let you know.</string>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="700" id="F1E-nU-s0B"/>
-                                            <constraint firstAttribute="height" constant="700" id="aNM-HB-fqj"/>
+                                            <constraint firstItem="Euk-My-yLC" firstAttribute="bottom" secondItem="y2F-V0-cDw" secondAttribute="bottom" id="08Y-Ag-2UQ"/>
+                                            <constraint firstItem="nkG-aq-zUe" firstAttribute="top" secondItem="Gez-cg-K8Q" secondAttribute="top" constant="60" id="4ST-4m-Q43"/>
+                                            <constraint firstAttribute="trailing" secondItem="nkG-aq-zUe" secondAttribute="trailing" constant="42" id="5lk-T3-N5i"/>
+                                            <constraint firstItem="y2F-V0-cDw" firstAttribute="leading" secondItem="Gez-cg-K8Q" secondAttribute="leading" constant="40" id="6zY-LM-Efe"/>
+                                            <constraint firstItem="bB3-cj-dWM" firstAttribute="leading" secondItem="y2F-V0-cDw" secondAttribute="leading" id="8Wy-jd-I3I"/>
+                                            <constraint firstItem="bB3-cj-dWM" firstAttribute="top" secondItem="Euk-My-yLC" secondAttribute="bottom" id="8i5-dp-DH8"/>
+                                            <constraint firstItem="b6I-Y8-Xhw" firstAttribute="top" secondItem="bB3-cj-dWM" secondAttribute="top" id="9tQ-OC-2VK"/>
+                                            <constraint firstItem="b6I-Y8-Xhw" firstAttribute="leading" secondItem="1Nv-Ey-WFv" secondAttribute="leading" id="BSx-9A-jWN"/>
+                                            <constraint firstItem="1Nv-Ey-WFv" firstAttribute="top" secondItem="mKP-li-ba4" secondAttribute="bottom" constant="59.5" id="DIY-iq-JnZ"/>
+                                            <constraint firstItem="Euk-My-yLC" firstAttribute="trailing" secondItem="y2F-V0-cDw" secondAttribute="trailing" id="EAS-jW-Cp9"/>
+                                            <constraint firstItem="bB3-cj-dWM" firstAttribute="trailing" secondItem="y2F-V0-cDw" secondAttribute="trailing" id="I91-6X-0xp"/>
+                                            <constraint firstItem="nkG-aq-zUe" firstAttribute="leading" secondItem="Gez-cg-K8Q" secondAttribute="leading" constant="40" id="ICl-AC-SSg"/>
+                                            <constraint firstItem="oQD-6d-vjs" firstAttribute="centerX" secondItem="Gez-cg-K8Q" secondAttribute="centerX" id="M71-HZ-J8v"/>
+                                            <constraint firstAttribute="trailing" secondItem="mKP-li-ba4" secondAttribute="trailing" constant="42" id="PKR-PO-LBJ"/>
+                                            <constraint firstItem="mKP-li-ba4" firstAttribute="leading" secondItem="nkG-aq-zUe" secondAttribute="leading" id="Pwi-od-t3g"/>
+                                            <constraint firstItem="1Nv-Ey-WFv" firstAttribute="width" secondItem="y2F-V0-cDw" secondAttribute="width" id="U6B-kj-HrA"/>
+                                            <constraint firstItem="b6I-Y8-Xhw" firstAttribute="bottom" secondItem="bB3-cj-dWM" secondAttribute="bottom" id="ZW3-H3-uOC"/>
+                                            <constraint firstItem="y2F-V0-cDw" firstAttribute="top" secondItem="mKP-li-ba4" secondAttribute="bottom" constant="50.5" id="Zzd-j4-Fv3"/>
+                                            <constraint firstItem="1Nv-Ey-WFv" firstAttribute="leading" secondItem="y2F-V0-cDw" secondAttribute="trailing" constant="12" id="fYA-N0-nsX"/>
+                                            <constraint firstItem="XLB-Hw-DJo" firstAttribute="centerX" secondItem="Gez-cg-K8Q" secondAttribute="centerX" id="jU1-UL-z8J"/>
+                                            <constraint firstItem="XLB-Hw-DJo" firstAttribute="top" secondItem="oQD-6d-vjs" secondAttribute="bottom" constant="40" id="l49-x4-Ac4"/>
+                                            <constraint firstItem="oQD-6d-vjs" firstAttribute="top" secondItem="bB3-cj-dWM" secondAttribute="bottom" constant="41.5" id="nOB-mO-PNy"/>
+                                            <constraint firstItem="Euk-My-yLC" firstAttribute="top" secondItem="y2F-V0-cDw" secondAttribute="top" id="t83-z1-zls"/>
+                                            <constraint firstAttribute="trailing" secondItem="1Nv-Ey-WFv" secondAttribute="trailing" constant="42" id="uaz-OW-x30"/>
+                                            <constraint firstItem="mKP-li-ba4" firstAttribute="top" secondItem="nkG-aq-zUe" secondAttribute="bottom" constant="4.5" id="wRG-kT-uyc"/>
+                                            <constraint firstItem="b6I-Y8-Xhw" firstAttribute="trailing" secondItem="1Nv-Ey-WFv" secondAttribute="trailing" id="zAA-j6-GFG"/>
+                                            <constraint firstItem="Euk-My-yLC" firstAttribute="leading" secondItem="y2F-V0-cDw" secondAttribute="leading" id="zN4-9a-6MZ"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="Gez-cg-K8Q" firstAttribute="bottom" secondItem="tjS-P4-FYI" secondAttribute="bottom" id="Atb-7T-Yq0"/>
-                                    <constraint firstItem="Gez-cg-K8Q" firstAttribute="width" secondItem="f5d-Me-2j0" secondAttribute="width" id="Q32-AW-Eil"/>
-                                    <constraint firstItem="Gez-cg-K8Q" firstAttribute="leading" secondItem="tjS-P4-FYI" secondAttribute="leading" id="aim-Ev-cEt"/>
-                                    <constraint firstItem="Gez-cg-K8Q" firstAttribute="top" secondItem="tjS-P4-FYI" secondAttribute="top" id="aun-Bk-XV1"/>
-                                    <constraint firstItem="Gez-cg-K8Q" firstAttribute="trailing" secondItem="tjS-P4-FYI" secondAttribute="trailing" id="opR-11-jZ0"/>
+                                    <constraint firstItem="Gez-cg-K8Q" firstAttribute="width" secondItem="cQa-30-gLF" secondAttribute="width" id="Bng-1r-VwO"/>
+                                    <constraint firstItem="Gez-cg-K8Q" firstAttribute="trailing" secondItem="cQa-30-gLF" secondAttribute="trailing" id="D8u-RD-BOq"/>
+                                    <constraint firstItem="Gez-cg-K8Q" firstAttribute="height" secondItem="cQa-30-gLF" secondAttribute="height" id="Epe-iE-zjh"/>
+                                    <constraint firstAttribute="bottom" secondItem="Gez-cg-K8Q" secondAttribute="bottom" constant="20" symbolic="YES" id="OlJ-kf-5ce"/>
+                                    <constraint firstItem="Gez-cg-K8Q" firstAttribute="leading" secondItem="cQa-30-gLF" secondAttribute="leading" id="V3M-BN-g2b"/>
+                                    <constraint firstItem="Gez-cg-K8Q" firstAttribute="top" secondItem="cQa-30-gLF" secondAttribute="top" id="xIa-58-xDK"/>
                                 </constraints>
-                                <viewLayoutGuide key="contentLayoutGuide" id="tjS-P4-FYI"/>
-                                <viewLayoutGuide key="frameLayoutGuide" id="f5d-Me-2j0"/>
+                                <viewLayoutGuide key="contentLayoutGuide" id="nbi-TY-WIU"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="yhf-aY-E8d"/>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Ifd-g6-Dke" firstAttribute="centerX" secondItem="U7Z-oe-xJF" secondAttribute="centerX" id="6El-Cd-0eu"/>
-                            <constraint firstItem="Ifd-g6-Dke" firstAttribute="leading" secondItem="Q01-0W-deV" secondAttribute="leading" id="YuC-hU-8Cb"/>
-                            <constraint firstItem="Ifd-g6-Dke" firstAttribute="bottom" secondItem="Q01-0W-deV" secondAttribute="bottom" id="sYT-QJ-qCJ"/>
-                            <constraint firstItem="Ifd-g6-Dke" firstAttribute="top" secondItem="Q01-0W-deV" secondAttribute="top" id="x3s-Ou-ZAd"/>
+                            <constraint firstItem="cQa-30-gLF" firstAttribute="trailing" secondItem="Q01-0W-deV" secondAttribute="trailing" id="2U3-Nk-S8z"/>
+                            <constraint firstAttribute="bottom" secondItem="cQa-30-gLF" secondAttribute="bottom" id="Uka-vQ-wkM"/>
+                            <constraint firstItem="cQa-30-gLF" firstAttribute="top" secondItem="U7Z-oe-xJF" secondAttribute="top" id="n82-hG-AZr"/>
+                            <constraint firstItem="cQa-30-gLF" firstAttribute="leading" secondItem="Q01-0W-deV" secondAttribute="leading" id="ye8-GA-xhu"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Q01-0W-deV"/>
                     </view>
@@ -589,6 +610,7 @@ during your day, we'll let you know.</string>
                         <outlet property="activeButton" destination="y2F-V0-cDw" id="6s6-KE-Sq7"/>
                         <outlet property="interactionsTotal" destination="1Nv-Ey-WFv" id="usv-r5-aSe"/>
                         <outlet property="qrCodeImage" destination="XLB-Hw-DJo" id="gGI-f5-wK3"/>
+                        <outlet property="scrollView" destination="cQa-30-gLF" id="imK-vu-wEy"/>
                         <outlet property="statusApp" destination="Euk-My-yLC" id="BIu-KZ-kgD"/>
                     </connections>
                 </viewController>
@@ -759,7 +781,7 @@ during your day, we'll let you know.</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="illustration-bluetooth" translatesAutoresizingMaskIntoConstraints="NO" id="Uj9-uI-DYg">
-                                <rect key="frame" x="0.0" y="382" width="414" height="514"/>
+                                <rect key="frame" x="0.0" y="-132" width="414" height="1028"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="414" id="iNq-PZ-cdJ"/>
                                 </constraints>
@@ -909,7 +931,7 @@ distance from other devices.</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="illustration-location" translatesAutoresizingMaskIntoConstraints="NO" id="R4q-uu-z6X">
-                                <rect key="frame" x="0.0" y="486" width="414" height="410"/>
+                                <rect key="frame" x="0.0" y="76" width="414" height="820"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fd6-Na-JOe" customClass="RoundButton" customModule="Coronavirus_Herd_Immunity" customModuleProvider="target">
                                 <rect key="frame" x="59.5" y="695" width="295" height="64"/>
