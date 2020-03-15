@@ -15,6 +15,7 @@ class MainViewController: StatusBarViewController {
     @IBOutlet weak var interactionsTotal: UILabel!
     @IBOutlet weak var qrCodeImage: UIImageView!
     @IBOutlet weak var activeButton: UIButton!
+    @IBOutlet weak var scrollView: UIScrollView!
     private var counterHidden : Int = 0
     
     
@@ -24,7 +25,11 @@ class MainViewController: StatusBarViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         self.run()
+        
+        scrollView.contentSize = CGSize(width: view.bounds.width,
+        height: 800)
     }
     
     private func run(){
