@@ -53,7 +53,7 @@ class BluetoothManager: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate
             }
         } else {
             //TODO Fallback on earlier versions
-            return .notAvailable
+            return .allowed
         }
     }
     
