@@ -82,11 +82,13 @@ class LocationManager : NSObject, CLLocationManagerDelegate{
       // create CLLocation from the coordinates of CLVisit
         BackgroundManager.backroundOperations()
         print("new visit received")
+        IBeaconManager.shared.registerListener()
     }
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         BackgroundManager.backroundOperations()
         print("new location received")
+        IBeaconManager.shared.registerListener()
     }
     
 }

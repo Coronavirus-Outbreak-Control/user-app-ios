@@ -100,16 +100,13 @@ class IBeaconManager: NSObject, CBPeripheralManagerDelegate, CLLocationManagerDe
     }
     
     func registerListener() {
+        print("registering region for iBeacon")
+        let uuid = UUID(uuidString: Costants.Setup.uuidCHIdevice)!
         
-        if let identifierDevice = StorageManager.shared.getIdentifierDevice(){
-            print("registering region for iBeacon")
-            let uuid = UUID(uuidString: Costants.Setup.uuidCHIdevice)!
-            
-            let beaconRegion = CLBeaconRegion(proximityUUID: uuid, identifier: Costants.Setup.beaconCHIidentifier)
+        let beaconRegion = CLBeaconRegion(proximityUUID: uuid, identifier: Costants.Setup.beaconCHIidentifier)
 
-            locationManager.startMonitoring(for: beaconRegion)
-            locationManager.startRangingBeacons(in: beaconRegion)
-        }
+        locationManager.startMonitoring(for: beaconRegion)
+        locationManager.startRangingBeacons(in: beaconRegion)
     }
     
     func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
