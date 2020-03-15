@@ -111,12 +111,10 @@ class IBeaconManager: NSObject, CBPeripheralManagerDelegate, CLLocationManagerDe
     
     func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
         print("did enter region")
-        self.registerListener()
     }
     
     func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
         print("did exit region")
-        self.registerListener()
     }
     
     func locationManager(_ manager: CLLocationManager, monitoringDidFailFor region: CLRegion?, withError error: Error) {
