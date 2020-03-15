@@ -83,7 +83,7 @@
                                 <constraints>
                                     <constraint firstItem="Fdy-am-YdY" firstAttribute="leading" secondItem="x8p-0F-Dgi" secondAttribute="leading" id="17c-Gg-vWD"/>
                                     <constraint firstItem="u43-2n-RLl" firstAttribute="top" secondItem="PS2-ym-ib5" secondAttribute="bottom" id="4aI-pP-wkg"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="130" id="5rJ-VR-qPy"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="200" id="5rJ-VR-qPy"/>
                                     <constraint firstItem="eUK-o7-h5n" firstAttribute="height" secondItem="PS2-ym-ib5" secondAttribute="height" id="9HP-N9-nPt"/>
                                     <constraint firstItem="PS2-ym-ib5" firstAttribute="leading" secondItem="x8p-0F-Dgi" secondAttribute="leading" id="CFo-hY-RAj"/>
                                     <constraint firstItem="Fdy-am-YdY" firstAttribute="top" secondItem="eUK-o7-h5n" secondAttribute="bottom" id="Hh7-Za-H5y"/>
@@ -101,8 +101,8 @@
                                     <constraint firstAttribute="trailing" secondItem="eUK-o7-h5n" secondAttribute="trailing" id="uh9-d2-aYk"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Sh-UK-sVs">
-                                <rect key="frame" x="44" y="398" width="330" height="72"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="1000" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="3Sh-UK-sVs">
+                                <rect key="frame" x="44" y="386" width="330" height="84"/>
                                 <attributedString key="attributedText">
                                     <fragment>
                                         <string key="content">Together we can save
@@ -111,7 +111,7 @@ keep their jobs.</string>
                                         <attributes>
                                             <color key="NSColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <font key="NSFont" metaFont="system" size="20"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
@@ -130,7 +130,7 @@ keep their jobs.</string>
                                         <fragment content="LET'S GET STARTED">
                                             <attributes>
                                                 <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <font key="NSFont" metaFont="system" size="14"/>
+                                                <font key="NSFont" metaFont="menu" size="14"/>
                                                 <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                             </attributes>
                                         </fragment>
@@ -171,8 +171,9 @@ keep their jobs.</string>
                         <constraints>
                             <constraint firstItem="NEs-MN-e2E" firstAttribute="top" secondItem="x8p-0F-Dgi" secondAttribute="bottom" priority="998" constant="346.5" id="7Jz-EH-lv2"/>
                             <constraint firstItem="x8p-0F-Dgi" firstAttribute="top" relation="lessThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="top" priority="999" constant="100" id="JcI-X2-kWV"/>
+                            <constraint firstItem="NEs-MN-e2E" firstAttribute="top" relation="lessThanOrEqual" secondItem="3Sh-UK-sVs" secondAttribute="bottom" priority="999" constant="222.5" id="Q4Y-rq-W3V"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3Sh-UK-sVs" secondAttribute="trailing" constant="40" id="QWj-fx-QbE"/>
-                            <constraint firstItem="3Sh-UK-sVs" firstAttribute="top" secondItem="x8p-0F-Dgi" secondAttribute="bottom" constant="52" id="VKK-af-y4n"/>
+                            <constraint firstItem="3Sh-UK-sVs" firstAttribute="top" secondItem="x8p-0F-Dgi" secondAttribute="bottom" constant="40" id="VKK-af-y4n"/>
                             <constraint firstItem="x8p-0F-Dgi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="44" id="Xua-BK-3e1"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ABA-Kp-KZc" secondAttribute="bottom" constant="44" id="dGu-mU-utJ"/>
                             <constraint firstItem="3Sh-UK-sVs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="44" id="eF3-vx-HKk"/>
@@ -234,7 +235,7 @@ during your day, we'll let you know.</string>
                                                         <attributes>
                                                             <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <color key="NSColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <font key="NSFont" metaFont="system" size="16"/>
+                                                            <font key="NSFont" metaFont="label" size="16"/>
                                                             <real key="NSKern" value="0.0"/>
                                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
                                                                 <tabStops/>
@@ -630,7 +631,7 @@ distance from other devices.</string>
                                         <fragment content="GIVE BLUETOOTH PERMISSION">
                                             <attributes>
                                                 <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <font key="NSFont" metaFont="system" size="14"/>
+                                                <font key="NSFont" metaFont="menu" size="14"/>
                                                 <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                             </attributes>
                                         </fragment>
@@ -722,7 +723,7 @@ distance from other devices.</string>
                                         <fragment content="GIVE LOCATION PERMISSION">
                                             <attributes>
                                                 <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <font key="NSFont" metaFont="system" size="14"/>
+                                                <font key="NSFont" metaFont="menu" size="14"/>
                                                 <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                             </attributes>
                                         </fragment>
@@ -913,7 +914,7 @@ closer than 2 meters to you.</string>
                                                         <attributes>
                                                             <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <color key="NSColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <font key="NSFont" metaFont="system" size="16"/>
+                                                            <font key="NSFont" metaFont="label" size="16"/>
                                                             <real key="NSKern" value="0.0"/>
                                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
                                                                 <tabStops/>
@@ -934,7 +935,7 @@ to an infected person, up to 14 days back.</string>
                                                         <attributes>
                                                             <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <color key="NSColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <font key="NSFont" metaFont="system" size="16"/>
+                                                            <font key="NSFont" metaFont="label" size="16"/>
                                                             <real key="NSKern" value="0.0"/>
                                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
                                                                 <tabStops/>
@@ -953,7 +954,7 @@ to an infected person, up to 14 days back.</string>
                                                         <attributes>
                                                             <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <color key="NSColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <font key="NSFont" metaFont="system" size="16"/>
+                                                            <font key="NSFont" metaFont="label" size="16"/>
                                                             <real key="NSKern" value="0.0"/>
                                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
                                                                 <tabStops/>
@@ -975,7 +976,7 @@ by scanning your accound ID.</string>
                                                         <attributes>
                                                             <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <color key="NSColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <font key="NSFont" metaFont="system" size="16"/>
+                                                            <font key="NSFont" metaFont="label" size="16"/>
                                                             <real key="NSKern" value="0.0"/>
                                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
                                                                 <tabStops/>
@@ -994,7 +995,7 @@ by scanning your accound ID.</string>
                                                         <attributes>
                                                             <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <color key="NSColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <font key="NSFont" metaFont="system" size="16"/>
+                                                            <font key="NSFont" metaFont="label" size="16"/>
                                                             <real key="NSKern" value="0.0"/>
                                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
                                                                 <tabStops/>

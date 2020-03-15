@@ -467,7 +467,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "";
-				DEVELOPMENT_TEAM = G98YG7LCA8;
+				DEVELOPMENT_TEAM = KA2S2D97SB;
 				INFOPLIST_FILE = "Coronavirus Herd Immunity/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -488,7 +488,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "";
-				DEVELOPMENT_TEAM = G98YG7LCA8;
+				DEVELOPMENT_TEAM = KA2S2D97SB;
 				INFOPLIST_FILE = "Coronavirus Herd Immunity/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
