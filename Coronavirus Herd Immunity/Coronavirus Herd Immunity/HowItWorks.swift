@@ -10,11 +10,18 @@ import UIKit
 
 class HowItWorksViewController: StatusBarViewController {
     
+    
+    @IBOutlet weak var scrollView: UIScrollView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         print("HOW IT WORKS CONTROLLER")
-        
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        scrollView.contentSize = CGSize(width: view.bounds.width,
+                                        height: 800)
+    }
 }
