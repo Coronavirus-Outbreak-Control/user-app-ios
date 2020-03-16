@@ -23,7 +23,7 @@ class BluetoothOffViewController: StatusBarViewController {
     }
     
     func run(){
-        NotificationCenter.default.addObserver(self, selector: #selector(changedBluetoothStatus(notification:)), name: NSNotification.Name(Costants.Notification.bluetoothChangeStatus), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(changedBluetoothStatus(notification:)), name: NSNotification.Name(Constants.Notification.bluetoothChangeStatus), object: nil)
         
         switch BluetoothManager.shared.getPermissionStatus() {
         case .allowed:

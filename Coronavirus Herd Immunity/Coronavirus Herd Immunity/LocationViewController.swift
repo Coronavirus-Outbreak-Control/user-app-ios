@@ -20,7 +20,7 @@ class LocationViewController : ViewController{
     
     override func viewDidAppear(_ animated: Bool) {
         print("LOCATION VIEW CONTROLLER")
-        NotificationCenter.default.addObserver(self, selector: #selector(changedLocationAuthorization(notification:)), name: NSNotification.Name(Costants.Notification.locationChangeStatus), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(changedLocationAuthorization(notification:)), name: NSNotification.Name(Constants.Notification.locationChangeStatus), object: nil)
         self.run()
     }
     

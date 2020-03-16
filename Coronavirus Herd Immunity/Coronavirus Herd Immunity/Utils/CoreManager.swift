@@ -36,10 +36,10 @@ class CoreManager {
             lastDate = beacon.timestamp
         }
         // add the minimum interval to take into account the last interaction
-        interval += Costants.Setup.minimumIntervalTime
+        interval += Constants.Setup.minimumIntervalTime
         
         let res = IBeaconDto(identifier: identifier, timestamp: ibeacons[0].timestamp,
-                             rssi: rssis.sorted(by: <)[rssis.count / 2], interval: max(interval, Costants.Setup.minimumIntervalTime))
+                             rssi: rssis.sorted(by: <)[rssis.count / 2], interval: max(interval, Constants.Setup.minimumIntervalTime))
 //        print("WILL RETURN", res)
         return res
     }
@@ -52,7 +52,7 @@ class CoreManager {
         for beacon in ibeacons{
             if id2list[beacon.identifier] != nil{
                 if let last = id2list[beacon.identifier]?.first{
-                    if abs(last.timestamp.timeIntervalSince(beacon.timestamp)) <= Costants.Setup.timeAggregationIBeacons{
+                    if abs(last.timestamp.timeIntervalSince(beacon.timestamp)) <= Constants.Setup.timeAggregationIBeacons{
                         id2list[beacon.identifier]?.append(beacon)
                     }else{
                         if let b = CoreManager.groupIBeacon(id2list[beacon.identifier]!){
@@ -80,9 +80,10 @@ class CoreManager {
             print("updating last time push")
             StorageManager.shared.setLastTimePush(timeOfPush)
         }else{
-            ApiManager.shared.uploadInteractions(validIbeacons) {
+            ApiManager.shared.uploadInteractions(validIbeacons) { pushDelay in
                 print("updating last time push")
                 StorageManager.shared.setLastTimePush(timeOfPush)
+                StorageManager.shared.setPushInterval(pushDelay)
             }
         }
     }
@@ -91,7 +92,7 @@ class CoreManager {
         
         print("checking interactions to push")
         if let lastDatePush = StorageManager.shared.getLastTimePush(){
-            if lastDatePush.addingTimeInterval(Costants.Setup.secondsIntervalBetweenPushes) < Date(){
+            if lastDatePush.addingTimeInterval(StorageManager.shared.getPushInterval()) < Date(){
                 print("interval elapsed, time to push")
                 //push old interactions
                 if let ibeacons = StorageManager.shared.readIBeaconsNewerThanDate(lastDatePush){
@@ -108,30 +109,6 @@ class CoreManager {
         }
         // no interactions to push
     }
-    
-//    public static func pushInteractionsInBackground() {
-//        // will need to schedule this using the task scheduler
-//        // https://developer.apple.com/documentation/backgroundtasks/bgtaskscheduler
-//        // In this case, delegate handles setting last push time - we don't want to update it if the upload fails
-//        print("checking interactions to push")
-//        if let lastDatePush = StorageManager.shared.getLastTimePush(){
-//            if lastDatePush.addingTimeInterval(Costants.Setup.secondsIntervalBetweenPushes) < Date(){
-//                print("interval elapsed, time to push")
-//                //push old interactions
-//                if let ibeacons = StorageManager.shared.readIBeaconsNewerThanDate(lastDatePush){
-//                    ApiManager.shared.uploadInteractionsInBackground(ibeacons)
-//                }
-//            }else{
-//                print("no need to push yet")
-//            }
-//        }else{
-//            print("no last push found, pushing everything")
-//            if let ibeacons = StorageManager.shared.readAllIBeacons(){
-//                ApiManager.shared.uploadInteractionsInBackground(ibeacons)
-//            }
-//        }
-//
-//    }
     
     public static func addIBeacon(_ iBeacon : CLBeacon){
         print("addIbeacon", iBeacon)

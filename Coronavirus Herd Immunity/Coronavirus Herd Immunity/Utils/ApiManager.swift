@@ -14,7 +14,7 @@
 
 import Foundation
 
-class ApiManager: NSObject, URLSessionDelegate, URLSessionTaskDelegate {
+class ApiManager: NSObject, URLSessionDelegate, URLSessionTaskDelegate, URLSessionDataDelegate {
 
     private let endpoint_string = "http://api.coronaviruscheck.org"
     
@@ -31,6 +31,11 @@ class ApiManager: NSObject, URLSessionDelegate, URLSessionTaskDelegate {
         super.init()
     }
     
+    private struct pushResponse: Codable {
+        let data: String
+        let next_try: TimeInterval
+    }
+    
     func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithError error: Error?) {
         print("Data upload in background completed")
         if let error = error {
@@ -42,6 +47,23 @@ class ApiManager: NSObject, URLSessionDelegate, URLSessionTaskDelegate {
             StorageManager.shared.setLastTimePush(Date())
         }
     }
+    
+    func urlSession(_ session: URLSession, dataTask: URLSessionDataTask, didReceive response: URLResponse, completionHandler: @escaping (URLSession.ResponseDisposition) -> Void) {
+        completionHandler(.allow)
+    }
+    
+    func urlSession(_ session: URLSession, dataTask: URLSessionDataTask, didReceive data: Data) {
+        DispatchQueue.main.async {
+            do{
+                let response = try JSONDecoder().decode(pushResponse.self, from: data)
+                print(response)
+                StorageManager.shared.setPushInterval(response.next_try)
+              } catch let parsingError {
+                 print("Error", parsingError)
+            }
+        }
+    }
+    
     
     public func uploadInteractionsInBackground(_ devices: [IBeaconDto]) -> Void {
         // https://medium.com/livefront/uploading-data-in-the-background-in-ios-f93722013c6a
@@ -72,12 +94,12 @@ class ApiManager: NSObject, URLSessionDelegate, URLSessionTaskDelegate {
         }
     }
     
-    public func uploadInteractions(_ devices: [IBeaconDto], handler: @escaping () -> Void) -> Void {
+    public func uploadInteractions(_ devices: [IBeaconDto], handler: @escaping (TimeInterval) -> Void) -> Void {
         print("Upload called")
 
         if devices.isEmpty {
             print("Ending task. No interactions.")
-            handler()
+            handler(Constants.Setup.secondsIntervalBetweenPushes)
             return
         }
         
@@ -99,7 +121,17 @@ class ApiManager: NSObject, URLSessionDelegate, URLSessionTaskDelegate {
                         print(response ?? "Unknown server error")
                         return
                 }
-                handler()
+                if let data = data {
+                    DispatchQueue.main.async {
+                        do{
+                            let response = try JSONDecoder().decode(pushResponse.self, from: data)
+                            print(response)
+                            handler(response.next_try)
+                          } catch let parsingError {
+                             print("Error", parsingError)
+                        }
+                    }
+                }
             }
             //backgroundTask.earliestBeginDate = Date().addingTimeInterval(60 * 60)
             //backgroundTask.countOfBytesClientExpectsToSend = 200
@@ -141,36 +173,6 @@ class ApiManager: NSObject, URLSessionDelegate, URLSessionTaskDelegate {
         
         return uploadData
         
-    }
-    
-    public func getActiveInteractions(handler: @escaping (Int) -> Void) -> Void {
-        let url = URL(string: "\(endpoint_string)/count/")!
-        let task = URLSession.shared.dataTask(with: url) { data, response, error in
-            if let error = error {
-                // error handling
-                print(error)
-                return
-            }
-            guard let httpResponse = response as? HTTPURLResponse,
-                (200...299).contains(httpResponse.statusCode) else {
-                    // error handling
-                    print(response ?? "Unknown server error")
-                    return
-            }
-            if let data = data {
-                DispatchQueue.main.async {
-                    do{
-                        let jsonResponse = try JSONSerialization.jsonObject(with: data, options: [])
-                        print(jsonResponse)
-                        // will probably need some pre processing first
-                        handler(jsonResponse as? Int ?? 0)
-                      } catch let parsingError {
-                         print("Error", parsingError)
-                    }
-                }
-            }
-        }
-        task.resume()
     }
     
     public func getIsInfected(handler: @escaping (Bool) -> Void) -> Void {
@@ -226,7 +228,6 @@ class ApiManager: NSObject, URLSessionDelegate, URLSessionTaskDelegate {
         }
         
         struct ApiResponse: Codable {
-            let cache: Bool
             let id: Int64
         }
         

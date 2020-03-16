@@ -35,10 +35,10 @@ class IBeaconManager: NSObject, CBPeripheralManagerDelegate, CLLocationManagerDe
     private func createBeaconRegion() -> CLBeaconRegion? {
         if let idDevice = StorageManager.shared.getIdentifierDevice(){
             
-            let proximityUUID = UUID(uuidString: Costants.Setup.uuidCHIdevice)
+            let proximityUUID = UUID(uuidString: Constants.Setup.uuidCHIdevice)
             let major : CLBeaconMajorValue = CLBeaconMajorValue(Utils.getMajorFromInt(idDevice))
             let minor : CLBeaconMinorValue = CLBeaconMinorValue(Utils.getMinorFromInt(idDevice))
-            let beaconID = Costants.Setup.beaconCHIidentifier
+            let beaconID = Constants.Setup.beaconCHIidentifier
                 
             return CLBeaconRegion(proximityUUID: proximityUUID!, major: major, minor: minor, identifier: beaconID)
         }
@@ -101,9 +101,9 @@ class IBeaconManager: NSObject, CBPeripheralManagerDelegate, CLLocationManagerDe
     
     func registerListener() {
         print("registering region for iBeacon")
-        let uuid = UUID(uuidString: Costants.Setup.uuidCHIdevice)!
+        let uuid = UUID(uuidString: Constants.Setup.uuidCHIdevice)!
         
-        let beaconRegion = CLBeaconRegion(proximityUUID: uuid, identifier: Costants.Setup.beaconCHIidentifier)
+        let beaconRegion = CLBeaconRegion(proximityUUID: uuid, identifier: Constants.Setup.beaconCHIidentifier)
 
         locationManager.startMonitoring(for: beaconRegion)
         locationManager.startRangingBeacons(in: beaconRegion)

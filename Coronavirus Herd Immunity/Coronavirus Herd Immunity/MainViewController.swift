@@ -45,8 +45,8 @@ class MainViewController: StatusBarViewController {
         self.interactionsTotal.text = countInteractions
         print("TOTAL INTERACTIONS", countInteractions)
 
-        NotificationCenter.default.addObserver(self, selector: #selector(handleBluetoothChangeStatus), name: NSNotification.Name(Costants.Notification.bluetoothChangeStatus), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(handleLocationChangeStatus(notification:)), name: NSNotification.Name(Costants.Notification.locationChangeStatus), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleBluetoothChangeStatus), name: NSNotification.Name(Constants.Notification.bluetoothChangeStatus), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleLocationChangeStatus(notification:)), name: NSNotification.Name(Constants.Notification.locationChangeStatus), object: nil)
 
         if BluetoothManager.shared.getPermissionStatus() != .allowed{
             print("permission not allowed")

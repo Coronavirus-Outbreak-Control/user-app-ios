@@ -175,26 +175,38 @@ class StorageManager{
     }
     
     public func getLastTimePush() -> Date?{
-        let i = defaults.double(forKey: Costants.Setup.lastDatePushPreference)
-        if i < 1{
+        let i = defaults.double(forKey: Constants.Setup.lastDatePushPreference)
+        if i.isZero {
             return nil
         }
         return Date(timeIntervalSince1970: i)
     }
     
     public func setLastTimePush(_ date : Date){
-        defaults.set(date.timeIntervalSince1970, forKey: Costants.Setup.lastDatePushPreference)
-        defaults.synchronize()
+        defaults.set(date.timeIntervalSince1970, forKey: Constants.Setup.lastDatePushPreference)
+    }
+    
+    public func setPushInterval(_ time: TimeInterval) {
+        print("Setting push interval to: \(time)")
+        defaults.set(time, forKey: Constants.Setup.pushDelay)
+    }
+    
+    public func getPushInterval() -> TimeInterval {
+        let interval = defaults.double(forKey: Constants.Setup.pushDelay)
+        
+        if interval.isZero {
+            return Constants.Setup.secondsIntervalBetweenPushes
+        }
+        return interval
     }
     
     public func getIdentifierDevice() -> Int?{
-        let i = defaults.integer(forKey: Costants.Setup.identifierDevice)
+        let i = defaults.integer(forKey: Constants.Setup.identifierDevice)
         return i == 0 ? nil : i
     }
     
     public func setIdentifierDevice(_ identifierDevice : Int){
-        defaults.set(identifierDevice, forKey: Costants.Setup.identifierDevice)
-        defaults.synchronize()
+        defaults.set(identifierDevice, forKey: Constants.Setup.identifierDevice)
     }
     
     public func countDailyInteractions() -> Int{

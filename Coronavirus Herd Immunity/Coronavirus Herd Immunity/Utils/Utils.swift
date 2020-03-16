@@ -50,15 +50,15 @@ class Utils{
     }
     
     public static func getMinorFromInt(_ value : Int) -> Int{
-        return Int(value / Costants.Setup.moduleMinorMajorVersion)
+        return Int(value / Constants.Setup.moduleMinorMajorVersion)
     }
     
     public static func getMajorFromInt(_ value : Int) -> Int{
-        return Int(value % Costants.Setup.moduleMinorMajorVersion)
+        return Int(value % Constants.Setup.moduleMinorMajorVersion)
     }
     
     public static func buildIdentifierBy(minor: Int, major: Int) -> Int64{
-        return Int64(minor * Costants.Setup.moduleMinorMajorVersion + major)
+        return Int64(minor * Constants.Setup.moduleMinorMajorVersion + major)
     }
     
 }
