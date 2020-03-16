@@ -1,5 +1,5 @@
 //
-//  Costants.swift
+//  Constants.swift
 //  Coronavirus Herd Immunity
 //
 //  Created by Antonio Romano on 27/02/2020.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Costants {
+class Constants {
     
     class Notification{
         
@@ -32,8 +32,10 @@ class Costants {
         public static let identifierDevice = "chi.identifier.device"
         public static let totalInteractionsKey = "chi.interactions.total"
         public static let lastDatePushPreference = "chi.preference.lastDatePush"
+        public static let pushDelay = "chi.preference.pushDelay"
         
         public static let secondsIntervalBetweenPushes : TimeInterval = 3600 * 24
+        
         
         public static let scanTime : Double = 10
         public static let minRSSIPower : Double = -60

@@ -10,7 +10,7 @@ import Foundation
 
 class BackgroundManager{
     
-    public static func backroundOperations(){
+    public static func backgroundOperations(){
         if BluetoothManager.shared.isBluetoothUsable() && LocationManager.shared.getPermessionStatus() == .allowedAlways{
             print("background operations")
             IBeaconManager.shared.startAdvertiseDevice()

@@ -84,27 +84,27 @@ class BluetoothManager: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate
         switch central.state {
             case .poweredOff:
                 print("poweredOff")
-                NotificationCenter.default.post(name: NSNotification.Name(Costants.Notification.bluetoothChangeStatus), object: Status.off)
+                NotificationCenter.default.post(name: NSNotification.Name(Constants.Notification.bluetoothChangeStatus), object: Status.off)
                 break
             case .poweredOn:
                 print("poweredOn")
-                NotificationCenter.default.post(name: NSNotification.Name(Costants.Notification.bluetoothChangeStatus), object: Status.on)
+                NotificationCenter.default.post(name: NSNotification.Name(Constants.Notification.bluetoothChangeStatus), object: Status.on)
                 break
             case .resetting:
                 print("resetting")
-                NotificationCenter.default.post(name: NSNotification.Name(Costants.Notification.bluetoothChangeStatus), object: Status.resetting)
+                NotificationCenter.default.post(name: NSNotification.Name(Constants.Notification.bluetoothChangeStatus), object: Status.resetting)
                 break
             case .unauthorized:
                 print("unauthorized")
-                NotificationCenter.default.post(name: NSNotification.Name(Costants.Notification.bluetoothChangeStatus), object: Status.unauthorized)
+                NotificationCenter.default.post(name: NSNotification.Name(Constants.Notification.bluetoothChangeStatus), object: Status.unauthorized)
                 break
             case .unknown:
                 print("unknown")
-                NotificationCenter.default.post(name: NSNotification.Name(Costants.Notification.bluetoothChangeStatus), object: Status.notAvailable)
+                NotificationCenter.default.post(name: NSNotification.Name(Constants.Notification.bluetoothChangeStatus), object: Status.notAvailable)
                 break
             case .unsupported:
                 print("unsupported")
-                NotificationCenter.default.post(name: NSNotification.Name(Costants.Notification.bluetoothChangeStatus), object: Status.notAvailable)
+                NotificationCenter.default.post(name: NSNotification.Name(Constants.Notification.bluetoothChangeStatus), object: Status.notAvailable)
                 break
         }
     }
@@ -115,7 +115,7 @@ class BluetoothManager: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate
         // RSSI value in dBm; 127 is not available
         print("BLUETOOTH NAME", peripheral.name ?? "<NO-NAME>", peripheral.identifier, RSSI)
 
-        if Costants.Setup.minRSSIPower <= RSSI.doubleValue && RSSI.doubleValue <= Costants.Setup.maxRSSIPower{
+        if Constants.Setup.minRSSIPower <= RSSI.doubleValue && RSSI.doubleValue <= Constants.Setup.maxRSSIPower{
             
             
         }

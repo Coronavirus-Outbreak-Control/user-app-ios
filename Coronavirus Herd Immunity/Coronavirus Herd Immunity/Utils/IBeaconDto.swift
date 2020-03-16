@@ -16,7 +16,7 @@ class IBeaconDto: Codable, CustomDebugStringConvertible {
     public var interval : Double
     /* TODO: add lat and lng of type Double */
     
-    public init(identifier : Int64, timestamp : Date, rssi: Int64, interval : Double = Costants.Setup.minimumIntervalTime){
+    public init(identifier : Int64, timestamp : Date, rssi: Int64, interval : Double = Constants.Setup.minimumIntervalTime){
         self.timestamp = timestamp
         self.identifier = identifier
         self.rssi = rssi

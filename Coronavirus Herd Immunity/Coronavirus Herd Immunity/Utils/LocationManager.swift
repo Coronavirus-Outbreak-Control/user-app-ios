@@ -63,30 +63,30 @@ class LocationManager : NSObject, CLLocationManagerDelegate{
         switch status {
         case .authorizedAlways:
             self.startMonitoring()
-            NotificationCenter.default.post(name: NSNotification.Name(Costants.Notification.locationChangeStatus), object: AuthorizationStatus.allowedAlways)
+            NotificationCenter.default.post(name: NSNotification.Name(Constants.Notification.locationChangeStatus), object: AuthorizationStatus.allowedAlways)
             break
         case .authorizedWhenInUse:
             print("authorized in use :O")
-            NotificationCenter.default.post(name: NSNotification.Name(Costants.Notification.locationChangeStatus), object: AuthorizationStatus.allowedWhenInUse)
+            NotificationCenter.default.post(name: NSNotification.Name(Constants.Notification.locationChangeStatus), object: AuthorizationStatus.allowedWhenInUse)
             break
         case .denied:
-            NotificationCenter.default.post(name: NSNotification.Name(Costants.Notification.locationChangeStatus), object: AuthorizationStatus.denied)
+            NotificationCenter.default.post(name: NSNotification.Name(Constants.Notification.locationChangeStatus), object: AuthorizationStatus.denied)
             break
         case .notDetermined, .restricted:
-            NotificationCenter.default.post(name: NSNotification.Name(Costants.Notification.locationChangeStatus), object: AuthorizationStatus.notDetermined)
+            NotificationCenter.default.post(name: NSNotification.Name(Constants.Notification.locationChangeStatus), object: AuthorizationStatus.notDetermined)
             break
         }
     }
     
     func locationManager(_ manager: CLLocationManager, didVisit visit: CLVisit) {
       // create CLLocation from the coordinates of CLVisit
-        BackgroundManager.backroundOperations()
+        BackgroundManager.backgroundOperations()
         print("new visit received")
         IBeaconManager.shared.registerListener()
     }
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        BackgroundManager.backroundOperations()
+        BackgroundManager.backgroundOperations()
         print("new location received")
         IBeaconManager.shared.registerListener()
     }

@@ -34,7 +34,7 @@
 		C8A892E7240864E4007EA317 /* BluetoothOffViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A892E6240864E4007EA317 /* BluetoothOffViewController.swift */; };
 		C8A892EA240866CC007EA317 /* BluetoothManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A892E9240866CC007EA317 /* BluetoothManager.swift */; };
 		C8A892EC24086AC8007EA317 /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A892EB24086AC8007EA317 /* AlertManager.swift */; };
-		C8A892EE24087226007EA317 /* Costants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A892ED24087226007EA317 /* Costants.swift */; };
+		C8A892EE24087226007EA317 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A892ED24087226007EA317 /* Constants.swift */; };
 		C8B188D72402B14400CFEE98 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B188D62402B14400CFEE98 /* AppDelegate.swift */; };
 		C8B188D92402B14400CFEE98 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B188D82402B14400CFEE98 /* ViewController.swift */; };
 		C8B188DC2402B14400CFEE98 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8B188DA2402B14400CFEE98 /* Main.storyboard */; };
@@ -73,7 +73,7 @@
 		C8A892E6240864E4007EA317 /* BluetoothOffViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothOffViewController.swift; sourceTree = "<group>"; };
 		C8A892E9240866CC007EA317 /* BluetoothManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothManager.swift; sourceTree = "<group>"; };
 		C8A892EB24086AC8007EA317 /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
-		C8A892ED24087226007EA317 /* Costants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Costants.swift; sourceTree = "<group>"; };
+		C8A892ED24087226007EA317 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C8B188D32402B14400CFEE98 /* Coronavirus Herd Immunity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Coronavirus Herd Immunity.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8B188D62402B14400CFEE98 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C8B188D82402B14400CFEE98 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -132,7 +132,7 @@
 				ADD969502413B13F00F08295 /* ApiManager.swift */,
 				ADD969522413B5F900F08295 /* DeviceInfoManager.swift */,
 				C8C72E52241062210023797E /* CoreManager.swift */,
-				C8A892ED24087226007EA317 /* Costants.swift */,
+				C8A892ED24087226007EA317 /* Constants.swift */,
 				C8D61A23240C575800895DA9 /* IBeaconManager.swift */,
 				C81BA5CF240D969C00CFFA6F /* LocationManager.swift */,
 				C8A32575240A76F600FF1620 /* IBeaconDto.swift */,
@@ -313,7 +313,7 @@
 				C8368CC4241D303A000D32FB /* HowItWorks.swift in Sources */,
 				C84DAEDF241990C30043A1E4 /* BackgroundManager.swift in Sources */,
 				C842066F240BB23E00B8B45B /* Models.xcdatamodeld in Sources */,
-				C8A892EE24087226007EA317 /* Costants.swift in Sources */,
+				C8A892EE24087226007EA317 /* Constants.swift in Sources */,
 				ADD969512413B13F00F08295 /* ApiManager.swift in Sources */,
 				C88D06A7240715080005E029 /* HelpMoreViewController.swift in Sources */,
 				C8B2CF42240D9BAF005248B8 /* LocationViewController.swift in Sources */,
