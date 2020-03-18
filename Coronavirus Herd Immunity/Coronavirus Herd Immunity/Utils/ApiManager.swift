@@ -222,7 +222,7 @@ class ApiManager: NSObject, URLSessionDelegate, URLSessionTaskDelegate, URLSessi
         let apiRequest = ApiRequest(id: deviceId, push_id: notificationId, platform: "iOS")
         
         guard let uploadData = try? JSONEncoder().encode(apiRequest) else {
-            print("Failed to encode deviceInfo")
+            print("Failed to encode request")
             return
         }
         
