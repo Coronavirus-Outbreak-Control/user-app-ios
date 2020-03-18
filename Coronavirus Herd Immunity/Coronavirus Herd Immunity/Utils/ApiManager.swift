@@ -205,6 +205,46 @@ class ApiManager: NSObject, URLSessionDelegate, URLSessionTaskDelegate, URLSessi
         task.resume()
     }
     
+    public func setPushNotificationId(deviceId: Int64, notificationId: String) {
+        let url = URL(string: "\(endpoint_string)/device")!
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "PUT"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        
+        struct ApiRequest: Codable {
+            let id: Int64
+            let push_id: String
+            let platform: String
+        }
+        
+        let apiRequest = ApiRequest(id: deviceId, push_id: notificationId, platform: "iOS")
+        
+        guard let uploadData = try? JSONEncoder().encode(apiRequest) else {
+            print("Failed to encode request")
+            return
+        }
+        
+        request.httpBody = uploadData
+
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            if let error = error {
+                // error handling
+                print(error)
+                return
+            }
+            guard let httpResponse = response as? HTTPURLResponse,
+                (200...299).contains(httpResponse.statusCode) else {
+                    // error handling
+                    print(response ?? "Unknown server error")
+                    return
+            }
+            print("set push notification ID for device")
+        }
+        task.resume()
+        
+    }
     // Shouldn't have to call this more than once, ever.
     public func getNewDeviceId(id: String, model: String, version: String, handler: @escaping (Int64) -> Void) -> Void {
         let url = URL(string: "\(endpoint_string)/device/handshake")!
