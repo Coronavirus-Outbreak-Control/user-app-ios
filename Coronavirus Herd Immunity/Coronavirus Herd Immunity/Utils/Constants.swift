@@ -14,6 +14,7 @@ class Constants {
         
         public static let bluetoothChangeStatus = "bluetooth.changeStatus"
         public static let locationChangeStatus = "location.changeStatus"
+        public static let notificationChangeStatus = "notification.changeStatus"
         
         public static let bluetoothPoweredOnPermissionStatus = "bluetooth.on"
         public static let bluetoothPoweredOffPermissionStatus = "bluetooth.off"
@@ -29,7 +30,11 @@ class Constants {
         public static let uuidCHIdevice = "451720ea-5e62-11ea-bc55-0242ac130003"
         public static let beaconCHIidentifier = "com.coronaherdimmunity.myDeviceRegion"
         
+        public static let alreadyAccessed = "chi.identifier.access"
+        
+        public static let statusDevice = "chi.identifier.status"
         public static let identifierDevice = "chi.identifier.device"
+        public static let pushIdentifier = "chi.identifier.push-notification"
         public static let totalInteractionsKey = "chi.interactions.total"
         public static let lastDatePushPreference = "chi.preference.lastDatePush"
         public static let pushDelay = "chi.preference.pushDelay"

@@ -30,13 +30,14 @@ class BluetoothManager: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate
         super.init()
         
         if self.getPermissionStatus() == .allowed{
+            print("GONNA ASK BLUETOOTH CENTRAL MANAGER")
             self.centralManager = CBCentralManager(delegate: self, queue: nil)
         }
     }
     
     // check if permission is allowed and bluetooth is on
     func isBluetoothUsable() -> Bool{
-        return self.getPermissionStatus() == .allowed && self.getBluetoothStatus() == .on
+        return self.getPermissionStatus() == .allowed && (self.getBluetoothStatus() == .on || self.getBluetoothStatus() == .notAvailable)
     }
     
     func getPermissionStatus() -> PermissionStatus{
@@ -58,6 +59,7 @@ class BluetoothManager: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate
     }
     
     func askUserPermission(){
+        print("ASKING USER PERMISSION")
         self.centralManager = CBCentralManager(delegate: self, queue: nil)
     }
     

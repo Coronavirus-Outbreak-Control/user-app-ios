@@ -24,4 +24,9 @@ class HowItWorksViewController: StatusBarViewController {
         scrollView.contentSize = CGSize(width: view.bounds.width,
                                         height: 800)
     }
+    
+    @IBAction func backButton(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
 }

@@ -61,4 +61,13 @@ class Utils{
         return Int64(minor * Constants.Setup.moduleMinorMajorVersion + major)
     }
     
+    public static func isActive() -> Bool{
+        var notification = false
+        if let n = NotificationManager.shared.getStatus(){
+            notification = n == .allowed
+        }
+        return BluetoothManager.shared.isBluetoothUsable() &&
+        LocationManager.shared.getPermessionStatus() == .allowedAlways && notification
+    }
+    
 }

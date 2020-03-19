@@ -50,6 +50,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     private func startup(){
+        NotificationManager.shared.getStatus()
         if StorageManager.shared.getIdentifierDevice() == nil{
             print("generating new ID from server")
             ApiManager.shared.getNewDeviceId(id: DeviceInfoManager.getId(), model: DeviceInfoManager.getModel(), version: DeviceInfoManager.getVersion()) { deviceID in
@@ -58,6 +59,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //            StorageManager.shared.setIdentifierDevice(Utils.randomInt())
         }else{
             print("MY ID:", StorageManager.shared.getIdentifierDevice())
+            print("Token ID", StorageManager.shared.getPushId())
         }
         UIApplication.shared.setMinimumBackgroundFetchInterval(UIApplication.backgroundFetchIntervalMinimum)
     }
@@ -124,5 +126,41 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         StorageManager.shared.saveContext()
         self.registerListeners()
     }
+    
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        // 1. Convert device token to string
+        let tokenParts = deviceToken.map { data -> String in
+            return String(format: "%02.2hhx", data)
+        }
+        let token = tokenParts.joined()
+        // 2. Print device token to use for PNs payloads
+        print("Device Token: \(token)")
+        let bundleID = Bundle.main.bundleIdentifier;
+        print("Bundle ID: \(token) \(bundleID)");
+        
+        StorageManager.shared.setPushId(token)
+        // 3. Save the token to local storeage and post to app server to generate Push Notification. ...
+    }
+    
+    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        print("failed to register for remote notifications: \(error.localizedDescription)")
+    }
+    
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any]) {
+        print("Received push notification: \(userInfo)")
+        if let status = userInfo["status"] as? Int{
+            StorageManager.shared.setStatusUser(status)
+        }
+        
+        if let title = userInfo["status"] as? String{
+            
+            let subtitle = userInfo["subtitle"] as? String
+            
+            if let message = userInfo["message"] as? String{
+                NotificationManager.shared.showLocalNotification(title, subtitle: subtitle, message: message)
+            }
+        }
+    }
+    
 }
 

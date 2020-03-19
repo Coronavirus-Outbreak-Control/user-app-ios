@@ -145,10 +145,9 @@ class ApiManager: NSObject, URLSessionDelegate, URLSessionTaskDelegate, URLSessi
             let i: Int64  // id of this device
             let o: Int64  // id of the interacted device
             let w: Int64  //unix time expressed in seconds
-            let y: Double? //latitude of the position at interaction time: avoid if not available
-            let x: Double? //longitude of the position at interaction time: avoid if not available
             let t: Int    // time of interaction, default is 10
             let r: Int64 // rssi value
+            let p: String
         }
         
         var payload: [Interaction] = []
@@ -159,10 +158,9 @@ class ApiManager: NSObject, URLSessionDelegate, URLSessionTaskDelegate, URLSessi
                 i: Int64(deviceID),
                 o: device.identifier,
                 w: Int64(device.timestamp.timeIntervalSince1970),
-                y: nil,
-                x: nil,
                 t: Int(device.interval),
-                r: device.rssi)
+                r: device.rssi,
+                p: device.platform)
             payload.append(interaction)
         }
         

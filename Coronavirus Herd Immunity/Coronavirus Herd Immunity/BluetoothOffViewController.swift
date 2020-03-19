@@ -24,11 +24,16 @@ class BluetoothOffViewController: StatusBarViewController {
     
     func run(){
         NotificationCenter.default.addObserver(self, selector: #selector(changedBluetoothStatus(notification:)), name: NSNotification.Name(Constants.Notification.bluetoothChangeStatus), object: nil)
-        
+        print("RECEIVED STATUS", BluetoothManager.shared.getPermissionStatus(), BluetoothManager.shared.getBluetoothStatus())
         switch BluetoothManager.shared.getPermissionStatus() {
         case .allowed:
+            #if targetEnvironment(simulator)
+            // your code
+            print("is simulator")
+            self.goNext()
+            #endif
             if BluetoothManager.shared.getBluetoothStatus() == .on{
-                self.openMainViewController()
+                self.goNext()
             }
             if BluetoothManager.shared.getBluetoothStatus() == .off{
             }
@@ -39,7 +44,7 @@ class BluetoothOffViewController: StatusBarViewController {
             // we will wait for user to click on the button
             break
         case .notAvailable:
-            self.bluetoothNotAvailable()
+            self.goNext()
             break
         }
     }
@@ -57,7 +62,7 @@ class BluetoothOffViewController: StatusBarViewController {
         print("handling status: ", status)
         switch status {
         case .on:
-            self.openMainViewController()
+            self.goNext()
         case .off:
             self.bluetoothOff()
             break
@@ -66,7 +71,7 @@ class BluetoothOffViewController: StatusBarViewController {
             self.present(alert, animated: true)
             break
         case .notAvailable:
-            self.bluetoothNotAvailable()
+            self.goNext()
             break
         case .unauthorized:
             self.bluetoothDeniedOrUnauthorized()
@@ -82,17 +87,38 @@ class BluetoothOffViewController: StatusBarViewController {
             self.bluetoothDeniedOrUnauthorized()
             break
         case .notDetermined:
+            print("bluetooth off view asking permission")
             // we will wait for user to click on the button
             BluetoothManager.shared.askUserPermission()
             break
         case .notAvailable:
-            self.bluetoothNotAvailable()
+            self.goNext()
             break
         }
     }
     
-    func openMainViewController(){
-        print("dismissing view")
+    func goNext(){
+        print("dismissing view bluetooth")
+        
+        if StorageManager.shared.isFirstAccess(){
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let controller = storyboard.instantiateViewController(withIdentifier: "LocationViewController")
+            UIApplication.shared.windows.first?.rootViewController = controller
+            UIApplication.shared.windows.first?.makeKeyAndVisible()
+        }else{
+            if Utils.isActive(){
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let controller = storyboard.instantiateViewController(withIdentifier: "MainViewController")
+                UIApplication.shared.windows.first?.rootViewController = controller
+                UIApplication.shared.windows.first?.makeKeyAndVisible()
+            }else{
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let controller = storyboard.instantiateViewController(withIdentifier: "InactiveViewController")
+                UIApplication.shared.windows.first?.rootViewController = controller
+                UIApplication.shared.windows.first?.makeKeyAndVisible()
+            }
+        }
+        
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -136,6 +162,10 @@ class BluetoothOffViewController: StatusBarViewController {
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let nextViewController = storyBoard.instantiateViewController(withIdentifier: "HelpMoreViewController") as! HelpMoreViewController
         self.present(nextViewController, animated:true, completion:nil)
+    }
+    
+    @IBAction func skipNext(_ sender: Any) {
+        self.goNext()
     }
     
 }

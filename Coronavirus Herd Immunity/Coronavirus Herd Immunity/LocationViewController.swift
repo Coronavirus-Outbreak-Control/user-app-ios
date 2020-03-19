@@ -28,14 +28,38 @@ class LocationViewController : ViewController{
         print("change location status notification received")
         if let status = notification.object as? LocationManager.AuthorizationStatus{
             print(status)
-            return handleChangeAuthorizationStatus(status)
+            if status == .allowedAlways{
+                return self.goNext()
+            }
+//            return handleChangeAuthorizationStatus(status)
         }else{
             print("WTF LOCATION?")
         }
     }
     
-    func openMainViewController(){
-        print("dismissing view")
+    func goNext(){
+        print("dismissing view location")
+        
+        if StorageManager.shared.isFirstAccess(){
+            print("gonna open notification view")
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let controller = storyboard.instantiateViewController(withIdentifier: "NotificationViewController")
+            UIApplication.shared.windows.first?.rootViewController = controller
+            UIApplication.shared.windows.first?.makeKeyAndVisible()
+        }else{
+            if Utils.isActive(){
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let controller = storyboard.instantiateViewController(withIdentifier: "MainViewController")
+                UIApplication.shared.windows.first?.rootViewController = controller
+                UIApplication.shared.windows.first?.makeKeyAndVisible()
+            }else{
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let controller = storyboard.instantiateViewController(withIdentifier: "InactiveViewController")
+                UIApplication.shared.windows.first?.rootViewController = controller
+                UIApplication.shared.windows.first?.makeKeyAndVisible()
+            }
+        }
+        
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -49,7 +73,7 @@ class LocationViewController : ViewController{
         print("handleChangeAuthorizationStatus", status)
         switch status {
         case .allowedAlways:
-            return self.openMainViewController()
+            return self.goNext()
         case .allowedWhenInUse:
             let alert = AlertManager.getAlertConfirmation(title: NSLocalizedString("Location", comment: "location title alert"), message: NSLocalizedString("We need to access always the location, please Open Settings -> Coronavirus Herd Immunity -> Location -> Always", comment: "location open always"), confirmAction: {action in
                 guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
@@ -111,9 +135,10 @@ class LocationViewController : ViewController{
     }
     
     private func run(){
+        print("location status", LocationManager.shared.getPermessionStatus())
         switch LocationManager.shared.getPermessionStatus() {
         case .allowedAlways:
-            return self.openMainViewController()
+            return self.goNext()
         case .notAvailable:
             break
         case .notDetermined, .denied, .allowedWhenInUse:
@@ -122,5 +147,10 @@ class LocationViewController : ViewController{
             break
         }
     }
+    
+    @IBAction func skipNext(_ sender: Any) {
+        self.goNext()
+    }
+    
     
 }

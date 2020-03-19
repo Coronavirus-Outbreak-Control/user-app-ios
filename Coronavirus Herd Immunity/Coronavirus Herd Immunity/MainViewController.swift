@@ -22,20 +22,37 @@ class MainViewController: StatusBarViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        self.updateStatus()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.updateStatus()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.updateStatus()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        print("LOADING MAIN")
         self.run()
         
-        scrollView.contentSize = CGSize(width: view.bounds.width,
-        height: 800)
+        scrollView.contentSize = CGSize(width: view.bounds.width, height: 800)
+        self.updateStatus()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        self.updateStatus()
     }
     
     private func run(){
         
-        self.statusApp.text = "Active"
-        self.activeButton.titleLabel?.text = "Active"
+        self.updateStatus()
+        
+        let _ = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false, block: { timer in
+            self.updateStatus()
+        })
         
         if let identifierDevice = StorageManager.shared.getIdentifierDevice(){
             print("identifier device:", identifierDevice)
@@ -45,86 +62,39 @@ class MainViewController: StatusBarViewController {
         self.interactionsTotal.text = countInteractions
         print("TOTAL INTERACTIONS", countInteractions)
 
-        NotificationCenter.default.addObserver(self, selector: #selector(handleBluetoothChangeStatus), name: NSNotification.Name(Constants.Notification.bluetoothChangeStatus), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(handleLocationChangeStatus(notification:)), name: NSNotification.Name(Constants.Notification.locationChangeStatus), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(statusChanged), name: NSNotification.Name(Constants.Notification.bluetoothChangeStatus), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(statusChanged), name: NSNotification.Name(Constants.Notification.locationChangeStatus), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(statusChanged), name: NSNotification.Name(Constants.Notification.notificationChangeStatus), object: nil)
 
-        if BluetoothManager.shared.getPermissionStatus() != .allowed{
-            print("permission not allowed")
-            self.changeToBluetoothOffViewController()
-        }else{
-            print("blt status main", BluetoothManager.shared.getBluetoothStatus())
-            if BluetoothManager.shared.getBluetoothStatus() == .on{
-                return bluetoothAccessible()
-            }else{
-                if BluetoothManager.shared.getBluetoothStatus() != .notAvailable {
-                    self.changeToBluetoothOffViewController()
-                }
-            }
+    }
+    
+    @objc private func statusChanged(){
+        if !Utils.isActive(){
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let controller = storyboard.instantiateViewController(withIdentifier: "InactiveViewController")
+            UIApplication.shared.windows.first?.rootViewController = controller
+            UIApplication.shared.windows.first?.makeKeyAndVisible()
         }
     }
     
-    private func bluetoothAccessible(){
-        // start device as IBeacon
-        if BluetoothManager.shared.isBluetoothUsable(){
-            // TODO:
-            if LocationManager.shared.getPermessionStatus() == .allowedAlways{
-                //TODO: we are good
-                LocationManager.shared.requestAlwaysPermission()
-                IBeaconManager.shared.startAdvertiseDevice()
-                IBeaconManager.shared.registerListener()
-            }else{
-                self.changeToLocationViewController()
-            }
-            
-        }else{
-            print("ERROR")
-        }
-    }
-    
-    private func changeToLocationViewController(){
-        print("switching to location view controller")
-
-        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "LocationViewController") as! LocationViewController
-        nextViewController.modalPresentationStyle = .fullScreen
-        self.present(nextViewController, animated:true, completion:nil)
+    private func updateStatus(){
         
-    }
-    
-    private func changeToBluetoothOffViewController(){
-        print("switching to bluetooth off controller")
-        
-        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "BluetoothOffViewController") as! BluetoothOffViewController
-        nextViewController.modalPresentationStyle = .fullScreen
-        self.present(nextViewController, animated:true, completion:nil)
-        
-    }
-    
-    @objc private func handleLocationChangeStatus(notification: NSNotification){
-        print("new location status notification", notification)
-        if let status = notification.object as? LocationManager.AuthorizationStatus{
-            if status != .allowedAlways{
-                self.changeToLocationViewController()
-            }else{
-                self.bluetoothAccessible()
-            }
-        }else{
-            print("WTF?")
+        let statusUser = StorageManager.shared.getStatusUser()
+        if statusUser == 1{
+            print("INFECTED")
+            // infected
+            self.statusApp.text = "Infected"
+            self.activeButton.titleLabel?.text = "Infected"
+            self.statusApp.textColor = UIColor(red: 255/255, green: 111/255, blue: 97/255, alpha: 1)
+            self.activeButton.setTitleColor(UIColor(red: 255/255, green: 111/255, blue: 97/255, alpha: 1), for: .normal)
+        }else if statusUser == 4{
+            print("SUPECT")
+            self.statusApp.text = "Suspect"
+            self.activeButton.titleLabel?.text = "Suspect"
+            self.statusApp.textColor = UIColor(red: 255/255, green: 111/255, blue: 97/255, alpha: 1)
+            self.activeButton.setTitleColor(UIColor(red: 255/255, green: 111/255, blue: 97/255, alpha: 1), for: .normal)
         }
-    }
-    
-    @objc private func handleBluetoothChangeStatus(notification: NSNotification){
-        print("new blt status notification", notification)
-        if let status = notification.object as? BluetoothManager.Status{
-            if status != .on{
-                self.changeToBluetoothOffViewController()
-            }else{
-                self.bluetoothAccessible()
-            }
-        }else{
-            print("WTF?")
-        }
+        
     }
     
     @IBAction func showHowCanIHelpMore(_ sender: Any) {
