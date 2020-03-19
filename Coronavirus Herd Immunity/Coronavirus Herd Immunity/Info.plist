@@ -2,18 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>UIAppFonts</key>
-	<array>
-		<string>SF-Compact-Display-Heavy.otf</string>
-		<string>SF-Compact-Display-Thin.otf</string>
-		<string>SF-Compact-Display-Ultralight.otf</string>
-		<string>SF-Compact-Display-Regular.otf</string>
-		<string>SF-Compact-Display-Semibold.otf</string>
-		<string>SF-Compact-Display-Light.otf</string>
-		<string>SF-Compact-Display-Black.otf</string>
-		<string>SF-Compact-Display-Medium.otf</string>
-		<string>SF-Compact-Display-Bold.otf</string>
-	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
@@ -45,10 +33,23 @@
 	<string>To anonymously monitor your interactions we will ask you permission to use location.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>To anonymously monitor your interactions we will ask you permission to use location.</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>SF-Compact-Display-Heavy.otf</string>
+		<string>SF-Compact-Display-Thin.otf</string>
+		<string>SF-Compact-Display-Ultralight.otf</string>
+		<string>SF-Compact-Display-Regular.otf</string>
+		<string>SF-Compact-Display-Semibold.otf</string>
+		<string>SF-Compact-Display-Light.otf</string>
+		<string>SF-Compact-Display-Black.otf</string>
+		<string>SF-Compact-Display-Medium.otf</string>
+		<string>SF-Compact-Display-Bold.otf</string>
+	</array>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>fetch</string>
 		<string>location</string>
+		<string>remote-notification</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>

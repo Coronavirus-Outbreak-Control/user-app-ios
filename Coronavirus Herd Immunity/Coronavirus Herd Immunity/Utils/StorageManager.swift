@@ -209,6 +209,30 @@ class StorageManager{
         defaults.set(identifierDevice, forKey: Constants.Setup.identifierDevice)
     }
     
+    public func setPushId(_ id : String){
+        defaults.set(id, forKey: Constants.Setup.pushIdentifier)
+    }
+    
+    public func getPushId() -> String?{
+        defaults.string(forKey: Constants.Setup.pushIdentifier)
+    }
+    
+    public func setStatusUser(_ status : Int){
+        defaults.set(status, forKey: Constants.Setup.statusDevice)
+    }
+    
+    public func getStatusUser() -> Int{
+        defaults.integer(forKey: Constants.Setup.statusDevice)
+    }
+    
+    public func isFirstAccess() -> Bool{
+        return !defaults.bool(forKey: Constants.Setup.alreadyAccessed)
+    }
+    
+    public func setFirstAccess(_ status : Bool){
+        defaults.set(!status, forKey: Constants.Setup.alreadyAccessed)
+    }
+    
     public func countDailyInteractions() -> Int{
         let d : Date = Calendar.current.date(bySettingHour: 0, minute: 0, second: 0, of: Date())!
         let predicate = NSPredicate(format: "(%K >= %@)", IBeaconEntity.timestampKey, d as NSDate)

@@ -29,15 +29,32 @@ class ViewController: StatusBarViewController {
     }
 
     @IBAction func letsGetStarted(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: "MainViewController")
-        UIApplication.shared.windows.first?.rootViewController = controller
-        UIApplication.shared.windows.first?.makeKeyAndVisible()
+        
+        if StorageManager.shared.isFirstAccess(){
+            print("FIRST ACCESS")
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let controller = storyboard.instantiateViewController(withIdentifier: "BluetoothOffViewController")
+            UIApplication.shared.windows.first?.rootViewController = controller
+            UIApplication.shared.windows.first?.makeKeyAndVisible()
+        }else{
+            print("LATER ACCESS")
+            if Utils.isActive(){
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let controller = storyboard.instantiateViewController(withIdentifier: "MainViewController")
+                UIApplication.shared.windows.first?.rootViewController = controller
+                UIApplication.shared.windows.first?.makeKeyAndVisible()
+            }else{
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let controller = storyboard.instantiateViewController(withIdentifier: "InactiveViewController")
+                UIApplication.shared.windows.first?.rootViewController = controller
+                UIApplication.shared.windows.first?.makeKeyAndVisible()
+            }
+        }
         
     }
     
     @IBAction func howItWorks(_ sender: Any) {
-        
+        print("VIEW CONTROLLER")
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let nextViewController = storyBoard.instantiateViewController(withIdentifier: "HowItWorksViewController") as! HowItWorksViewController
         self.present(nextViewController, animated:true, completion:nil)

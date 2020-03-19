@@ -100,6 +100,10 @@ class IBeaconManager: NSObject, CBPeripheralManagerDelegate, CLLocationManagerDe
     }
     
     func registerListener() {
+        if !BluetoothManager.shared.isBluetoothUsable(){
+            print("bluetooth not usable!")
+            return
+        }
         print("registering region for iBeacon")
         let uuid = UUID(uuidString: Constants.Setup.uuidCHIdevice)!
         
