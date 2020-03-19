@@ -137,7 +137,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print("Device Token: \(token)")
         let bundleID = Bundle.main.bundleIdentifier;
         print("Bundle ID: \(token) \(bundleID)");
-        
+        if let idDevice = StorageManager.shared.getIdentifierDevice(){
+            ApiManager.shared.setPushNotificationId(deviceId: idDevice, notificationId: token)
+        }
         StorageManager.shared.setPushId(token)
         // 3. Save the token to local storeage and post to app server to generate Push Notification. ...
     }
