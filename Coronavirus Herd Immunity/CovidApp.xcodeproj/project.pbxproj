@@ -79,7 +79,7 @@
 		C8A892E9240866CC007EA317 /* BluetoothManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothManager.swift; sourceTree = "<group>"; };
 		C8A892EB24086AC8007EA317 /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
 		C8A892ED24087226007EA317 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		C8B188D32402B14400CFEE98 /* Coronavirus Herd Immunity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Coronavirus Herd Immunity.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8B188D32402B14400CFEE98 /* CovidApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CovidApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8B188D62402B14400CFEE98 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C8B188D82402B14400CFEE98 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C8B188DB2402B14400CFEE98 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -154,7 +154,7 @@
 		C8B188CA2402B14400CFEE98 = {
 			isa = PBXGroup;
 			children = (
-				C8B188D52402B14400CFEE98 /* Coronavirus Herd Immunity */,
+				C8B188D52402B14400CFEE98 /* CovidApp */,
 				C8B188D42402B14400CFEE98 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -162,12 +162,12 @@
 		C8B188D42402B14400CFEE98 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C8B188D32402B14400CFEE98 /* Coronavirus Herd Immunity.app */,
+				C8B188D32402B14400CFEE98 /* CovidApp.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		C8B188D52402B14400CFEE98 /* Coronavirus Herd Immunity */ = {
+		C8B188D52402B14400CFEE98 /* CovidApp */ = {
 			isa = PBXGroup;
 			children = (
 				C83CF003241D5C8A005849D4 /* Font */,
@@ -191,15 +191,15 @@
 				C8B188E22402B14600CFEE98 /* Info.plist */,
 				C8B861EA240ABD9C00B35CF2 /* MyPlayground.playground */,
 			);
-			path = "Coronavirus Herd Immunity";
+			path = CovidApp;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C8B188D22402B14400CFEE98 /* Coronavirus Herd Immunity */ = {
+		C8B188D22402B14400CFEE98 /* CovidApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C8B188E52402B14600CFEE98 /* Build configuration list for PBXNativeTarget "Coronavirus Herd Immunity" */;
+			buildConfigurationList = C8B188E52402B14600CFEE98 /* Build configuration list for PBXNativeTarget "CovidApp" */;
 			buildPhases = (
 				C8B188CF2402B14400CFEE98 /* Sources */,
 				C8B188D02402B14400CFEE98 /* Frameworks */,
@@ -210,12 +210,12 @@
 			);
 			dependencies = (
 			);
-			name = "Coronavirus Herd Immunity";
+			name = CovidApp;
 			packageProductDependencies = (
 				C80C3B36241AC9B70047B1DC /* Sentry */,
 			);
 			productName = "Coronavirus Herd Immunity";
-			productReference = C8B188D32402B14400CFEE98 /* Coronavirus Herd Immunity.app */;
+			productReference = C8B188D32402B14400CFEE98 /* CovidApp.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -233,7 +233,7 @@
 					};
 				};
 			};
-			buildConfigurationList = C8B188CE2402B14400CFEE98 /* Build configuration list for PBXProject "Coronavirus Herd Immunity" */;
+			buildConfigurationList = C8B188CE2402B14400CFEE98 /* Build configuration list for PBXProject "CovidApp" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -249,7 +249,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C8B188D22402B14400CFEE98 /* Coronavirus Herd Immunity */,
+				C8B188D22402B14400CFEE98 /* CovidApp */,
 			);
 		};
 /* End PBXProject section */
@@ -480,12 +480,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = G98YG7LCA8;
-				INFOPLIST_FILE = "Coronavirus Herd Immunity/Info.plist";
+				INFOPLIST_FILE = CovidApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.ios.Coronavirus-Herd-Immunity";
+				PRODUCT_BUNDLE_IDENTIFIER = org.covidapp.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
@@ -501,12 +501,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = G98YG7LCA8;
-				INFOPLIST_FILE = "Coronavirus Herd Immunity/Info.plist";
+				INFOPLIST_FILE = CovidApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.ios.Coronavirus-Herd-Immunity";
+				PRODUCT_BUNDLE_IDENTIFIER = org.covidapp.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
@@ -517,7 +517,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C8B188CE2402B14400CFEE98 /* Build configuration list for PBXProject "Coronavirus Herd Immunity" */ = {
+		C8B188CE2402B14400CFEE98 /* Build configuration list for PBXProject "CovidApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C8B188E32402B14600CFEE98 /* Debug */,
@@ -526,7 +526,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C8B188E52402B14600CFEE98 /* Build configuration list for PBXNativeTarget "Coronavirus Herd Immunity" */ = {
+		C8B188E52402B14600CFEE98 /* Build configuration list for PBXNativeTarget "CovidApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C8B188E62402B14600CFEE98 /* Debug */,
