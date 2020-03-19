@@ -20,6 +20,7 @@ class StorageManager{
     private class IBeaconEntity{
         static let entityName = "IBeacon"
         static let identifierKey = "identifier"
+        static let distanceKey = "distance"
         static let rssiKey = "rssi"
         static let timestampKey = "timestamp"
     }
@@ -60,7 +61,8 @@ class StorageManager{
         return IBeaconDto(
             identifier: object.value(forKey: IBeaconEntity.identifierKey) as! Int64,
             timestamp: object.value(forKey: IBeaconEntity.timestampKey) as! Date,
-            rssi: object.value(forKey: IBeaconEntity.rssiKey) as! Int64
+            rssi: object.value(forKey: IBeaconEntity.rssiKey) as! Int64,
+            distance: object.value(forKey: IBeaconEntity.distanceKey) as! Int
         )
     }
     
@@ -72,6 +74,7 @@ class StorageManager{
         ibeacon.setValue(iBeaconInput.identifier, forKeyPath: IBeaconEntity.identifierKey)
         ibeacon.setValue(iBeaconInput.rssi, forKeyPath: IBeaconEntity.rssiKey)
         ibeacon.setValue(iBeaconInput.timestamp, forKeyPath: IBeaconEntity.timestampKey)
+        ibeacon.setValue(iBeaconInput.distance, forKeyPath: IBeaconEntity.distanceKey)
         
         do {
             try self.persistentContainer.viewContext.save()

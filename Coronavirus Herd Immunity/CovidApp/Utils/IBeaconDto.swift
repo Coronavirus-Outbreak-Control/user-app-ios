@@ -15,19 +15,29 @@ class IBeaconDto: Codable, CustomDebugStringConvertible {
     public var rssi : Int64
     public var interval : Double
     public var platform : String
+    public var distance : Int
     /* TODO: add lat and lng of type Double */
     
-    public init(identifier : Int64, timestamp : Date, rssi: Int64, interval : Double = Constants.Setup.minimumIntervalTime){
+    public init(identifier : Int64, timestamp : Date, rssi: Int64, distance : Int, interval : Double = Constants.Setup.minimumIntervalTime){
         self.timestamp = timestamp
         self.identifier = identifier
         self.rssi = rssi
         self.interval = interval
         self.platform = "i"
+        self.distance = distance
     }
     
     
     var debugDescription: String{
-        return "id: \(self.identifier), timestamp: \(self.timestamp), rssi: \(self.rssi), interval: \(self.interval)"
+        var d = "f"
+        if self.distance == 1{
+            d = "i"
+        }
+        if self.distance == 2{
+            d = "n"
+        }
+        
+        return "id: \(self.identifier), timestamp: \(self.timestamp), rssi: \(self.rssi), distance: \(d), interval: \(self.interval)"
     }
     
 }

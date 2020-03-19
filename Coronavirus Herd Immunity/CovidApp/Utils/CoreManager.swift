@@ -24,6 +24,7 @@ class CoreManager {
         }
         
         var rssis = [Int64]()
+        var distances = [Int]()
         var interval = 0.0
         var lastDate : Date? = nil
         let identifier = ibeacons[0].identifier
@@ -33,13 +34,17 @@ class CoreManager {
                 interval += abs(d.timeIntervalSince(beacon.timestamp))
             }
             rssis.append(beacon.rssi)
+            distances.append(beacon.distance)
             lastDate = beacon.timestamp
         }
         // add the minimum interval to take into account the last interaction
         interval += Constants.Setup.minimumIntervalTime
         
-        let res = IBeaconDto(identifier: identifier, timestamp: ibeacons[0].timestamp,
-                             rssi: rssis.sorted(by: <)[rssis.count / 2], interval: max(interval, Constants.Setup.minimumIntervalTime))
+        let res = IBeaconDto(identifier: identifier,
+                             timestamp: ibeacons[0].timestamp,
+                             rssi: rssis.sorted(by: <)[rssis.count / 2],
+                             distance: distances.sorted(by: <)[distances.count / 2],
+                             interval: max(interval, Constants.Setup.minimumIntervalTime))
 //        print("WILL RETURN", res)
         return res
     }
@@ -99,7 +104,7 @@ class CoreManager {
                     CoreManager.prepareAndPush(ibeacons, isBackground: isBackground)
                 }
             }else{
-                print("no need to push yet last time was", lastDatePush)
+                print("no need to push yet last time was", lastDatePush, "next at", lastDatePush.addingTimeInterval(StorageManager.shared.getPushInterval()))
             }
         }else{
             print("no last push found, pushing everything")
@@ -116,7 +121,8 @@ class CoreManager {
         let ib : IBeaconDto = IBeaconDto(
             identifier: uuid,
             timestamp: Date(),
-            rssi: Int64(iBeacon.rssi))
+            rssi: Int64(iBeacon.rssi),
+            distance: iBeacon.proximity.rawValue)
         
         StorageManager.shared.saveIBeacon(ib)
         
