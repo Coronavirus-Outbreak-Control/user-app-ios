@@ -99,26 +99,31 @@ class IBeaconManager: NSObject, CBPeripheralManagerDelegate, CLLocationManagerDe
         }
     }
     
+    private func regionToMonitor() -> CLBeaconRegion{
+        let uuid = UUID(uuidString: Constants.Setup.uuidCHIdevice)!
+        return CLBeaconRegion(proximityUUID: uuid, identifier: Constants.Setup.beaconCHIidentifier)
+    }
+    
     func registerListener() {
         if !BluetoothManager.shared.isBluetoothUsable(){
             print("bluetooth not usable!")
             return
         }
         print("registering region for iBeacon")
-        let uuid = UUID(uuidString: Constants.Setup.uuidCHIdevice)!
         
-        let beaconRegion = CLBeaconRegion(proximityUUID: uuid, identifier: Constants.Setup.beaconCHIidentifier)
-
-        locationManager.startMonitoring(for: beaconRegion)
-        locationManager.startRangingBeacons(in: beaconRegion)
+        locationManager.stopMonitoring(for: self.regionToMonitor())
+        locationManager.startMonitoring(for: self.regionToMonitor())
+        locationManager.startRangingBeacons(in: self.regionToMonitor())
     }
     
     func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
         print("did enter region")
+        self.registerListener()
     }
     
     func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
         print("did exit region")
+        self.registerListener()
     }
     
     func locationManager(_ manager: CLLocationManager, monitoringDidFailFor region: CLRegion?, withError error: Error) {

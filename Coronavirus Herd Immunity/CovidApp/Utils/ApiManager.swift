@@ -148,19 +148,29 @@ class ApiManager: NSObject, URLSessionDelegate, URLSessionTaskDelegate, URLSessi
             let t: Int    // time of interaction, default is 10
             let r: Int64 // rssi value
             let p: String
+            let d: String
         }
         
         var payload: [Interaction] = []
         let deviceID = StorageManager.shared.getIdentifierDevice()!
         
         for device in devices {
+            var distance = "f"
+            if device.distance == 1{
+                distance = "i"
+            }
+            if device.distance == 2{
+                distance = "n"
+            }
+            
             let interaction = Interaction(
                 i: Int64(deviceID),
                 o: device.identifier,
                 w: Int64(device.timestamp.timeIntervalSince1970),
                 t: Int(device.interval),
                 r: device.rssi,
-                p: device.platform)
+                p: device.platform,
+                d: distance)
             payload.append(interaction)
         }
         
