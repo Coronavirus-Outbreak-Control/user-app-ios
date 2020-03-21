@@ -1,0 +1,42 @@
+
+/* bluetooth title alert */
+"Bluetooth" = "Bluetooth";
+
+/* notification open */
+"If you’ve been close to an infected person in the past two weeks we will notify you. That’s it, just one notification." = "Se você esteve próximo de uma pessoa infectada nas últimas duas semanas, te notificaremos. É só isso, apenas uma notificação.";
+
+/* location title alert */
+"Location" = "Localização";
+
+/* notification title alert */
+"Notification" = "Notificação";
+
+/* bluetooth unavailable */
+"The bluetooth seems to be resetting, please try later" = "O bluetooth parece estar sendo redefinido. Tente mais tarde";
+
+/* bluetooth unavailable */
+"The bluetooth seems to be unavailable on your device" = "O bluetooth parece estar indisponível no seu dispositivo";
+
+/* location unavailable */
+"The location seems to be unavailable on your device" = "O local parece estar indisponível no seu dispositivo";
+
+/* location open always */
+"We need to access always the location, please Open Settings -> Coronavirus Herd Immunity -> Location -> Always" = "Precisamos sempre acessar o local, abra Configurações -> Imunidade a Coronavírus -> Localização -> Sempre";
+
+/* bluetooth open app settings */
+"We need to access the bluetooth, please Open Settings -> Coronavirus Herd Immunity -> enable bluetooth access" = "Precisamos acessar o bluetooth, abra Configurações -> Imunidade a rebanhos de coronavírus -> habilite o acesso ao bluetooth";
+
+/* location open  */
+"We need to access the location, please Open Settings -> Coronavirus Herd Immunity -> enable location access" = "Precisamos acessar o local. Abra Configurações -> Imunidade a Rebanhos Coronavírus -> habilite o acesso ao local";
+
+/* bluetooth off */
+"You need to enable the bluetooth, please Open Settings -> Bluetooth -> enable bluetooth" = "Você precisa habilitar o bluetooth. Abra Configurações -> Bluetooth -> habilitar bluetooth";
+
+/* location denied */
+"You need to enable the location, please Open Settings -> Privacy -> Location services" = "Você precisa habilitar o local. Abra Configurações -> Privacidade -> Serviços de localização";
+
+/* Infected status */
+"Infected" = "Infectada";
+
+/* Suspect status */
+"Suspect" = "Suspeito";

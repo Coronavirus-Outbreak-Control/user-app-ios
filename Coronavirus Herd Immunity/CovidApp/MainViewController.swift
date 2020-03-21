@@ -56,7 +56,7 @@ class MainViewController: StatusBarViewController {
         
         if let identifierDevice = StorageManager.shared.getIdentifierDevice(){
             print("identifier device:", identifierDevice)
-            self.qrCodeImage.image = Utils.generateQRCode(from: identifierDevice.description)
+            self.qrCodeImage.image = Utils.generateQRCode(deviceId: identifierDevice.description)
         }
         let countInteractions = StorageManager.shared.countTotalInteractions().description
         self.interactionsTotal.text = countInteractions

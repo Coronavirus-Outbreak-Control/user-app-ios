@@ -27,8 +27,9 @@ class Utils{
         return dateFormatter.string(from: date)
     }
     
-    public static func generateQRCode(from string: String) -> UIImage? {
-        let data = string.data(using: String.Encoding.ascii)
+    public static func generateQRCode(_ deviceId: String) -> UIImage? {
+        let formatted = "covid-outbreak-control:" + deviceId
+        let data = formatted.data(using: String.Encoding.ascii)
 
         if let filter = CIFilter(name: "CIQRCodeGenerator") {
             filter.setValue(data, forKey: "inputMessage")
