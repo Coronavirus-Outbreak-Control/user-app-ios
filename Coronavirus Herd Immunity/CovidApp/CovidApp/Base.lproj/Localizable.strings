@@ -34,3 +34,9 @@
 
 /* location denied */
 "You need to enable the location, please Open Settings -> Privacy -> Location services" = "";
+
+/* Infected status */
+"Infected" = "";
+
+/* Suspect status */
+"Suspect" = "";

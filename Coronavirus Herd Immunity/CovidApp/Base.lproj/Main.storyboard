@@ -74,10 +74,8 @@ to an infected person, up to 14 days back.</string>
                                                     <constraint firstAttribute="height" constant="3" id="cfA-ap-CY2"/>
                                                 </constraints>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6xm-br-pwN">
-                                                <rect key="frame" x="44" y="561.5" width="326" height="38.5"/>
-                                                <string key="text">You will be alerted when you’ve been close
-to an infected person, up to 14 days back.</string>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your status, and others in the network will be validated by professional medical staff by scanning the QR code in your app." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6xm-br-pwN">
+                                                <rect key="frame" x="44" y="561.5" width="326" height="57.5"/>
                                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="16"/>
                                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>

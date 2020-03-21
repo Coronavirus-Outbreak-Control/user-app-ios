@@ -83,14 +83,14 @@ class MainViewController: StatusBarViewController {
         if statusUser == 1{
             print("INFECTED")
             // infected
-            self.statusApp.text = "Infected"
-            self.activeButton.titleLabel?.text = "Infected"
+            self.statusApp.text = NSLocalizedString("Infected", comment: "Infected status")
+            self.activeButton.titleLabel?.text = NSLocalizedString("Infected", comment: "Infected status")
             self.statusApp.textColor = UIColor(red: 255/255, green: 111/255, blue: 97/255, alpha: 1)
             self.activeButton.setTitleColor(UIColor(red: 255/255, green: 111/255, blue: 97/255, alpha: 1), for: .normal)
         }else if statusUser == 4{
             print("SUPECT")
-            self.statusApp.text = "Suspect"
-            self.activeButton.titleLabel?.text = "Suspect"
+            self.statusApp.text = NSLocalizedString("Suspect", comment: "Suspect status")
+            self.activeButton.titleLabel?.text = NSLocalizedString("Suspect", comment: "Suspect status")
             self.statusApp.textColor = UIColor(red: 255/255, green: 111/255, blue: 97/255, alpha: 1)
             self.activeButton.setTitleColor(UIColor(red: 255/255, green: 111/255, blue: 97/255, alpha: 1), for: .normal)
         }
