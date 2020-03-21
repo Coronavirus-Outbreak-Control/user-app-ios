@@ -78,6 +78,12 @@ class LocationManager : NSObject, CLLocationManagerDelegate{
         }
     }
     
+    public func getLocationAndUpdate() -> CLLocation?{
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
+        self.locationManager.requestLocation()
+        return self.locationManager.location
+    }
+    
     func locationManager(_ manager: CLLocationManager, didVisit visit: CLVisit) {
       // create CLLocation from the coordinates of CLVisit
         BackgroundManager.backgroundOperations()

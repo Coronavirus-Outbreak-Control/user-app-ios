@@ -23,6 +23,8 @@ class StorageManager{
         static let distanceKey = "distance"
         static let rssiKey = "rssi"
         static let timestampKey = "timestamp"
+        static let latKey = "lat"
+        static let lonKey = "lon"
     }
     
     public static var shared : StorageManager = StorageManager()
@@ -62,7 +64,9 @@ class StorageManager{
             identifier: object.value(forKey: IBeaconEntity.identifierKey) as! Int64,
             timestamp: object.value(forKey: IBeaconEntity.timestampKey) as! Date,
             rssi: object.value(forKey: IBeaconEntity.rssiKey) as! Int64,
-            distance: object.value(forKey: IBeaconEntity.distanceKey) as! Int
+            distance: object.value(forKey: IBeaconEntity.distanceKey) as! Int,
+            lat: object.value(forKey: IBeaconEntity.latKey) as! Double,
+            lon: object.value(forKey: IBeaconEntity.lonKey) as! Double
         )
     }
     
@@ -75,6 +79,8 @@ class StorageManager{
         ibeacon.setValue(iBeaconInput.rssi, forKeyPath: IBeaconEntity.rssiKey)
         ibeacon.setValue(iBeaconInput.timestamp, forKeyPath: IBeaconEntity.timestampKey)
         ibeacon.setValue(iBeaconInput.distance, forKeyPath: IBeaconEntity.distanceKey)
+        ibeacon.setValue(iBeaconInput.lat, forKey: IBeaconEntity.latKey)
+        ibeacon.setValue(iBeaconInput.lon, forKey: IBeaconEntity.lonKey)
         
         do {
             try self.persistentContainer.viewContext.save()
@@ -234,6 +240,14 @@ class StorageManager{
     
     public func setFirstAccess(_ status : Bool){
         defaults.set(!status, forKey: Constants.Setup.alreadyAccessed)
+    }
+    
+    public func setLocationNeeded(_ locationNeeded : Bool){
+        defaults.set(locationNeeded, forKey: Constants.Setup.locationNeeded)
+    }
+    
+    public func getLocationNeeded() -> Bool{
+        return defaults.bool(forKey: Constants.Setup.locationNeeded)
     }
     
     public func countDailyInteractions() -> Int{
