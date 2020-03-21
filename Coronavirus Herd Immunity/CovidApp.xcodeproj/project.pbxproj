@@ -39,13 +39,14 @@
 		C8A892EE24087226007EA317 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A892ED24087226007EA317 /* Constants.swift */; };
 		C8B188D72402B14400CFEE98 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B188D62402B14400CFEE98 /* AppDelegate.swift */; };
 		C8B188D92402B14400CFEE98 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B188D82402B14400CFEE98 /* ViewController.swift */; };
-		C8B188DC2402B14400CFEE98 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8B188DA2402B14400CFEE98 /* Main.storyboard */; };
 		C8B188DE2402B14600CFEE98 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8B188DD2402B14600CFEE98 /* Assets.xcassets */; };
 		C8B188E12402B14600CFEE98 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8B188DF2402B14600CFEE98 /* LaunchScreen.storyboard */; };
 		C8B2CF42240D9BAF005248B8 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B2CF41240D9BAF005248B8 /* LocationViewController.swift */; };
 		C8B861E9240ABD0600B35CF2 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B861E8240ABD0600B35CF2 /* Utils.swift */; };
 		C8C72E53241062210023797E /* CoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C72E52241062210023797E /* CoreManager.swift */; };
 		C8D61A24240C575800895DA9 /* IBeaconManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D61A23240C575800895DA9 /* IBeaconManager.swift */; };
+		C8DD58CA24262755004C54CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8B188DA2402B14400CFEE98 /* Main.storyboard */; };
+		C8DD58D324263122004C54CA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C8DD58D124263122004C54CA /* Localizable.strings */; };
 		C8FD2DD5242251B0004D2E84 /* InactiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FD2DD4242251B0004D2E84 /* InactiveViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -91,6 +92,10 @@
 		C8B861EA240ABD9C00B35CF2 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		C8C72E52241062210023797E /* CoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreManager.swift; sourceTree = "<group>"; };
 		C8D61A23240C575800895DA9 /* IBeaconManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBeaconManager.swift; sourceTree = "<group>"; };
+		C8DD58D024262F1B004C54CA /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		C8DD58D224263122004C54CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = CovidApp/Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		C8DD58D52426317B004C54CA /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = CovidApp/it.lproj/Localizable.strings; sourceTree = "<group>"; };
+		C8DD58D7242634BB004C54CA /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Main.strings; sourceTree = "<group>"; };
 		C8FD2DD4242251B0004D2E84 /* InactiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InactiveViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -185,6 +190,7 @@
 				C8595876241D3C6B0060F2F3 /* StatusBarViewController.swift */,
 				C8B188D82402B14400CFEE98 /* ViewController.swift */,
 				C8B188DA2402B14400CFEE98 /* Main.storyboard */,
+				C8DD58D124263122004C54CA /* Localizable.strings */,
 				C8A32570240A759300FF1620 /* Models.xcdatamodeld */,
 				C8B188DD2402B14600CFEE98 /* Assets.xcassets */,
 				C8B188DF2402B14600CFEE98 /* LaunchScreen.storyboard */,
@@ -205,6 +211,7 @@
 				C8B188D02402B14400CFEE98 /* Frameworks */,
 				C8B188D12402B14400CFEE98 /* Resources */,
 				C80C3B38241ACBA80047B1DC /* ShellScript */,
+				C8DD58D424263141004C54CA /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -240,6 +247,7 @@
 			knownRegions = (
 				en,
 				Base,
+				it,
 			);
 			mainGroup = C8B188CA2402B14400CFEE98;
 			packageReferences = (
@@ -262,15 +270,16 @@
 				C83CF028241D5E13005849D4 /* SF-Compact-Display-Light.otf in Resources */,
 				C83CF02C241D5E13005849D4 /* SF-Compact-Display-Thin.otf in Resources */,
 				C8B188E12402B14600CFEE98 /* LaunchScreen.storyboard in Resources */,
+				C8DD58CA24262755004C54CA /* Main.storyboard in Resources */,
 				C83CF029241D5E13005849D4 /* SF-Compact-Display-Medium.otf in Resources */,
 				C83CF027241D5E13005849D4 /* SF-Compact-Display-Heavy.otf in Resources */,
 				C83CF02B241D5E13005849D4 /* SF-Compact-Display-Semibold.otf in Resources */,
 				C83CF025241D5E13005849D4 /* SF-Compact-Display-Black.otf in Resources */,
 				C83CF02D241D5E13005849D4 /* SF-Compact-Display-Ultralight.otf in Resources */,
+				C8DD58D324263122004C54CA /* Localizable.strings in Resources */,
 				C83CF02A241D5E13005849D4 /* SF-Compact-Display-Regular.otf in Resources */,
 				C8B188DE2402B14600CFEE98 /* Assets.xcassets in Resources */,
 				C83CF026241D5E13005849D4 /* SF-Compact-Display-Bold.otf in Resources */,
-				C8B188DC2402B14400CFEE98 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,6 +303,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if which sentry-cli >/dev/null; then\nexport SENTRY_ORG=coronavirus-herd-immunity\nexport SENTRY_PROJECT=coronavirus-herd-immunity\nexport SENTRY_AUTH_TOKEN=a4ef67e276344189a4a4e0b44aef0e44a58d4411d79549cf845b134791672765\nERROR=$(sentry-cli upload-dif \"$DWARF_DSYM_FOLDER_PATH\" 2>&1 >/dev/null)\nif [ ! $? -eq 0 ]; then\necho \"warning: sentry-cli - $ERROR\"\nfi\nelse\necho \"warning: sentry-cli not installed, download from https://github.com/getsentry/sentry-cli/releases\"\nfi\n";
+		};
+		C8DD58D424263141004C54CA /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which bartycrouch > /dev/null; then\n    bartycrouch update -x\n    bartycrouch lint -x\nelse\n    echo \"warning: BartyCrouch not installed, download it from https://github.com/Flinesoft/BartyCrouch\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -339,6 +365,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				C8B188DB2402B14400CFEE98 /* Base */,
+				C8DD58D7242634BB004C54CA /* it */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -347,8 +374,18 @@
 			isa = PBXVariantGroup;
 			children = (
 				C8B188E02402B14600CFEE98 /* Base */,
+				C8DD58D024262F1B004C54CA /* it */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		C8DD58D124263122004C54CA /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C8DD58D224263122004C54CA /* Base */,
+				C8DD58D52426317B004C54CA /* it */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

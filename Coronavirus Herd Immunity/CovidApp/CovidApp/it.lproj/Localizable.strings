@@ -1,0 +1,42 @@
+
+/* bluetooth title alert */
+"Bluetooth" = "Bluetooth";
+
+/* notification open */
+"If you’ve been close to an infected person in the past two weeks we will notify you. That’s it, just one notification." = "Se sei stato vicino a una persona infetta nelle ultime due settimane, ti faremo sapere. Tutto qui, solo una notica.";
+
+/* location title alert */
+"Location" = "Posizione";
+
+/* notification title alert */
+"Notification" = "Notifiche";
+
+/* bluetooth unavailable */
+"The bluetooth seems to be resetting, please try later" = "Il bluetooth sembra essere non disponibile, riprova più tardi";
+
+/* bluetooth unavailable */
+"The bluetooth seems to be unavailable on your device" = "Il bluetooth sembra non essere disponibile sul tuo dispositivo";
+
+/* location unavailable */
+"The location seems to be unavailable on your device" = "La posizione sembra non essere disponibile sul tuo dispositivo";
+
+/* location open always */
+"We need to access always the location, please Open Settings -> Coronavirus Herd Immunity -> Location -> Always" = "Abbiamo bisogno di accedere alla posizione costantemente, puoi abilitare i permessi da Impostazioni -> App -> Posizione -> Sempre";
+
+/* bluetooth open app settings */
+"We need to access the bluetooth, please Open Settings -> Coronavirus Herd Immunity -> enable bluetooth access" = "Abbiamo bisogno del bluetooth, apri Impostazioni -> Bluetooth -> abilita";
+
+/* location open  */
+"We need to access the location, please Open Settings -> Coronavirus Herd Immunity -> enable location access" = "Abbiamo bisogno della posizione, apri Impostazioni -> Privacy -> Servizi di localizzazione -> abilita";
+
+/* bluetooth off */
+"You need to enable the bluetooth, please Open Settings -> Bluetooth -> enable bluetooth" = "Devi abilitare il bluetooth, apri Impostazioni -> Bluetooth -> abilita bluetooth";
+
+/* location denied */
+"You need to enable the location, please Open Settings -> Privacy -> Location services" = "Devi abilitare la posizione, apri Impostazioni -> Privacy -> Servizi di localizzazione";
+
+/* Infected status */
+"Infected" = "Infetto";
+
+/* Suspect status */
+"Suspect" = "Sospetto";
