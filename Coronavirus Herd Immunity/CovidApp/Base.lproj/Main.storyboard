@@ -642,17 +642,14 @@ distance from other devices.</string>
                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="62D-qb-l2v">
-                                <rect key="frame" x="40" y="245" width="246" height="72"/>
-                                <string key="text">We need your permission to
-use Location to monitor your
-distance from other devices.</string>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To monitor more accurately your interactions we will ask you permission to use Location." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="62D-qb-l2v">
+                                <rect key="frame" x="40" y="245" width="334" height="72"/>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="20"/>
                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="It's anonymous." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vek-Pm-sYO">
-                                <rect key="frame" x="40" y="320" width="137" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="And It's anonymous." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vek-Pm-sYO">
+                                <rect key="frame" x="40" y="320" width="176.5" height="24"/>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="20"/>
                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -664,6 +661,7 @@ distance from other devices.</string>
                             <constraint firstItem="Olv-kI-5Pz" firstAttribute="leading" secondItem="UTF-Ww-8a0" secondAttribute="leading" constant="40" id="7hV-ZR-FGF"/>
                             <constraint firstAttribute="bottom" secondItem="R4q-uu-z6X" secondAttribute="bottom" id="FPK-sT-W8u"/>
                             <constraint firstItem="R4q-uu-z6X" firstAttribute="leading" secondItem="UTF-Ww-8a0" secondAttribute="leading" id="HtE-J4-F0H"/>
+                            <constraint firstItem="UTF-Ww-8a0" firstAttribute="trailing" secondItem="62D-qb-l2v" secondAttribute="trailing" constant="40" id="KvV-be-DZQ"/>
                             <constraint firstItem="G2h-W9-Xd9" firstAttribute="top" secondItem="Olv-kI-5Pz" secondAttribute="bottom" constant="26" id="LCZ-a7-diI"/>
                             <constraint firstItem="vek-Pm-sYO" firstAttribute="leading" secondItem="G2h-W9-Xd9" secondAttribute="leading" id="M1z-Ei-0Zc"/>
                             <constraint firstItem="FMk-EN-B47" firstAttribute="centerX" secondItem="fd6-Na-JOe" secondAttribute="centerX" id="ObS-GO-hcM"/>
@@ -761,17 +759,8 @@ distance from other devices.</string>
                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dzx-o8-G5g">
-                                <rect key="frame" x="40" y="245" width="246" height="72"/>
-                                <string key="text">We need your permission to
-use Location to monitor your
-distance from other devices.</string>
-                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="20"/>
-                                <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="It's anonymous." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XHK-BT-veT">
-                                <rect key="frame" x="40" y="320" width="137" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="If you’ve been close to an infected person in the past two weeks we will notify you. That’s it, just one notification." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dzx-o8-G5g">
+                                <rect key="frame" x="40" y="245" width="334" height="95.5"/>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="20"/>
                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -785,14 +774,13 @@ distance from other devices.</string>
                             <constraint firstItem="UYu-DR-m7J" firstAttribute="leading" secondItem="Xl0-DN-whH" secondAttribute="leading" constant="40" id="OKh-Zi-f8N"/>
                             <constraint firstItem="dzx-o8-G5g" firstAttribute="top" secondItem="UYu-DR-m7J" secondAttribute="bottom" constant="61.5" id="OM1-zL-OpK"/>
                             <constraint firstItem="UYu-DR-m7J" firstAttribute="top" secondItem="bgF-ii-alp" secondAttribute="bottom" constant="26" id="Zdy-wv-1tF"/>
-                            <constraint firstItem="XHK-BT-veT" firstAttribute="leading" secondItem="UYu-DR-m7J" secondAttribute="leading" id="cy9-15-wq2"/>
                             <constraint firstItem="8BV-Ct-9Tj" firstAttribute="trailing" secondItem="Xl0-DN-whH" secondAttribute="trailing" id="eHJ-vQ-VbO"/>
                             <constraint firstItem="bgF-ii-alp" firstAttribute="top" secondItem="Xl0-DN-whH" secondAttribute="top" constant="49" id="g5Q-Yw-C2Y"/>
+                            <constraint firstItem="Xl0-DN-whH" firstAttribute="trailing" secondItem="dzx-o8-G5g" secondAttribute="trailing" constant="40" id="giE-f8-rYX"/>
                             <constraint firstAttribute="bottom" secondItem="8BV-Ct-9Tj" secondAttribute="bottom" id="hRi-bo-x1b"/>
                             <constraint firstItem="Xl0-DN-whH" firstAttribute="bottom" secondItem="iBi-1G-Mp8" secondAttribute="bottom" constant="56" id="jDk-Md-iAQ"/>
                             <constraint firstItem="iBi-1G-Mp8" firstAttribute="leading" secondItem="Xl0-DN-whH" secondAttribute="leading" constant="148" id="lGW-UZ-LKx"/>
                             <constraint firstItem="bgF-ii-alp" firstAttribute="leading" secondItem="Xl0-DN-whH" secondAttribute="leading" constant="40" id="lqu-Wi-tCE"/>
-                            <constraint firstItem="XHK-BT-veT" firstAttribute="top" secondItem="dzx-o8-G5g" secondAttribute="bottom" constant="3" id="mEK-u9-OQX"/>
                             <constraint firstItem="iBi-1G-Mp8" firstAttribute="centerX" secondItem="qYv-To-SWE" secondAttribute="centerX" id="onI-CP-IAC"/>
                             <constraint firstItem="dzx-o8-G5g" firstAttribute="leading" secondItem="UYu-DR-m7J" secondAttribute="leading" id="s9M-A6-GJT"/>
                         </constraints>
