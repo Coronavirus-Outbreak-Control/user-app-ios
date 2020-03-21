@@ -44,6 +44,8 @@ class CoreManager {
                              timestamp: ibeacons[0].timestamp,
                              rssi: rssis.sorted(by: <)[rssis.count / 2],
                              distance: distances.sorted(by: <)[distances.count / 2],
+                             lat: ibeacons[ibeacons.count-1].lat,
+                             lon: ibeacons[ibeacons.count-1].lon,
                              interval: max(interval, Constants.Setup.minimumIntervalTime))
 //        print("WILL RETURN", res)
         return res
@@ -123,6 +125,12 @@ class CoreManager {
             timestamp: Date(),
             rssi: Int64(iBeacon.rssi),
             distance: iBeacon.proximity.rawValue)
+        
+        if StorageManager.shared.getLocationNeeded(){
+            if let cl = LocationManager.shared.getLocationAndUpdate(){
+                ib.setLocation(cl)
+            }
+        }
         
         StorageManager.shared.saveIBeacon(ib)
         

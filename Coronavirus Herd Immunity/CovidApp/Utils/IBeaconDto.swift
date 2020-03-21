@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreLocation
 
 
 class IBeaconDto: Codable, CustomDebugStringConvertible {
@@ -16,6 +17,8 @@ class IBeaconDto: Codable, CustomDebugStringConvertible {
     public var interval : Double
     public var platform : String
     public var distance : Int
+    public var lat : Double
+    public var lon : Double
     /* TODO: add lat and lng of type Double */
     
     public init(identifier : Int64, timestamp : Date, rssi: Int64, distance : Int, interval : Double = Constants.Setup.minimumIntervalTime){
@@ -25,8 +28,25 @@ class IBeaconDto: Codable, CustomDebugStringConvertible {
         self.interval = interval
         self.platform = "i"
         self.distance = distance
+        self.lat = 0.0
+        self.lon = 0.0
     }
     
+    public init(identifier : Int64, timestamp : Date, rssi: Int64, distance : Int, lat: Double, lon: Double, interval : Double = Constants.Setup.minimumIntervalTime){
+        self.timestamp = timestamp
+        self.identifier = identifier
+        self.rssi = rssi
+        self.interval = interval
+        self.platform = "i"
+        self.distance = distance
+        self.lat = lat
+        self.lon = lon
+    }
+    
+    public func setLocation(_ location : CLLocation){
+        self.lat = location.coordinate.latitude
+        self.lon = location.coordinate.longitude
+    }
     
     var debugDescription: String{
         var d = "f"

@@ -34,6 +34,7 @@ class ApiManager: NSObject, URLSessionDelegate, URLSessionTaskDelegate, URLSessi
     private struct pushResponse: Codable {
         let data: String
         let next_try: TimeInterval
+        let location: Bool?
     }
     
     func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithError error: Error?) {
@@ -58,6 +59,9 @@ class ApiManager: NSObject, URLSessionDelegate, URLSessionTaskDelegate, URLSessi
                 let response = try JSONDecoder().decode(pushResponse.self, from: data)
                 print(response)
                 StorageManager.shared.setPushInterval(response.next_try)
+                if let b = response.location{
+                    StorageManager.shared.setLocationNeeded(b)
+                }
               } catch let parsingError {
                  print("Error", parsingError)
             }
@@ -127,6 +131,9 @@ class ApiManager: NSObject, URLSessionDelegate, URLSessionTaskDelegate, URLSessi
                             let response = try JSONDecoder().decode(pushResponse.self, from: data)
                             print(response)
                             handler(response.next_try)
+                            if let b = response.location{
+                                StorageManager.shared.setLocationNeeded(b)
+                            }
                           } catch let parsingError {
                              print("Error", parsingError)
                         }
@@ -146,6 +153,8 @@ class ApiManager: NSObject, URLSessionDelegate, URLSessionTaskDelegate, URLSessi
             let o: Int64  // id of the interacted device
             let w: Int64  //unix time expressed in seconds
             let t: Int    // time of interaction, default is 10
+            let x: Double // longitude
+            let y: Double // latitude
             let r: Int64 // rssi value
             let p: String
             let d: String
@@ -168,6 +177,8 @@ class ApiManager: NSObject, URLSessionDelegate, URLSessionTaskDelegate, URLSessi
                 o: device.identifier,
                 w: Int64(device.timestamp.timeIntervalSince1970),
                 t: Int(device.interval),
+                x: device.lon,
+                y: device.lat,
                 r: device.rssi,
                 p: device.platform,
                 d: distance)
