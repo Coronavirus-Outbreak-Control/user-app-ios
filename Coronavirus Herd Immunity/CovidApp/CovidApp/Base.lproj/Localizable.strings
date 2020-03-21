@@ -40,3 +40,21 @@
 
 /* Suspect status */
 "Suspect" = "";
+
+/* Give bluetooth permission */
+"Give bluetooth permission" = "";
+
+/* Bluetooth permission */
+"Bluetooth permission" = "";
+
+/* Enable location access */
+"Enable location access" = "";
+
+/* Enable notifications */
+"Enable notifications" = "";
+
+/* Location access */
+"Location access" = "";
+
+/* Notifications */
+"Notifications" = "";

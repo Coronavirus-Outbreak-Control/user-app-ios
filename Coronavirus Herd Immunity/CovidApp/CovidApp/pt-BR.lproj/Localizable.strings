@@ -40,3 +40,21 @@
 
 /* Suspect status */
 "Suspect" = "Suspeito";
+
+/* Give bluetooth permission */
+"Give bluetooth permission" = "Conceder pemissão bluetooth";
+
+/* Bluetooth permission */
+"Bluetooth permission" = "Pemissão bluetooth";
+
+/* Enable location access */
+"Enable location access" = "Conceder permissão de localização";
+
+/* Enable notifications */
+"Enable notifications" = "Conceder permissão de notificações";
+
+/* Location access */
+"Location access" = "Localização";
+
+/* Notifications */
+"Notifications" = "Notificações";

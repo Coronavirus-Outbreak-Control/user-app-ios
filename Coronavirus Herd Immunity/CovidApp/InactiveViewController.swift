@@ -68,22 +68,22 @@ class InactiveViewController : StatusBarViewController{
         var granted = true
         
         if !BluetoothManager.shared.isBluetoothUsable(){
-            bluetoothLabel.text = "Give bluetooth permission"
+            bluetoothLabel.text = NSLocalizedString("Give bluetooth permission", comment: "Give bluetooth permission")
             bluetoothButton.isHidden = false
             granted = false
         }else{
-            bluetoothLabel.text = "Bluetooth permission"
+            bluetoothLabel.text = NSLocalizedString("Bluetooth permission", comment: "Bluetooth permission")
             bluetoothLabel.textColor = colorGreen
             bluetoothButton.isHidden = true
         }
         
         if LocationManager.shared.getPermessionStatus() != .allowedAlways{
-            locationLabel.text = "Enable location access"
+            locationLabel.text = NSLocalizedString("Enable location access", comment: "Enable location access")
             locationButton.isHidden = false
             granted = false
         }else{
             print("XXX location")
-            locationLabel.text = "Location access"
+            locationLabel.text = NSLocalizedString("Location access", comment: "Location access")
             locationLabel.textColor = colorGreen
             locationButton.isHidden = true
         }
@@ -95,12 +95,12 @@ class InactiveViewController : StatusBarViewController{
         }
         
         if !notificationAllowed{
-            notificationLabel.text = "Enable notifications"
+            notificationLabel.text = NSLocalizedString("Enable notifications", comment: "Enable notifications")
             notificationButton.isHidden = false
             granted = false
         }else{
             print("XXX notification")
-            notificationLabel.text = "Notifications"
+            notificationLabel.text = NSLocalizedString("Notifications", comment: "Notifications")
             notificationLabel.textColor = colorGreen
             notificationButton.isHidden = true
         }
