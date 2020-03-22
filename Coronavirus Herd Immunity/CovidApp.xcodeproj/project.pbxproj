@@ -47,6 +47,7 @@
 		C8D61A24240C575800895DA9 /* IBeaconManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D61A23240C575800895DA9 /* IBeaconManager.swift */; };
 		C8DD58CA24262755004C54CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8B188DA2402B14400CFEE98 /* Main.storyboard */; };
 		C8DD58D324263122004C54CA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C8DD58D124263122004C54CA /* Localizable.strings */; };
+		C8FA58772427A5E900821DF0 /* ShareLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FA58762427A5E900821DF0 /* ShareLocationViewController.swift */; };
 		C8FD2DD5242251B0004D2E84 /* InactiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FD2DD4242251B0004D2E84 /* InactiveViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -96,6 +97,7 @@
 		C8DD58D224263122004C54CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = CovidApp/Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C8DD58D52426317B004C54CA /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = CovidApp/it.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C8DD58D7242634BB004C54CA /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Main.strings; sourceTree = "<group>"; };
+		C8FA58762427A5E900821DF0 /* ShareLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareLocationViewController.swift; sourceTree = "<group>"; };
 		C8FCC8AB2426B742006044C1 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Main.strings"; sourceTree = "<group>"; };
 		C8FCC8AC2426B742006044C1 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		C8FCC8AD2426B742006044C1 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "CovidApp/pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 				C8B2CF41240D9BAF005248B8 /* LocationViewController.swift */,
 				C80170572405D19F002FC397 /* MainViewController.swift */,
 				C883D6DC24200BD100DB7362 /* NotificationViewController.swift */,
+				C8FA58762427A5E900821DF0 /* ShareLocationViewController.swift */,
 				C8595876241D3C6B0060F2F3 /* StatusBarViewController.swift */,
 				C8B188D82402B14400CFEE98 /* ViewController.swift */,
 				C8B188DA2402B14400CFEE98 /* Main.storyboard */,
@@ -333,6 +336,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD47449E241968D900717E77 /* Date+strings.swift in Sources */,
+				C8FA58772427A5E900821DF0 /* ShareLocationViewController.swift in Sources */,
 				C8C72E53241062210023797E /* CoreManager.swift in Sources */,
 				C8A892EC24086AC8007EA317 /* AlertManager.swift in Sources */,
 				C80170582405D19F002FC397 /* MainViewController.swift in Sources */,

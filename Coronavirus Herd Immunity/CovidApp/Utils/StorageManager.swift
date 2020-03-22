@@ -250,6 +250,14 @@ class StorageManager{
         return defaults.bool(forKey: Constants.Setup.locationNeeded)
     }
     
+    public func setShareLocation(_ share : Bool){
+        defaults.set(share, forKey: Constants.Setup.shareLocation)
+    }
+    
+    public func getShareLocation() -> Bool{
+        return defaults.bool(forKey: Constants.Setup.shareLocation)
+    }
+    
     public func countDailyInteractions() -> Int{
         let d : Date = Calendar.current.date(bySettingHour: 0, minute: 0, second: 0, of: Date())!
         let predicate = NSPredicate(format: "(%K >= %@)", IBeaconEntity.timestampKey, d as NSDate)

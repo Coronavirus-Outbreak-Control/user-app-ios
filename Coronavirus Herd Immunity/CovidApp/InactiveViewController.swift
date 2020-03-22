@@ -40,7 +40,16 @@ class InactiveViewController : StatusBarViewController{
     
     override func viewDidAppear(_ animated: Bool) {
         print("VIEW DID APPEAR LOADING INACTIVE")
-        refresh()
+        if Thread.isMainThread{
+            print("main thread")
+            refresh()
+        }else{
+            DispatchQueue.main.sync{
+                print("main no main thread")
+                refresh()
+                
+            }
+        }
         
         NotificationCenter.default.addObserver(self, selector: #selector(statusChanged), name: NSNotification.Name(Constants.Notification.bluetoothChangeStatus), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(statusChanged), name: NSNotification.Name(Constants.Notification.locationChangeStatus), object: nil)
@@ -48,16 +57,24 @@ class InactiveViewController : StatusBarViewController{
     }
     
     @objc private func statusChanged(){
-        if Utils.isActive(){
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let controller = storyboard.instantiateViewController(withIdentifier: "MainViewController")
-            UIApplication.shared.windows.first?.rootViewController = controller
-            UIApplication.shared.windows.first?.makeKeyAndVisible()
-        }
         if Thread.isMainThread{
             print("is main thread, refreshing")
+            if Utils.isActive(){
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let controller = storyboard.instantiateViewController(withIdentifier: "MainViewController")
+                UIApplication.shared.windows.first?.rootViewController = controller
+                UIApplication.shared.windows.first?.makeKeyAndVisible()
+            }
             refresh()
         }else{
+            DispatchQueue.main.sync{
+                if Utils.isActive(){
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    let controller = storyboard.instantiateViewController(withIdentifier: "MainViewController")
+                    UIApplication.shared.windows.first?.rootViewController = controller
+                    UIApplication.shared.windows.first?.makeKeyAndVisible()
+                }
+            }
             print("not the main thread")
         }
     }

@@ -40,6 +40,12 @@ class LocationViewController : ViewController{
     func goNext(){
         print("dismissing view location")
         
+        
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        let controller = storyboard.instantiateViewController(withIdentifier: "ShareLocationViewController")
+//        UIApplication.shared.windows.first?.rootViewController = controller
+//        UIApplication.shared.windows.first?.makeKeyAndVisible()
+
         if StorageManager.shared.isFirstAccess(){
             print("gonna open notification view")
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -65,8 +71,11 @@ class LocationViewController : ViewController{
     
     @IBAction func helpMoreAction(_ sender: Any) {
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "HelpMoreViewController") as! HelpMoreViewController
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "ShareLocationViewController") as! ShareLocationViewController
+        nextViewController.modalPresentationStyle = .fullScreen
         self.present(nextViewController, animated:true, completion:nil)
+        
+//        self.dismiss(animated: true, completion: nil)
     }
     
     private func handleChangeAuthorizationStatus(_ status : LocationManager.AuthorizationStatus){

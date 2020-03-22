@@ -70,10 +70,19 @@ class MainViewController: StatusBarViewController {
     
     @objc private func statusChanged(){
         if !Utils.isActive(){
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let controller = storyboard.instantiateViewController(withIdentifier: "InactiveViewController")
-            UIApplication.shared.windows.first?.rootViewController = controller
-            UIApplication.shared.windows.first?.makeKeyAndVisible()
+            if Thread.isMainThread{
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let controller = storyboard.instantiateViewController(withIdentifier: "InactiveViewController")
+                UIApplication.shared.windows.first?.rootViewController = controller
+                UIApplication.shared.windows.first?.makeKeyAndVisible()
+            }else{
+                DispatchQueue.main.sync {
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    let controller = storyboard.instantiateViewController(withIdentifier: "InactiveViewController")
+                    UIApplication.shared.windows.first?.rootViewController = controller
+                    UIApplication.shared.windows.first?.makeKeyAndVisible()
+                }
+            }
         }
     }
     
