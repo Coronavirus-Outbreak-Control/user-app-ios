@@ -53,14 +53,8 @@
 /* Class = "UILabel"; text = "Welcome to"; ObjectID = "PS2-ym-ib5"; */
 "PS2-ym-ib5.text" = "Bem-vindo ao";
 
-/* Class = "UILabel"; text = "Bluetooth"; ObjectID = "UDm-kz-8eX"; */
-"UDm-kz-8eX.text" = "Bluetooth";
-
 /* Class = "UILabel"; text = "Notification"; ObjectID = "UYu-DR-m7J"; */
 "UYu-DR-m7J.text" = "Notificações";
-
-/* Class = "UILabel"; text = "Location"; ObjectID = "Uh8-E9-F6H"; */
-"Uh8-E9-F6H.text" = "Localização";
 
 /* Class = "UILabel"; text = "Bluetooth"; ObjectID = "Uvw-Cp-0an"; */
 "Uvw-Cp-0an.text" = "Bluetooth";
@@ -119,9 +113,6 @@
 /* Class = "UIButton"; normalTitle = "HOW IT WORKS?"; ObjectID = "oQD-6d-vjs"; */
 "oQD-6d-vjs.normalTitle" = "COMO FUNCIONA?";
 
-/* Class = "UILabel"; text = "Notification"; ObjectID = "oRF-Vm-Hc9"; */
-"oRF-Vm-Hc9.text" = "Notificações";
-
 /* Class = "UILabel"; text = "We will use your mobile phone bluetooth\nand gps to anonymously log the devices\ncloser than 2 meters to you."; ObjectID = "oex-KU-Krk"; */
 "oex-KU-Krk.text" = "Vamos usar o Bluetooth do seu telefone para registrar anonimamente todos os dispositivos que estiverem a menos de 2 metros de você.";
 
@@ -142,3 +133,12 @@
 
 /* Class = "UILabel"; text = "And It's anonymous."; ObjectID = "vek-Pm-sYO"; */
 "vek-Pm-sYO.text" = "";
+
+/* Class = "UIButton"; normalTitle = "Bluetooth"; ObjectID = "VTR-mB-wT6"; */
+"VTR-mB-wT6.normalTitle" = "";
+
+/* Class = "UIButton"; normalTitle = "Notification"; ObjectID = "gIo-tP-VRu"; */
+"gIo-tP-VRu.normalTitle" = "";
+
+/* Class = "UIButton"; normalTitle = "Location"; ObjectID = "hdP-oP-fKL"; */
+"hdP-oP-fKL.normalTitle" = "";

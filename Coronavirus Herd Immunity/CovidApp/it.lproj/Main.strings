@@ -8,15 +8,6 @@
 /* Class = "UILabel"; text = "Detail"; ObjectID = "Lsy-SV-AyG"; */
 "Lsy-SV-AyG.text" = "Detail";
 
-/* Class = "UILabel"; text = "Bluetooth"; ObjectID = "UDm-kz-8eX"; */
-"UDm-kz-8eX.text" = "Bluetooth";
-
-/* Class = "UILabel"; text = "Location"; ObjectID = "Uh8-E9-F6H"; */
-"Uh8-E9-F6H.text" = "Location";
-
-/* Class = "UILabel"; text = "Notification"; ObjectID = "oRF-Vm-Hc9"; */
-"oRF-Vm-Hc9.text" = "Notification";
-
 /* Class = "UILabel"; text = "How it\nworks?"; ObjectID = "lE4-wP-W8e"; */
 "lE4-wP-W8e.text" = "Come\nfunziona?";
 
@@ -139,3 +130,12 @@
 
 /* Class = "UIButton"; normalTitle = "Active       "; ObjectID = "y2F-V0-cDw"; */
 "y2F-V0-cDw.normalTitle" = "Attivo       ";
+
+/* Class = "UIButton"; normalTitle = "Bluetooth"; ObjectID = "VTR-mB-wT6"; */
+"VTR-mB-wT6.normalTitle" = "";
+
+/* Class = "UIButton"; normalTitle = "Notification"; ObjectID = "gIo-tP-VRu"; */
+"gIo-tP-VRu.normalTitle" = "";
+
+/* Class = "UIButton"; normalTitle = "Location"; ObjectID = "hdP-oP-fKL"; */
+"hdP-oP-fKL.normalTitle" = "";
