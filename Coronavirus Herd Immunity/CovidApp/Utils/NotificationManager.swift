@@ -33,29 +33,62 @@ class NotificationManager : NSObject, UNUserNotificationCenterDelegate{
         })
     }
     
-    public func getAuthorizationStatus(_ completion : @escaping (PermissionStatus) -> Void){
+    private func isStatusChanged(_ newStatus : UNAuthorizationStatus) -> Bool{
+        if let s = self.status{
+            switch s {
+            case PermissionStatus.allowed:
+                return newStatus != .authorized
+            case PermissionStatus.denied:
+                return newStatus != .denied && newStatus != .provisional
+            case PermissionStatus.notDetermined:
+                return newStatus != .authorized
+            }
+        }else{
+            return true
+        }
+        
+    }
+    
+    public func getAuthorizationStatus(_ completion : ((PermissionStatus) -> Void)?){
         UNUserNotificationCenter.current().getNotificationSettings(completionHandler: {
             settings in
-            NotificationCenter.default.post(name: NSNotification.Name(Constants.Notification.notificationChangeStatus), object: true)
+            if self.isStatusChanged(settings.authorizationStatus){
+                print("new notification status", self.status, settings.authorizationStatus.rawValue)
+                NotificationCenter.default.post(name: NSNotification.Name(Constants.Notification.notificationChangeStatus), object: true)
+            }else{
+                print("same notification status")
+            }
             print("asked notification")
 //            DispatchQueue.main.sync {
                 switch settings.authorizationStatus{
                 case .authorized:
                     print("authorized")
                     self.status = .allowed
-                    return completion(PermissionStatus.allowed)
+                    if let c = completion{
+                        return c(PermissionStatus.allowed)
+                    }
+                    break
                 case .denied:
                     print("denied")
                     self.status = .denied
-                    return completion(PermissionStatus.denied)
+                    if let c = completion{
+                        return c(PermissionStatus.denied)
+                    }
+                    break
                 case .notDetermined:
                     print("notDetermined")
                     self.status = .notDetermined
-                    return completion(PermissionStatus.notDetermined)
+                    if let c = completion{
+                        return c(PermissionStatus.notDetermined)
+                    }
+                    break
                 case .provisional:
                     print("provisional")
                     self.status = .denied
-                    return completion(PermissionStatus.denied)
+                    if let c = completion{
+                        return c(PermissionStatus.denied)
+                    }
+                    break
                 }
 //            }
         })
@@ -68,6 +101,7 @@ class NotificationManager : NSObject, UNUserNotificationCenterDelegate{
             print("error", error)
             if granted == true && error == nil {
                 self.status = .allowed
+                print("GONNA REGISTER DEVICE FOR NOTIFICATION")
                 DispatchQueue.main.sync {
                     UIApplication.shared.registerForRemoteNotifications()
                 }
@@ -101,6 +135,8 @@ class NotificationManager : NSObject, UNUserNotificationCenterDelegate{
     }
     
     public func getStatus() -> PermissionStatus?{
+        print("AAA")
+        self.getAuthorizationStatus(nil)
         return self.status
     }
 }

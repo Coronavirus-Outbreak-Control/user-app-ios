@@ -10,15 +10,14 @@ import UIKit
 
 class InactiveViewController : StatusBarViewController{
     
-    @IBOutlet weak var bluetoothLabel: UILabel!
     @IBOutlet weak var bluetoothButton: UIButton!
+    @IBOutlet weak var bluetoothLabelButton: UIButton!
     
-    @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var locationButton: UIButton!
+    @IBOutlet weak var LocationLabelButton: UIButton!
     
-    
-    @IBOutlet weak var notificationLabel: UILabel!
     @IBOutlet weak var notificationButton: UIButton!
+    @IBOutlet weak var notificationLabelButton: UIButton!
     
     private let colorGreen : UIColor = UIColor(red: 0, green: 152 / 255, blue: 116 / 255, alpha: 1)
     private let colorRed : UIColor = UIColor(red: 1, green: 111 / 255, blue: 97 / 255, alpha: 1)
@@ -68,23 +67,29 @@ class InactiveViewController : StatusBarViewController{
         var granted = true
         
         if !BluetoothManager.shared.isBluetoothUsable(){
-            bluetoothLabel.text = NSLocalizedString("Give bluetooth permission", comment: "Give bluetooth permission")
+            bluetoothLabelButton.setTitle(NSLocalizedString("Give bluetooth permission", comment: "Give bluetooth permission"), for: .normal)
+            bluetoothLabelButton.setTitleColor(colorRed, for: .normal)
+            bluetoothLabelButton.isEnabled = true
             bluetoothButton.isHidden = false
             granted = false
         }else{
-            bluetoothLabel.text = NSLocalizedString("Bluetooth permission", comment: "Bluetooth permission")
-            bluetoothLabel.textColor = colorGreen
+            bluetoothLabelButton.setTitleColor(colorGreen, for: .normal)
+            bluetoothLabelButton.setTitle(NSLocalizedString("Bluetooth permission", comment: "Bluetooth permission"), for: .normal)
+            bluetoothLabelButton.isEnabled = false
             bluetoothButton.isHidden = true
         }
         
         if LocationManager.shared.getPermessionStatus() != .allowedAlways{
-            locationLabel.text = NSLocalizedString("Enable location access", comment: "Enable location access")
+            LocationLabelButton.setTitle(NSLocalizedString("Enable location access", comment: "Enable location access"), for: .normal)
+            LocationLabelButton.setTitleColor(colorRed, for: .normal)
+            LocationLabelButton.isEnabled = true
             locationButton.isHidden = false
             granted = false
         }else{
             print("XXX location")
-            locationLabel.text = NSLocalizedString("Location access", comment: "Location access")
-            locationLabel.textColor = colorGreen
+            LocationLabelButton.setTitle(NSLocalizedString("Location access", comment: "Location access"), for: .normal)
+            LocationLabelButton.setTitleColor(colorGreen, for: .normal)
+            LocationLabelButton.isEnabled = false
             locationButton.isHidden = true
         }
         
@@ -95,13 +100,16 @@ class InactiveViewController : StatusBarViewController{
         }
         
         if !notificationAllowed{
-            notificationLabel.text = NSLocalizedString("Enable notifications", comment: "Enable notifications")
+            notificationLabelButton.setTitle(NSLocalizedString("Enable notifications", comment: "Enable notifications"), for: .normal)
+            notificationLabelButton.setTitleColor(colorRed, for: .normal)
+            notificationLabelButton.isEnabled = true
             notificationButton.isHidden = false
             granted = false
         }else{
             print("XXX notification")
-            notificationLabel.text = NSLocalizedString("Notifications", comment: "Notifications")
-            notificationLabel.textColor = colorGreen
+            notificationLabelButton.setTitle(NSLocalizedString("Notifications", comment: "Notifications"), for: .normal)
+            notificationLabelButton.setTitleColor(colorGreen, for: .normal)
+            notificationLabelButton.isEnabled = false
             notificationButton.isHidden = true
         }
         

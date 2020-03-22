@@ -79,6 +79,16 @@ class MainViewController: StatusBarViewController {
     
     private func updateStatus(){
         
+        if StorageManager.shared.getPushId() == nil{
+            print("no push if, gonna register")
+            if NotificationManager.shared.getStatus() == NotificationManager.PermissionStatus.allowed{
+                NotificationManager.shared.requestPermission({
+                    granted in
+                    print("permission grant is", granted)
+                })
+            }
+        }
+        
         let statusUser = StorageManager.shared.getStatusUser()
         if statusUser == 1{
             print("INFECTED")
