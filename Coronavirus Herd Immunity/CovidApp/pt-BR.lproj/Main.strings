@@ -142,3 +142,18 @@
 
 /* Class = "UIButton"; normalTitle = "Location"; ObjectID = "hdP-oP-fKL"; */
 "hdP-oP-fKL.normalTitle" = "";
+
+/* Class = "UIButton"; normalTitle = "SKIP TO NEXT STEP"; ObjectID = "6Mx-fk-Yug"; */
+"6Mx-fk-Yug.normalTitle" = "";
+
+/* Class = "UIButton"; normalTitle = "SHARE LOCATION"; ObjectID = "VLR-P5-hgi"; */
+"VLR-P5-hgi.normalTitle" = "";
+
+/* Class = "UILabel"; text = "Step 2"; ObjectID = "nrH-4j-YPZ"; */
+"nrH-4j-YPZ.text" = "";
+
+/* Class = "UILabel"; text = "Share Location"; ObjectID = "sHD-37-Mlj"; */
+"sHD-37-Mlj.text" = "";
+
+/* Class = "UILabel"; text = "To help doctors with research with this crysis you can choose to share your position with the scientist."; ObjectID = "tIT-NQ-V3Q"; */
+"tIT-NQ-V3Q.text" = "";

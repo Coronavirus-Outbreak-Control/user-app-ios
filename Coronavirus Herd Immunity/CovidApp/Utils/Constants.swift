@@ -39,6 +39,7 @@ class Constants {
         public static let lastDatePushPreference = "chi.preference.lastDatePush"
         public static let pushDelay = "chi.preference.pushDelay"
         public static let locationNeeded = "chi.preference.locationNeeded"
+        public static let shareLocation = "chi.preference.shareLocation"
         
         public static let secondsIntervalBetweenPushes : TimeInterval = 3600 * 24
         
