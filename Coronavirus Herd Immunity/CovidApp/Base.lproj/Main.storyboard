@@ -941,10 +941,10 @@ is</string>
             </objects>
             <point key="canvasLocation" x="1782.608695652174" y="-238.39285714285714"/>
         </scene>
-        <!--Location View Controller-->
+        <!--Share Location View Controller-->
         <scene sceneID="qiM-dJ-ydT">
             <objects>
-                <viewController storyboardIdentifier="ShareLocationViewController" id="Ls6-uj-vgb" customClass="LocationViewController" customModule="CovidApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ShareLocationViewController" id="Ls6-uj-vgb" customClass="ShareLocationViewController" customModule="CovidApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ou8-Ix-cT5">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
