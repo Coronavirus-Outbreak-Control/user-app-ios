@@ -34,6 +34,7 @@ class Constants {
         
         public static let statusDevice = "chi.identifier.status"
         public static let identifierDevice = "chi.identifier.device"
+        public static let tokenJWT = "chi.identifier.tokenJWT"
         public static let pushIdentifier = "chi.identifier.push-notification"
         public static let totalInteractionsKey = "chi.interactions.total"
         public static let lastDatePushPreference = "chi.preference.lastDatePush"

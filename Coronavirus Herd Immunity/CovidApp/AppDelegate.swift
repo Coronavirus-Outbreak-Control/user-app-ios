@@ -53,12 +53,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         NotificationManager.shared.getStatus()
         if StorageManager.shared.getIdentifierDevice() == nil{
             print("generating new ID from server")
-            ApiManager.shared.getNewDeviceId(id: DeviceInfoManager.getId(), model: DeviceInfoManager.getModel(), version: DeviceInfoManager.getVersion()) { deviceID in
+            ApiManager.shared.handshakeNewDevice(id: DeviceInfoManager.getId(), model: DeviceInfoManager.getModel(), version: DeviceInfoManager.getVersion()) { deviceID, token in
                     StorageManager.shared.setIdentifierDevice(Int(deviceID))
             }
 //            StorageManager.shared.setIdentifierDevice(Utils.randomInt())
         }else{
             print("MY ID:", StorageManager.shared.getIdentifierDevice())
+            print("TOKN JWT:", StorageManager.shared.getTokenJWT())
             print("Token ID", StorageManager.shared.getPushId())
         }
         UIApplication.shared.setMinimumBackgroundFetchInterval(UIApplication.backgroundFetchIntervalMinimum)
@@ -139,7 +140,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let bundleID = Bundle.main.bundleIdentifier;
         print("Bundle ID: \(token) \(bundleID)");
         if let idDevice = StorageManager.shared.getIdentifierDevice(){
-            ApiManager.shared.setPushNotificationId(deviceId: Int64(idDevice), notificationId: token)
+            
+            ApiManager.shared.handshakeNewDevice(id: DeviceInfoManager.getId(), model: DeviceInfoManager.getModel(), version: DeviceInfoManager.getVersion()) {
+                deviceID, tokenJWT in
+
+                ApiManager.shared.setPushNotificationId(deviceId: Int64(idDevice), notificationId: token, token: tokenJWT)
+            }
+            
         }
         StorageManager.shared.setPushId(token)
         // 3. Save the token to local storeage and post to app server to generate Push Notification. ...

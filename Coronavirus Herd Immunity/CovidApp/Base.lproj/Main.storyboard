@@ -976,7 +976,7 @@ is</string>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="enableLocationAction:" destination="Ls6-uj-vgb" eventType="touchUpInside" id="bfQ-TS-NOh"/>
+                                    <action selector="shareLocation:" destination="Ls6-uj-vgb" eventType="touchUpInside" id="pHu-QC-A4V"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2qO-Hh-VBZ">
@@ -984,7 +984,7 @@ is</string>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="12"/>
                                 <state key="normal" title="SKIP TO NEXT STEP"/>
                                 <connections>
-                                    <action selector="skipNext:" destination="Ls6-uj-vgb" eventType="touchUpInside" id="80d-tr-N5S"/>
+                                    <action selector="skipStep:" destination="Ls6-uj-vgb" eventType="touchUpInside" id="Nlx-bV-Vit"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Step 2" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eDj-OF-eZt">
@@ -1005,12 +1005,6 @@ is</string>
                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cmk-br-wlg">
-                                <rect key="frame" x="40" y="320" width="4.5" height="24"/>
-                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="20"/>
-                                <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -1026,9 +1020,7 @@ is</string>
                             <constraint firstItem="Elz-lo-tdP" firstAttribute="centerX" secondItem="ou8-Ix-cT5" secondAttribute="centerX" id="dWU-Pd-Lmq"/>
                             <constraint firstItem="rux-iK-l4p" firstAttribute="top" secondItem="HQy-Cs-56D" secondAttribute="bottom" constant="61.5" id="hGa-g5-TX7"/>
                             <constraint firstItem="2qO-Hh-VBZ" firstAttribute="leading" secondItem="4FP-pC-8TZ" secondAttribute="leading" constant="92" id="i4b-9L-NVg"/>
-                            <constraint firstItem="Cmk-br-wlg" firstAttribute="top" secondItem="rux-iK-l4p" secondAttribute="bottom" constant="3" id="iZF-NU-zf9"/>
                             <constraint firstItem="4FP-pC-8TZ" firstAttribute="trailing" secondItem="rux-iK-l4p" secondAttribute="trailing" constant="40" id="oa1-9i-p7o"/>
-                            <constraint firstItem="Cmk-br-wlg" firstAttribute="leading" secondItem="HQy-Cs-56D" secondAttribute="leading" id="oxQ-Xi-MpD"/>
                             <constraint firstItem="HQy-Cs-56D" firstAttribute="leading" secondItem="4FP-pC-8TZ" secondAttribute="leading" constant="40" id="rGc-Sw-yqW"/>
                             <constraint firstItem="7Vo-xg-M55" firstAttribute="leading" secondItem="4FP-pC-8TZ" secondAttribute="leading" id="z4n-cb-gPb"/>
                         </constraints>
