@@ -115,7 +115,7 @@ class CoreManager {
         print("checking interactions to push")
         if let lastDatePush = StorageManager.shared.getLastTimePush(){
             if lastDatePush.addingTimeInterval(StorageManager.shared.getPushInterval()) < Date(){
-                print("interval elapsed, time to push")
+                print("interval elapsed, time to PUSH")
                 //push old interactions
                 if let ibeacons = StorageManager.shared.readIBeaconsNewerThanDate(lastDatePush){
                     CoreManager.getTokenAndProceed(ibeacons, isBackground: isBackground)

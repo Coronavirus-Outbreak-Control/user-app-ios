@@ -158,6 +158,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any]) {
         print("Received push notification: \(userInfo)")
+        return
+        //avoid updating status
         if let status = userInfo["status"] as? Int{
             StorageManager.shared.setStatusUser(status)
         }

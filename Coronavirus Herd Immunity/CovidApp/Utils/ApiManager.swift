@@ -32,7 +32,7 @@ class ApiManager: NSObject, URLSessionDelegate, URLSessionTaskDelegate, URLSessi
     }
     
     private struct pushResponse: Codable {
-        let data: String
+        let data: String?
         let next_try: TimeInterval
         let location: Bool?
     }
@@ -107,6 +107,8 @@ class ApiManager: NSObject, URLSessionDelegate, URLSessionTaskDelegate, URLSessi
             handler(Constants.Setup.secondsIntervalBetweenPushes)
             return
         }
+        
+        print("gonna PUSH intereactions")
         
         let endpoint = URL(string: "\(endpoint_string)/interaction/report")
         var request = URLRequest(url: endpoint!)
