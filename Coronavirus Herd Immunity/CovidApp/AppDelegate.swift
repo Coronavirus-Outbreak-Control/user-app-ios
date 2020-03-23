@@ -56,31 +56,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             ApiManager.shared.handshakeNewDevice(id: DeviceInfoManager.getId(), model: DeviceInfoManager.getModel(), version: DeviceInfoManager.getVersion()) { deviceID, token in
                     StorageManager.shared.setIdentifierDevice(Int(deviceID))
             }
-//            StorageManager.shared.setIdentifierDevice(Utils.randomInt())
+            
         }else{
             print("MY ID:", StorageManager.shared.getIdentifierDevice())
             print("TOKN JWT:", StorageManager.shared.getTokenJWT())
             print("Token ID", StorageManager.shared.getPushId())
         }
+        
+        NotificationManager.shared.getAuthorizationStatus({
+            status in
+            if status == .allowed && StorageManager.shared.getPushId() == nil{
+                NotificationManager.shared.requestPermission({
+                    granted in
+                    print("REGISTERING FROM APPDELEGATE")
+                })
+            }
+            
+        })
+        
         UIApplication.shared.setMinimumBackgroundFetchInterval(UIApplication.backgroundFetchIntervalMinimum)
     }
     
-//    func application(_ application: UIApplication,
-//                     handleEventsForBackgroundURLSession identifier: String,
-//                     completionHandler: @escaping () -> Void) {
-//        backgroundCompletionHandler = completionHandler
-//    }
-//
-//    func urlSessionDidFinishEvents(forBackgroundURLSession session: URLSession) {
-//        DispatchQueue.main.async {
-//            guard let appDelegate = UIApplication.shared.delegate as? AppDelegate,
-//                let backgroundCompletionHandler =
-//                appDelegate.backgroundCompletionHandler else {
-//                    return
-//            }
-//            backgroundCompletionHandler()
-//        }
-//    }
     
     func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         print("background fetchs")
@@ -130,6 +126,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        print("XXXXXXXXXXXXXXXXXX")
         // 1. Convert device token to string
         let tokenParts = deviceToken.map { data -> String in
             return String(format: "%02.2hhx", data)

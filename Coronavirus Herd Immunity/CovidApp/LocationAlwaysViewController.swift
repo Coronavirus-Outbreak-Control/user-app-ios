@@ -23,7 +23,7 @@ class LocationAlwaysViewController : StatusBarViewController{
     }
     
     @objc func changedLocationAuthorization(notification: NSNotification){
-        print("change location status notification received")
+        print("change location status notification received ALWAYS")
         if let status = notification.object as? LocationManager.AuthorizationStatus{
             print(status)
             if status == .allowedAlways{
@@ -31,53 +31,23 @@ class LocationAlwaysViewController : StatusBarViewController{
             }
 //            return handleChangeAuthorizationStatus(status)
         }else{
-            print("WTF LOCATION?")
+            print("WTF LOCATION? ALWAYS")
         }
     }
     
     func goNext(){
-        print("dismissing view location")
-        
+        print("dismissing view location ALWAYS")
+        self.dismiss(animated: true, completion: nil)
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let controller = storyboard.instantiateViewController(withIdentifier: "ShareLocationViewController")
         UIApplication.shared.windows.first?.rootViewController = controller
         UIApplication.shared.windows.first?.makeKeyAndVisible()
 
-//        if StorageManager.shared.isFirstAccess(){
-//            print("gonna open notification view")
-//            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//            let controller = storyboard.instantiateViewController(withIdentifier: "NotificationViewController")
-//            UIApplication.shared.windows.first?.rootViewController = controller
-//            UIApplication.shared.windows.first?.makeKeyAndVisible()
-//        }else{
-//            if Utils.isActive(){
-//                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//                let controller = storyboard.instantiateViewController(withIdentifier: "MainViewController")
-//                UIApplication.shared.windows.first?.rootViewController = controller
-//                UIApplication.shared.windows.first?.makeKeyAndVisible()
-//            }else{
-//                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//                let controller = storyboard.instantiateViewController(withIdentifier: "InactiveViewController")
-//                UIApplication.shared.windows.first?.rootViewController = controller
-//                UIApplication.shared.windows.first?.makeKeyAndVisible()
-//            }
-//        }
-        
-        self.dismiss(animated: true, completion: nil)
-    }
-    
-    @IBAction func helpMoreAction(_ sender: Any) {
-        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "ShareLocationViewController") as! ShareLocationViewController
-        nextViewController.modalPresentationStyle = .fullScreen
-        self.present(nextViewController, animated:true, completion:nil)
-        
-//        self.dismiss(animated: true, completion: nil)
     }
     
     private func handleChangeAuthorizationStatus(_ status : LocationManager.AuthorizationStatus){
-        print("handleChangeAuthorizationStatus", status)
+        print("handleChangeAuthorizationStatus ALWAYS", status)
         switch status {
         case .allowedAlways:
             return self.goNext()
@@ -99,7 +69,7 @@ class LocationAlwaysViewController : StatusBarViewController{
             self.present(alert, animated: true)
             break
         case .notDetermined:
-            print("GONNA ASK USER")
+            print("GONNA ASK USER ALWAYS")
             LocationManager.shared.requestAlwaysPermission()
             break
         case .denied:
@@ -136,17 +106,8 @@ class LocationAlwaysViewController : StatusBarViewController{
         }
     }
     
-//    private func switchAlwaysPermission(){
-//        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-//        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "LocationViewController") as! LocationViewController
-//        nextViewController.modalPresentationStyle = .fullScreen
-//        self.present(nextViewController, animated:true, completion:nil)
-//        print("SWITCHING TO LOCATION PERMISSION")
-//        self.dismiss(animated: true, completion: nil)
-//    }
-    
     @IBAction func enableLocationAction(_ sender: Any) {
-        print("asking to enable location")
+        print("asking to enable location ALWAYS")
         self.handleChangeAuthorizationStatus(LocationManager.shared.getPermessionStatus())
     }
     
@@ -155,11 +116,10 @@ class LocationAlwaysViewController : StatusBarViewController{
         switch LocationManager.shared.getPermessionStatus() {
         case .allowedAlways:
             return self.goNext()
-            break
         case .notAvailable:
             break
         case .notDetermined, .denied, .allowedWhenInUse:
-            print("not determined waiting for user")
+            print("not determined waiting for user ALWAYS")
             // waiting from user action
             break
         }
