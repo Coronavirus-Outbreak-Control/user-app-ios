@@ -51,7 +51,7 @@ class CoreManager {
         return res
     }
     
-    private static func prepareAndPush(_ ibeacons: [IBeaconDto], isBackground : Bool){
+    private static func prepareAndPush(_ ibeacons: [IBeaconDto], isBackground : Bool, tokenJWT : String){
 //        print("\n\nRECEIVED beacons", ibeacons)
         var id2list = [Int64: [IBeaconDto]]()
         var validIbeacons = [IBeaconDto]()
@@ -81,17 +81,32 @@ class CoreManager {
         
         let timeOfPush = Date()
         print("gonna push", validIbeacons)
-        if isBackground{
-            print("pushing positions on background")
-            ApiManager.shared.uploadInteractionsInBackground(validIbeacons)
+        
+        ApiManager.shared.uploadInteractions(validIbeacons, token: tokenJWT) { pushDelay in
             print("updating last time push")
             StorageManager.shared.setLastTimePush(timeOfPush)
-        }else{
-            ApiManager.shared.uploadInteractions(validIbeacons) { pushDelay in
-                print("updating last time push")
-                StorageManager.shared.setLastTimePush(timeOfPush)
-                StorageManager.shared.setPushInterval(pushDelay)
-            }
+            StorageManager.shared.setPushInterval(pushDelay)
+        }
+        
+//        if isBackground{
+//            print("pushing positions on background")
+//            ApiManager.shared.uploadInteractionsInBackground(validIbeacons, token: tokenJWT)
+//            print("updating last time push")
+//            StorageManager.shared.setLastTimePush(timeOfPush)
+//        }else{
+//            ApiManager.shared.uploadInteractions(validIbeacons, token: tokenJWT) { pushDelay in
+//                print("updating last time push")
+//                StorageManager.shared.setLastTimePush(timeOfPush)
+//                StorageManager.shared.setPushInterval(pushDelay)
+//            }
+//        }
+    }
+    
+    private static func getTokenAndProceed(_ ibeacons: [IBeaconDto], isBackground : Bool){
+        ApiManager.shared.handshakeNewDevice(id: DeviceInfoManager.getId(), model: DeviceInfoManager.getModel(), version: DeviceInfoManager.getVersion()) {
+            deviceID, token in
+
+            CoreManager.prepareAndPush(ibeacons, isBackground: isBackground, tokenJWT: token)
         }
     }
     
@@ -103,7 +118,7 @@ class CoreManager {
                 print("interval elapsed, time to push")
                 //push old interactions
                 if let ibeacons = StorageManager.shared.readIBeaconsNewerThanDate(lastDatePush){
-                    CoreManager.prepareAndPush(ibeacons, isBackground: isBackground)
+                    CoreManager.getTokenAndProceed(ibeacons, isBackground: isBackground)
                 }
             }else{
                 print("no need to push yet last time was", lastDatePush, "next at", lastDatePush.addingTimeInterval(StorageManager.shared.getPushInterval()))
@@ -111,7 +126,7 @@ class CoreManager {
         }else{
             print("no last push found, pushing everything")
             if let ibeacons = StorageManager.shared.readAllIBeacons(){
-                CoreManager.prepareAndPush(ibeacons, isBackground: isBackground)
+                CoreManager.getTokenAndProceed(ibeacons, isBackground: isBackground)
             }
         }
         // no interactions to push

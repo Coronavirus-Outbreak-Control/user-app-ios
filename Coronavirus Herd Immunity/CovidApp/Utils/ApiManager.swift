@@ -16,7 +16,7 @@ import Foundation
 
 class ApiManager: NSObject, URLSessionDelegate, URLSessionTaskDelegate, URLSessionDataDelegate {
 
-    private let endpoint_string = "http://api.coronaviruscheck.org"
+    private let endpoint_string = "https://api.coronaviruscheck.org"
     
     private lazy var urlSession: URLSession = {
         let config = URLSessionConfiguration.background(withIdentifier: "coronavirus-app")
@@ -69,7 +69,7 @@ class ApiManager: NSObject, URLSessionDelegate, URLSessionTaskDelegate, URLSessi
     }
     
     
-    public func uploadInteractionsInBackground(_ devices: [IBeaconDto]) -> Void {
+    public func uploadInteractionsInBackground(_ devices: [IBeaconDto], token: String) -> Void {
         // https://medium.com/livefront/uploading-data-in-the-background-in-ios-f93722013c6a
         // We need to write to tempDir to make things work here
         //
@@ -82,6 +82,7 @@ class ApiManager: NSObject, URLSessionDelegate, URLSessionTaskDelegate, URLSessi
         let endpoint = URL(string: "\(endpoint_string)/interaction/report")
         var request = URLRequest(url: endpoint!)
         request.httpMethod = "POST"
+        request.addValue("Bearer " + token, forHTTPHeaderField: "Authorization")
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
         if let uploadData = generatePayload(devices) {
@@ -98,7 +99,7 @@ class ApiManager: NSObject, URLSessionDelegate, URLSessionTaskDelegate, URLSessi
         }
     }
     
-    public func uploadInteractions(_ devices: [IBeaconDto], handler: @escaping (TimeInterval) -> Void) -> Void {
+    public func uploadInteractions(_ devices: [IBeaconDto], token: String, handler: @escaping (TimeInterval) -> Void) -> Void {
         print("Upload called")
 
         if devices.isEmpty {
@@ -110,6 +111,7 @@ class ApiManager: NSObject, URLSessionDelegate, URLSessionTaskDelegate, URLSessi
         let endpoint = URL(string: "\(endpoint_string)/interaction/report")
         var request = URLRequest(url: endpoint!)
         request.httpMethod = "POST"
+        request.addValue("Bearer " + token, forHTTPHeaderField: "Authorization")
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
         if let uploadData = generatePayload(devices) {
@@ -126,23 +128,18 @@ class ApiManager: NSObject, URLSessionDelegate, URLSessionTaskDelegate, URLSessi
                         return
                 }
                 if let data = data {
-                    DispatchQueue.main.async {
-                        do{
-                            let response = try JSONDecoder().decode(pushResponse.self, from: data)
-                            print(response)
-                            handler(response.next_try)
-                            if let b = response.location{
-                                StorageManager.shared.setLocationNeeded(b)
-                            }
-                          } catch let parsingError {
-                             print("Error", parsingError)
+                    do{
+                        let response = try JSONDecoder().decode(pushResponse.self, from: data)
+                        print(response)
+                        handler(response.next_try)
+                        if let b = response.location{
+                            StorageManager.shared.setLocationNeeded(b)
                         }
+                      } catch let parsingError {
+                         print("Error", parsingError)
                     }
                 }
             }
-            //backgroundTask.earliestBeginDate = Date().addingTimeInterval(60 * 60)
-            //backgroundTask.countOfBytesClientExpectsToSend = 200
-            //backgroundTask.countOfBytesClientExpectsToReceive = 500 * 1024
             task.resume()
         }
     }
@@ -224,11 +221,12 @@ class ApiManager: NSObject, URLSessionDelegate, URLSessionTaskDelegate, URLSessi
         task.resume()
     }
     
-    public func setPushNotificationId(deviceId: Int64, notificationId: String) {
+    public func setPushNotificationId(deviceId: Int64, notificationId: String, token: String) {
         let url = URL(string: "\(endpoint_string)/device")!
         
         var request = URLRequest(url: url)
         request.httpMethod = "PUT"
+        request.addValue("Bearer " + token, forHTTPHeaderField: "Authorization")
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
         
@@ -265,7 +263,7 @@ class ApiManager: NSObject, URLSessionDelegate, URLSessionTaskDelegate, URLSessi
         
     }
     // Shouldn't have to call this more than once, ever.
-    public func getNewDeviceId(id: String, model: String, version: String, handler: @escaping (Int64) -> Void) -> Void {
+    public func handshakeNewDevice(id: String, model: String, version: String, handler: @escaping (Int64, String) -> Void) -> Void {
         let url = URL(string: "\(endpoint_string)/device/handshake")!
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
@@ -288,6 +286,7 @@ class ApiManager: NSObject, URLSessionDelegate, URLSessionTaskDelegate, URLSessi
         
         struct ApiResponse: Codable {
             let id: Int64
+            let token: String
         }
         
         let deviceModel = DeviceModel(manufacturer: "Apple", model: model)
@@ -314,15 +313,13 @@ class ApiManager: NSObject, URLSessionDelegate, URLSessionTaskDelegate, URLSessi
                     return
             }
             if let dataResponse = data {
-                DispatchQueue.main.async {
-                    do{
-                        let response = try JSONDecoder().decode(ApiResponse.self, from: dataResponse)
-                        print(response)
-                        handler(response.id)
-                      } catch let parsingError {
-                         print("Error", parsingError)
-                    }
-                    
+                do{
+                    let response = try JSONDecoder().decode(ApiResponse.self, from: dataResponse)
+                    print("HANDSHAKE", response)
+                    StorageManager.shared.setTokenJWT(response.token)
+                    handler(response.id, response.token)
+                  } catch let parsingError {
+                     print("Error", parsingError)
                 }
             }
         }

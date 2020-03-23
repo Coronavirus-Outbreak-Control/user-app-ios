@@ -41,35 +41,30 @@ class LocationViewController : ViewController{
         print("dismissing view location")
         
         
-//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        let controller = storyboard.instantiateViewController(withIdentifier: "ShareLocationViewController")
-//        UIApplication.shared.windows.first?.rootViewController = controller
-//        UIApplication.shared.windows.first?.makeKeyAndVisible()
-        
-//        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-//        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "ShareLocationViewController") as! ShareLocationViewController
-//        nextViewController.modalPresentationStyle = .fullScreen
-//        self.present(nextViewController, animated:true, completion:nil)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "ShareLocationViewController")
+        UIApplication.shared.windows.first?.rootViewController = controller
+        UIApplication.shared.windows.first?.makeKeyAndVisible()
 
-        if StorageManager.shared.isFirstAccess(){
-            print("gonna open notification view")
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let controller = storyboard.instantiateViewController(withIdentifier: "NotificationViewController")
-            UIApplication.shared.windows.first?.rootViewController = controller
-            UIApplication.shared.windows.first?.makeKeyAndVisible()
-        }else{
-            if Utils.isActive(){
-                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let controller = storyboard.instantiateViewController(withIdentifier: "MainViewController")
-                UIApplication.shared.windows.first?.rootViewController = controller
-                UIApplication.shared.windows.first?.makeKeyAndVisible()
-            }else{
-                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let controller = storyboard.instantiateViewController(withIdentifier: "InactiveViewController")
-                UIApplication.shared.windows.first?.rootViewController = controller
-                UIApplication.shared.windows.first?.makeKeyAndVisible()
-            }
-        }
+//        if StorageManager.shared.isFirstAccess(){
+//            print("gonna open notification view")
+//            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//            let controller = storyboard.instantiateViewController(withIdentifier: "NotificationViewController")
+//            UIApplication.shared.windows.first?.rootViewController = controller
+//            UIApplication.shared.windows.first?.makeKeyAndVisible()
+//        }else{
+//            if Utils.isActive(){
+//                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//                let controller = storyboard.instantiateViewController(withIdentifier: "MainViewController")
+//                UIApplication.shared.windows.first?.rootViewController = controller
+//                UIApplication.shared.windows.first?.makeKeyAndVisible()
+//            }else{
+//                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//                let controller = storyboard.instantiateViewController(withIdentifier: "InactiveViewController")
+//                UIApplication.shared.windows.first?.rootViewController = controller
+//                UIApplication.shared.windows.first?.makeKeyAndVisible()
+//            }
+//        }
         
         self.dismiss(animated: true, completion: nil)
     }
@@ -165,6 +160,5 @@ class LocationViewController : ViewController{
     @IBAction func skipNext(_ sender: Any) {
         self.goNext()
     }
-    
     
 }

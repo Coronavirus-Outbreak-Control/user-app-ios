@@ -132,25 +132,25 @@
 "y2F-V0-cDw.normalTitle" = "Attivo       ";
 
 /* Class = "UIButton"; normalTitle = "Bluetooth"; ObjectID = "VTR-mB-wT6"; */
-"VTR-mB-wT6.normalTitle" = "";
+"VTR-mB-wT6.normalTitle" = "Bluetooth";
 
 /* Class = "UIButton"; normalTitle = "Notification"; ObjectID = "gIo-tP-VRu"; */
-"gIo-tP-VRu.normalTitle" = "";
+"gIo-tP-VRu.normalTitle" = "Notifiche";
 
 /* Class = "UIButton"; normalTitle = "Location"; ObjectID = "hdP-oP-fKL"; */
-"hdP-oP-fKL.normalTitle" = "";
+"hdP-oP-fKL.normalTitle" = "Posizione";
 
-/* Class = "UIButton"; normalTitle = "SKIP TO NEXT STEP"; ObjectID = "6Mx-fk-Yug"; */
-"6Mx-fk-Yug.normalTitle" = "";
+/* Class = "UIButton"; normalTitle = "SKIP TO NEXT STEP"; ObjectID = "2qO-Hh-VBZ"; */
+"2qO-Hh-VBZ.normalTitle" = "SALTA QUESTA RICHIESTA";
 
-/* Class = "UIButton"; normalTitle = "SHARE LOCATION"; ObjectID = "VLR-P5-hgi"; */
-"VLR-P5-hgi.normalTitle" = "";
+/* Class = "UIButton"; normalTitle = "SHARE LOCATION"; ObjectID = "Elz-lo-tdP"; */
+"Elz-lo-tdP.normalTitle" = "CONDIVIDI LA POSIZIONE";
 
-/* Class = "UILabel"; text = "Step 2"; ObjectID = "nrH-4j-YPZ"; */
-"nrH-4j-YPZ.text" = "";
+/* Class = "UILabel"; text = "Share Location"; ObjectID = "HQy-Cs-56D"; */
+"HQy-Cs-56D.text" = "Condividi posizione";
 
-/* Class = "UILabel"; text = "Share Location"; ObjectID = "sHD-37-Mlj"; */
-"sHD-37-Mlj.text" = "";
+/* Class = "UILabel"; text = "Step 2"; ObjectID = "eDj-OF-eZt"; */
+"eDj-OF-eZt.text" = "Step 2";
 
-/* Class = "UILabel"; text = "To help doctors with research with this crysis you can choose to share your position with the scientist."; ObjectID = "tIT-NQ-V3Q"; */
-"tIT-NQ-V3Q.text" = "";
+/* Class = "UILabel"; text = "To help doctors with research with this crysis you can choose to share your position with the scientist."; ObjectID = "rux-iK-l4p"; */
+"rux-iK-l4p.text" = "Per aiutare i medici con la ricerca e l’analisi di questa crisi, puoi decidere di condividere la tua Posizione. Questo non è obbligatorio, e aiuterà solo se tu decidi di farlo.";

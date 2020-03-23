@@ -41,7 +41,7 @@ class NotificationManager : NSObject, UNUserNotificationCenterDelegate{
             case PermissionStatus.denied:
                 return newStatus != .denied && newStatus != .provisional
             case PermissionStatus.notDetermined:
-                return newStatus != .authorized
+                return newStatus != .notDetermined
             }
         }else{
             return true
