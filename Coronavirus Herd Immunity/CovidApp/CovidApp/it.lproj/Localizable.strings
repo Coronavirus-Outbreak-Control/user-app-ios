@@ -60,10 +60,10 @@
 "Notifications" = "Notifiche";
 
 /* location open always */
-"We need to access always the location, please Open Settings -> Coronavirus Herd Immunity -> Location -> Always" = "";
+"We need to access always the location, please Open Settings -> Coronavirus Herd Immunity -> Location -> Always" = "Abbiamo bisogno di accedere alla posizione costantemente, puoi abilitare i permessi da Impostazioni -> CovidApp -> Posizione -> Sempre";
 
 /* bluetooth open app settings */
-"We need to access the bluetooth, please Open Settings -> Coronavirus Herd Immunity -> enable bluetooth access" = "";
+"We need to access the bluetooth, please Open Settings -> Coronavirus Herd Immunity -> enable bluetooth access" = "Abbiamo bisogno del bluetooth, apri Impostazioni -> Bluetooth -> abilita";
 
 /* location open  */
-"We need to access the location, please Open Settings -> Coronavirus Herd Immunity -> enable location access" = "";
+"We need to access the location, please Open Settings -> Coronavirus Herd Immunity -> enable location access" = "Abbiamo bisogno della posizione, apri Impostazioni -> Privacy -> Servizi di localizzazione -> abilita";

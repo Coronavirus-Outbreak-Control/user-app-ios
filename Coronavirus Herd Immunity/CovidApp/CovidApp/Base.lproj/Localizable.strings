@@ -1,69 +1,63 @@
 
 /* bluetooth title alert */
-"Bluetooth" = "";
+"Bluetooth" = "Bluetooth";
 
 /* notification open */
-"If you’ve been close to an infected person in the past two weeks we will notify you. That’s it, just one notification." = "";
+"If you’ve been close to an infected person in the past two weeks we will notify you. That’s it, just one notification." = "If you’ve been close to an infected person in the past two weeks we will notify you. That’s it, just one notification.";
 
 /* location title alert */
-"Location" = "";
+"Location" = "Location";
 
 /* notification title alert */
-"Notification" = "";
+"Notification" = "Notification";
 
 /* bluetooth unavailable */
-"The bluetooth seems to be resetting, please try later" = "";
+"The bluetooth seems to be resetting, please try later" = "The bluetooth seems to be resetting, please try later";
 
 /* bluetooth unavailable */
-"The bluetooth seems to be unavailable on your device" = "";
+"The bluetooth seems to be unavailable on your device" = "The bluetooth seems to be unavailable on your device";
 
 /* location unavailable */
-"The location seems to be unavailable on your device" = "";
+"The location seems to be unavailable on your device" = "The location seems to be unavailable on your device";
 
 /* location open always */
-"We need to access always the location, please Open Settings -> Coronavirus Herd Immunity -> Location -> Always" = "";
+"We need to access always the location, please Open Settings -> CovisApp -> Location -> Always" = "We need to access always the location, please Open Settings -> CovisApp -> Location -> Always";
 
 /* bluetooth open app settings */
-"We need to access the bluetooth, please Open Settings -> Coronavirus Herd Immunity -> enable bluetooth access" = "";
+"We need to access the bluetooth, please Open Settings -> CovidApp -> enable bluetooth access" = "We need to access the bluetooth, please Open Settings -> CovidApp -> enable bluetooth access";
 
 /* location open  */
-"We need to access the location, please Open Settings -> Coronavirus Herd Immunity -> enable location access" = "";
+"We need to access the location, please Open Settings -> CovidApp -> enable location access" = "We need to access the location, please Open Settings -> CovidApp -> enable location access";
 
 /* bluetooth off */
-"You need to enable the bluetooth, please Open Settings -> Bluetooth -> enable bluetooth" = "";
+"You need to enable the bluetooth, please Open Settings -> Bluetooth -> enable bluetooth" = "You need to enable the bluetooth, please Open Settings -> Bluetooth -> enable bluetooth";
 
 /* location denied */
-"You need to enable the location, please Open Settings -> Privacy -> Location services" = "";
+"You need to enable the location, please Open Settings -> Privacy -> Location services" = "You need to enable the location, please Open Settings -> Privacy -> Location services";
 
 /* Infected status */
-"Infected" = "";
+"Infected" = "Infected";
 
 /* Suspect status */
-"Suspect" = "";
+"Suspect" = "Suspect";
 
 /* Give bluetooth permission */
-"Give bluetooth permission" = "";
+"Give bluetooth permission" = "Give bluetooth permission";
 
 /* Bluetooth permission */
-"Bluetooth permission" = "";
+"Bluetooth permission" = "Bluetooth permission";
 
 /* Enable location access */
-"Enable location access" = "";
+"Enable location access" = "Enable location access";
 
 /* Enable notifications */
-"Enable notifications" = "";
+"Enable notifications" = "Enable notifications";
 
 /* Location access */
-"Location access" = "";
+"Location access" = "Location access";
 
 /* Notifications */
-"Notifications" = "";
+"Notifications" = "Notifications";
 
 /* location open always */
-"We need to access always the location, please Open Settings -> CovidApp -> Location -> Always" = "";
-
-/* bluetooth open app settings */
-"We need to access the bluetooth, please Open Settings -> CovidApp -> enable bluetooth access" = "";
-
-/* location open  */
-"We need to access the location, please Open Settings -> CovidApp -> enable location access" = "";
+"We need to access always the location, please Open Settings -> CovidApp -> Location -> Always" = "We need to access always the location, please Open Settings -> CovidApp -> Location -> Always";

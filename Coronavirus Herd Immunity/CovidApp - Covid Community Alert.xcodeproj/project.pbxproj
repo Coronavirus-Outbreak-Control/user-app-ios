@@ -529,7 +529,7 @@
 				CODE_SIGN_ENTITLEMENTS = "CovidApp - Covid Community Alert.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = TAHN979S3F;
 				INFOPLIST_FILE = CovidApp/Info.plist;
@@ -552,7 +552,7 @@
 				CODE_SIGN_ENTITLEMENTS = "CovidApp - Covid Community Alert.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = TAHN979S3F;
 				INFOPLIST_FILE = CovidApp/Info.plist;
