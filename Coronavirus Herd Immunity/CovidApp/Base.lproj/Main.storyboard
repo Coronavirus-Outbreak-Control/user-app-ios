@@ -11,7 +11,7 @@
         <!--How It Works View Controller-->
         <scene sceneID="B5K-zh-dA0">
             <objects>
-                <viewController storyboardIdentifier="HowItWorksViewController" id="a8g-1i-cnh" customClass="HowItWorksViewController" customModule="CovidApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HowItWorksViewController" id="a8g-1i-cnh" customClass="HowItWorksViewController" customModule="CovidApp___Covid_Community_Alert" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jTW-cO-AtD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -80,26 +80,6 @@ to an infected person, up to 14 days back.</string>
                                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q8k-vt-zby" customClass="RoundButton" customModule="CovidApp" customModuleProvider="target">
-                                                <rect key="frame" x="44" y="798" width="56" height="56"/>
-                                                <color key="backgroundColor" red="1" green="0.43529411764705883" blue="0.38039215686274508" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="56" id="NS3-Cu-RyR"/>
-                                                    <constraint firstAttribute="width" constant="56" id="aal-DC-oj3"/>
-                                                </constraints>
-                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" image="arrow-white-left">
-                                                    <attributedString key="attributedTitle"/>
-                                                </state>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                        <real key="value" value="28"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <action selector="backButton:" destination="a8g-1i-cnh" eventType="touchUpInside" id="MGF-Yg-u7i"/>
-                                                </connections>
-                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -107,12 +87,10 @@ to an infected person, up to 14 days back.</string>
                                             <constraint firstItem="oex-KU-Krk" firstAttribute="top" secondItem="lE4-wP-W8e" secondAttribute="bottom" constant="40" id="97F-bu-rOs"/>
                                             <constraint firstItem="Wir-Pv-FdO" firstAttribute="trailing" secondItem="kIm-R5-VGq" secondAttribute="trailing" id="Ass-1Y-1wf"/>
                                             <constraint firstAttribute="height" priority="250" constant="896" id="B0o-E6-hAI"/>
-                                            <constraint firstAttribute="bottom" secondItem="q8k-vt-zby" secondAttribute="bottom" constant="42" id="BZk-Ku-7t9"/>
                                             <constraint firstItem="6xm-br-pwN" firstAttribute="leading" secondItem="Wir-Pv-FdO" secondAttribute="leading" id="GO8-CY-Ll6"/>
                                             <constraint firstItem="ua8-Xu-iFs" firstAttribute="leading" secondItem="kIm-R5-VGq" secondAttribute="leading" id="NO5-cV-xWW"/>
                                             <constraint firstItem="Wyx-kq-ZCe" firstAttribute="trailing" secondItem="oex-KU-Krk" secondAttribute="trailing" id="O6C-cm-9dS"/>
                                             <constraint firstItem="ua8-Xu-iFs" firstAttribute="trailing" secondItem="kIm-R5-VGq" secondAttribute="trailing" id="OoH-2y-gIN"/>
-                                            <constraint firstItem="q8k-vt-zby" firstAttribute="leading" secondItem="Rl1-ZK-aaV" secondAttribute="leading" constant="44" id="Pa9-us-OZH"/>
                                             <constraint firstItem="oex-KU-Krk" firstAttribute="leading" secondItem="lE4-wP-W8e" secondAttribute="leading" id="Q0R-BX-8Bn"/>
                                             <constraint firstItem="3Aj-4V-d8O" firstAttribute="leading" secondItem="oex-KU-Krk" secondAttribute="leading" id="Shk-kw-YJc"/>
                                             <constraint firstItem="oex-KU-Krk" firstAttribute="trailing" secondItem="lE4-wP-W8e" secondAttribute="trailing" id="TGO-IK-eMn"/>
@@ -125,9 +103,7 @@ to an infected person, up to 14 days back.</string>
                                             <constraint firstItem="kIm-R5-VGq" firstAttribute="trailing" secondItem="oex-KU-Krk" secondAttribute="trailing" id="lNx-Kj-THh"/>
                                             <constraint firstItem="lE4-wP-W8e" firstAttribute="leading" secondItem="Rl1-ZK-aaV" secondAttribute="leading" constant="44" id="mhA-4R-jzO"/>
                                             <constraint firstItem="6xm-br-pwN" firstAttribute="trailing" secondItem="Wir-Pv-FdO" secondAttribute="trailing" id="n68-eu-xaw"/>
-                                            <constraint firstItem="q8k-vt-zby" firstAttribute="leading" secondItem="Rl1-ZK-aaV" secondAttribute="leading" constant="44" id="oVt-cM-FM4"/>
                                             <constraint firstItem="3Aj-4V-d8O" firstAttribute="top" secondItem="Wyx-kq-ZCe" secondAttribute="bottom" constant="40" id="oWY-jA-46B"/>
-                                            <constraint firstAttribute="bottom" secondItem="q8k-vt-zby" secondAttribute="bottom" constant="42" id="qFe-1v-TUW"/>
                                             <constraint firstItem="ua8-Xu-iFs" firstAttribute="top" secondItem="kIm-R5-VGq" secondAttribute="bottom" constant="44" id="qdw-9K-KWj"/>
                                             <constraint firstItem="Wyx-kq-ZCe" firstAttribute="top" secondItem="oex-KU-Krk" secondAttribute="bottom" constant="40" id="qhG-nm-AwP"/>
                                             <constraint firstItem="Wyx-kq-ZCe" firstAttribute="leading" secondItem="oex-KU-Krk" secondAttribute="leading" id="uKi-uX-EvC"/>
@@ -147,11 +123,33 @@ to an infected person, up to 14 days back.</string>
                                 <viewLayoutGuide key="contentLayoutGuide" id="l1v-a5-XU8"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="XZD-Ve-5cd"/>
                             </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q8k-vt-zby" customClass="RoundButton" customModule="CovidApp___Covid_Community_Alert" customModuleProvider="target">
+                                <rect key="frame" x="40" y="766" width="56" height="56"/>
+                                <color key="backgroundColor" red="1" green="0.43529411764705883" blue="0.38039215686274508" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="56" id="FwQ-oz-qH6"/>
+                                    <constraint firstAttribute="height" constant="56" id="GAn-jd-0Gd"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="arrow-white-left">
+                                    <attributedString key="attributedTitle"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="28"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="backButton:" destination="a8g-1i-cnh" eventType="touchUpInside" id="MGF-Yg-u7i"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="yhG-II-zEl" firstAttribute="trailing" secondItem="x9k-fi-8ap" secondAttribute="trailing" id="5sC-2a-6kc"/>
                             <constraint firstAttribute="bottom" secondItem="yhG-II-zEl" secondAttribute="bottom" id="U4C-4D-Ibn"/>
+                            <constraint firstItem="q8k-vt-zby" firstAttribute="leading" secondItem="x9k-fi-8ap" secondAttribute="leading" constant="40" id="V72-lW-gAa"/>
+                            <constraint firstItem="x9k-fi-8ap" firstAttribute="bottom" secondItem="q8k-vt-zby" secondAttribute="bottom" constant="40" id="Yep-ZL-l2S"/>
                             <constraint firstItem="yhG-II-zEl" firstAttribute="leading" secondItem="x9k-fi-8ap" secondAttribute="leading" id="Z4p-sG-pBU"/>
                             <constraint firstItem="yhG-II-zEl" firstAttribute="top" secondItem="jTW-cO-AtD" secondAttribute="top" id="sVg-UR-to6"/>
                         </constraints>
@@ -168,13 +166,13 @@ to an infected person, up to 14 days back.</string>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CovidApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CovidApp___Covid_Community_Alert" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="x8p-0F-Dgi">
-                                <rect key="frame" x="44" y="143.5" width="330" height="202"/>
+                                <rect key="frame" x="44" y="144" width="330" height="202.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="PS2-ym-ib5">
                                         <rect key="frame" x="0.0" y="0.0" width="330" height="50.5"/>
@@ -183,19 +181,19 @@ to an infected person, up to 14 days back.</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="anonymous" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="u43-2n-RLl">
-                                        <rect key="frame" x="0.0" y="50.5" width="330" height="50.5"/>
+                                        <rect key="frame" x="0.0" y="50.5" width="330" height="51"/>
                                         <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="42"/>
                                         <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CovidCommunity" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="eUK-o7-h5n">
-                                        <rect key="frame" x="0.0" y="101" width="330" height="50.5"/>
+                                        <rect key="frame" x="0.0" y="101.5" width="330" height="50.5"/>
                                         <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="42"/>
                                         <color key="textColor" red="1" green="0.43529411764705883" blue="0.38039215686274508" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="alert 👋" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="Fdy-am-YdY">
-                                        <rect key="frame" x="0.0" y="151.5" width="330" height="50.5"/>
+                                        <rect key="frame" x="0.0" y="152" width="330" height="50.5"/>
                                         <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="42"/>
                                         <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -224,7 +222,7 @@ to an infected person, up to 14 days back.</string>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="1000" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="3Sh-UK-sVs">
-                                <rect key="frame" x="44" y="385.5" width="330" height="84"/>
+                                <rect key="frame" x="44" y="386.5" width="330" height="84"/>
                                 <string key="text">Together we can save
 lives and help people
 keep their jobs.</string>
@@ -232,8 +230,8 @@ keep their jobs.</string>
                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NEs-MN-e2E" customClass="RoundButton" customModule="CovidApp" customModuleProvider="target">
-                                <rect key="frame" x="59.5" y="692" width="295" height="64"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NEs-MN-e2E" customClass="RoundButton" customModule="CovidApp___Covid_Community_Alert" customModuleProvider="target">
+                                <rect key="frame" x="59.5" y="693" width="295" height="64"/>
                                 <color key="backgroundColor" red="1" green="0.43529411759999997" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="295" id="MiD-t8-xeq"/>
@@ -259,28 +257,32 @@ keep their jobs.</string>
                                     <action selector="letsGetStarted:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7I0-A5-xHA"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ABA-Kp-KZc">
-                                <rect key="frame" x="158.5" y="791" width="97" height="27"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xb4-xH-i7d">
+                                <rect key="frame" x="141" y="778" width="136" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="29" id="xvu-2v-DL4"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="12"/>
                                 <state key="normal" title="HOW IT WORKS?"/>
                                 <connections>
-                                    <action selector="howItWorks:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hHu-Nf-3xG"/>
+                                    <action selector="howItWorks:" destination="BYZ-38-t0r" eventType="touchUpInside" id="isB-FM-I08"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="xb4-xH-i7d" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="141" id="2Y0-WK-sss"/>
                             <constraint firstItem="NEs-MN-e2E" firstAttribute="top" secondItem="x8p-0F-Dgi" secondAttribute="bottom" priority="998" constant="346.5" id="7Jz-EH-lv2"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="xb4-xH-i7d" secondAttribute="bottom" constant="55" id="H2e-qP-Gmt"/>
                             <constraint firstItem="x8p-0F-Dgi" firstAttribute="top" relation="lessThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="top" priority="999" constant="100" id="JcI-X2-kWV"/>
                             <constraint firstItem="NEs-MN-e2E" firstAttribute="top" relation="lessThanOrEqual" secondItem="3Sh-UK-sVs" secondAttribute="bottom" priority="999" constant="222.5" id="Q4Y-rq-W3V"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3Sh-UK-sVs" secondAttribute="trailing" constant="40" id="QWj-fx-QbE"/>
                             <constraint firstItem="3Sh-UK-sVs" firstAttribute="top" secondItem="x8p-0F-Dgi" secondAttribute="bottom" constant="40" id="VKK-af-y4n"/>
                             <constraint firstItem="x8p-0F-Dgi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="44" id="Xua-BK-3e1"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ABA-Kp-KZc" secondAttribute="bottom" constant="44" id="dGu-mU-utJ"/>
+                            <constraint firstItem="xb4-xH-i7d" firstAttribute="centerX" secondItem="NEs-MN-e2E" secondAttribute="centerX" constant="2" id="cn0-2Z-dL6"/>
                             <constraint firstItem="3Sh-UK-sVs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="44" id="eF3-vx-HKk"/>
+                            <constraint firstItem="xb4-xH-i7d" firstAttribute="top" secondItem="NEs-MN-e2E" secondAttribute="bottom" constant="21" id="gtI-1r-PO7"/>
                             <constraint firstItem="x8p-0F-Dgi" firstAttribute="top" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="top" priority="999" constant="30" id="hXe-wa-Bin"/>
-                            <constraint firstItem="ABA-Kp-KZc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hcG-j5-9RJ"/>
-                            <constraint firstItem="ABA-Kp-KZc" firstAttribute="top" secondItem="NEs-MN-e2E" secondAttribute="bottom" constant="35" id="s6v-OT-Zaj"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="x8p-0F-Dgi" secondAttribute="trailing" constant="40" id="t5m-Lu-inq"/>
                             <constraint firstItem="NEs-MN-e2E" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ya5-1z-yTr"/>
                         </constraints>
@@ -294,7 +296,7 @@ keep their jobs.</string>
         <!--Main View Controller-->
         <scene sceneID="VZN-LA-QLD">
             <objects>
-                <viewController storyboardIdentifier="MainViewController" interfaceStyle="dark" id="xcS-4u-vjt" customClass="MainViewController" customModule="CovidApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainViewController" interfaceStyle="dark" id="xcS-4u-vjt" customClass="MainViewController" customModule="CovidApp___Covid_Community_Alert" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="U7Z-oe-xJF">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -437,7 +439,7 @@ during your day, we'll let you know.</string>
         <!--Known Bluetooth devices-->
         <scene sceneID="8F8-1i-4Zo">
             <objects>
-                <tableViewController storyboardIdentifier="BluetoothTableViewController" id="gJf-Al-C2f" customClass="BluetoothTableViewController" customModule="CovidApp" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="BluetoothTableViewController" id="gJf-Al-C2f" customClass="BluetoothTableViewController" customModule="CovidApp___Covid_Community_Alert" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="UuH-xN-t0r">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -482,7 +484,7 @@ during your day, we'll let you know.</string>
         <!--Bluetooth Off View Controller-->
         <scene sceneID="r4l-64-WeV">
             <objects>
-                <viewController storyboardIdentifier="BluetoothOffViewController" interfaceStyle="dark" id="v5A-pM-8af" customClass="BluetoothOffViewController" customModule="CovidApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BluetoothOffViewController" interfaceStyle="dark" id="v5A-pM-8af" customClass="BluetoothOffViewController" customModule="CovidApp___Covid_Community_Alert" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1vk-Hh-aXW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -514,7 +516,7 @@ distance from other devices.</string>
                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iaE-IC-WIK" customClass="RoundButton" customModule="CovidApp" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iaE-IC-WIK" customClass="RoundButton" customModule="CovidApp___Covid_Community_Alert" customModuleProvider="target">
                                 <rect key="frame" x="59.5" y="695" width="295" height="64"/>
                                 <color key="backgroundColor" red="1" green="0.43529411759999997" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -586,7 +588,7 @@ distance from other devices.</string>
         <!--Location View Controller-->
         <scene sceneID="lmN-7w-QIJ">
             <objects>
-                <viewController storyboardIdentifier="LocationViewController" interfaceStyle="dark" id="XIH-VQ-Rht" customClass="LocationViewController" customModule="CovidApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LocationViewController" interfaceStyle="dark" id="XIH-VQ-Rht" customClass="LocationViewController" customModule="CovidApp___Covid_Community_Alert" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MzB-gw-BTJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -594,7 +596,7 @@ distance from other devices.</string>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="illustration-location" translatesAutoresizingMaskIntoConstraints="NO" id="R4q-uu-z6X">
                                 <rect key="frame" x="0.0" y="486" width="414" height="410"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fd6-Na-JOe" customClass="RoundButton" customModule="CovidApp" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fd6-Na-JOe" customClass="RoundButton" customModule="CovidApp___Covid_Community_Alert" customModuleProvider="target">
                                 <rect key="frame" x="59.5" y="695" width="295" height="64"/>
                                 <color key="backgroundColor" red="1" green="0.43529411759999997" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -703,7 +705,7 @@ distance from other devices.</string>
         <!--Notification View Controller-->
         <scene sceneID="O55-I1-iWT">
             <objects>
-                <viewController storyboardIdentifier="NotificationViewController" id="QC2-aM-H8O" customClass="NotificationViewController" customModule="CovidApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NotificationViewController" id="QC2-aM-H8O" customClass="NotificationViewController" customModule="CovidApp___Covid_Community_Alert" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Fit-wh-e75">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -711,7 +713,7 @@ distance from other devices.</string>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="illustration-location" translatesAutoresizingMaskIntoConstraints="NO" id="8BV-Ct-9Tj">
                                 <rect key="frame" x="0.0" y="486" width="414" height="410"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qYv-To-SWE" customClass="RoundButton" customModule="CovidApp" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qYv-To-SWE" customClass="RoundButton" customModule="CovidApp___Covid_Community_Alert" customModuleProvider="target">
                                 <rect key="frame" x="59.5" y="695" width="295" height="64"/>
                                 <color key="backgroundColor" red="1" green="0.43529411759999997" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -793,7 +795,7 @@ distance from other devices.</string>
         <!--Inactive View Controller-->
         <scene sceneID="Nof-3Z-mAi">
             <objects>
-                <viewController storyboardIdentifier="InactiveViewController" id="2WV-Iv-zXY" customClass="InactiveViewController" customModule="CovidApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InactiveViewController" id="2WV-Iv-zXY" customClass="InactiveViewController" customModule="CovidApp___Covid_Community_Alert" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FN0-Cy-xn0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -944,7 +946,7 @@ is</string>
         <!--Share Location View Controller-->
         <scene sceneID="qiM-dJ-ydT">
             <objects>
-                <viewController storyboardIdentifier="ShareLocationViewController" id="Ls6-uj-vgb" customClass="ShareLocationViewController" customModule="CovidApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ShareLocationViewController" id="Ls6-uj-vgb" customClass="ShareLocationViewController" customModule="CovidApp___Covid_Community_Alert" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ou8-Ix-cT5">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -952,7 +954,7 @@ is</string>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="illustration-location" translatesAutoresizingMaskIntoConstraints="NO" id="7Vo-xg-M55">
                                 <rect key="frame" x="0.0" y="486" width="414" height="410"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Elz-lo-tdP" customClass="RoundButton" customModule="CovidApp" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Elz-lo-tdP" customClass="RoundButton" customModule="CovidApp___Covid_Community_Alert" customModuleProvider="target">
                                 <rect key="frame" x="59.5" y="695" width="295" height="64"/>
                                 <color key="backgroundColor" red="1" green="0.43529411759999997" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>

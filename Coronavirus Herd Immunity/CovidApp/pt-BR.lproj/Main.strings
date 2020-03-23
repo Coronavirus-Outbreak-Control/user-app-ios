@@ -26,9 +26,6 @@
 /* Class = "UINavigationItem"; title = "Known Bluetooth devices"; ObjectID = "9Ps-Xo-EoE"; */
 "9Ps-Xo-EoE.title" = "Dispositivos Bluetooth conhecidos";
 
-/* Class = "UIButton"; normalTitle = "HOW IT WORKS?"; ObjectID = "ABA-Kp-KZc"; */
-"ABA-Kp-KZc.normalTitle" = "COMO FUNCIONA?";
-
 /* Class = "UILabel"; text = "Active       "; ObjectID = "Euk-My-yLC"; */
 "Euk-My-yLC.text" = "Ativo       ";
 
@@ -157,3 +154,6 @@
 
 /* Class = "UILabel"; text = "To help doctors with research with this crysis you can choose to share your position with the scientist."; ObjectID = "rux-iK-l4p"; */
 "rux-iK-l4p.text" = "Para ajudar os médicos na pesquisa com essa crise, você pode compartilhar sua posição com o cientista.";
+
+/* Class = "UIButton"; normalTitle = "HOW IT WORKS?"; ObjectID = "xb4-xH-i7d"; */
+"xb4-xH-i7d.normalTitle" = "COMO FUNCIONA?";

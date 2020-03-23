@@ -29,9 +29,6 @@
 /* Class = "UILabel"; text = "Together we can save\nlives and help people\nkeep their jobs."; ObjectID = "3Sh-UK-sVs"; */
 "3Sh-UK-sVs.text" = "Insieme possiamo salvare vite e aiutare persone a non perdere il lavoro.";
 
-/* Class = "UIButton"; normalTitle = "HOW IT WORKS?"; ObjectID = "ABA-Kp-KZc"; */
-"ABA-Kp-KZc.normalTitle" = "COME FUNZIONA?";
-
 /* Class = "UILabel"; text = "alert 👋"; ObjectID = "Fdy-am-YdY"; */
 "Fdy-am-YdY.text" = "alert 👋";
 
@@ -154,3 +151,6 @@
 
 /* Class = "UILabel"; text = "To help doctors with research with this crysis you can choose to share your position with the scientist."; ObjectID = "rux-iK-l4p"; */
 "rux-iK-l4p.text" = "Per aiutare i medici con la ricerca e l’analisi di questa crisi, puoi decidere di condividere la tua Posizione. Questo non è obbligatorio, e aiuterà solo se tu decidi di farlo.";
+
+/* Class = "UIButton"; normalTitle = "HOW IT WORKS?"; ObjectID = "xb4-xH-i7d"; */
+"xb4-xH-i7d.normalTitle" = "COME FUNZIONA?";

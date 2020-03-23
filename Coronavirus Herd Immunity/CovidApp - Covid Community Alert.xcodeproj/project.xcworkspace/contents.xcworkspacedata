@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:/Users/antonioromano/development/coronavirus-project/ios/Coronavirus Herd Immunity/CovidApp - Covid Community Alert.xcodeproj">
+      location = "self:">
    </FileRef>
 </Workspace>
