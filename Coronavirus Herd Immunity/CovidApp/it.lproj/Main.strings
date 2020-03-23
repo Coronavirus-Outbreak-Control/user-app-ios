@@ -32,8 +32,8 @@
 /* Class = "UIButton"; normalTitle = "HOW IT WORKS?"; ObjectID = "ABA-Kp-KZc"; */
 "ABA-Kp-KZc.normalTitle" = "COME FUNZIONA?";
 
-/* Class = "UILabel"; text = "check 👋"; ObjectID = "Fdy-am-YdY"; */
-"Fdy-am-YdY.text" = "check 👋";
+/* Class = "UILabel"; text = "alert 👋"; ObjectID = "Fdy-am-YdY"; */
+"Fdy-am-YdY.text" = "alert 👋";
 
 /* Class = "UIButton"; normalTitle = "LET'S GET STARTED"; ObjectID = "NEs-MN-e2E"; */
 "NEs-MN-e2E.normalTitle" = "INIZIA!";
@@ -41,8 +41,8 @@
 /* Class = "UILabel"; text = "Welcome to"; ObjectID = "PS2-ym-ib5"; */
 "PS2-ym-ib5.text" = "Welcome to";
 
-/* Class = "UILabel"; text = "Coronavirus"; ObjectID = "eUK-o7-h5n"; */
-"eUK-o7-h5n.text" = "Coronavirus";
+/* Class = "UILabel"; text = "CovidCommunity"; ObjectID = "eUK-o7-h5n"; */
+"eUK-o7-h5n.text" = "CovidCommunity";
 
 /* Class = "UILabel"; text = "anonymous"; ObjectID = "u43-2n-RLl"; */
 "u43-2n-RLl.text" = "anonymous";

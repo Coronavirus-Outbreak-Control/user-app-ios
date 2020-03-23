@@ -35,8 +35,8 @@
 /* Class = "UIButton"; normalTitle = "SKIP TO NEXT STEP"; ObjectID = "FMk-EN-B47"; */
 "FMk-EN-B47.normalTitle" = "PULAR ESTE PASSO";
 
-/* Class = "UILabel"; text = "check 👋"; ObjectID = "Fdy-am-YdY"; */
-"Fdy-am-YdY.text" = "check 👋";
+/* Class = "UILabel"; text = "alert 👋"; ObjectID = "Fdy-am-YdY"; */
+"Fdy-am-YdY.text" = "alert 👋";
 
 /* Class = "UILabel"; text = "Location"; ObjectID = "G2h-W9-Xd9"; */
 "G2h-W9-Xd9.text" = "Localização";
@@ -77,7 +77,7 @@
 /* Class = "UILabel"; text = "If you’ve been close to an infected person in the past two weeks we will notify you. That’s it, just one notification."; ObjectID = "dzx-o8-G5g"; */
 "dzx-o8-G5g.text" = "Se você esteve próximo de uma pessoa infectada nas últimas duas semanas, te notificaremos. É só isso, apenas uma notificação.";
 
-/* Class = "UILabel"; text = "Coronavirus"; ObjectID = "eUK-o7-h5n"; */
+/* Class = "UILabel"; text = "CovidCommunity"; ObjectID = "eUK-o7-h5n"; */
 "eUK-o7-h5n.text" = "Corona Vírus";
 
 /* Class = "UIButton"; normalTitle = "GIVE LOCATION PERMISSION"; ObjectID = "fd6-Na-JOe"; */

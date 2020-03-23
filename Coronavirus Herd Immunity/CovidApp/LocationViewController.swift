@@ -84,7 +84,7 @@ class LocationViewController : ViewController{
         case .allowedAlways:
             return self.goNext()
         case .allowedWhenInUse:
-            let alert = AlertManager.getAlertConfirmation(title: NSLocalizedString("Location", comment: "location title alert"), message: NSLocalizedString("We need to access always the location, please Open Settings -> Coronavirus Herd Immunity -> Location -> Always", comment: "location open always"), confirmAction: {action in
+            let alert = AlertManager.getAlertConfirmation(title: NSLocalizedString("Location", comment: "location title alert"), message: NSLocalizedString("We need to access always the location, please Open Settings -> CovidApp -> Location -> Always", comment: "location open always"), confirmAction: {action in
                 guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
                     print("NO SETTINGS URL")
                     return
@@ -106,7 +106,7 @@ class LocationViewController : ViewController{
             break
         case .denied:
             if LocationManager.shared.isServiceEnabledForApp(){
-                let alert = AlertManager.getAlertConfirmation(title: NSLocalizedString("Location", comment: "location title alert"), message: NSLocalizedString("We need to access the location, please Open Settings -> Coronavirus Herd Immunity -> enable location access", comment: "location open "), confirmAction: {action in
+                let alert = AlertManager.getAlertConfirmation(title: NSLocalizedString("Location", comment: "location title alert"), message: NSLocalizedString("We need to access the location, please Open Settings -> CovidApp -> enable location access", comment: "location open "), confirmAction: {action in
                     guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
                         print("NO SETTINGS URL")
                         return

@@ -21,13 +21,13 @@
 "The location seems to be unavailable on your device" = "La posizione sembra non essere disponibile sul tuo dispositivo";
 
 /* location open always */
-"We need to access always the location, please Open Settings -> Coronavirus Herd Immunity -> Location -> Always" = "Abbiamo bisogno di accedere alla posizione costantemente, puoi abilitare i permessi da Impostazioni -> App -> Posizione -> Sempre";
+"We need to access always the location, please Open Settings -> CovidApp -> Location -> Always" = "Abbiamo bisogno di accedere alla posizione costantemente, puoi abilitare i permessi da Impostazioni -> CovidApp -> Posizione -> Sempre";
 
 /* bluetooth open app settings */
-"We need to access the bluetooth, please Open Settings -> Coronavirus Herd Immunity -> enable bluetooth access" = "Abbiamo bisogno del bluetooth, apri Impostazioni -> Bluetooth -> abilita";
+"We need to access the bluetooth, please Open Settings -> CovidApp -> enable bluetooth access" = "Abbiamo bisogno del bluetooth, apri Impostazioni -> Bluetooth -> abilita";
 
 /* location open  */
-"We need to access the location, please Open Settings -> Coronavirus Herd Immunity -> enable location access" = "Abbiamo bisogno della posizione, apri Impostazioni -> Privacy -> Servizi di localizzazione -> abilita";
+"We need to access the location, please Open Settings -> CovidApp -> enable location access" = "Abbiamo bisogno della posizione, apri Impostazioni -> Privacy -> Servizi di localizzazione -> abilita";
 
 /* bluetooth off */
 "You need to enable the bluetooth, please Open Settings -> Bluetooth -> enable bluetooth" = "Devi abilitare il bluetooth, apri Impostazioni -> Bluetooth -> abilita bluetooth";
@@ -58,3 +58,12 @@
 
 /* Notifications */
 "Notifications" = "Notifiche";
+
+/* location open always */
+"We need to access always the location, please Open Settings -> Coronavirus Herd Immunity -> Location -> Always" = "";
+
+/* bluetooth open app settings */
+"We need to access the bluetooth, please Open Settings -> Coronavirus Herd Immunity -> enable bluetooth access" = "";
+
+/* location open  */
+"We need to access the location, please Open Settings -> Coronavirus Herd Immunity -> enable location access" = "";

@@ -58,3 +58,12 @@
 
 /* Notifications */
 "Notifications" = "";
+
+/* location open always */
+"We need to access always the location, please Open Settings -> CovidApp -> Location -> Always" = "";
+
+/* bluetooth open app settings */
+"We need to access the bluetooth, please Open Settings -> CovidApp -> enable bluetooth access" = "";
+
+/* location open  */
+"We need to access the location, please Open Settings -> CovidApp -> enable location access" = "";

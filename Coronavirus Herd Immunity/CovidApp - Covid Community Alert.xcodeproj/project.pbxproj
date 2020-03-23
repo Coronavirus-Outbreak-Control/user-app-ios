@@ -81,7 +81,7 @@
 		C8A892E9240866CC007EA317 /* BluetoothManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothManager.swift; sourceTree = "<group>"; };
 		C8A892EB24086AC8007EA317 /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
 		C8A892ED24087226007EA317 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		C8B188D32402B14400CFEE98 /* CovidApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CovidApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8B188D32402B14400CFEE98 /* CovidApp - Covid Community Alert.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CovidApp - Covid Community Alert.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8B188D62402B14400CFEE98 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C8B188D82402B14400CFEE98 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C8B188DB2402B14400CFEE98 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -172,7 +172,7 @@
 		C8B188D42402B14400CFEE98 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C8B188D32402B14400CFEE98 /* CovidApp.app */,
+				C8B188D32402B14400CFEE98 /* CovidApp - Covid Community Alert.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -209,9 +209,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C8B188D22402B14400CFEE98 /* CovidApp */ = {
+		C8B188D22402B14400CFEE98 /* CovidApp - Covid Community Alert */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C8B188E52402B14600CFEE98 /* Build configuration list for PBXNativeTarget "CovidApp" */;
+			buildConfigurationList = C8B188E52402B14600CFEE98 /* Build configuration list for PBXNativeTarget "CovidApp - Covid Community Alert" */;
 			buildPhases = (
 				C8B188CF2402B14400CFEE98 /* Sources */,
 				C8B188D02402B14400CFEE98 /* Frameworks */,
@@ -223,12 +223,12 @@
 			);
 			dependencies = (
 			);
-			name = CovidApp;
+			name = "CovidApp - Covid Community Alert";
 			packageProductDependencies = (
 				C80C3B36241AC9B70047B1DC /* Sentry */,
 			);
 			productName = "Coronavirus Herd Immunity";
-			productReference = C8B188D32402B14400CFEE98 /* CovidApp.app */;
+			productReference = C8B188D32402B14400CFEE98 /* CovidApp - Covid Community Alert.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -246,7 +246,7 @@
 					};
 				};
 			};
-			buildConfigurationList = C8B188CE2402B14400CFEE98 /* Build configuration list for PBXProject "CovidApp" */;
+			buildConfigurationList = C8B188CE2402B14400CFEE98 /* Build configuration list for PBXProject "CovidApp - Covid Community Alert" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -264,7 +264,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C8B188D22402B14400CFEE98 /* CovidApp */,
+				C8B188D22402B14400CFEE98 /* CovidApp - Covid Community Alert */,
 			);
 		};
 /* End PBXProject section */
@@ -565,7 +565,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C8B188CE2402B14400CFEE98 /* Build configuration list for PBXProject "CovidApp" */ = {
+		C8B188CE2402B14400CFEE98 /* Build configuration list for PBXProject "CovidApp - Covid Community Alert" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C8B188E32402B14600CFEE98 /* Debug */,
@@ -574,7 +574,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C8B188E52402B14600CFEE98 /* Build configuration list for PBXNativeTarget "CovidApp" */ = {
+		C8B188E52402B14600CFEE98 /* Build configuration list for PBXNativeTarget "CovidApp - Covid Community Alert" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C8B188E62402B14600CFEE98 /* Debug */,

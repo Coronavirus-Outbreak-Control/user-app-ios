@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "C8B188D22402B14400CFEE98"
-               BuildableName = "CovidApp.app"
-               BlueprintName = "CovidApp"
-               ReferencedContainer = "container:CovidApp.xcodeproj">
+               BuildableName = "CovidApp - Covid Community Alert.app"
+               BlueprintName = "CovidApp - Covid Community Alert"
+               ReferencedContainer = "container:CovidApp - Covid Community Alert.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,9 +45,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C8B188D22402B14400CFEE98"
-            BuildableName = "CovidApp.app"
-            BlueprintName = "CovidApp"
-            ReferencedContainer = "container:CovidApp.xcodeproj">
+            BuildableName = "CovidApp - Covid Community Alert.app"
+            BlueprintName = "CovidApp - Covid Community Alert"
+            ReferencedContainer = "container:CovidApp - Covid Community Alert.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C8B188D22402B14400CFEE98"
-            BuildableName = "CovidApp.app"
-            BlueprintName = "CovidApp"
-            ReferencedContainer = "container:CovidApp.xcodeproj">
+            BuildableName = "CovidApp - Covid Community Alert.app"
+            BlueprintName = "CovidApp - Covid Community Alert"
+            ReferencedContainer = "container:CovidApp - Covid Community Alert.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
