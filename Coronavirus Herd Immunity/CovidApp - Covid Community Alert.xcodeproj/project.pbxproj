@@ -71,6 +71,7 @@
 		C83CF024241D5E0D005849D4 /* SF-Compact-Display-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Compact-Display-Semibold.otf"; sourceTree = "<group>"; };
 		C84DAEDE241990C30043A1E4 /* BackgroundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundManager.swift; sourceTree = "<group>"; };
 		C8595876241D3C6B0060F2F3 /* StatusBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarViewController.swift; sourceTree = "<group>"; };
+		C867F4102428DD4A0052E2C2 /* CovidApp - Covid Community Alert.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "CovidApp - Covid Community Alert.entitlements"; sourceTree = "<group>"; };
 		C883D6DC24200BD100DB7362 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		C883D6DE24200CFD00DB7362 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		C88D06A6240715080005E029 /* HelpMoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpMoreViewController.swift; sourceTree = "<group>"; };
@@ -164,6 +165,7 @@
 		C8B188CA2402B14400CFEE98 = {
 			isa = PBXGroup;
 			children = (
+				C867F4102428DD4A0052E2C2 /* CovidApp - Covid Community Alert.entitlements */,
 				C8B188D52402B14400CFEE98 /* CovidApp */,
 				C8B188D42402B14400CFEE98 /* Products */,
 			);
@@ -524,16 +526,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "CovidApp - Covid Community Alert.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "";
-				DEVELOPMENT_TEAM = G98YG7LCA8;
+				DEVELOPMENT_TEAM = TAHN979S3F;
 				INFOPLIST_FILE = CovidApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = org.covidapp.ios;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.covidapp-community-alert.ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
@@ -545,16 +549,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "CovidApp - Covid Community Alert.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "";
-				DEVELOPMENT_TEAM = G98YG7LCA8;
+				DEVELOPMENT_TEAM = TAHN979S3F;
 				INFOPLIST_FILE = CovidApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = org.covidapp.ios;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.covidapp-community-alert.ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
