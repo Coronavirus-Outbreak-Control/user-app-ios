@@ -1033,6 +1033,104 @@ is</string>
             </objects>
             <point key="canvasLocation" x="2707" y="465"/>
         </scene>
+        <!--Location Always View Controller-->
+        <scene sceneID="S30-wZ-X4y">
+            <objects>
+                <viewController storyboardIdentifier="LocationAlwaysViewController" id="KrW-I0-4de" customClass="LocationAlwaysViewController" customModule="CovidApp___Covid_Community_Alert" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SCO-2q-wAd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="illustration-location" translatesAutoresizingMaskIntoConstraints="NO" id="eok-Gi-HcI">
+                                <rect key="frame" x="0.0" y="76" width="414" height="820"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R4K-Kd-suq" customClass="RoundButton" customModule="CovidApp___Covid_Community_Alert" customModuleProvider="target">
+                                <rect key="frame" x="59.5" y="695" width="295" height="64"/>
+                                <color key="backgroundColor" red="1" green="0.43529411759999997" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="C2A-Wp-84h"/>
+                                    <constraint firstAttribute="width" constant="295" id="bie-dJ-gLS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="GIVE ALWAYS PERMISSION">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="enableLocationAction:" destination="KrW-I0-4de" eventType="touchUpInside" id="7XN-8K-Jl8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a3w-mQ-qOI">
+                                <rect key="frame" x="92" y="779" width="230" height="27"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="12"/>
+                                <state key="normal" title="SKIP TO NEXT STEP"/>
+                                <connections>
+                                    <action selector="skipNext:" destination="KrW-I0-4de" eventType="touchUpInside" id="uDV-ho-DM7"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Step 2" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AHg-4W-og8">
+                                <rect key="frame" x="40" y="93" width="37" height="14"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="12"/>
+                                <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" lineBreakMode="characterWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="52N-iN-Ntq">
+                                <rect key="frame" x="40" y="133" width="154.5" height="50.5"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="42"/>
+                                <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The application needs this permission to work in the background. Please select “always allow”." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VvI-jT-kwb">
+                                <rect key="frame" x="40" y="245" width="334" height="72"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="20"/>
+                                <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="And It's anonymous." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vK1-8u-vJc">
+                                <rect key="frame" x="40" y="320" width="176.5" height="24"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="20"/>
+                                <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="a3w-mQ-qOI" firstAttribute="centerX" secondItem="R4K-Kd-suq" secondAttribute="centerX" id="8e7-h6-G7o"/>
+                            <constraint firstItem="AHg-4W-og8" firstAttribute="top" secondItem="aj9-h1-4ok" secondAttribute="top" constant="49" id="9sJ-0t-6sP"/>
+                            <constraint firstItem="52N-iN-Ntq" firstAttribute="leading" secondItem="aj9-h1-4ok" secondAttribute="leading" constant="40" id="BjT-5E-fwu"/>
+                            <constraint firstItem="R4K-Kd-suq" firstAttribute="centerX" secondItem="SCO-2q-wAd" secondAttribute="centerX" id="DRz-kI-BV0"/>
+                            <constraint firstItem="a3w-mQ-qOI" firstAttribute="leading" secondItem="aj9-h1-4ok" secondAttribute="leading" constant="92" id="Epf-j1-VB5"/>
+                            <constraint firstItem="vK1-8u-vJc" firstAttribute="leading" secondItem="52N-iN-Ntq" secondAttribute="leading" id="Ry4-Va-Ood"/>
+                            <constraint firstItem="VvI-jT-kwb" firstAttribute="leading" secondItem="52N-iN-Ntq" secondAttribute="leading" id="UjN-CY-yZf"/>
+                            <constraint firstItem="eok-Gi-HcI" firstAttribute="leading" secondItem="aj9-h1-4ok" secondAttribute="leading" id="XqA-LP-S9S"/>
+                            <constraint firstItem="52N-iN-Ntq" firstAttribute="top" secondItem="AHg-4W-og8" secondAttribute="bottom" constant="26" id="YWg-te-Ji4"/>
+                            <constraint firstItem="VvI-jT-kwb" firstAttribute="top" secondItem="52N-iN-Ntq" secondAttribute="bottom" constant="61.5" id="a2a-hB-wNV"/>
+                            <constraint firstItem="AHg-4W-og8" firstAttribute="leading" secondItem="aj9-h1-4ok" secondAttribute="leading" constant="40" id="c91-0S-CwS"/>
+                            <constraint firstItem="aj9-h1-4ok" firstAttribute="trailing" secondItem="VvI-jT-kwb" secondAttribute="trailing" constant="40" id="ceK-WH-H8p"/>
+                            <constraint firstItem="eok-Gi-HcI" firstAttribute="trailing" secondItem="aj9-h1-4ok" secondAttribute="trailing" id="i7w-M8-248"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="R4K-Kd-suq" secondAttribute="bottom" constant="103" id="irn-K1-9MC"/>
+                            <constraint firstItem="aj9-h1-4ok" firstAttribute="bottom" secondItem="a3w-mQ-qOI" secondAttribute="bottom" constant="56" id="kzl-FX-eKp"/>
+                            <constraint firstItem="vK1-8u-vJc" firstAttribute="top" secondItem="VvI-jT-kwb" secondAttribute="bottom" constant="3" id="lO9-xO-zix"/>
+                            <constraint firstAttribute="bottom" secondItem="eok-Gi-HcI" secondAttribute="bottom" id="tGQ-pT-Oka"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="aj9-h1-4ok"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l4x-CA-N2z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1964" y="1173"/>
+        </scene>
     </scenes>
     <resources>
         <image name="arrow-black-right" width="16" height="16"/>

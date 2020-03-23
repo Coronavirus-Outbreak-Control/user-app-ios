@@ -15,6 +15,7 @@
 		C80C3B37241AC9B70047B1DC /* Sentry in Frameworks */ = {isa = PBXBuildFile; productRef = C80C3B36241AC9B70047B1DC /* Sentry */; };
 		C81BA5D0240D969C00CFFA6F /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81BA5CF240D969C00CFFA6F /* LocationManager.swift */; };
 		C827F82C241C0A390026CF05 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C827F82B241C0A390026CF05 /* RoundButton.swift */; };
+		C82F96752429088A0031B91E /* LocationAlwaysViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82F96742429088A0031B91E /* LocationAlwaysViewController.swift */; };
 		C8368CC4241D303A000D32FB /* HowItWorks.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8368CC3241D303A000D32FB /* HowItWorks.swift */; };
 		C83CF025241D5E13005849D4 /* SF-Compact-Display-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = C83CF01D241D5E0D005849D4 /* SF-Compact-Display-Black.otf */; };
 		C83CF026241D5E13005849D4 /* SF-Compact-Display-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = C83CF020241D5E0D005849D4 /* SF-Compact-Display-Bold.otf */; };
@@ -59,6 +60,7 @@
 		C80170572405D19F002FC397 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		C81BA5CF240D969C00CFFA6F /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		C827F82B241C0A390026CF05 /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
+		C82F96742429088A0031B91E /* LocationAlwaysViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationAlwaysViewController.swift; sourceTree = "<group>"; };
 		C8368CC3241D303A000D32FB /* HowItWorks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowItWorks.swift; sourceTree = "<group>"; };
 		C83CF01C241D5E0D005849D4 /* SF-Compact-Display-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Compact-Display-Light.otf"; sourceTree = "<group>"; };
 		C83CF01D241D5E0D005849D4 /* SF-Compact-Display-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Compact-Display-Black.otf"; sourceTree = "<group>"; };
@@ -192,6 +194,7 @@
 				C8368CC3241D303A000D32FB /* HowItWorks.swift */,
 				C8FD2DD4242251B0004D2E84 /* InactiveViewController.swift */,
 				C8B2CF41240D9BAF005248B8 /* LocationViewController.swift */,
+				C82F96742429088A0031B91E /* LocationAlwaysViewController.swift */,
 				C80170572405D19F002FC397 /* MainViewController.swift */,
 				C883D6DC24200BD100DB7362 /* NotificationViewController.swift */,
 				C8FA58762427A5E900821DF0 /* ShareLocationViewController.swift */,
@@ -345,6 +348,7 @@
 				C827F82C241C0A390026CF05 /* RoundButton.swift in Sources */,
 				AD47449C2419663400717E77 /* BluetoothTableViewController.swift in Sources */,
 				C883D6DF24200CFD00DB7362 /* NotificationManager.swift in Sources */,
+				C82F96752429088A0031B91E /* LocationAlwaysViewController.swift in Sources */,
 				C81BA5D0240D969C00CFFA6F /* LocationManager.swift in Sources */,
 				C8B861E9240ABD0600B35CF2 /* Utils.swift in Sources */,
 				C8595877241D3C6B0060F2F3 /* StatusBarViewController.swift in Sources */,

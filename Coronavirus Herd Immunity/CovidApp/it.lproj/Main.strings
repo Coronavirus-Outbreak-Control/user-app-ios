@@ -154,3 +154,21 @@
 
 /* Class = "UIButton"; normalTitle = "HOW IT WORKS?"; ObjectID = "xb4-xH-i7d"; */
 "xb4-xH-i7d.normalTitle" = "COME FUNZIONA?";
+
+/* Class = "UILabel"; text = "Location"; ObjectID = "52N-iN-Ntq"; */
+"52N-iN-Ntq.text" = "Posizione";
+
+/* Class = "UILabel"; text = "Step 2"; ObjectID = "AHg-4W-og8"; */
+"AHg-4W-og8.text" = "Step 2";
+
+/* Class = "UIButton"; normalTitle = "GIVE ALWAYS PERMISSION"; ObjectID = "R4K-Kd-suq"; */
+"R4K-Kd-suq.normalTitle" = "AUTORIZZA SEMPRE";
+
+/* Class = "UILabel"; text = "The application needs this permission to work in the background. Please select “always allow”."; ObjectID = "VvI-jT-kwb"; */
+"VvI-jT-kwb.text" = "L'applicazione ha bisogno di questo permesso per lavorare in background, per piacere selezina 'autorizza sempre'";
+
+/* Class = "UIButton"; normalTitle = "SKIP TO NEXT STEP"; ObjectID = "a3w-mQ-qOI"; */
+"a3w-mQ-qOI.normalTitle" = "SALTA QUESTA RICHIESTA";
+
+/* Class = "UILabel"; text = "And It's anonymous."; ObjectID = "vK1-8u-vJc"; */
+"vK1-8u-vJc.text" = "È anonimo.";

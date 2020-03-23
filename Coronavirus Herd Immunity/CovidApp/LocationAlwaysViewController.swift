@@ -1,16 +1,14 @@
 //
-//  LocationViewController.swift
-//  Coronavirus Herd Immunity
+//  LocationAlwaysViewController.swift
+//  CovidApp - Covid Community Alert
 //
-//  Created by Antonio Romano on 02/03/2020.
+//  Created by Antonio Romano on 23/03/2020.
 //  Copyright © 2020 Coronavirus-Herd-Immunity. All rights reserved.
 //
 
 import UIKit
 
-// https://forums.developer.apple.com/thread/117256
-
-class LocationViewController : ViewController{
+class LocationAlwaysViewController : StatusBarViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,7 +17,7 @@ class LocationViewController : ViewController{
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        print("LOCATION VIEW CONTROLLER")
+        print("LOCATION VIEW CONTROLLER ALWAYS")
         NotificationCenter.default.addObserver(self, selector: #selector(changedLocationAuthorization(notification:)), name: NSNotification.Name(Constants.Notification.locationChangeStatus), object: nil)
         self.run()
     }
@@ -31,11 +29,6 @@ class LocationViewController : ViewController{
             if status == .allowedAlways{
                 return self.goNext()
             }
-            if status == .allowedWhenInUse{
-                print("SWITCHING NEXT")
-                self.switchAlwaysPermission()
-                return
-            }
 //            return handleChangeAuthorizationStatus(status)
         }else{
             print("WTF LOCATION?")
@@ -43,7 +36,7 @@ class LocationViewController : ViewController{
     }
     
     func goNext(){
-        print("dismissing view location once")
+        print("dismissing view location")
         
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -84,14 +77,23 @@ class LocationViewController : ViewController{
     }
     
     private func handleChangeAuthorizationStatus(_ status : LocationManager.AuthorizationStatus){
-        print("handleChangeAuthorizationStatus ALWAYS", status)
+        print("handleChangeAuthorizationStatus", status)
         switch status {
         case .allowedAlways:
             return self.goNext()
         case .allowedWhenInUse:
-            print("SWITCHING NEXT ALWAYS")
-            self.switchAlwaysPermission()
-            break
+            let alert = AlertManager.getAlertConfirmation(title: NSLocalizedString("Location", comment: "location title alert"), message: NSLocalizedString("We need to access always the location, please Open Settings -> CovidApp -> Location -> Always", comment: "location open always"), confirmAction: {action in
+                guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
+                    print("NO SETTINGS URL")
+                    return
+                }
+                if UIApplication.shared.canOpenURL(settingsUrl) {
+                    UIApplication.shared.open(settingsUrl, completionHandler: { (success) in
+                        print("Settings opened: \(success)") // Prints true
+                    })
+                }
+            })
+            self.present(alert, animated: true)
         case .notAvailable:
             let alert : UIAlertController = AlertManager.getAlert(title: NSLocalizedString("Location", comment: "location title alert"), message: NSLocalizedString("The location seems to be unavailable on your device", comment: "location unavailable"))
             self.present(alert, animated: true)
@@ -134,14 +136,14 @@ class LocationViewController : ViewController{
         }
     }
     
-    private func switchAlwaysPermission(){
-        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "LocationAlwaysViewController") as! LocationAlwaysViewController
-        nextViewController.modalPresentationStyle = .fullScreen
-        self.present(nextViewController, animated:true, completion:nil)
-        
-        self.dismiss(animated: true, completion: nil)
-    }
+//    private func switchAlwaysPermission(){
+//        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+//        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "LocationViewController") as! LocationViewController
+//        nextViewController.modalPresentationStyle = .fullScreen
+//        self.present(nextViewController, animated:true, completion:nil)
+//        print("SWITCHING TO LOCATION PERMISSION")
+//        self.dismiss(animated: true, completion: nil)
+//    }
     
     @IBAction func enableLocationAction(_ sender: Any) {
         print("asking to enable location")
@@ -149,18 +151,15 @@ class LocationViewController : ViewController{
     }
     
     private func run(){
-        print("location status", LocationManager.shared.getPermessionStatus())
+        print("location status ALWAYS", LocationManager.shared.getPermessionStatus())
         switch LocationManager.shared.getPermessionStatus() {
         case .allowedAlways:
             return self.goNext()
+            break
         case .notAvailable:
             break
-        case .allowedWhenInUse:
-            NotificationCenter.default.removeObserver(self)
-            self.switchAlwaysPermission()
-            break
-        case .notDetermined, .denied:
-            print("not determined waiting for user LOCATION")
+        case .notDetermined, .denied, .allowedWhenInUse:
+            print("not determined waiting for user")
             // waiting from user action
             break
         }
