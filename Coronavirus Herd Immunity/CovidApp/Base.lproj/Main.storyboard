@@ -367,7 +367,7 @@ keep their jobs.</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xb4-xH-i7d">
-                                <rect key="frame" x="141" y="778" width="136" height="29"/>
+                                <rect key="frame" x="94" y="778" width="230" height="29"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="29" id="xvu-2v-DL4"/>
                                 </constraints>
@@ -380,7 +380,7 @@ keep their jobs.</string>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="xb4-xH-i7d" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="141" id="2Y0-WK-sss"/>
+                            <constraint firstItem="xb4-xH-i7d" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="94" id="2Y0-WK-sss"/>
                             <constraint firstItem="NEs-MN-e2E" firstAttribute="top" secondItem="x8p-0F-Dgi" secondAttribute="bottom" priority="998" constant="346.5" id="7Jz-EH-lv2"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="xb4-xH-i7d" secondAttribute="bottom" constant="55" id="H2e-qP-Gmt"/>
                             <constraint firstItem="x8p-0F-Dgi" firstAttribute="top" relation="lessThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="top" priority="999" constant="100" id="JcI-X2-kWV"/>
