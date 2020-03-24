@@ -44,6 +44,7 @@ class Constants {
         
         public static let secondsIntervalBetweenPushes : TimeInterval = 3600 * 24
         
+        public static let version : Int = 1
         
         public static let scanTime : Double = 10
         public static let minRSSIPower : Double = -60

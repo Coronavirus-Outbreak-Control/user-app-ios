@@ -157,6 +157,7 @@ class ApiManager: NSObject, URLSessionDelegate, URLSessionTaskDelegate, URLSessi
             let r: Int64 // rssi value
             let p: String
             let d: String
+            let v : Int
         }
         
         var payload: [Interaction] = []
@@ -180,7 +181,8 @@ class ApiManager: NSObject, URLSessionDelegate, URLSessionTaskDelegate, URLSessi
                 y: device.lat,
                 r: device.rssi,
                 p: device.platform,
-                d: distance)
+                d: distance,
+                v: Constants.Setup.version)
             payload.append(interaction)
         }
         
