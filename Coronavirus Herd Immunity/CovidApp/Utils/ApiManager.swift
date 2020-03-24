@@ -184,11 +184,13 @@ class ApiManager: NSObject, URLSessionDelegate, URLSessionTaskDelegate, URLSessi
             payload.append(interaction)
         }
         
+        print("PAYLOAD", payload)
+        
         guard let uploadData = try? JSONEncoder().encode(payload) else {
             print("Failed to encode interactions")
             return nil
         }
-        
+        print("GONNA UPLOAD", uploadData)
         return uploadData
         
     }

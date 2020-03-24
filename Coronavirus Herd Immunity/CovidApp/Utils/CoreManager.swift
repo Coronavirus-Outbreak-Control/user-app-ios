@@ -146,6 +146,7 @@ class CoreManager {
                 ib.setLocation(cl)
             }
         }
+        print("WILL BE ", ib)
         
         StorageManager.shared.saveIBeacon(ib)
         
