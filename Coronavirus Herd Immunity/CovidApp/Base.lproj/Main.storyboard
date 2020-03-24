@@ -7,6 +7,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-Compact-Display-Bold.otf">
+            <string>SFCompactDisplay-Bold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--How It Works View Controller-->
         <scene sceneID="B5K-zh-dA0">
@@ -20,7 +25,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rl1-ZK-aaV">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1246"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1516"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lE4-wP-W8e">
                                                 <rect key="frame" x="44" y="72" width="326" height="100.5"/>
@@ -46,13 +51,13 @@ works?</string>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How do you keep me safe?" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Aj-4V-d8O">
                                                 <rect key="frame" x="44" y="372" width="326" height="19.5"/>
-                                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="16"/>
+                                                <fontDescription key="fontDescription" name="SFCompactDisplay-Bold" family="SF Compact Display" pointSize="16"/>
                                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How do we maintain your anonymity?" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wir-Pv-FdO">
                                                 <rect key="frame" x="44" y="560" width="326" height="19.5"/>
-                                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="16"/>
+                                                <fontDescription key="fontDescription" name="SFCompactDisplay-Bold" family="SF Compact Display" pointSize="16"/>
                                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -87,7 +92,7 @@ works?</string>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How do we know who's sick?" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SqO-Ok-kAa">
                                                 <rect key="frame" x="44" y="767" width="326" height="19.5"/>
-                                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="16"/>
+                                                <fontDescription key="fontDescription" name="SFCompactDisplay-Bold" family="SF Compact Display" pointSize="16"/>
                                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -108,7 +113,7 @@ works?</string>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What happens if you receive the notification that you could be at risk?" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CVO-IF-hpj">
                                                 <rect key="frame" x="44" y="1012.5" width="326" height="38.5"/>
-                                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="16"/>
+                                                <fontDescription key="fontDescription" name="SFCompactDisplay-Bold" family="SF Compact Display" pointSize="16"/>
                                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -121,32 +126,56 @@ Call your doctor in case you don't feel well.</string>
                                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n2d-uc-20B">
+                                                <rect key="frame" x="44" y="1210.5" width="326" height="3"/>
+                                                <color key="backgroundColor" red="0.86453610749999998" green="0.86453610749999998" blue="0.86453610749999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="3" id="HyV-gn-jWf"/>
+                                                    <constraint firstAttribute="height" constant="3" id="Xyw-KI-0fX"/>
+                                                </constraints>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What can you do to help?" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GSM-gj-LU7">
+                                                <rect key="frame" x="44" y="1257.5" width="326" height="19.5"/>
+                                                <fontDescription key="fontDescription" name="SFCompactDisplay-Bold" family="SF Compact Display" pointSize="16"/>
+                                                <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LHt-NZ-DO6">
+                                                <rect key="frame" x="44" y="1297" width="326" height="76.5"/>
+                                                <string key="text">Just leave this app running in the background, and we'll do the rest. If you want to help us, share this app with your loved ones to keep them safe.</string>
+                                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="16"/>
+                                                <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="CVO-IF-hpj" firstAttribute="top" secondItem="pNE-eX-Sub" secondAttribute="bottom" constant="44" id="0yt-FZ-V8i"/>
                                             <constraint firstItem="fnv-4f-1vi" firstAttribute="leading" secondItem="Rl1-ZK-aaV" secondAttribute="leading" constant="44" id="3nK-LW-iCQ"/>
+                                            <constraint firstAttribute="trailing" secondItem="GSM-gj-LU7" secondAttribute="trailing" constant="44" id="42w-3T-Zld"/>
                                             <constraint firstItem="fnv-4f-1vi" firstAttribute="top" secondItem="CVO-IF-hpj" secondAttribute="bottom" constant="20" id="4Hx-7B-nls"/>
                                             <constraint firstItem="3Aj-4V-d8O" firstAttribute="trailing" secondItem="oex-KU-Krk" secondAttribute="trailing" id="5wx-r4-WoT"/>
                                             <constraint firstItem="SqO-Ok-kAa" firstAttribute="top" secondItem="eeP-a3-XJj" secondAttribute="bottom" constant="44" id="7IJ-QT-CEO"/>
                                             <constraint firstItem="oWa-dN-Dr4" firstAttribute="trailing" secondItem="SqO-Ok-kAa" secondAttribute="trailing" id="7lM-bO-j2X"/>
                                             <constraint firstItem="oex-KU-Krk" firstAttribute="top" secondItem="lE4-wP-W8e" secondAttribute="bottom" constant="40" id="97F-bu-rOs"/>
                                             <constraint firstItem="fnv-4f-1vi" firstAttribute="trailing" secondItem="CVO-IF-hpj" secondAttribute="trailing" id="9vz-AB-wRj"/>
-                                            <constraint firstItem="CVO-IF-hpj" firstAttribute="top" secondItem="pNE-eX-Sub" secondAttribute="bottom" constant="44" id="Aqj-If-Ua7"/>
                                             <constraint firstItem="Wir-Pv-FdO" firstAttribute="trailing" secondItem="kIm-R5-VGq" secondAttribute="trailing" id="Ass-1Y-1wf"/>
                                             <constraint firstAttribute="height" priority="250" constant="896" id="B0o-E6-hAI"/>
                                             <constraint firstItem="oex-KU-Krk" firstAttribute="leading" secondItem="Rl1-ZK-aaV" secondAttribute="leading" constant="44" id="BaL-9m-4fK"/>
                                             <constraint firstAttribute="trailing" secondItem="kIm-R5-VGq" secondAttribute="trailing" constant="44" id="CEq-0O-GUr"/>
-                                            <constraint firstItem="fnv-4f-1vi" firstAttribute="top" secondItem="CVO-IF-hpj" secondAttribute="bottom" constant="20" id="Dd6-Hk-HEa"/>
                                             <constraint firstItem="6xm-br-pwN" firstAttribute="leading" secondItem="Wir-Pv-FdO" secondAttribute="leading" id="GO8-CY-Ll6"/>
+                                            <constraint firstItem="LHt-NZ-DO6" firstAttribute="top" secondItem="GSM-gj-LU7" secondAttribute="bottom" constant="20" id="ImH-pU-4cX"/>
+                                            <constraint firstItem="GSM-gj-LU7" firstAttribute="top" secondItem="n2d-uc-20B" secondAttribute="bottom" constant="44" id="JXY-vS-sNZ"/>
                                             <constraint firstItem="CVO-IF-hpj" firstAttribute="leading" secondItem="Rl1-ZK-aaV" secondAttribute="leading" constant="44" id="LKa-4d-4c1"/>
                                             <constraint firstItem="ua8-Xu-iFs" firstAttribute="leading" secondItem="kIm-R5-VGq" secondAttribute="leading" id="NO5-cV-xWW"/>
+                                            <constraint firstItem="n2d-uc-20B" firstAttribute="top" secondItem="fnv-4f-1vi" secondAttribute="bottom" constant="44" id="O1k-f6-MD4"/>
                                             <constraint firstItem="Wyx-kq-ZCe" firstAttribute="trailing" secondItem="oex-KU-Krk" secondAttribute="trailing" id="O6C-cm-9dS"/>
                                             <constraint firstItem="pNE-eX-Sub" firstAttribute="leading" secondItem="Rl1-ZK-aaV" secondAttribute="leading" constant="44" id="OHw-w6-10S"/>
                                             <constraint firstItem="ua8-Xu-iFs" firstAttribute="trailing" secondItem="kIm-R5-VGq" secondAttribute="trailing" id="OoH-2y-gIN"/>
                                             <constraint firstAttribute="trailing" secondItem="6xm-br-pwN" secondAttribute="trailing" constant="44" id="PvO-fQ-Z7E"/>
                                             <constraint firstItem="oex-KU-Krk" firstAttribute="leading" secondItem="lE4-wP-W8e" secondAttribute="leading" id="Q0R-BX-8Bn"/>
                                             <constraint firstItem="eeP-a3-XJj" firstAttribute="top" secondItem="6xm-br-pwN" secondAttribute="bottom" constant="44" id="Qe4-29-ASf"/>
+                                            <constraint firstItem="GSM-gj-LU7" firstAttribute="leading" secondItem="Rl1-ZK-aaV" secondAttribute="leading" constant="44" id="RfO-ei-PDs"/>
                                             <constraint firstItem="eeP-a3-XJj" firstAttribute="leading" secondItem="Rl1-ZK-aaV" secondAttribute="leading" constant="44" id="Sdj-TH-y5d"/>
                                             <constraint firstItem="3Aj-4V-d8O" firstAttribute="leading" secondItem="oex-KU-Krk" secondAttribute="leading" id="Shk-kw-YJc"/>
                                             <constraint firstItem="oex-KU-Krk" firstAttribute="trailing" secondItem="lE4-wP-W8e" secondAttribute="trailing" id="TGO-IK-eMn"/>
@@ -154,6 +183,7 @@ Call your doctor in case you don't feel well.</string>
                                             <constraint firstAttribute="trailing" secondItem="CVO-IF-hpj" secondAttribute="trailing" constant="44" id="V75-f0-KKe"/>
                                             <constraint firstItem="kIm-R5-VGq" firstAttribute="top" secondItem="3Aj-4V-d8O" secondAttribute="bottom" constant="20" id="X5F-0L-VHM"/>
                                             <constraint firstAttribute="trailing" secondItem="pNE-eX-Sub" secondAttribute="trailing" constant="44" id="XVB-dX-R6e"/>
+                                            <constraint firstItem="LHt-NZ-DO6" firstAttribute="leading" secondItem="GSM-gj-LU7" secondAttribute="leading" id="XXV-hf-DVe"/>
                                             <constraint firstItem="pNE-eX-Sub" firstAttribute="top" secondItem="oWa-dN-Dr4" secondAttribute="bottom" constant="44" id="Y4R-c7-qMB"/>
                                             <constraint firstAttribute="trailing" secondItem="3Aj-4V-d8O" secondAttribute="trailing" constant="44" id="YQN-KN-RwY"/>
                                             <constraint firstItem="lE4-wP-W8e" firstAttribute="top" secondItem="Rl1-ZK-aaV" secondAttribute="top" constant="72" id="YfV-gq-4Dh"/>
@@ -165,12 +195,17 @@ Call your doctor in case you don't feel well.</string>
                                             <constraint firstItem="oWa-dN-Dr4" firstAttribute="top" secondItem="SqO-Ok-kAa" secondAttribute="bottom" constant="20" id="eNB-9T-wiH"/>
                                             <constraint firstAttribute="trailing" secondItem="fnv-4f-1vi" secondAttribute="trailing" constant="44" id="fAk-3n-9br"/>
                                             <constraint firstAttribute="trailing" secondItem="SqO-Ok-kAa" secondAttribute="trailing" constant="44" id="fOk-pP-80g"/>
+                                            <constraint firstItem="LHt-NZ-DO6" firstAttribute="trailing" secondItem="GSM-gj-LU7" secondAttribute="trailing" id="gIZ-9N-kcE"/>
                                             <constraint firstAttribute="trailing" secondItem="eeP-a3-XJj" secondAttribute="trailing" constant="44" id="hpn-wu-a0h"/>
+                                            <constraint firstAttribute="trailing" secondItem="LHt-NZ-DO6" secondAttribute="trailing" constant="44" id="hyk-Ca-tux"/>
+                                            <constraint firstItem="n2d-uc-20B" firstAttribute="leading" secondItem="Rl1-ZK-aaV" secondAttribute="leading" constant="44" id="irL-oC-Enf"/>
                                             <constraint firstItem="kIm-R5-VGq" firstAttribute="leading" secondItem="oex-KU-Krk" secondAttribute="leading" id="kMv-ob-vJ5"/>
+                                            <constraint firstItem="LHt-NZ-DO6" firstAttribute="leading" secondItem="Rl1-ZK-aaV" secondAttribute="leading" constant="44" id="lFm-W6-uvQ"/>
                                             <constraint firstItem="kIm-R5-VGq" firstAttribute="leading" secondItem="Rl1-ZK-aaV" secondAttribute="leading" constant="44" id="lKa-uD-hic"/>
                                             <constraint firstItem="kIm-R5-VGq" firstAttribute="trailing" secondItem="oex-KU-Krk" secondAttribute="trailing" id="lNx-Kj-THh"/>
                                             <constraint firstItem="lE4-wP-W8e" firstAttribute="leading" secondItem="Rl1-ZK-aaV" secondAttribute="leading" constant="44" id="mhA-4R-jzO"/>
                                             <constraint firstItem="6xm-br-pwN" firstAttribute="trailing" secondItem="Wir-Pv-FdO" secondAttribute="trailing" id="n68-eu-xaw"/>
+                                            <constraint firstAttribute="trailing" secondItem="n2d-uc-20B" secondAttribute="trailing" constant="44" id="nRM-tQ-eoI"/>
                                             <constraint firstItem="3Aj-4V-d8O" firstAttribute="top" secondItem="Wyx-kq-ZCe" secondAttribute="bottom" constant="40" id="oWY-jA-46B"/>
                                             <constraint firstItem="3Aj-4V-d8O" firstAttribute="leading" secondItem="Rl1-ZK-aaV" secondAttribute="leading" constant="44" id="p83-Ph-yoW"/>
                                             <constraint firstItem="fnv-4f-1vi" firstAttribute="leading" secondItem="CVO-IF-hpj" secondAttribute="leading" id="p8N-wt-IMy"/>
@@ -191,7 +226,7 @@ Call your doctor in case you don't feel well.</string>
                                     <constraint firstItem="Rl1-ZK-aaV" firstAttribute="leading" secondItem="yhG-II-zEl" secondAttribute="leading" id="Mdw-6K-Ah2"/>
                                     <constraint firstItem="Rl1-ZK-aaV" firstAttribute="top" secondItem="yhG-II-zEl" secondAttribute="top" id="ShZ-bi-6xf"/>
                                     <constraint firstAttribute="trailing" secondItem="Rl1-ZK-aaV" secondAttribute="trailing" id="Uw6-Pg-Vaf"/>
-                                    <constraint firstItem="Rl1-ZK-aaV" firstAttribute="height" secondItem="yhG-II-zEl" secondAttribute="height" constant="350" id="iEq-id-qfM"/>
+                                    <constraint firstItem="Rl1-ZK-aaV" firstAttribute="height" secondItem="yhG-II-zEl" secondAttribute="height" constant="620" id="iEq-id-qfM"/>
                                     <constraint firstAttribute="bottom" secondItem="Rl1-ZK-aaV" secondAttribute="bottom" id="oto-rn-ILc"/>
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="l1v-a5-XU8"/>
@@ -580,8 +615,8 @@ keep their jobs.</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="It's anonymous." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lPE-Da-ZjX">
-                                <rect key="frame" x="40" y="293" width="137" height="24"/>
-                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="20"/>
+                                <rect key="frame" x="40" y="293" width="144" height="24"/>
+                                <fontDescription key="fontDescription" name="SFCompactDisplay-Bold" family="SF Compact Display" pointSize="20"/>
                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -720,8 +755,8 @@ keep their jobs.</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="And It's anonymous." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vek-Pm-sYO">
-                                <rect key="frame" x="40" y="320" width="176.5" height="24"/>
-                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="20"/>
+                                <rect key="frame" x="40" y="320" width="184" height="24"/>
+                                <fontDescription key="fontDescription" name="SFCompactDisplay-Bold" family="SF Compact Display" pointSize="20"/>
                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -1174,8 +1209,8 @@ is</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="It's anonymous." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vK1-8u-vJc">
-                                <rect key="frame" x="40" y="320" width="137" height="24"/>
-                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="20"/>
+                                <rect key="frame" x="40" y="320" width="144" height="24"/>
+                                <fontDescription key="fontDescription" name="SFCompactDisplay-Bold" family="SF Compact Display" pointSize="20"/>
                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>

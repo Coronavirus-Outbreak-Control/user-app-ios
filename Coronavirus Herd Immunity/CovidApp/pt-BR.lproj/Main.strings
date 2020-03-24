@@ -190,3 +190,9 @@
 
 /* Class = "UILabel"; text = "Only professional medical staff can diagnose if a patient is positive to the virus. In that case, the doctor will scan the patient's QR code and notify the people that are at risk because they have been interacting with the infected patient."; ObjectID = "oWa-dN-Dr4"; */
 "oWa-dN-Dr4.text" = "";
+
+/* Class = "UILabel"; text = "What can you do to help?"; ObjectID = "GSM-gj-LU7"; */
+"GSM-gj-LU7.text" = "";
+
+/* Class = "UILabel"; text = "Just leave this app running in the background, and we'll do the rest. If you want to help us, share this app with your loved ones to keep them safe."; ObjectID = "LHt-NZ-DO6"; */
+"LHt-NZ-DO6.text" = "";
