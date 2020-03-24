@@ -21,19 +21,19 @@
 "The location seems to be unavailable on your device" = "The location seems to be unavailable on your device";
 
 /* location open always */
-"We need to access always the location, please Open Settings -> CovisApp -> Location -> Always" = "We need to access always the location, please Open Settings -> CovisApp -> Location -> Always";
+"We need to access always the location, please Open Settings -> CovisApp -> Location -> Always" = "CovidApp needs to access always the location, please Open Settings -> CovisApp -> Location -> Always";
 
 /* bluetooth open app settings */
-"We need to access the bluetooth, please Open Settings -> CovidApp -> enable bluetooth access" = "We need to access the bluetooth, please Open Settings -> CovidApp -> enable bluetooth access";
+"We need to access the bluetooth, please Open Settings -> CovidApp -> enable bluetooth access" = "CovidApp needs to access the bluetooth, please Open Settings -> CovidApp -> enable bluetooth access";
 
 /* location open  */
-"We need to access the location, please Open Settings -> CovidApp -> enable location access" = "We need to access the location, please Open Settings -> CovidApp -> enable location access";
+"We need to access the location, please Open Settings -> CovidApp -> enable location access" = "CovidApp needs to access the location, please Open Settings -> CovidApp -> enable location access";
 
 /* bluetooth off */
-"You need to enable the bluetooth, please Open Settings -> Bluetooth -> enable bluetooth" = "You need to enable the bluetooth, please Open Settings -> Bluetooth -> enable bluetooth";
+"You need to enable the bluetooth, please Open Settings -> Bluetooth -> enable bluetooth" = "CovidApp needs to access bluetooth, please Open Settings -> Bluetooth -> enable bluetooth";
 
 /* location denied */
-"You need to enable the location, please Open Settings -> Privacy -> Location services" = "You need to enable the location, please Open Settings -> Privacy -> Location services";
+"You need to enable the location, please Open Settings -> Privacy -> Location services" = "CovidApp needs to access the location, please Open Settings -> Privacy -> Location services";
 
 /* Infected status */
 "Infected" = "Infected";
@@ -60,4 +60,4 @@
 "Notifications" = "Notifications";
 
 /* location open always */
-"We need to access always the location, please Open Settings -> CovidApp -> Location -> Always" = "We need to access always the location, please Open Settings -> CovidApp -> Location -> Always";
+"We need to access always the location, please Open Settings -> CovidApp -> Location -> Always" = "CovidApp needs to access always the location, please Open Settings -> CovidApp -> Location -> Always";

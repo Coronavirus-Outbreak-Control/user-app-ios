@@ -158,7 +158,7 @@
 /* Class = "UIButton"; normalTitle = "HOW IT WORKS?"; ObjectID = "xb4-xH-i7d"; */
 "xb4-xH-i7d.normalTitle" = "COMO FUNCIONA?";
 
-/* Class = "UILabel"; text = "Location"; ObjectID = "52N-iN-Ntq"; */
+/* Class = "UILabel"; text = "Distance Monitoring"; ObjectID = "52N-iN-Ntq"; */
 "52N-iN-Ntq.text" = "Localização";
 
 /* Class = "UILabel"; text = "Step 2"; ObjectID = "AHg-4W-og8"; */
@@ -167,7 +167,7 @@
 /* Class = "UIButton"; normalTitle = "GIVE ALWAYS PERMISSION"; ObjectID = "R4K-Kd-suq"; */
 "R4K-Kd-suq.normalTitle" = "DÊ SEMPRE PERMISSÃO";
 
-/* Class = "UILabel"; text = "The application needs this permission to work in the background. Please select “always allow”."; ObjectID = "VvI-jT-kwb"; */
+/* Class = "UILabel"; text = "We need always permission to run in the background. Please select always allow."; ObjectID = "VvI-jT-kwb"; */
 "VvI-jT-kwb.text" = "O aplicativo precisa dessa permissão para trabalhar em segundo plano. Por favor, selecione 'sempre permitir';
 
 /* Class = "UIButton"; normalTitle = "SKIP TO NEXT STEP"; ObjectID = "a3w-mQ-qOI"; */
