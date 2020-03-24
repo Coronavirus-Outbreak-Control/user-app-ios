@@ -20,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rl1-ZK-aaV">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1246"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lE4-wP-W8e">
                                                 <rect key="frame" x="44" y="72" width="326" height="100.5"/>
@@ -31,51 +31,92 @@ works?</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oex-KU-Krk">
-                                                <rect key="frame" x="44" y="212.5" width="326" height="57.5"/>
-                                                <string key="text">We will use your mobile phone bluetooth
-and gps to anonymously log the devices
-closer than 2 meters to you.</string>
+                                                <rect key="frame" x="44" y="212.5" width="326" height="76.5"/>
+                                                <string key="text">We use the Bluetooth signal to anonymously detect the devices that get closer than 2 meters to you, and the time the two devices have been interacting for.</string>
                                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="16"/>
                                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wyx-kq-ZCe">
-                                                <rect key="frame" x="44" y="310" width="326" height="3"/>
+                                                <rect key="frame" x="44" y="329" width="326" height="3"/>
                                                 <color key="backgroundColor" red="0.8645361075129534" green="0.8645361075129534" blue="0.8645361075129534" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="3" id="5Xl-kl-5zu"/>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How do you keep me safe?" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Aj-4V-d8O">
-                                                <rect key="frame" x="44" y="353" width="326" height="19.5"/>
+                                                <rect key="frame" x="44" y="372" width="326" height="19.5"/>
                                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="16"/>
                                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How do you know who's sick?" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wir-Pv-FdO">
-                                                <rect key="frame" x="44" y="522" width="326" height="19.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How do we maintain your anonymity?" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wir-Pv-FdO">
+                                                <rect key="frame" x="44" y="560" width="326" height="19.5"/>
                                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="16"/>
                                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kIm-R5-VGq">
-                                                <rect key="frame" x="44" y="392.5" width="326" height="38.5"/>
-                                                <string key="text">You will be alerted when you’ve been close
-to an infected person, up to 14 days back.</string>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="If one of your interactions of the past 14 days is diagnosed with Coronavirus, you will be notified." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kIm-R5-VGq">
+                                                <rect key="frame" x="44" y="411.5" width="326" height="57.5"/>
                                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="16"/>
                                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ua8-Xu-iFs">
-                                                <rect key="frame" x="44" y="475" width="326" height="3"/>
+                                                <rect key="frame" x="44" y="513" width="326" height="3"/>
                                                 <color key="backgroundColor" red="0.86453610749999998" green="0.86453610749999998" blue="0.86453610749999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="3" id="3t6-Ym-0jr"/>
                                                     <constraint firstAttribute="height" constant="3" id="cfA-ap-CY2"/>
                                                 </constraints>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your status, and others in the network will be validated by professional medical staff by scanning the QR code in your app." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6xm-br-pwN">
-                                                <rect key="frame" x="44" y="561.5" width="326" height="57.5"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eeP-a3-XJj">
+                                                <rect key="frame" x="44" y="720" width="326" height="3"/>
+                                                <color key="backgroundColor" red="0.86453610749999998" green="0.86453610749999998" blue="0.86453610749999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="3" id="psI-QE-dE8"/>
+                                                    <constraint firstAttribute="height" constant="3" id="uKt-wP-aA9"/>
+                                                </constraints>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6xm-br-pwN">
+                                                <rect key="frame" x="44" y="599.5" width="326" height="76.5"/>
+                                                <string key="text">We only save the interactions between your phone and the other devices, and how long it lasted for. We do not store any personal information or location history.</string>
+                                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="16"/>
+                                                <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How do we know who's sick?" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SqO-Ok-kAa">
+                                                <rect key="frame" x="44" y="767" width="326" height="19.5"/>
+                                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="16"/>
+                                                <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oWa-dN-Dr4">
+                                                <rect key="frame" x="44" y="806.5" width="326" height="115"/>
+                                                <string key="text">Only professional medical staff can diagnose if a patient is positive to the virus. In that case, the doctor will scan the patient's QR code and notify the people that are at risk because they have been interacting with the infected patient.</string>
+                                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="16"/>
+                                                <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pNE-eX-Sub">
+                                                <rect key="frame" x="44" y="965.5" width="326" height="3"/>
+                                                <color key="backgroundColor" red="0.86453610749999998" green="0.86453610749999998" blue="0.86453610749999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="3" id="XFk-E9-mTt"/>
+                                                    <constraint firstAttribute="height" constant="3" id="YFF-vA-O6z"/>
+                                                </constraints>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What happens if you receive the notification that you could be at risk?" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CVO-IF-hpj">
+                                                <rect key="frame" x="44" y="1012.5" width="326" height="38.5"/>
+                                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="16"/>
+                                                <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fnv-4f-1vi">
+                                                <rect key="frame" x="44" y="1071" width="326" height="95.5"/>
+                                                <string key="text">It means that you have been interacting with someone that has tested positive.
+Protect your loved ones by self-isolating for two weeks.
+Call your doctor in case you don't feel well.</string>
                                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="16"/>
                                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -83,41 +124,74 @@ to an infected person, up to 14 days back.</string>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstItem="CVO-IF-hpj" firstAttribute="top" secondItem="pNE-eX-Sub" secondAttribute="bottom" constant="44" id="0yt-FZ-V8i"/>
+                                            <constraint firstItem="fnv-4f-1vi" firstAttribute="leading" secondItem="Rl1-ZK-aaV" secondAttribute="leading" constant="44" id="3nK-LW-iCQ"/>
+                                            <constraint firstItem="fnv-4f-1vi" firstAttribute="top" secondItem="CVO-IF-hpj" secondAttribute="bottom" constant="20" id="4Hx-7B-nls"/>
                                             <constraint firstItem="3Aj-4V-d8O" firstAttribute="trailing" secondItem="oex-KU-Krk" secondAttribute="trailing" id="5wx-r4-WoT"/>
+                                            <constraint firstItem="SqO-Ok-kAa" firstAttribute="top" secondItem="eeP-a3-XJj" secondAttribute="bottom" constant="44" id="7IJ-QT-CEO"/>
+                                            <constraint firstItem="oWa-dN-Dr4" firstAttribute="trailing" secondItem="SqO-Ok-kAa" secondAttribute="trailing" id="7lM-bO-j2X"/>
                                             <constraint firstItem="oex-KU-Krk" firstAttribute="top" secondItem="lE4-wP-W8e" secondAttribute="bottom" constant="40" id="97F-bu-rOs"/>
+                                            <constraint firstItem="fnv-4f-1vi" firstAttribute="trailing" secondItem="CVO-IF-hpj" secondAttribute="trailing" id="9vz-AB-wRj"/>
+                                            <constraint firstItem="CVO-IF-hpj" firstAttribute="top" secondItem="pNE-eX-Sub" secondAttribute="bottom" constant="44" id="Aqj-If-Ua7"/>
                                             <constraint firstItem="Wir-Pv-FdO" firstAttribute="trailing" secondItem="kIm-R5-VGq" secondAttribute="trailing" id="Ass-1Y-1wf"/>
                                             <constraint firstAttribute="height" priority="250" constant="896" id="B0o-E6-hAI"/>
+                                            <constraint firstItem="oex-KU-Krk" firstAttribute="leading" secondItem="Rl1-ZK-aaV" secondAttribute="leading" constant="44" id="BaL-9m-4fK"/>
+                                            <constraint firstAttribute="trailing" secondItem="kIm-R5-VGq" secondAttribute="trailing" constant="44" id="CEq-0O-GUr"/>
+                                            <constraint firstItem="fnv-4f-1vi" firstAttribute="top" secondItem="CVO-IF-hpj" secondAttribute="bottom" constant="20" id="Dd6-Hk-HEa"/>
                                             <constraint firstItem="6xm-br-pwN" firstAttribute="leading" secondItem="Wir-Pv-FdO" secondAttribute="leading" id="GO8-CY-Ll6"/>
+                                            <constraint firstItem="CVO-IF-hpj" firstAttribute="leading" secondItem="Rl1-ZK-aaV" secondAttribute="leading" constant="44" id="LKa-4d-4c1"/>
                                             <constraint firstItem="ua8-Xu-iFs" firstAttribute="leading" secondItem="kIm-R5-VGq" secondAttribute="leading" id="NO5-cV-xWW"/>
                                             <constraint firstItem="Wyx-kq-ZCe" firstAttribute="trailing" secondItem="oex-KU-Krk" secondAttribute="trailing" id="O6C-cm-9dS"/>
+                                            <constraint firstItem="pNE-eX-Sub" firstAttribute="leading" secondItem="Rl1-ZK-aaV" secondAttribute="leading" constant="44" id="OHw-w6-10S"/>
                                             <constraint firstItem="ua8-Xu-iFs" firstAttribute="trailing" secondItem="kIm-R5-VGq" secondAttribute="trailing" id="OoH-2y-gIN"/>
+                                            <constraint firstAttribute="trailing" secondItem="6xm-br-pwN" secondAttribute="trailing" constant="44" id="PvO-fQ-Z7E"/>
                                             <constraint firstItem="oex-KU-Krk" firstAttribute="leading" secondItem="lE4-wP-W8e" secondAttribute="leading" id="Q0R-BX-8Bn"/>
+                                            <constraint firstItem="eeP-a3-XJj" firstAttribute="top" secondItem="6xm-br-pwN" secondAttribute="bottom" constant="44" id="Qe4-29-ASf"/>
+                                            <constraint firstItem="eeP-a3-XJj" firstAttribute="leading" secondItem="Rl1-ZK-aaV" secondAttribute="leading" constant="44" id="Sdj-TH-y5d"/>
                                             <constraint firstItem="3Aj-4V-d8O" firstAttribute="leading" secondItem="oex-KU-Krk" secondAttribute="leading" id="Shk-kw-YJc"/>
                                             <constraint firstItem="oex-KU-Krk" firstAttribute="trailing" secondItem="lE4-wP-W8e" secondAttribute="trailing" id="TGO-IK-eMn"/>
                                             <constraint firstItem="Wir-Pv-FdO" firstAttribute="top" secondItem="ua8-Xu-iFs" secondAttribute="bottom" constant="44" id="UIG-mZ-wWz"/>
+                                            <constraint firstAttribute="trailing" secondItem="CVO-IF-hpj" secondAttribute="trailing" constant="44" id="V75-f0-KKe"/>
                                             <constraint firstItem="kIm-R5-VGq" firstAttribute="top" secondItem="3Aj-4V-d8O" secondAttribute="bottom" constant="20" id="X5F-0L-VHM"/>
+                                            <constraint firstAttribute="trailing" secondItem="pNE-eX-Sub" secondAttribute="trailing" constant="44" id="XVB-dX-R6e"/>
+                                            <constraint firstItem="pNE-eX-Sub" firstAttribute="top" secondItem="oWa-dN-Dr4" secondAttribute="bottom" constant="44" id="Y4R-c7-qMB"/>
+                                            <constraint firstAttribute="trailing" secondItem="3Aj-4V-d8O" secondAttribute="trailing" constant="44" id="YQN-KN-RwY"/>
                                             <constraint firstItem="lE4-wP-W8e" firstAttribute="top" secondItem="Rl1-ZK-aaV" secondAttribute="top" constant="72" id="YfV-gq-4Dh"/>
+                                            <constraint firstItem="SqO-Ok-kAa" firstAttribute="leading" secondItem="Rl1-ZK-aaV" secondAttribute="leading" constant="44" id="a0R-dd-2pQ"/>
+                                            <constraint firstAttribute="trailing" secondItem="Wir-Pv-FdO" secondAttribute="trailing" constant="44" id="cQz-Jz-L4V"/>
+                                            <constraint firstItem="oWa-dN-Dr4" firstAttribute="leading" secondItem="SqO-Ok-kAa" secondAttribute="leading" id="cfS-nE-bYr"/>
                                             <constraint firstItem="Wir-Pv-FdO" firstAttribute="leading" secondItem="kIm-R5-VGq" secondAttribute="leading" id="cjU-eu-AbT"/>
                                             <constraint firstItem="6xm-br-pwN" firstAttribute="top" secondItem="Wir-Pv-FdO" secondAttribute="bottom" constant="20" id="dTk-Dv-TDg"/>
+                                            <constraint firstItem="oWa-dN-Dr4" firstAttribute="top" secondItem="SqO-Ok-kAa" secondAttribute="bottom" constant="20" id="eNB-9T-wiH"/>
+                                            <constraint firstAttribute="trailing" secondItem="fnv-4f-1vi" secondAttribute="trailing" constant="44" id="fAk-3n-9br"/>
+                                            <constraint firstAttribute="trailing" secondItem="SqO-Ok-kAa" secondAttribute="trailing" constant="44" id="fOk-pP-80g"/>
+                                            <constraint firstAttribute="trailing" secondItem="eeP-a3-XJj" secondAttribute="trailing" constant="44" id="hpn-wu-a0h"/>
                                             <constraint firstItem="kIm-R5-VGq" firstAttribute="leading" secondItem="oex-KU-Krk" secondAttribute="leading" id="kMv-ob-vJ5"/>
+                                            <constraint firstItem="kIm-R5-VGq" firstAttribute="leading" secondItem="Rl1-ZK-aaV" secondAttribute="leading" constant="44" id="lKa-uD-hic"/>
                                             <constraint firstItem="kIm-R5-VGq" firstAttribute="trailing" secondItem="oex-KU-Krk" secondAttribute="trailing" id="lNx-Kj-THh"/>
                                             <constraint firstItem="lE4-wP-W8e" firstAttribute="leading" secondItem="Rl1-ZK-aaV" secondAttribute="leading" constant="44" id="mhA-4R-jzO"/>
                                             <constraint firstItem="6xm-br-pwN" firstAttribute="trailing" secondItem="Wir-Pv-FdO" secondAttribute="trailing" id="n68-eu-xaw"/>
                                             <constraint firstItem="3Aj-4V-d8O" firstAttribute="top" secondItem="Wyx-kq-ZCe" secondAttribute="bottom" constant="40" id="oWY-jA-46B"/>
+                                            <constraint firstItem="3Aj-4V-d8O" firstAttribute="leading" secondItem="Rl1-ZK-aaV" secondAttribute="leading" constant="44" id="p83-Ph-yoW"/>
+                                            <constraint firstItem="fnv-4f-1vi" firstAttribute="leading" secondItem="CVO-IF-hpj" secondAttribute="leading" id="p8N-wt-IMy"/>
                                             <constraint firstItem="ua8-Xu-iFs" firstAttribute="top" secondItem="kIm-R5-VGq" secondAttribute="bottom" constant="44" id="qdw-9K-KWj"/>
                                             <constraint firstItem="Wyx-kq-ZCe" firstAttribute="top" secondItem="oex-KU-Krk" secondAttribute="bottom" constant="40" id="qhG-nm-AwP"/>
+                                            <constraint firstAttribute="trailing" secondItem="oex-KU-Krk" secondAttribute="trailing" constant="44" id="swb-2F-E1Q"/>
                                             <constraint firstItem="Wyx-kq-ZCe" firstAttribute="leading" secondItem="oex-KU-Krk" secondAttribute="leading" id="uKi-uX-EvC"/>
+                                            <constraint firstItem="Wir-Pv-FdO" firstAttribute="leading" secondItem="Rl1-ZK-aaV" secondAttribute="leading" constant="44" id="uzu-ta-wpp"/>
                                             <constraint firstAttribute="trailing" secondItem="lE4-wP-W8e" secondAttribute="trailing" constant="44" id="vPe-By-PcQ"/>
                                             <constraint firstAttribute="width" priority="250" constant="414" id="wJV-L7-Gsr"/>
+                                            <constraint firstItem="6xm-br-pwN" firstAttribute="leading" secondItem="Rl1-ZK-aaV" secondAttribute="leading" constant="44" id="yHa-IF-rd6"/>
                                         </constraints>
                                     </view>
                                 </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="Rl1-ZK-aaV" firstAttribute="width" secondItem="yhG-II-zEl" secondAttribute="width" id="1TO-R2-uKi"/>
                                     <constraint firstItem="Rl1-ZK-aaV" firstAttribute="leading" secondItem="yhG-II-zEl" secondAttribute="leading" id="Mdw-6K-Ah2"/>
                                     <constraint firstItem="Rl1-ZK-aaV" firstAttribute="top" secondItem="yhG-II-zEl" secondAttribute="top" id="ShZ-bi-6xf"/>
                                     <constraint firstAttribute="trailing" secondItem="Rl1-ZK-aaV" secondAttribute="trailing" id="Uw6-Pg-Vaf"/>
-                                    <constraint firstItem="Rl1-ZK-aaV" firstAttribute="height" secondItem="yhG-II-zEl" secondAttribute="height" id="iEq-id-qfM"/>
+                                    <constraint firstItem="Rl1-ZK-aaV" firstAttribute="height" secondItem="yhG-II-zEl" secondAttribute="height" constant="350" id="iEq-id-qfM"/>
                                     <constraint firstAttribute="bottom" secondItem="Rl1-ZK-aaV" secondAttribute="bottom" id="oto-rn-ILc"/>
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="l1v-a5-XU8"/>
@@ -313,10 +387,8 @@ keep their jobs.</string>
                                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mKP-li-ba4">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remember to leave your Bluetooth and Location on, and we'll do the rest." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mKP-li-ba4">
                                                 <rect key="frame" x="40" y="115" width="332" height="38.5"/>
-                                                <string key="text">If you got close to an infected person
-during your day, we'll let you know.</string>
                                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="16"/>
                                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -496,22 +568,19 @@ during your day, we'll let you know.</string>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bluetooth" lineBreakMode="characterWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uvw-Cp-0an">
-                                <rect key="frame" x="40" y="133" width="173" height="50.5"/>
+                                <rect key="frame" x="40" y="133" width="334" height="50.5"/>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="42"/>
                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8GN-ww-2vw">
-                                <rect key="frame" x="40" y="245" width="334" height="72"/>
-                                <string key="text">We need your permission to
-use Bluetooth to monitor your
-distance from other devices.</string>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We will use your Bluetooth to monitor your distance from other devices." lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8GN-ww-2vw">
+                                <rect key="frame" x="40" y="245" width="334" height="48"/>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="20"/>
                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="It's anonymous." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lPE-Da-ZjX">
-                                <rect key="frame" x="40" y="329" width="137" height="24"/>
+                                <rect key="frame" x="40" y="293" width="137" height="24"/>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="20"/>
                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -525,7 +594,7 @@ distance from other devices.</string>
                                 </constraints>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="GIVE BLUETOOTH PERMISSION">
+                                <state key="normal" title="TURN ON BLUETOOTH">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -560,6 +629,7 @@ distance from other devices.</string>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="cmj-kI-wp8" firstAttribute="trailing" secondItem="Uvw-Cp-0an" secondAttribute="trailing" constant="40" id="0At-2o-e3L"/>
                             <constraint firstItem="xsn-mD-QxH" firstAttribute="leading" secondItem="cmj-kI-wp8" secondAttribute="leading" constant="91" id="4qb-Sa-dsW"/>
                             <constraint firstItem="8GN-ww-2vw" firstAttribute="leading" secondItem="Uvw-Cp-0an" secondAttribute="leading" id="Aum-Op-vIK"/>
                             <constraint firstItem="iaE-IC-WIK" firstAttribute="centerX" secondItem="1vk-Hh-aXW" secondAttribute="centerX" id="BGX-nh-CI8"/>
@@ -570,7 +640,7 @@ distance from other devices.</string>
                             <constraint firstItem="cmj-kI-wp8" firstAttribute="bottom" secondItem="iaE-IC-WIK" secondAttribute="bottom" constant="103" id="SY2-mH-4Jn"/>
                             <constraint firstItem="cmj-kI-wp8" firstAttribute="bottom" secondItem="xsn-mD-QxH" secondAttribute="bottom" constant="56" id="a5f-15-4r5"/>
                             <constraint firstItem="cmj-kI-wp8" firstAttribute="trailing" secondItem="8GN-ww-2vw" secondAttribute="trailing" constant="40" id="fM5-De-gTJ"/>
-                            <constraint firstItem="lPE-Da-ZjX" firstAttribute="top" secondItem="8GN-ww-2vw" secondAttribute="bottom" constant="12" id="heD-bY-pNo"/>
+                            <constraint firstItem="lPE-Da-ZjX" firstAttribute="top" secondItem="8GN-ww-2vw" secondAttribute="bottom" id="heD-bY-pNo"/>
                             <constraint firstItem="lPE-Da-ZjX" firstAttribute="leading" secondItem="Uvw-Cp-0an" secondAttribute="leading" id="jaf-K4-4WU"/>
                             <constraint firstItem="Uvw-Cp-0an" firstAttribute="top" secondItem="iGW-XV-oQu" secondAttribute="bottom" constant="26" id="jiN-j2-t2R"/>
                             <constraint firstItem="iGW-XV-oQu" firstAttribute="leading" secondItem="cmj-kI-wp8" secondAttribute="leading" constant="40" id="kiD-XX-YnB"/>
@@ -605,7 +675,7 @@ distance from other devices.</string>
                                 </constraints>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="GIVE LOCATION PERMISSION">
+                                <state key="normal" title="GIVE PERMISSION">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -638,12 +708,12 @@ distance from other devices.</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" lineBreakMode="characterWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G2h-W9-Xd9">
-                                <rect key="frame" x="40" y="133" width="154.5" height="50.5"/>
+                                <rect key="frame" x="40" y="133" width="334" height="50.5"/>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="42"/>
                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To monitor more accurately your interactions we will ask you permission to use Location." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="62D-qb-l2v">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We will use your Distance Monitoring to approximate more precisely your interactions." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="62D-qb-l2v">
                                 <rect key="frame" x="40" y="245" width="334" height="72"/>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="20"/>
                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -660,6 +730,7 @@ distance from other devices.</string>
                         <constraints>
                             <constraint firstItem="fd6-Na-JOe" firstAttribute="centerX" secondItem="MzB-gw-BTJ" secondAttribute="centerX" id="0BM-BY-s1V"/>
                             <constraint firstItem="Olv-kI-5Pz" firstAttribute="leading" secondItem="UTF-Ww-8a0" secondAttribute="leading" constant="40" id="7hV-ZR-FGF"/>
+                            <constraint firstItem="UTF-Ww-8a0" firstAttribute="trailing" secondItem="G2h-W9-Xd9" secondAttribute="trailing" constant="40" id="FKK-kq-HTL"/>
                             <constraint firstAttribute="bottom" secondItem="R4q-uu-z6X" secondAttribute="bottom" id="FPK-sT-W8u"/>
                             <constraint firstItem="R4q-uu-z6X" firstAttribute="leading" secondItem="UTF-Ww-8a0" secondAttribute="leading" id="HtE-J4-F0H"/>
                             <constraint firstItem="UTF-Ww-8a0" firstAttribute="trailing" secondItem="62D-qb-l2v" secondAttribute="trailing" constant="40" id="KvV-be-DZQ"/>
@@ -722,7 +793,7 @@ distance from other devices.</string>
                                 </constraints>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="GIVE NOTIFICATION PERMISSION">
+                                <state key="normal" title="ALLOW NOTIFICATIONS">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -755,13 +826,15 @@ distance from other devices.</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notification" lineBreakMode="characterWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UYu-DR-m7J">
-                                <rect key="frame" x="40" y="133" width="206.5" height="50.5"/>
+                                <rect key="frame" x="40" y="133" width="334" height="50.5"/>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="42"/>
                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="If you’ve been close to an infected person in the past two weeks we will notify you. That’s it, just one notification." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dzx-o8-G5g">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dzx-o8-G5g">
                                 <rect key="frame" x="40" y="245" width="334" height="95.5"/>
+                                <string key="text">If you have been close to an infected person in the past two weeks, we will notify you.
+That's it, just one notification.</string>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="20"/>
                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -772,6 +845,7 @@ distance from other devices.</string>
                             <constraint firstItem="qYv-To-SWE" firstAttribute="centerX" secondItem="Fit-wh-e75" secondAttribute="centerX" id="8cT-EZ-cUf"/>
                             <constraint firstItem="8BV-Ct-9Tj" firstAttribute="leading" secondItem="Xl0-DN-whH" secondAttribute="leading" id="Cpz-PV-DIu"/>
                             <constraint firstAttribute="bottomMargin" secondItem="qYv-To-SWE" secondAttribute="bottom" constant="103" id="GLE-FN-65j"/>
+                            <constraint firstItem="Xl0-DN-whH" firstAttribute="trailing" secondItem="UYu-DR-m7J" secondAttribute="trailing" constant="40" id="Jf6-4h-wh6"/>
                             <constraint firstItem="UYu-DR-m7J" firstAttribute="leading" secondItem="Xl0-DN-whH" secondAttribute="leading" constant="40" id="OKh-Zi-f8N"/>
                             <constraint firstItem="dzx-o8-G5g" firstAttribute="top" secondItem="UYu-DR-m7J" secondAttribute="bottom" constant="61.5" id="OM1-zL-OpK"/>
                             <constraint firstItem="UYu-DR-m7J" firstAttribute="top" secondItem="bgF-ii-alp" secondAttribute="bottom" constant="26" id="Zdy-wv-1tF"/>
@@ -815,7 +889,7 @@ is</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="inactive" lineBreakMode="characterWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1yP-sm-Glj">
-                                <rect key="frame" x="76" y="114" width="138.5" height="50.5"/>
+                                <rect key="frame" x="76" y="111" width="138.5" height="50.5"/>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="42"/>
                                 <color key="textColor" red="1" green="0.43529411764705883" blue="0.38039215686274508" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -895,7 +969,7 @@ is</string>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="1yP-sm-Glj" firstAttribute="top" secondItem="2gC-R8-6l2" secondAttribute="top" constant="70" id="01P-ZX-bMU"/>
+                            <constraint firstItem="1yP-sm-Glj" firstAttribute="top" secondItem="2gC-R8-6l2" secondAttribute="top" constant="67" id="01P-ZX-bMU"/>
                             <constraint firstItem="hdP-oP-fKL" firstAttribute="leading" secondItem="2gC-R8-6l2" secondAttribute="leading" constant="40" id="1cJ-xT-EUX"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Tcu-cg-NY2" secondAttribute="trailing" constant="20" id="67e-VZ-E1a"/>
                             <constraint firstItem="NEl-AG-Fwq" firstAttribute="top" secondItem="p9Z-yX-rwm" secondAttribute="bottom" constant="30" id="6Mn-9j-oI7"/>
@@ -984,7 +1058,7 @@ is</string>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2qO-Hh-VBZ">
                                 <rect key="frame" x="92" y="779" width="230" height="27"/>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="12"/>
-                                <state key="normal" title="SKIP TO NEXT STEP"/>
+                                <state key="normal" title="NOT RIGHT NOW"/>
                                 <connections>
                                     <action selector="skipStep:" destination="Ls6-uj-vgb" eventType="touchUpInside" id="Nlx-bV-Vit"/>
                                 </connections>
@@ -995,14 +1069,15 @@ is</string>
                                 <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Share Location" lineBreakMode="characterWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HQy-Cs-56D">
-                                <rect key="frame" x="40" y="133" width="267.5" height="50.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Help your Community" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HQy-Cs-56D">
+                                <rect key="frame" x="40" y="133" width="334" height="100.5"/>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="42"/>
                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To help doctors with research with this crysis you can choose to share your position with the scientist." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rux-iK-l4p">
-                                <rect key="frame" x="40" y="245" width="334" height="72"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rux-iK-l4p">
+                                <rect key="frame" x="40" y="295" width="334" height="119.5"/>
+                                <string key="text">To help doctors with the research and analysis of this crisis, you can choose to anonymously send your Position. This is not mandatory, and will only help if you decide to do so.</string>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="20"/>
                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -1023,6 +1098,7 @@ is</string>
                             <constraint firstItem="rux-iK-l4p" firstAttribute="top" secondItem="HQy-Cs-56D" secondAttribute="bottom" constant="61.5" id="hGa-g5-TX7"/>
                             <constraint firstItem="2qO-Hh-VBZ" firstAttribute="leading" secondItem="4FP-pC-8TZ" secondAttribute="leading" constant="92" id="i4b-9L-NVg"/>
                             <constraint firstItem="4FP-pC-8TZ" firstAttribute="trailing" secondItem="rux-iK-l4p" secondAttribute="trailing" constant="40" id="oa1-9i-p7o"/>
+                            <constraint firstItem="4FP-pC-8TZ" firstAttribute="trailing" secondItem="HQy-Cs-56D" secondAttribute="trailing" constant="40" id="oto-bh-V5I"/>
                             <constraint firstItem="HQy-Cs-56D" firstAttribute="leading" secondItem="4FP-pC-8TZ" secondAttribute="leading" constant="40" id="rGc-Sw-yqW"/>
                             <constraint firstItem="7Vo-xg-M55" firstAttribute="leading" secondItem="4FP-pC-8TZ" secondAttribute="leading" id="z4n-cb-gPb"/>
                         </constraints>
@@ -1042,7 +1118,7 @@ is</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="illustration-location" translatesAutoresizingMaskIntoConstraints="NO" id="eok-Gi-HcI">
-                                <rect key="frame" x="0.0" y="76" width="414" height="820"/>
+                                <rect key="frame" x="0.0" y="486" width="414" height="410"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R4K-Kd-suq" customClass="RoundButton" customModule="CovidApp___Covid_Community_Alert" customModuleProvider="target">
                                 <rect key="frame" x="59.5" y="695" width="295" height="64"/>
@@ -1097,8 +1173,8 @@ is</string>
                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="And It's anonymous." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vK1-8u-vJc">
-                                <rect key="frame" x="40" y="320" width="176.5" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="It's anonymous." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vK1-8u-vJc">
+                                <rect key="frame" x="40" y="320" width="137" height="24"/>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="20"/>
                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>

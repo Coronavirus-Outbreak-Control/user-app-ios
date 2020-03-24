@@ -14,16 +14,16 @@
 /* Class = "UILabel"; text = "How do you keep me safe?"; ObjectID = "3Aj-4V-d8O"; */
 "3Aj-4V-d8O.text" = "Come mi proteggerete?";
 
-/* Class = "UILabel"; text = "Your status, and others in the network will be validated by professional medical staff by scanning the QR code in your app."; ObjectID = "6xm-br-pwN"; */
+/* Class = "UILabel"; text = "We only save the interactions between your phone and the other devices, and how long it lasted for. We do not store any personal information or location history."; ObjectID = "6xm-br-pwN"; */
 "6xm-br-pwN.text" = "Il tuo stato, e quello delle persone intorno a te, sarà convalidato da medici professionisti selezionati dal governo, usando il codice QR presente nell'App.";
 
-/* Class = "UILabel"; text = "How do you know who's sick?"; ObjectID = "Wir-Pv-FdO"; */
+/* Class = "UILabel"; text = "How do we maintain your anonymity?"; ObjectID = "Wir-Pv-FdO"; */
 "Wir-Pv-FdO.text" = "Come fate a sapere chi è malato?";
 
-/* Class = "UILabel"; text = "You will be alerted when you’ve been close\nto an infected person, up to 14 days back."; ObjectID = "kIm-R5-VGq"; */
+/* Class = "UILabel"; text = "If one of your interactions of the past 14 days is diagnosed with Coronavirus, you will be notified."; ObjectID = "kIm-R5-VGq"; */
 "kIm-R5-VGq.text" = "Ti avvertiremo se sei stato vicino negli ultimi 14 giorni a una persona che è stata diagnosticata con Covid-19.";
 
-/* Class = "UILabel"; text = "We will use your mobile phone bluetooth\nand gps to anonymously log the devices\ncloser than 2 meters to you."; ObjectID = "oex-KU-Krk"; */
+/* Class = "UILabel"; text = "We use the Bluetooth signal to anonymously detect the devices that get closer than 2 meters to you, and the time the two devices have been interacting for."; ObjectID = "oex-KU-Krk"; */
 "oex-KU-Krk.text" = "Useremo il Bluetooth del tuo telefono per registrare tutti i dispositivi che sono stati a meno di 2 metri di distanza da te.";
 
 /* Class = "UILabel"; text = "Together we can save\nlives and help people\nkeep their jobs."; ObjectID = "3Sh-UK-sVs"; */
@@ -50,10 +50,10 @@
 /* Class = "UILabel"; text = "inactive"; ObjectID = "1yP-sm-Glj"; */
 "1yP-sm-Glj.text" = "inattivo";
 
-/* Class = "UILabel"; text = "To monitor more accurately your interactions we will ask you permission to use Location."; ObjectID = "62D-qb-l2v"; */
+/* Class = "UILabel"; text = "We will use your Distance Monitoring to approximate more precisely your interactions."; ObjectID = "62D-qb-l2v"; */
 "62D-qb-l2v.text" = "Per individuare con più precisione le interazioni, ti chiediamo il permesso di usare la tua Posizione.";
 
-/* Class = "UILabel"; text = "We need your permission to\nuse Bluetooth to monitor your\ndistance from other devices."; ObjectID = "8GN-ww-2vw"; */
+/* Class = "UILabel"; text = "We will use your Bluetooth to monitor your distance from other devices."; ObjectID = "8GN-ww-2vw"; */
 "8GN-ww-2vw.text" = "Abbiamo bisogno del tuo permesso per usare il Bluetooth per misurare la tua distanza da altri dispositivi.";
 
 /* Class = "UILabel"; text = "Active       "; ObjectID = "Euk-My-yLC"; */
@@ -86,10 +86,10 @@
 /* Class = "UILabel"; text = "Step 3"; ObjectID = "bgF-ii-alp"; */
 "bgF-ii-alp.text" = "Step 3";
 
-/* Class = "UILabel"; text = "If you’ve been close to an infected person in the past two weeks we will notify you. That’s it, just one notification."; ObjectID = "dzx-o8-G5g"; */
+/* Class = "UILabel"; text = "If you have been close to an infected person in the past two weeks, we will notify you.\nThat's it, just one notification."; ObjectID = "dzx-o8-G5g"; */
 "dzx-o8-G5g.text" = "Se sei stato vicino a una persona infetta nelle ultime due settimane, ti faremo sapere. Tutto qui, solo una notica.";
 
-/* Class = "UIButton"; normalTitle = "GIVE LOCATION PERMISSION"; ObjectID = "fd6-Na-JOe"; */
+/* Class = "UIButton"; normalTitle = "GIVE PERMISSION"; ObjectID = "fd6-Na-JOe"; */
 "fd6-Na-JOe.normalTitle" = "ATTIVA LA POSIZIONE";
 
 /* Class = "UIButton"; normalTitle = "SKIP TO NEXT STEP"; ObjectID = "iBi-1G-Mp8"; */
@@ -98,13 +98,13 @@
 /* Class = "UILabel"; text = "Step 1"; ObjectID = "iGW-XV-oQu"; */
 "iGW-XV-oQu.text" = "Step 1";
 
-/* Class = "UIButton"; normalTitle = "GIVE BLUETOOTH PERMISSION"; ObjectID = "iaE-IC-WIK"; */
+/* Class = "UIButton"; normalTitle = "TURN ON BLUETOOTH"; ObjectID = "iaE-IC-WIK"; */
 "iaE-IC-WIK.normalTitle" = "ACCENDI IL BLUETOOTH";
 
 /* Class = "UILabel"; text = "It's anonymous."; ObjectID = "lPE-Da-ZjX"; */
 "lPE-Da-ZjX.text" = "È anonimo.";
 
-/* Class = "UILabel"; text = "If you got close to an infected person\nduring your day, we'll let you know."; ObjectID = "mKP-li-ba4"; */
+/* Class = "UILabel"; text = "Remember to leave your Bluetooth and Location on, and we'll do the rest."; ObjectID = "mKP-li-ba4"; */
 "mKP-li-ba4.text" = "Se ti sei avvicinato a una persona infetta durante la giornata, ti faremo sapere.";
 
 /* Class = "UILabel"; text = "All set 🤗"; ObjectID = "nkG-aq-zUe"; */
@@ -116,7 +116,7 @@
 /* Class = "UIButton"; normalTitle = "HOW IT WORKS?"; ObjectID = "oQD-6d-vjs"; */
 "oQD-6d-vjs.normalTitle" = "COME FUNZIONA?";
 
-/* Class = "UIButton"; normalTitle = "GIVE NOTIFICATION PERMISSION"; ObjectID = "qYv-To-SWE"; */
+/* Class = "UIButton"; normalTitle = "ALLOW NOTIFICATIONS"; ObjectID = "qYv-To-SWE"; */
 "qYv-To-SWE.normalTitle" = "ATTIVA LE NOTIFICHE";
 
 /* Class = "UILabel"; text = "And It's anonymous."; ObjectID = "vek-Pm-sYO"; */
@@ -137,19 +137,19 @@
 /* Class = "UIButton"; normalTitle = "Location"; ObjectID = "hdP-oP-fKL"; */
 "hdP-oP-fKL.normalTitle" = "Posizione";
 
-/* Class = "UIButton"; normalTitle = "SKIP TO NEXT STEP"; ObjectID = "2qO-Hh-VBZ"; */
+/* Class = "UIButton"; normalTitle = "NOT RIGHT NOW"; ObjectID = "2qO-Hh-VBZ"; */
 "2qO-Hh-VBZ.normalTitle" = "SALTA QUESTA RICHIESTA";
 
 /* Class = "UIButton"; normalTitle = "SHARE LOCATION"; ObjectID = "Elz-lo-tdP"; */
 "Elz-lo-tdP.normalTitle" = "CONDIVIDI LA POSIZIONE";
 
-/* Class = "UILabel"; text = "Share Location"; ObjectID = "HQy-Cs-56D"; */
+/* Class = "UILabel"; text = "Help your Community"; ObjectID = "HQy-Cs-56D"; */
 "HQy-Cs-56D.text" = "Condividi posizione";
 
 /* Class = "UILabel"; text = "Step 2"; ObjectID = "eDj-OF-eZt"; */
 "eDj-OF-eZt.text" = "Step 2";
 
-/* Class = "UILabel"; text = "To help doctors with research with this crysis you can choose to share your position with the scientist."; ObjectID = "rux-iK-l4p"; */
+/* Class = "UILabel"; text = "To help doctors with the research and analysis of this crisis, you can choose to anonymously send your Position. This is not mandatory, and will only help if you decide to do so."; ObjectID = "rux-iK-l4p"; */
 "rux-iK-l4p.text" = "Per aiutare i medici con la ricerca e l’analisi di questa crisi, puoi decidere di condividere la tua Posizione. Questo non è obbligatorio, e aiuterà solo se tu decidi di farlo.";
 
 /* Class = "UIButton"; normalTitle = "HOW IT WORKS?"; ObjectID = "xb4-xH-i7d"; */
@@ -170,5 +170,17 @@
 /* Class = "UIButton"; normalTitle = "SKIP TO NEXT STEP"; ObjectID = "a3w-mQ-qOI"; */
 "a3w-mQ-qOI.normalTitle" = "SALTA QUESTA RICHIESTA";
 
-/* Class = "UILabel"; text = "And It's anonymous."; ObjectID = "vK1-8u-vJc"; */
+/* Class = "UILabel"; text = "It's anonymous."; ObjectID = "vK1-8u-vJc"; */
 "vK1-8u-vJc.text" = "È anonimo.";
+
+/* Class = "UILabel"; text = "What happens if you receive the notification that you could be at risk?"; ObjectID = "CVO-IF-hpj"; */
+"CVO-IF-hpj.text" = "";
+
+/* Class = "UILabel"; text = "How do we know who's sick?"; ObjectID = "SqO-Ok-kAa"; */
+"SqO-Ok-kAa.text" = "";
+
+/* Class = "UILabel"; text = "It means that you have been interacting with someone that has tested positive.\nProtect your loved ones by self-isolating for two weeks.\nCall your doctor in case you don't feel well."; ObjectID = "fnv-4f-1vi"; */
+"fnv-4f-1vi.text" = "";
+
+/* Class = "UILabel"; text = "Only professional medical staff can diagnose if a patient is positive to the virus. In that case, the doctor will scan the patient's QR code and notify the people that are at risk because they have been interacting with the infected patient."; ObjectID = "oWa-dN-Dr4"; */
+"oWa-dN-Dr4.text" = "";
