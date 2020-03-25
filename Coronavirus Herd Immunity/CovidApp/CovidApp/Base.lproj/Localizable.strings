@@ -61,3 +61,9 @@
 
 /* location open always */
 "We need to access always the location, please Open Settings -> CovidApp -> Location -> Always" = "CovidApp needs to access always the location, please Open Settings -> CovidApp -> Location -> Always";
+
+/* Healed status */
+"Healed" = "Healed";
+
+/* Quarantine status */
+"Quarantine" = "Quarantine";

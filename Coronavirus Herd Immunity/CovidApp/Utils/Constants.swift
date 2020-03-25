@@ -6,6 +6,7 @@
 //  Copyright © 2020 Coronavirus-Herd-Immunity. All rights reserved.
 //
 
+import UIKit
 import Foundation
 
 class Constants {
@@ -15,6 +16,8 @@ class Constants {
         public static let bluetoothChangeStatus = "bluetooth.changeStatus"
         public static let locationChangeStatus = "location.changeStatus"
         public static let notificationChangeStatus = "notification.changeStatus"
+        
+        public static let patientChangeStatus = "notification.patient.changeStatus"
         
         public static let bluetoothPoweredOnPermissionStatus = "bluetooth.on"
         public static let bluetoothPoweredOffPermissionStatus = "bluetooth.off"
@@ -33,6 +36,7 @@ class Constants {
         public static let alreadyAccessed = "chi.identifier.access"
         
         public static let statusDevice = "chi.identifier.status"
+        public static let warningLevel = "chi.identifier.warning_level"
         public static let identifierDevice = "chi.identifier.device"
         public static let tokenJWT = "chi.identifier.tokenJWT"
         public static let pushIdentifier = "chi.identifier.push-notification"
@@ -54,6 +58,16 @@ class Constants {
         public static let minimumIntervalTime : Double = 10
         
         public static let moduleMinorMajorVersion : Int = 65536
+    }
+    
+    class UI {
+        public static let colorStandard : UIColor = UIColor(red: 51 / 255, green: 51 / 255, blue: 51 / 255, alpha: 1)
+        public static let colorGreen : UIColor = UIColor(red: 0 / 255, green: 152 / 255, blue: 116 / 255, alpha: 1)
+        public static let colorYellow : UIColor = UIColor(red: 236 / 255, green: 183 / 255, blue: 48 / 255, alpha: 1)
+        public static let colorOrange : UIColor = UIColor(red: 238 / 255, green: 143 / 255, blue: 48 / 255, alpha: 1)
+        public static let colorRed : UIColor = UIColor(red: 255 / 255, green: 111 / 255, blue: 97 / 255, alpha: 1)
+        
+        public static let warningLevelColors : [UIColor] = [colorStandard, colorGreen, colorYellow, colorOrange, colorRed]
     }
     
 }

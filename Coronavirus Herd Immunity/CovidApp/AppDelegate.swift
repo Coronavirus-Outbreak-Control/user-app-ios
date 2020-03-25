@@ -65,13 +65,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         NotificationManager.shared.getAuthorizationStatus({
             status in
-            if status == .allowed && StorageManager.shared.getPushId() == nil{
-                NotificationManager.shared.requestPermission({
-                    granted in
-                    print("REGISTERING FROM APPDELEGATE")
-                })
+            if status == .allowed{
+                DispatchQueue.main.async{
+                    UIApplication.shared.registerForRemoteNotifications()
+                }
             }
-            
         })
         
         UIApplication.shared.setMinimumBackgroundFetchInterval(UIApplication.backgroundFetchIntervalMinimum)
@@ -125,6 +123,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.registerListeners()
     }
     
+    private func updatePushId(token : String){
+        if let idDevice = StorageManager.shared.getIdentifierDevice(){
+            ApiManager.shared.handshakeNewDevice(id: DeviceInfoManager.getId(), model: DeviceInfoManager.getModel(), version: DeviceInfoManager.getVersion()) {
+                deviceID, tokenJWT in
+
+                ApiManager.shared.setPushNotificationId(deviceId: Int64(idDevice), notificationId: token, token: tokenJWT)
+            }
+        }
+        StorageManager.shared.setPushId(token)
+    }
+    
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         print("XXXXXXXXXXXXXXXXXX")
         // 1. Convert device token to string
@@ -136,17 +145,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print("Device Token: \(token)")
         let bundleID = Bundle.main.bundleIdentifier;
         print("Bundle ID: \(token) \(bundleID)");
-        if let idDevice = StorageManager.shared.getIdentifierDevice(){
-            
-            ApiManager.shared.handshakeNewDevice(id: DeviceInfoManager.getId(), model: DeviceInfoManager.getModel(), version: DeviceInfoManager.getVersion()) {
-                deviceID, tokenJWT in
-
-                ApiManager.shared.setPushNotificationId(deviceId: Int64(idDevice), notificationId: token, token: tokenJWT)
+        if let oldPushId = StorageManager.shared.getPushId(){
+            if oldPushId != token{
+                updatePushId(token: token)
             }
-            
+        }else{
+            updatePushId(token: token)
         }
-        StorageManager.shared.setPushId(token)
-        // 3. Save the token to local storeage and post to app server to generate Push Notification. ...
     }
     
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
@@ -154,19 +159,43 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any]) {
+        print("REMOTE NOTIFICATION - normal")
+        self.handleRemoteContent(userInfo)
+    }
+    
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        print("REMOTE NOTIFICATION - fetch")
+        self.handleRemoteContent(userInfo)
+        completionHandler(.newData)
+//      URLSession.shared.dataTask(with: URL(string: "https://donnywals.com")!) { data, response, error in
+//        print(data)
+//        completionHandler(.newData)
+//      }.resume()
+    }
+    
+    private func handleRemoteContent(_ userInfo: [AnyHashable : Any]){
         print("Received push notification: \(userInfo)")
-        return
-        //avoid updating status
-        if let status = userInfo["status"] as? Int{
-            StorageManager.shared.setStatusUser(status)
-        }
         
-        if let title = userInfo["status"] as? String{
+        if let d = userInfo["data"] as? [String: Any]{
+            print("DATA FOUND", d)
+            //avoid updating status
+            if let status = d["status"] as? Int{
+                StorageManager.shared.setStatusUser(status)
+            }
             
-            let subtitle = userInfo["subtitle"] as? String
+            if let warningLevel = d["warning_level"] as? Int{
+                StorageManager.shared.setWarningLevel(warningLevel)
+            }
             
-            if let message = userInfo["message"] as? String{
-                NotificationManager.shared.showLocalNotification(title, subtitle: subtitle, message: message)
+            NotificationCenter.default.post(name: NSNotification.Name(Constants.Notification.patientChangeStatus), object: nil)
+            
+            if let title = d["title"] as? String{
+                print("title", title)
+                let subtitle = d["subtitle"] as? String
+                if let message = d["message"] as? String{
+                    print("message", message)
+                    NotificationManager.shared.showLocalNotification(title, subtitle: subtitle, message: message)
+                }
             }
         }
     }

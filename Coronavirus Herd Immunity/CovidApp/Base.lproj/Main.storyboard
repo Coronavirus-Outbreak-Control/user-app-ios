@@ -441,12 +441,12 @@ keep their jobs.</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Nv-Ey-WFv">
-                                                <rect key="frame" x="212" y="213" width="160" height="33.5"/>
-                                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="28"/>
+                                                <rect key="frame" x="212" y="213" width="160" height="42"/>
+                                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="35"/>
                                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DEVICES DETECTED" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="b6I-Y8-Xhw">
+                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ALERT" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="b6I-Y8-Xhw">
                                                 <rect key="frame" x="212" y="258" width="160" height="14.5"/>
                                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="12"/>
                                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -533,10 +533,11 @@ keep their jobs.</string>
                     </view>
                     <connections>
                         <outlet property="activeButton" destination="y2F-V0-cDw" id="6s6-KE-Sq7"/>
-                        <outlet property="interactionsTotal" destination="1Nv-Ey-WFv" id="usv-r5-aSe"/>
+                        <outlet property="alertLabel" destination="b6I-Y8-Xhw" id="sWG-Vh-5HV"/>
                         <outlet property="qrCodeImage" destination="XLB-Hw-DJo" id="gGI-f5-wK3"/>
                         <outlet property="scrollView" destination="cQa-30-gLF" id="imK-vu-wEy"/>
                         <outlet property="statusApp" destination="Euk-My-yLC" id="BIu-KZ-kgD"/>
+                        <outlet property="statusPatientLabel" destination="1Nv-Ey-WFv" id="uOs-57-zrS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o2R-WR-uat" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

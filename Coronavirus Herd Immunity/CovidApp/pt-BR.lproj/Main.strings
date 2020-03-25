@@ -62,8 +62,8 @@
 /* Class = "UILabel"; text = "How do we maintain your anonymity?"; ObjectID = "Wir-Pv-FdO"; */
 "Wir-Pv-FdO.text" = "Como mantemos seu anonimato?";
 
-/* Class = "UILabel"; text = "DEVICES DETECTED"; ObjectID = "b6I-Y8-Xhw"; */
-"b6I-Y8-Xhw.text" = "DISPOSITIVOS DETECTADOS";
+/* Class = "UILabel"; text = "ALERT"; ObjectID = "b6I-Y8-Xhw"; */
+"b6I-Y8-Xhw.text" = "ALERTA";
 
 /* Class = "UILabel"; text = "STATUS"; ObjectID = "bB3-cj-dWM"; */
 "bB3-cj-dWM.text" = "STATUS";

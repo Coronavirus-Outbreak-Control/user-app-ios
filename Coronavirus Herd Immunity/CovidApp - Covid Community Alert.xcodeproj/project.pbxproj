@@ -533,15 +533,15 @@
 				CODE_SIGN_ENTITLEMENTS = "CovidApp - Covid Community Alert.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "";
-				DEVELOPMENT_TEAM = TAHN979S3F;
+				DEVELOPMENT_TEAM = 652YXNAPUW;
 				INFOPLIST_FILE = CovidApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.covidapp-community-alert.ios";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.covidapp-coronavirus-outbreak-control.ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
@@ -556,15 +556,15 @@
 				CODE_SIGN_ENTITLEMENTS = "CovidApp - Covid Community Alert.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "";
-				DEVELOPMENT_TEAM = TAHN979S3F;
+				DEVELOPMENT_TEAM = 652YXNAPUW;
 				INFOPLIST_FILE = CovidApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.covidapp-community-alert.ios";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.covidapp-coronavirus-outbreak-control.ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
