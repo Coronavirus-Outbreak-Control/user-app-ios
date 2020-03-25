@@ -67,3 +67,9 @@
 
 /* location open  */
 "We need to access the location, please Open Settings -> Coronavirus Herd Immunity -> enable location access" = "Precisamos acessar o local. Abra Configurações -> CovidApp -> habilite o acesso ao local";
+
+/* Healed status */
+"Healed" = "Curada";
+
+/* Quarantine status */
+"Quarantine" = "Quarentena";

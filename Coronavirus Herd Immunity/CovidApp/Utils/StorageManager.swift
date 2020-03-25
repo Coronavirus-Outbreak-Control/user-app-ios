@@ -242,6 +242,14 @@ class StorageManager{
         defaults.integer(forKey: Constants.Setup.statusDevice)
     }
     
+    public func setWarningLevel(_ status : Int){
+        defaults.set(status, forKey: Constants.Setup.warningLevel)
+    }
+    
+    public func getWarningLevel() -> Int{
+        defaults.integer(forKey: Constants.Setup.warningLevel)
+    }
+    
     public func isFirstAccess() -> Bool{
         return !defaults.bool(forKey: Constants.Setup.alreadyAccessed)
     }

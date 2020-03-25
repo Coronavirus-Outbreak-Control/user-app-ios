@@ -12,10 +12,11 @@ import CoreBluetooth
 class MainViewController: StatusBarViewController {
     
     @IBOutlet weak var statusApp: UILabel!
-    @IBOutlet weak var interactionsTotal: UILabel!
+    @IBOutlet weak var statusPatientLabel: UILabel!
     @IBOutlet weak var qrCodeImage: UIImageView!
     @IBOutlet weak var activeButton: UIButton!
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var alertLabel: UILabel!
     private var counterHidden : Int = 0
     
     
@@ -58,13 +59,17 @@ class MainViewController: StatusBarViewController {
             print("identifier device:", identifierDevice)
             self.qrCodeImage.image = Utils.generateQRCode(identifierDevice.description)
         }
-        let countInteractions = StorageManager.shared.countTotalInteractions().description
-        self.interactionsTotal.text = countInteractions
-        print("TOTAL INTERACTIONS", countInteractions)
+//        let countInteractions = StorageManager.shared.countTotalInteractions().description
+//        self.statusPatientLabel.text = countInteractions
+//        print("TOTAL UNIQUE INTERACTIONS", countInteractions)
+        self.statusPatientLabel.isHidden = true
+        self.alertLabel.isHidden = true
+        self.statusPatientLabel.text = "-"
 
         NotificationCenter.default.addObserver(self, selector: #selector(statusChanged), name: NSNotification.Name(Constants.Notification.bluetoothChangeStatus), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(statusChanged), name: NSNotification.Name(Constants.Notification.locationChangeStatus), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(statusChanged), name: NSNotification.Name(Constants.Notification.notificationChangeStatus), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(updatePatientStatus), name: NSNotification.Name(Constants.Notification.patientChangeStatus), object: nil)
 
     }
     
@@ -86,6 +91,16 @@ class MainViewController: StatusBarViewController {
         }
     }
     
+    @objc func updatePatientStatus(){
+        if Thread.isMainThread{
+            self.updateStatus()
+        }else{
+            DispatchQueue.main.async {
+                self.updateStatus()
+            }
+        }
+    }
+    
     private func updateStatus(){
         //avoid updating status
 
@@ -98,31 +113,48 @@ class MainViewController: StatusBarViewController {
                 })
             }
         }
-        return
-        //TODO: remove return to handle status
+        
         let statusUser = StorageManager.shared.getStatusUser()
-        if statusUser == 1{
-            print("INFECTED")
-            // infected
-            self.statusApp.text = NSLocalizedString("Infected", comment: "Infected status")
-            self.activeButton.titleLabel?.text = NSLocalizedString("Infected", comment: "Infected status")
-            self.statusApp.textColor = UIColor(red: 255/255, green: 111/255, blue: 97/255, alpha: 1)
-            self.activeButton.setTitleColor(UIColor(red: 255/255, green: 111/255, blue: 97/255, alpha: 1), for: .normal)
-        }else if statusUser == 4{
-            print("SUPECT")
-            self.statusApp.text = NSLocalizedString("Suspect", comment: "Suspect status")
-            self.activeButton.titleLabel?.text = NSLocalizedString("Suspect", comment: "Suspect status")
-            self.statusApp.textColor = UIColor(red: 255/255, green: 111/255, blue: 97/255, alpha: 1)
-            self.activeButton.setTitleColor(UIColor(red: 255/255, green: 111/255, blue: 97/255, alpha: 1), for: .normal)
+        let warningLevel = StorageManager.shared.getWarningLevel()
+        
+        var text : String? = nil
+        var color = Constants.UI.colorStandard
+        
+        if warningLevel < Constants.UI.warningLevelColors.count{
+            color = Constants.UI.warningLevelColors[warningLevel]
         }
         
-    }
-    
-    @IBAction func showHowCanIHelpMore(_ sender: Any) {
-        print("GONNA PRESENT HELP MORE FROM MAIN")
-        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "HelpMoreViewController") as! HelpMoreViewController
-        self.present(nextViewController, animated:true, completion:nil)
+        switch statusUser {
+        case 1:
+            print("infected status")
+            text = NSLocalizedString("Infected", comment: "Infected status")
+            break
+        case 2:
+            print("suspect status")
+            text = NSLocalizedString("Suspect", comment: "Suspect status")
+            break
+        case 3:
+            print("healed status")
+            text = NSLocalizedString("Healed", comment: "Healed status")
+            break
+        case 4, 5, 6:
+            print("quarantine status")
+            text = NSLocalizedString("Quarantine", comment: "Quarantine status")
+            break
+        default:
+            text = nil
+        }
+        
+        if let t = text{
+            self.statusPatientLabel.text = t
+            self.statusPatientLabel.isHidden = false
+            self.alertLabel.isHidden = false
+            self.statusPatientLabel.textColor = color
+        }else{
+            self.statusPatientLabel.text = "-"
+            self.alertLabel.isHidden = true
+            self.statusPatientLabel.isHidden = true
+        }
     }
     
     @IBAction func howItWorks(_ sender: Any) {

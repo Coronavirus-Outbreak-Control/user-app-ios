@@ -77,8 +77,8 @@
 /* Class = "UILabel"; text = "Please finish setting up your device so we can help people and save lives."; ObjectID = "Vsg-5g-TVI"; */
 "Vsg-5g-TVI.text" = "Completa la configurazione del tuo device in maniera da aiutare persone e salvare vite.";
 
-/* Class = "UILabel"; text = "DEVICES DETECTED"; ObjectID = "b6I-Y8-Xhw"; */
-"b6I-Y8-Xhw.text" = "DISPOSITIVI INCONTRATI";
+/* Class = "UILabel"; text = "ALERT"; ObjectID = "b6I-Y8-Xhw"; */
+"b6I-Y8-Xhw.text" = "ALERT";
 
 /* Class = "UILabel"; text = "STATUS"; ObjectID = "bB3-cj-dWM"; */
 "bB3-cj-dWM.text" = "STATO";
