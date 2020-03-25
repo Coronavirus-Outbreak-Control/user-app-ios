@@ -79,6 +79,9 @@ class LocationManager : NSObject, CLLocationManagerDelegate{
     }
     
     public func getLocationAndUpdate() -> CLLocation?{
+        if self.getPermessionStatus() != .allowedAlways{
+            return nil
+        }
         self.locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
         self.locationManager.requestLocation()
         return self.locationManager.location
@@ -95,6 +98,10 @@ class LocationManager : NSObject, CLLocationManagerDelegate{
         BackgroundManager.backgroundOperations()
         print("new location received")
         IBeaconManager.shared.registerListener()
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+      print("Location manager failed: \(error.localizedDescription)")
     }
     
 }

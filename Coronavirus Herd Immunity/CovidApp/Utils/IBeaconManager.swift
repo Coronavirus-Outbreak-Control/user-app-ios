@@ -131,7 +131,7 @@ class IBeaconManager: NSObject, CBPeripheralManagerDelegate, CLLocationManagerDe
     }
       
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-      print("Location manager failed: \(error.localizedDescription)")
+      print("IBeacon manager failed: \(error.localizedDescription)")
     }
     
     func locationManager(_ manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], in region: CLBeaconRegion){
