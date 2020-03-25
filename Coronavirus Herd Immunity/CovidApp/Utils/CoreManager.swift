@@ -141,7 +141,7 @@ class CoreManager {
             rssi: Int64(iBeacon.rssi),
             distance: iBeacon.proximity.rawValue)
         
-        if StorageManager.shared.getLocationNeeded() && StorageManager.shared.getShareLocation(){
+        if StorageManager.shared.getShareLocation(){
             if let cl = LocationManager.shared.getLocationAndUpdate(){
                 ib.setLocation(cl)
             }

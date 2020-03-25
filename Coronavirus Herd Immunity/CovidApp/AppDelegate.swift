@@ -84,6 +84,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         print("will finish launch with options")
+        BackgroundManager.backgroundOperations()
         return true
     }
 
@@ -106,13 +107,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
         print("did become active")
         NotificationManager.shared.getStatus()
-        if BluetoothManager.shared.isBluetoothUsable() && LocationManager.shared.getPermessionStatus() == .allowedAlways{
-            print("restarting ibeacon")
-            IBeaconManager.shared.startAdvertiseDevice()
-            IBeaconManager.shared.registerListener()
-            LocationManager.shared.startMonitoring()
-        }
-        CoreManager.pushInteractions(isBackground: false)
+        BackgroundManager.backgroundOperations()
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
@@ -164,6 +159,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        
+        BackgroundManager.backgroundOperations()
         print("REMOTE NOTIFICATION - fetch")
         self.handleRemoteContent(userInfo)
         completionHandler(.newData)
