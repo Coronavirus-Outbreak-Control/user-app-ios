@@ -150,6 +150,15 @@ class CoreManager {
         
         StorageManager.shared.saveIBeacon(ib)
         
-        CoreManager.pushInteractions(isBackground: false)
+        // since this is called every second, we do another check with an extra
+        // time delay (15 seconds) to ensure that the first request finishes and updates
+        // last push time. (The handler for that is called when the push completes)
+        if let lastDatePush = StorageManager.shared.getLastTimePush() {
+            if lastDatePush
+                .addingTimeInterval(StorageManager.shared.getPushInterval())
+                .addingTimeInterval(15) < Date() {
+                    CoreManager.pushInteractions(isBackground: false)
+            }
+        }
     }
 }
