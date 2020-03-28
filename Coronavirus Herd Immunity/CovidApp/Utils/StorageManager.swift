@@ -191,6 +191,33 @@ class StorageManager{
         return Date(timeIntervalSince1970: i)
     }
     
+    public func getPushInProgress() -> Bool {
+        let value = defaults.bool(forKey: Constants.Setup.pushInProgress)
+        if value == false {
+            return false
+        }
+    
+        let time = defaults.double(forKey: Constants.Setup.pushInProgressSince)
+        if time.isZero {
+            return false
+        }
+        let date = Date(timeIntervalSince1970: time)
+        if date.addingTimeInterval(Constants.Setup.secondsIntervalBetweenConcurrentPushes) < Date() {
+            return false
+        }
+        return true
+    }
+    
+    public func setPushInProgress() {
+        defaults.set(true, forKey: Constants.Setup.pushInProgress)
+        defaults.set(Date().timeIntervalSince1970 , forKey: Constants.Setup.pushInProgressSince)
+    }
+    
+    public func resetPushInProgress() {
+        defaults.set(false, forKey: Constants.Setup.pushInProgress)
+        defaults.removeObject(forKey: Constants.Setup.pushInProgressSince)
+    }
+    
     public func setLastTimePush(_ date : Date){
         defaults.set(date.timeIntervalSince1970, forKey: Constants.Setup.lastDatePushPreference)
     }

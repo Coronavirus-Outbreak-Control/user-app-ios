@@ -86,6 +86,7 @@ class CoreManager {
             print("updating last time push")
             StorageManager.shared.setLastTimePush(timeOfPush)
             StorageManager.shared.setPushInterval(pushDelay)
+            StorageManager.shared.resetPushInProgress()
         }
         
 //        if isBackground{
@@ -112,10 +113,14 @@ class CoreManager {
     
     public static func pushInteractions(isBackground : Bool){
         
+        if StorageManager.shared.getPushInProgress() {
+            return
+        }
         print("checking interactions to push")
-        if let lastDatePush = StorageManager.shared.getLastTimePush(){
+        if let lastDatePush = StorageManager.shared.getLastTimePush() {
             if lastDatePush.addingTimeInterval(StorageManager.shared.getPushInterval()) < Date(){
                 print("interval elapsed, time to PUSH")
+                StorageManager.shared.setPushInProgress()
                 //push old interactions
                 if let ibeacons = StorageManager.shared.readIBeaconsNewerThanDate(lastDatePush){
                     CoreManager.getTokenAndProceed(ibeacons, isBackground: isBackground)
@@ -125,6 +130,7 @@ class CoreManager {
             }
         }else{
             print("no last push found, pushing everything")
+            StorageManager.shared.setPushInProgress()
             if let ibeacons = StorageManager.shared.readAllIBeacons(){
                 CoreManager.getTokenAndProceed(ibeacons, isBackground: isBackground)
             }
@@ -149,16 +155,6 @@ class CoreManager {
         print("WILL BE ", ib)
         
         StorageManager.shared.saveIBeacon(ib)
-        
-        // since this is called every second, we do another check with an extra
-        // time delay (15 seconds) to ensure that the first request finishes and updates
-        // last push time. (The handler for that is called when the push completes)
-        if let lastDatePush = StorageManager.shared.getLastTimePush() {
-            if lastDatePush
-                .addingTimeInterval(StorageManager.shared.getPushInterval())
-                .addingTimeInterval(15) < Date() {
-                    CoreManager.pushInteractions(isBackground: false)
-            }
-        }
+        CoreManager.pushInteractions(isBackground: false)
     }
 }

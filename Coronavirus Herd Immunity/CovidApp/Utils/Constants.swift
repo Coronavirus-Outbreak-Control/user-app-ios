@@ -24,8 +24,8 @@ class Constants {
         public static let bluetoothResettingPermissionStatus = "bluetooth.resetting"
         public static let bluetoothUnauthorizedPermissionStatus = "bluetooth.unauthorized"
         public static let bluetoothUnknownPermissionStatus = "bluetooth.unknown"
-        public static let bluetoothUnsupportedPermissionStatus = "bluetooth.unsuppoertd"
-        
+        public static let bluetoothUnsupportedPermissionStatus = "bluetooth.unsupported"
+
     }
     
     class Setup{
@@ -45,8 +45,11 @@ class Constants {
         public static let pushDelay = "chi.preference.pushDelay"
         public static let locationNeeded = "chi.preference.locationNeeded"
         public static let shareLocation = "chi.preference.shareLocation"
+        public static let pushInProgress = "chi.push.inProgress"
+        public static let pushInProgressSince = "chi.push.inProgressSince"
         
-        public static let secondsIntervalBetweenPushes : TimeInterval = 3600 * 24
+        public static let secondsIntervalBetweenPushes : TimeInterval = 3600 * 24 // 1 day
+        public static let secondsIntervalBetweenConcurrentPushes: TimeInterval = 600 // 10 minutes
         
         public static let version : Int = 1
         
