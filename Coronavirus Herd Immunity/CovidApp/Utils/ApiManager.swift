@@ -269,7 +269,12 @@ class ApiManager: NSObject, URLSessionDelegate, URLSessionTaskDelegate, URLSessi
         
     }
     // Shouldn't have to call this more than once, ever.
-    public func handshakeNewDevice(id: String, model: String, version: String, handler: @escaping (Int64, String) -> Void) -> Void {
+    public func handshakeNewDevice(googleToken: String?, handler: @escaping (Int64, String) -> Void) -> Void {
+        
+        let id = DeviceInfoManager.getId()
+        let model = DeviceInfoManager.getModel()
+        let version = DeviceInfoManager.getVersion()
+        
         let url = URL(string: "\(endpoint_string)/device/handshake")!
         var request = URLRequest(url: url)
         request.httpMethod = "POST"

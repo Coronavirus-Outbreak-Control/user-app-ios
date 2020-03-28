@@ -1,0 +1,22 @@
+PODS:
+  - ReCaptcha/Core (1.5.0)
+  - ReCaptcha/RxSwift (1.5.0):
+    - ReCaptcha/Core
+    - RxSwift (~> 5.0)
+  - RxSwift (5.1.1)
+
+DEPENDENCIES:
+  - ReCaptcha/RxSwift
+
+SPEC REPOS:
+  trunk:
+    - ReCaptcha
+    - RxSwift
+
+SPEC CHECKSUMS:
+  ReCaptcha: 40ae1dc390fd5837267674b9a6ae0978abb5eeeb
+  RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
+
+PODFILE CHECKSUM: c12f2a4718eac81c311fb842cb143943bb7b62db
+
+COCOAPODS: 1.9.1

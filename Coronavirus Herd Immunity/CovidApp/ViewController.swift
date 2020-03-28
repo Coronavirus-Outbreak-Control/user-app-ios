@@ -7,9 +7,18 @@
 //
 
 import UIKit
+import ReCaptcha
+import RxSwift
 
 class ViewController: StatusBarViewController {
 
+    let recaptcha = try? ReCaptcha(
+        apiKey: "6Ldiu-QUAAAAAE8oOqLZizOnEq42Ar9tNMIj8WXQ",
+        baseURL: URL(string: "http://recaptcha.covidapp-alert.com/index.html")!
+    )
+    
+    var canContinue : Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -18,6 +27,29 @@ class ViewController: StatusBarViewController {
     override func viewDidAppear(_ animated: Bool) {
         
         NotificationCenter.default.addObserver(self, selector: #selector(handleBluetoothChangeStatus), name: NSNotification.Name(Constants.Notification.bluetoothChangeStatus), object: nil)
+        
+        
+        if let _ = StorageManager.shared.getIdentifierDevice(){
+            canContinue = true
+        }else{
+            recaptcha?.configureWebView { [weak self] webview in
+                webview.frame = self?.view.bounds ?? CGRect.zero
+            }
+            
+            recaptcha?.validate(on: view) { [weak self] (result: ReCaptchaResult) in
+                print("VALIDATION")
+                
+                do{
+                    let googleToken = try result.dematerialize()
+                    print("GOOGLE TOKEN", googleToken)
+                    ApiManager.shared.handshakeNewDevice(googleToken: googleToken) { deviceID, token in
+                            StorageManager.shared.setIdentifierDevice(Int(deviceID))
+                    }
+                }catch let error{
+                    print("ERROR ON REGISTRATION", error)
+                }
+            }
+        }
         
     }
     
