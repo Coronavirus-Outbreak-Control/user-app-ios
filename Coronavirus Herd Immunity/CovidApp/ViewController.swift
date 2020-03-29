@@ -18,7 +18,6 @@ class ViewController: StatusBarViewController {
     override func viewDidAppear(_ animated: Bool) {
         
         NotificationCenter.default.addObserver(self, selector: #selector(handleBluetoothChangeStatus), name: NSNotification.Name(Constants.Notification.bluetoothChangeStatus), object: nil)
-        
     }
     
     @objc private func handleBluetoothChangeStatus(notification: NSNotification){

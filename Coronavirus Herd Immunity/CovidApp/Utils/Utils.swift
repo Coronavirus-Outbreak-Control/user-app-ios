@@ -36,7 +36,8 @@ class Utils{
             let transform = CGAffineTransform(scaleX: 10, y: 10)
 
             if let output = filter.outputImage?.transformed(by: transform) {
-                return UIImage(ciImage: output)
+                var img = UIImage(ciImage: output)
+                return img
             }
         }
         return nil

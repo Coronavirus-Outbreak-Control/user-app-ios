@@ -73,3 +73,33 @@
 
 /* Quarantine status */
 "Quarantine" = "Quarantena";
+
+/* Body Email */
+"Body Email" = "Prova https://coronavirus-outbreak-control.github.io/web-en/";
+
+/* Body SMS */
+"Body SMS" = "Prova https://coronavirus-outbreak-control.github.io/web-en/";
+
+/* Email not enabled */
+"Email not enabled" = "Email non disponibile";
+
+/* Link copied */
+"Link copied" = "Link copiato";
+
+/* social not available */
+"not available" = "non disponibile";
+
+/* website */
+"Share Text" = "Prova CovidApp!";
+
+/* SMS not enabled */
+"SMS not enabled" = "SMS non abilitati";
+
+/* website */
+"Website URL" = "https://coronavirus-outbreak-control.github.io/web-en/";
+
+/* Share Text Social */
+"Share Text Social" = "Prova CovidApp!";
+
+/* No risk detected */
+"No risk detected" = "Nessun rischio trovato";
