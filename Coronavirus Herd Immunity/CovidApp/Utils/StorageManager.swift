@@ -194,26 +194,31 @@ class StorageManager{
     public func getPushInProgress() -> Bool {
         let value = defaults.bool(forKey: Constants.Setup.pushInProgress)
         if value == false {
+            print("no push found")
             return false
         }
     
         let time = defaults.double(forKey: Constants.Setup.pushInProgressSince)
         if time.isZero {
+            print("time is zero")
             return false
         }
         let date = Date(timeIntervalSince1970: time)
         if date.addingTimeInterval(Constants.Setup.secondsIntervalBetweenConcurrentPushes) < Date() {
             return false
         }
+        print("last date push", date)
         return true
     }
     
     public func setPushInProgress() {
+        print("setting push in progress")
         defaults.set(true, forKey: Constants.Setup.pushInProgress)
         defaults.set(Date().timeIntervalSince1970 , forKey: Constants.Setup.pushInProgressSince)
     }
     
     public func resetPushInProgress() {
+        print("resetting push in progress")
         defaults.set(false, forKey: Constants.Setup.pushInProgress)
         defaults.removeObject(forKey: Constants.Setup.pushInProgressSince)
     }

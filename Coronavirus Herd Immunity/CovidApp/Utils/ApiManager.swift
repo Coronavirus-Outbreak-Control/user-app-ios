@@ -62,6 +62,7 @@ class ApiManager: NSObject, URLSessionDelegate, URLSessionTaskDelegate, URLSessi
                 if let b = response.location{
                     StorageManager.shared.setLocationNeeded(b)
                 }
+                StorageManager.shared.resetPushInProgress()
               } catch let parsingError {
                  print("Error", parsingError)
             }

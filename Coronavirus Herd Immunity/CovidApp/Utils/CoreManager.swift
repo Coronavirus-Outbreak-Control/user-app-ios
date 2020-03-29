@@ -108,15 +108,16 @@ class CoreManager {
     public static func pushInteractions(isBackground : Bool){
         
         if StorageManager.shared.getPushInProgress() {
+            print("push in progress")
             return
         }
         print("checking interactions to push")
         if let lastDatePush = StorageManager.shared.getLastTimePush() {
             if lastDatePush.addingTimeInterval(StorageManager.shared.getPushInterval()) < Date(){
                 print("interval elapsed, time to PUSH")
-                StorageManager.shared.setPushInProgress()
                 //push old interactions
                 if let ibeacons = StorageManager.shared.readIBeaconsNewerThanDate(lastDatePush){
+                    StorageManager.shared.setPushInProgress()
                     CoreManager.getTokenAndProceed(ibeacons, isBackground: isBackground)
                 }
             }else{
@@ -124,8 +125,8 @@ class CoreManager {
             }
         }else{
             print("no last push found, pushing everything")
-            StorageManager.shared.setPushInProgress()
             if let ibeacons = StorageManager.shared.readAllIBeacons(){
+                StorageManager.shared.setPushInProgress()
                 CoreManager.getTokenAndProceed(ibeacons, isBackground: isBackground)
             }
         }
