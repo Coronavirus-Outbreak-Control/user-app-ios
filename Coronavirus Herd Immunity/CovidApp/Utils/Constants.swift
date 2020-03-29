@@ -24,8 +24,8 @@ class Constants {
         public static let bluetoothResettingPermissionStatus = "bluetooth.resetting"
         public static let bluetoothUnauthorizedPermissionStatus = "bluetooth.unauthorized"
         public static let bluetoothUnknownPermissionStatus = "bluetooth.unknown"
-        public static let bluetoothUnsupportedPermissionStatus = "bluetooth.unsuppoertd"
-        
+        public static let bluetoothUnsupportedPermissionStatus = "bluetooth.unsupported"
+
     }
     
     class Setup{
@@ -34,6 +34,8 @@ class Constants {
         public static let beaconCHIidentifier = "com.coronaherdimmunity.myDeviceRegion"
         
         public static let alreadyAccessed = "chi.identifier.access"
+
+        public static let backgroundPushIdentifier = "com.coronaherdimmunity.backgroundInteractionPush"
         
         public static let statusDevice = "chi.identifier.status"
         public static let warningLevel = "chi.identifier.warning_level"
@@ -45,10 +47,13 @@ class Constants {
         public static let pushDelay = "chi.preference.pushDelay"
         public static let locationNeeded = "chi.preference.locationNeeded"
         public static let shareLocation = "chi.preference.shareLocation"
+        public static let pushInProgress = "chi.push.inProgress"
+        public static let pushInProgressSince = "chi.push.inProgressSince"
         
-        public static let secondsIntervalBetweenPushes : TimeInterval = 3600 * 24
+        public static let defaultSecondsIntervalBetweenPushes : TimeInterval = 3600 * 1 // 1 day
+        public static let secondsIntervalBetweenConcurrentPushes: TimeInterval = 5 // 5 seconds
         
-        public static let version : Int = 1
+        public static let version : Int = 2
         
         public static let scanTime : Double = 10
         public static let minRSSIPower : Double = -60

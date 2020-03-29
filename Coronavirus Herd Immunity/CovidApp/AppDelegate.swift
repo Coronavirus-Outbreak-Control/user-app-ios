@@ -8,17 +8,18 @@
 
 import UIKit
 import Sentry
+import BackgroundTasks
 
-//background fetch: https://www.hackingwithswift.com/example-code/system/how-to-run-code-when-your-app-is-terminated
+// background fetch: https://www.hackingwithswift.com/example-code/system/how-to-run-code-when-your-app-is-terminated
 // scrollview: https://fluffy.es/scrollview-storyboard-xcode-11/
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-//    var backgroundCompletionHandler: (()->Void)?
 
     private func registerListeners(){
+        BackgroundManager.backgroundOperations()
         if BluetoothManager.shared.isBluetoothUsable() && LocationManager.shared.getPermessionStatus() == .allowedAlways{
             print("restarting ibeacon will resign")
             IBeaconManager.shared.registerListener()
@@ -30,6 +31,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         self.startup()
+        
+        // MARK: Registering Launch Handlers for Tasks
+        if #available(iOS 13.0, *) {
+            BGTaskScheduler.shared.register(forTaskWithIdentifier: Constants.Setup.backgroundPushIdentifier, using: nil) { task in
+                // Downcast the parameter to an app refresh task as this identifier is used for a refresh request.
+                print("HANDLE PUSH scheduled called")
+                self.handlePushInteractions(task: task as! BGAppRefreshTask)
+            }
+        } else {
+            // Fallback on earlier versions
+        }
         
         do {
             Client.shared = try Client(dsn: "https://2d08d421fc5e40f1ba4a04ee468b5898@sentry.io/4506990")
@@ -47,6 +59,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.registerListeners()
         
         return true
+    }
+    
+    @available(iOS 13.0, *)
+    func schedulePushInteractions() {
+        BGTaskScheduler.shared.cancelAllTaskRequests()
+        let request = BGAppRefreshTaskRequest(identifier: Constants.Setup.backgroundPushIdentifier)
+        // Push again no earlier than 15 minutes from now
+        request.earliestBeginDate = Date(timeIntervalSinceNow: 15*60)
+        do {
+           try BGTaskScheduler.shared.submit(request)
+            print("Push scheduled!")
+        } catch {
+           print("Could not schedule push: \(error)")
+        }
+    }
+    
+    @available(iOS 13.0, *)
+    func handlePushInteractions(task: BGAppRefreshTask) {
+        print("Processing scheduled push!")
+        // Schedule a new refresh task
+        self.schedulePushInteractions()
+        
+        BackgroundManager.backgroundOperations()
+        task.expirationHandler = {}
+        task.setTaskCompleted(success: true)
+
     }
     
     private func startup(){
@@ -88,11 +126,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
         self.registerListeners()
+        BackgroundManager.backgroundOperations()
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+        BackgroundManager.backgroundOperations()
+        if #available(iOS 13.0, *) {
+            self.schedulePushInteractions()
+        } else {
+            // Fallback on earlier versions
+        }
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
@@ -110,6 +155,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         // TODO:
         print("WILL TERMINATE")
+        BackgroundManager.backgroundOperations()
         StorageManager.shared.saveContext()
         self.registerListeners()
     }
@@ -167,6 +213,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     private func handleRemoteContent(_ userInfo: [AnyHashable : Any]){
+        registerListeners()
+        
         print("Received push notification: \(userInfo)")
         
         if let d = userInfo["data"] as? [String: Any]{

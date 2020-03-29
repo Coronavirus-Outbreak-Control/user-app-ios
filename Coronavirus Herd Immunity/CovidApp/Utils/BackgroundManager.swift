@@ -6,18 +6,19 @@
 //  Copyright © 2020 Coronavirus-Herd-Immunity. All rights reserved.
 //
 
+import UIKit
 import Foundation
 
 class BackgroundManager{
     
     public static func backgroundOperations(){
+        CoreManager.pushInteractions(isBackground: UIApplication.shared.applicationState == .background)
         if BluetoothManager.shared.isBluetoothUsable() && LocationManager.shared.getPermessionStatus() == .allowedAlways{
             print("background operations")
-            IBeaconManager.shared.startAdvertiseDevice()
             IBeaconManager.shared.registerListener()
             LocationManager.shared.startMonitoring()
+            IBeaconManager.shared.startAdvertiseDevice()
         }
-        CoreManager.pushInteractions(isBackground: true)
     }
     
 }

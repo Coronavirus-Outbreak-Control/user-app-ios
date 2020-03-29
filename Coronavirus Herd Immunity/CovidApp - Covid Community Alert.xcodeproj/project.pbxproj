@@ -13,7 +13,8 @@
 		ADD969532413B5F900F08295 /* DeviceInfoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD969522413B5F900F08295 /* DeviceInfoManager.swift */; };
 		C7A4224CA171867D837D1F7D /* Pods_CovidApp___Covid_Community_Alert.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14CB9B8DB2731051E0CAB3EA /* Pods_CovidApp___Covid_Community_Alert.framework */; };
 		C80170582405D19F002FC397 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80170572405D19F002FC397 /* MainViewController.swift */; };
-		C80C3B37241AC9B70047B1DC /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = C80C3B36241AC9B70047B1DC /* SwiftPackageProductDependency */; };
+		C80C3B37241AC9B70047B1DC /* Sentry in Frameworks */ = {isa = PBXBuildFile; productRef = C80C3B36241AC9B70047B1DC /* Sentry */; };
+		C813D0102430A08300FEC6AF /* ShareManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C813D00F2430A08300FEC6AF /* ShareManager.swift */; };
 		C81BA5D0240D969C00CFFA6F /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81BA5CF240D969C00CFFA6F /* LocationManager.swift */; };
 		C827F82C241C0A390026CF05 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C827F82B241C0A390026CF05 /* RoundButton.swift */; };
 		C82F96752429088A0031B91E /* LocationAlwaysViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82F96742429088A0031B91E /* LocationAlwaysViewController.swift */; };
@@ -63,6 +64,7 @@
 		ADD969502413B13F00F08295 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		ADD969522413B5F900F08295 /* DeviceInfoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfoManager.swift; sourceTree = "<group>"; };
 		C80170572405D19F002FC397 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		C813D00F2430A08300FEC6AF /* ShareManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareManager.swift; sourceTree = "<group>"; };
 		C81BA5CF240D969C00CFFA6F /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		C827F82B241C0A390026CF05 /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		C82F96742429088A0031B91E /* LocationAlwaysViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationAlwaysViewController.swift; sourceTree = "<group>"; };
@@ -164,9 +166,9 @@
 			isa = PBXGroup;
 			children = (
 				C8A892EB24086AC8007EA317 /* AlertManager.swift */,
+				ADD969502413B13F00F08295 /* ApiManager.swift */,
 				C84DAEDE241990C30043A1E4 /* BackgroundManager.swift */,
 				C8A892E9240866CC007EA317 /* BluetoothManager.swift */,
-				ADD969502413B13F00F08295 /* ApiManager.swift */,
 				AD47449D241968D900717E77 /* Date+strings.swift */,
 				ADD969522413B5F900F08295 /* DeviceInfoManager.swift */,
 				C8C72E52241062210023797E /* CoreManager.swift */,
@@ -175,6 +177,7 @@
 				C8D61A23240C575800895DA9 /* IBeaconManager.swift */,
 				C81BA5CF240D969C00CFFA6F /* LocationManager.swift */,
 				C883D6DE24200CFD00DB7362 /* NotificationManager.swift */,
+				C813D00F2430A08300FEC6AF /* ShareManager.swift */,
 				C8A32573240A767C00FF1620 /* StorageManager.swift */,
 				C8B861E8240ABD0600B35CF2 /* Utils.swift */,
 			);
@@ -419,6 +422,7 @@
 				AD47449C2419663400717E77 /* BluetoothTableViewController.swift in Sources */,
 				C883D6DF24200CFD00DB7362 /* NotificationManager.swift in Sources */,
 				C82F96752429088A0031B91E /* LocationAlwaysViewController.swift in Sources */,
+				C813D0102430A08300FEC6AF /* ShareManager.swift in Sources */,
 				C81BA5D0240D969C00CFFA6F /* LocationManager.swift in Sources */,
 				C8B861E9240ABD0600B35CF2 /* Utils.swift in Sources */,
 				C8595877241D3C6B0060F2F3 /* StatusBarViewController.swift in Sources */,
@@ -604,7 +608,7 @@
 				CODE_SIGN_ENTITLEMENTS = "CovidApp - Covid Community Alert.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 652YXNAPUW;
 				INFOPLIST_FILE = CovidApp/Info.plist;
@@ -628,7 +632,7 @@
 				CODE_SIGN_ENTITLEMENTS = "CovidApp - Covid Community Alert.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 652YXNAPUW;
 				INFOPLIST_FILE = CovidApp/Info.plist;

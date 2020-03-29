@@ -39,7 +39,7 @@ class MainViewController: StatusBarViewController {
         print("LOADING MAIN")
         self.run()
         
-        scrollView.contentSize = CGSize(width: view.bounds.width, height: 800)
+        scrollView.contentSize = CGSize(width: view.bounds.width, height: 1175)
         self.updateStatus()
     }
     
@@ -62,9 +62,6 @@ class MainViewController: StatusBarViewController {
 //        let countInteractions = StorageManager.shared.countTotalInteractions().description
 //        self.statusPatientLabel.text = countInteractions
 //        print("TOTAL UNIQUE INTERACTIONS", countInteractions)
-        self.statusPatientLabel.isHidden = true
-        self.alertLabel.isHidden = true
-        self.statusPatientLabel.text = "-"
 
         NotificationCenter.default.addObserver(self, selector: #selector(statusChanged), name: NSNotification.Name(Constants.Notification.bluetoothChangeStatus), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(statusChanged), name: NSNotification.Name(Constants.Notification.locationChangeStatus), object: nil)
@@ -117,7 +114,7 @@ class MainViewController: StatusBarViewController {
         let statusUser = StorageManager.shared.getStatusUser()
         let warningLevel = StorageManager.shared.getWarningLevel()
         
-        var text : String? = nil
+        var text : String = NSLocalizedString("No risk detected", comment: "No risk detected")
         var color = Constants.UI.colorStandard
         
         if warningLevel < Constants.UI.warningLevelColors.count{
@@ -127,34 +124,26 @@ class MainViewController: StatusBarViewController {
         switch statusUser {
         case 1:
             print("infected status")
-            text = NSLocalizedString("Infected", comment: "Infected status")
+            text = "\n" + NSLocalizedString("Infected", comment: "Infected status")
             break
         case 2:
             print("suspect status")
-            text = NSLocalizedString("Suspect", comment: "Suspect status")
+            text = "\n" + NSLocalizedString("Suspect", comment: "Suspect status")
             break
         case 3:
             print("healed status")
-            text = NSLocalizedString("Healed", comment: "Healed status")
+            text = "\n" + NSLocalizedString("Healed", comment: "Healed status")
             break
         case 4, 5, 6:
             print("quarantine status")
-            text = NSLocalizedString("Quarantine", comment: "Quarantine status")
+            text = "\n" + NSLocalizedString("Quarantine", comment: "Quarantine status")
             break
         default:
-            text = nil
+            text = NSLocalizedString("No risk detected", comment: "No risk detected")
         }
         
-        if let t = text{
-            self.statusPatientLabel.text = t
-            self.statusPatientLabel.isHidden = false
-            self.alertLabel.isHidden = false
-            self.statusPatientLabel.textColor = color
-        }else{
-            self.statusPatientLabel.text = "-"
-            self.alertLabel.isHidden = true
-            self.statusPatientLabel.isHidden = true
-        }
+        self.statusPatientLabel.text = text
+        self.statusPatientLabel.textColor = color
     }
     
     @IBAction func howItWorks(_ sender: Any) {
@@ -163,13 +152,33 @@ class MainViewController: StatusBarViewController {
         self.present(nextViewController, animated:true, completion: nil)
     }
     
-    @IBAction func counterTotalInteractions(_ sender: Any) {
-        self.counterHidden += 1
-        print("counter is now at:", self.counterHidden)
-        if(self.counterHidden > 10){
-            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-            let nextViewController = storyBoard.instantiateViewController(withIdentifier: "BluetoothTableViewController") as! BluetoothTableViewController
-            self.present(nextViewController, animated:true, completion:nil)
-        }
+    @IBAction func shareFacebook(_ sender: Any) {
+        print("facebook")
+        ShareManager.shareFacebook(self)
+    }
+    
+    @IBAction func shareTwitter(_ sender: Any) {
+        print("twitter")
+        ShareManager.shareTwitter(self)
+    }
+    
+    @IBAction func shareWhatsapp(_ sender: Any) {
+        print("whatsapp")
+        ShareManager.shareWhatsapp(self)
+    }
+    
+    @IBAction func shareSMS(_ sender: Any) {
+        print("SMS")
+        ShareManager.shareSMS(self)
+    }
+    
+    @IBAction func shareEmail(_ sender: Any) {
+        print("email")
+        ShareManager.shareEmail(self)
+    }
+    
+    @IBAction func shareCopyLink(_ sender: Any) {
+        print("copylink")
+        ShareManager.copyLink(self)
     }
 }

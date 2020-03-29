@@ -6,6 +6,7 @@
 //  Copyright © 2020 Coronavirus-Herd-Immunity. All rights reserved.
 //
 
+import UIKit
 import Foundation
 import CoreLocation
 
@@ -82,24 +83,19 @@ class CoreManager {
         let timeOfPush = Date()
         print("gonna push", validIbeacons)
         
-        ApiManager.shared.uploadInteractions(validIbeacons, token: tokenJWT) { pushDelay in
+        if isBackground {
+            print("pushing positions on background")
+            ApiManager.shared.uploadInteractionsInBackground(validIbeacons, token: tokenJWT)
             print("updating last time push")
             StorageManager.shared.setLastTimePush(timeOfPush)
-            StorageManager.shared.setPushInterval(pushDelay)
+        } else {
+            ApiManager.shared.uploadInteractions(validIbeacons, token: tokenJWT) { pushDelay in
+                print("updating last time push")
+                StorageManager.shared.setLastTimePush(timeOfPush)
+                StorageManager.shared.setPushInterval(pushDelay)
+                StorageManager.shared.resetPushInProgress()
+            }
         }
-        
-//        if isBackground{
-//            print("pushing positions on background")
-//            ApiManager.shared.uploadInteractionsInBackground(validIbeacons, token: tokenJWT)
-//            print("updating last time push")
-//            StorageManager.shared.setLastTimePush(timeOfPush)
-//        }else{
-//            ApiManager.shared.uploadInteractions(validIbeacons, token: tokenJWT) { pushDelay in
-//                print("updating last time push")
-//                StorageManager.shared.setLastTimePush(timeOfPush)
-//                StorageManager.shared.setPushInterval(pushDelay)
-//            }
-//        }
     }
     
     private static func getTokenAndProceed(_ ibeacons: [IBeaconDto], isBackground : Bool){
@@ -112,12 +108,17 @@ class CoreManager {
     
     public static func pushInteractions(isBackground : Bool){
         
+        if StorageManager.shared.getPushInProgress() {
+            print("push in progress")
+            return
+        }
         print("checking interactions to push")
-        if let lastDatePush = StorageManager.shared.getLastTimePush(){
+        if let lastDatePush = StorageManager.shared.getLastTimePush() {
             if lastDatePush.addingTimeInterval(StorageManager.shared.getPushInterval()) < Date(){
                 print("interval elapsed, time to PUSH")
                 //push old interactions
                 if let ibeacons = StorageManager.shared.readIBeaconsNewerThanDate(lastDatePush){
+                    StorageManager.shared.setPushInProgress()
                     CoreManager.getTokenAndProceed(ibeacons, isBackground: isBackground)
                 }
             }else{
@@ -126,6 +127,7 @@ class CoreManager {
         }else{
             print("no last push found, pushing everything")
             if let ibeacons = StorageManager.shared.readAllIBeacons(){
+                StorageManager.shared.setPushInProgress()
                 CoreManager.getTokenAndProceed(ibeacons, isBackground: isBackground)
             }
         }
@@ -149,7 +151,6 @@ class CoreManager {
         print("WILL BE ", ib)
         
         StorageManager.shared.saveIBeacon(ib)
-        
-        CoreManager.pushInteractions(isBackground: false)
+        CoreManager.pushInteractions(isBackground: UIApplication.shared.applicationState == .background)
     }
 }

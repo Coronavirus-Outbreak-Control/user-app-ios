@@ -8,6 +8,8 @@
 
 import UIKit
 
+// https://fluffy.es/scrollview-storyboard-xcode-11/
+
 class InactiveViewController : StatusBarViewController{
     
     @IBOutlet weak var bluetoothButton: UIButton!
@@ -19,6 +21,7 @@ class InactiveViewController : StatusBarViewController{
     @IBOutlet weak var notificationButton: UIButton!
     @IBOutlet weak var notificationLabelButton: UIButton!
     
+    @IBOutlet weak var scrollView: UIScrollView!
     private let colorGreen : UIColor = UIColor(red: 0, green: 152 / 255, blue: 116 / 255, alpha: 1)
     private let colorRed : UIColor = UIColor(red: 1, green: 111 / 255, blue: 97 / 255, alpha: 1)
     
@@ -54,6 +57,8 @@ class InactiveViewController : StatusBarViewController{
         NotificationCenter.default.addObserver(self, selector: #selector(statusChanged), name: NSNotification.Name(Constants.Notification.bluetoothChangeStatus), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(statusChanged), name: NSNotification.Name(Constants.Notification.locationChangeStatus), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(statusChanged), name: NSNotification.Name(Constants.Notification.notificationChangeStatus), object: nil)
+        
+//        scrollView.contentSize = CGSize(width: view.bounds.width, height: 1125)
     }
     
     @objc private func statusChanged(){
@@ -169,6 +174,42 @@ class InactiveViewController : StatusBarViewController{
         let nextViewController = storyBoard.instantiateViewController(withIdentifier: "NotificationViewController") as! NotificationViewController
         nextViewController.modalPresentationStyle = .fullScreen
         self.present(nextViewController, animated:true, completion:nil)
+    }
+    
+    @IBAction func howItWorks(_ sender: Any) {
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "HowItWorksViewController") as! HowItWorksViewController
+        self.present(nextViewController, animated:true, completion: nil)
+    }
+    
+    @IBAction func shareFacebook(_ sender: Any) {
+        print("facebook inactive")
+        ShareManager.shareFacebook(self)
+    }
+    
+    @IBAction func shareTwitter(_ sender: Any) {
+        print("facebook inactive inactive")
+        ShareManager.shareTwitter(self)
+    }
+    
+    @IBAction func shareWhatsapp(_ sender: Any) {
+        print("whatsapp inactive")
+        ShareManager.shareWhatsapp(self)
+    }
+    
+    @IBAction func shareSMS(_ sender: Any) {
+        print("SMS inactive")
+        ShareManager.shareSMS(self)
+    }
+    
+    @IBAction func shareEmail(_ sender: Any) {
+        print("email inactive")
+        ShareManager.shareEmail(self)
+    }
+    
+    @IBAction func copyLink(_ sender: Any) {
+        print("copylink inactive")
+        ShareManager.copyLink(self)
     }
     
 }
