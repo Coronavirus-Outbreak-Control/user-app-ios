@@ -10,14 +10,13 @@ import UIKit
 import Sentry
 import BackgroundTasks
 
-//background fetch: https://www.hackingwithswift.com/example-code/system/how-to-run-code-when-your-app-is-terminated
+// background fetch: https://www.hackingwithswift.com/example-code/system/how-to-run-code-when-your-app-is-terminated
 // scrollview: https://fluffy.es/scrollview-storyboard-xcode-11/
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-//    var backgroundCompletionHandler: (()->Void)?
 
     private func registerListeners(){
         BackgroundManager.backgroundOperations()
@@ -218,6 +217,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     private func handleRemoteContent(_ userInfo: [AnyHashable : Any]){
+        registerListeners()
+        
         print("Received push notification: \(userInfo)")
         
         if let d = userInfo["data"] as? [String: Any]{

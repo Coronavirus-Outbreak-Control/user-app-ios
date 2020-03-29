@@ -50,10 +50,10 @@ class Constants {
         public static let pushInProgress = "chi.push.inProgress"
         public static let pushInProgressSince = "chi.push.inProgressSince"
         
-        public static let secondsIntervalBetweenPushes : TimeInterval = 3600 * 24 // 1 day
-        public static let secondsIntervalBetweenConcurrentPushes: TimeInterval = 60 // 1 minutes
+        public static let defaultSecondsIntervalBetweenPushes : TimeInterval = 3600 * 1 // 1 day
+        public static let secondsIntervalBetweenConcurrentPushes: TimeInterval = 5 // 5 seconds
         
-        public static let version : Int = 1
+        public static let version : Int = 2
         
         public static let scanTime : Double = 10
         public static let minRSSIPower : Double = -60

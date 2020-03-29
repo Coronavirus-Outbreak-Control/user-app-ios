@@ -105,7 +105,7 @@ class ApiManager: NSObject, URLSessionDelegate, URLSessionTaskDelegate, URLSessi
 
         if devices.isEmpty {
             print("Ending task. No interactions.")
-            handler(Constants.Setup.secondsIntervalBetweenPushes)
+            handler(Constants.Setup.defaultSecondsIntervalBetweenPushes)
             return
         }
         

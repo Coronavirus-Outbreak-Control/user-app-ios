@@ -236,7 +236,7 @@ class StorageManager{
         let interval = defaults.double(forKey: Constants.Setup.pushDelay)
         
         if interval.isZero {
-            return Constants.Setup.secondsIntervalBetweenPushes
+            return Constants.Setup.defaultSecondsIntervalBetweenPushes
         }
         return interval
     }

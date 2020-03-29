@@ -6,6 +6,7 @@
 //  Copyright © 2020 Coronavirus-Herd-Immunity. All rights reserved.
 //
 
+import UIKit
 import Foundation
 import CoreLocation
 
@@ -150,6 +151,6 @@ class CoreManager {
         print("WILL BE ", ib)
         
         StorageManager.shared.saveIBeacon(ib)
-        CoreManager.pushInteractions(isBackground: false)
+        CoreManager.pushInteractions(isBackground: UIApplication.shared.applicationState == .background)
     }
 }
