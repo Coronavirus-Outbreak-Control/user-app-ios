@@ -34,6 +34,8 @@ class Constants {
         public static let beaconCHIidentifier = "com.coronaherdimmunity.myDeviceRegion"
         
         public static let alreadyAccessed = "chi.identifier.access"
+
+        public static let backgroundPushIdentifier = "com.coronaherdimmunity.backgroundInteractionPush"
         
         public static let statusDevice = "chi.identifier.status"
         public static let warningLevel = "chi.identifier.warning_level"

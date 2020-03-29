@@ -82,25 +82,19 @@ class CoreManager {
         let timeOfPush = Date()
         print("gonna push", validIbeacons)
         
-        ApiManager.shared.uploadInteractions(validIbeacons, token: tokenJWT) { pushDelay in
+        if isBackground {
+            print("pushing positions on background")
+            ApiManager.shared.uploadInteractionsInBackground(validIbeacons, token: tokenJWT)
             print("updating last time push")
             StorageManager.shared.setLastTimePush(timeOfPush)
-            StorageManager.shared.setPushInterval(pushDelay)
-            StorageManager.shared.resetPushInProgress()
+        } else {
+            ApiManager.shared.uploadInteractions(validIbeacons, token: tokenJWT) { pushDelay in
+                print("updating last time push")
+                StorageManager.shared.setLastTimePush(timeOfPush)
+                StorageManager.shared.setPushInterval(pushDelay)
+                StorageManager.shared.resetPushInProgress()
+            }
         }
-        
-//        if isBackground{
-//            print("pushing positions on background")
-//            ApiManager.shared.uploadInteractionsInBackground(validIbeacons, token: tokenJWT)
-//            print("updating last time push")
-//            StorageManager.shared.setLastTimePush(timeOfPush)
-//        }else{
-//            ApiManager.shared.uploadInteractions(validIbeacons, token: tokenJWT) { pushDelay in
-//                print("updating last time push")
-//                StorageManager.shared.setLastTimePush(timeOfPush)
-//                StorageManager.shared.setPushInterval(pushDelay)
-//            }
-//        }
     }
     
     private static func getTokenAndProceed(_ ibeacons: [IBeaconDto], isBackground : Bool){
