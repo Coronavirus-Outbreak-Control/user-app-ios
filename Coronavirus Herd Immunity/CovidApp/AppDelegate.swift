@@ -163,9 +163,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func updatePushId(token : String){
         if let idDevice = StorageManager.shared.getIdentifierDevice(){
             ApiManager.shared.handshakeNewDevice(googleToken: nil) {
-                deviceID, tokenJWT in
-
-                ApiManager.shared.setPushNotificationId(deviceId: Int64(idDevice), notificationId: token, token: tokenJWT)
+                deviceID, tokenJWT, error in
+                if let token = tokenJWT{
+                    ApiManager.shared.setPushNotificationId(deviceId: Int64(idDevice), notificationId: token, token: token)
+                }
             }
         }
         StorageManager.shared.setPushId(token)

@@ -17,8 +17,6 @@ class ViewController: StatusBarViewController {
         baseURL: URL(string: "http://recaptcha.covidapp-alert.com/index.html")!
     )
     
-    var canContinue : Bool = false
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -27,30 +25,6 @@ class ViewController: StatusBarViewController {
     override func viewDidAppear(_ animated: Bool) {
         
         NotificationCenter.default.addObserver(self, selector: #selector(handleBluetoothChangeStatus), name: NSNotification.Name(Constants.Notification.bluetoothChangeStatus), object: nil)
-        
-        
-        if let _ = StorageManager.shared.getIdentifierDevice(){
-            canContinue = true
-        }else{
-            recaptcha?.configureWebView { [weak self] webview in
-                webview.frame = self?.view.bounds ?? CGRect.zero
-            }
-            
-            recaptcha?.validate(on: view) { [weak self] (result: ReCaptchaResult) in
-                print("VALIDATION")
-                
-                do{
-                    let googleToken = try result.dematerialize()
-                    print("GOOGLE TOKEN", googleToken)
-                    ApiManager.shared.handshakeNewDevice(googleToken: googleToken) { deviceID, token in
-                            StorageManager.shared.setIdentifierDevice(Int(deviceID))
-                    }
-                }catch let error{
-                    print("ERROR ON REGISTRATION", error)
-                }
-            }
-        }
-        
     }
     
     @objc private func handleBluetoothChangeStatus(notification: NSNotification){
@@ -62,6 +36,50 @@ class ViewController: StatusBarViewController {
 
     @IBAction func letsGetStarted(_ sender: Any) {
         
+        if let _ = StorageManager.shared.getIdentifierDevice(){
+            self.continueNavigation()
+        }else{
+            recaptcha?.configureWebView { [weak self] webview in
+                webview.frame = self?.view.bounds ?? CGRect.zero
+            }
+            
+            recaptcha?.validate(on: view) { [weak self] (result: ReCaptchaResult) in
+                print("VALIDATION")
+                
+                do{
+                    let googleToken = try result.dematerialize()
+                    print("GOOGLE TOKEN", googleToken)
+                    ApiManager.shared.handshakeNewDevice(googleToken: googleToken) {
+                        deviceID, token, error in
+                        print("REGISTERED")
+                        if let did = deviceID{
+                            DispatchQueue.main.sync {
+                                StorageManager.shared.setIdentifierDevice(Int(did))
+                                self?.continueNavigation()
+                            }
+                        }else{
+                            DispatchQueue.main.sync {
+                                let title = NSLocalizedString("Alert", comment: "Generic alert")
+                                let message = NSLocalizedString("We couldn't verify your identity, please check your internet connection and try again later.", comment: "Error response code from api")
+                                let alert = AlertManager.getAlert(title: title, message: message)
+                                self?.present(alert, animated: true)
+                            }
+                        }
+                    }
+                }catch let error{
+                    print("ERROR ON REGISTRATION", error)
+                    DispatchQueue.main.sync {
+                        let title = NSLocalizedString("Alert", comment: "Generic alert")
+                        let message = NSLocalizedString("We couldn't verify your identity, please check your internet connection and try again later.", comment: "Google validation not passed")
+                        let alert = AlertManager.getAlert(title: title, message: message)
+                        self?.present(alert, animated: true)
+                    }
+                }
+            }
+        }
+    }
+    
+    private func continueNavigation(){
         if StorageManager.shared.isFirstAccess(){
             print("FIRST ACCESS")
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -82,7 +100,6 @@ class ViewController: StatusBarViewController {
                 UIApplication.shared.windows.first?.makeKeyAndVisible()
             }
         }
-        
     }
     
     @IBAction func howItWorks(_ sender: Any) {

@@ -270,7 +270,7 @@ class ApiManager: NSObject, URLSessionDelegate, URLSessionTaskDelegate, URLSessi
         
     }
     // Shouldn't have to call this more than once, ever.
-    public func handshakeNewDevice(googleToken: String?, handler: @escaping (Int64, String) -> Void) -> Void {
+    public func handshakeNewDevice(googleToken: String?, handler: @escaping (Int64?, String?, String?) -> Void) -> Void {
         
         let id = DeviceInfoManager.getId()
         let model = DeviceInfoManager.getModel()
@@ -294,6 +294,7 @@ class ApiManager: NSObject, URLSessionDelegate, URLSessionTaskDelegate, URLSessi
             let id: String // unique generated ID
             let device: DeviceModel
             let os: DeviceOS
+            let challenge: String?
         }
         
         struct ApiResponse: Codable {
@@ -303,10 +304,11 @@ class ApiManager: NSObject, URLSessionDelegate, URLSessionTaskDelegate, URLSessi
         
         let deviceModel = DeviceModel(manufacturer: "Apple", model: model)
         let deviceOS = DeviceOS(name: "iOS", version: version)
-        let deviceInfo = DeviceInfo(id: id, device: deviceModel, os: deviceOS)
+        let deviceInfo = DeviceInfo(id: id, device: deviceModel, os: deviceOS, challenge: googleToken)
         
         guard let uploadData = try? JSONEncoder().encode(deviceInfo) else {
             print("Failed to encode deviceInfo")
+            handler(nil, nil, "Failed to encode deviceInfo")
             return
         }
         
@@ -316,12 +318,14 @@ class ApiManager: NSObject, URLSessionDelegate, URLSessionTaskDelegate, URLSessi
             if let error = error {
                 // error handling
                 print(error)
+                handler(nil, nil, error.localizedDescription)
                 return
             }
             guard let httpResponse = response as? HTTPURLResponse,
                 (200...299).contains(httpResponse.statusCode) else {
                     // error handling
                     print(response ?? "Unknown server error")
+                    handler(nil, nil, "Unknown server error")
                     return
             }
             if let dataResponse = data {
@@ -329,9 +333,11 @@ class ApiManager: NSObject, URLSessionDelegate, URLSessionTaskDelegate, URLSessi
                     let response = try JSONDecoder().decode(ApiResponse.self, from: dataResponse)
                     print("HANDSHAKE", response)
                     StorageManager.shared.setTokenJWT(response.token)
-                    handler(response.id, response.token)
-                  } catch let parsingError {
-                     print("Error", parsingError)
+                    handler(response.id, response.token, nil)
+                  }
+                catch let parsingError {
+                    print("Error", parsingError)
+                    handler(nil, nil, "parsing error")
                 }
             }
         }

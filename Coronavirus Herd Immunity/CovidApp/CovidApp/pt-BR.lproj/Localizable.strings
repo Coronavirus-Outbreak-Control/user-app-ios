@@ -103,3 +103,10 @@
 
 /* No risk detected */
 "No risk detected" = "Nenhum risco detectado";
+
+/* Error response code from api
+   Google validation not passed */
+"We couldn't verify your identity, please check your internet connection and try again later." = "Não foi possível verificar sua identidade. Verifique sua conexão com a internet e tente novamente mais tarde.";
+
+/* Generic alert */
+"Alert" = "Alerta";
