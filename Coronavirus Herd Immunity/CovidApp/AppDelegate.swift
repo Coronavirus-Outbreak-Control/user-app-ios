@@ -90,11 +90,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func startup(){
         NotificationManager.shared.getStatus()
         if StorageManager.shared.getIdentifierDevice() == nil{
-            print("generating new ID from server")
-            ApiManager.shared.handshakeNewDevice(id: DeviceInfoManager.getId(), model: DeviceInfoManager.getModel(), version: DeviceInfoManager.getVersion()) { deviceID, token in
-                    StorageManager.shared.setIdentifierDevice(Int(deviceID))
-            }
-            
+            print("Device not yet registered")
         }else{
             print("MY ID:", StorageManager.shared.getIdentifierDevice())
             print("TOKN JWT:", StorageManager.shared.getTokenJWT())
@@ -166,10 +162,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     private func updatePushId(token : String){
         if let idDevice = StorageManager.shared.getIdentifierDevice(){
-            ApiManager.shared.handshakeNewDevice(id: DeviceInfoManager.getId(), model: DeviceInfoManager.getModel(), version: DeviceInfoManager.getVersion()) {
-                deviceID, tokenJWT in
-
-                ApiManager.shared.setPushNotificationId(deviceId: Int64(idDevice), notificationId: token, token: tokenJWT)
+            ApiManager.shared.handshakeNewDevice(googleToken: nil) {
+                deviceID, tokenJWT, error in
+                if let token = tokenJWT{
+                    ApiManager.shared.setPushNotificationId(deviceId: Int64(idDevice), notificationId: token, token: token)
+                }
             }
         }
         StorageManager.shared.setPushId(token)

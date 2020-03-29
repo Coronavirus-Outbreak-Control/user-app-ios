@@ -97,3 +97,10 @@
 
 /* No risk detected */
 "No risk detected" = "No risk detected";
+
+/* Error response code from api
+   Google validation not passed */
+"We couldn't verify your identity, please check your internet connection and try again later." = "We couldn't verify your identity, please check your internet connection and try again later.";
+
+/* Generic alert */
+"Alert" = "Alert";

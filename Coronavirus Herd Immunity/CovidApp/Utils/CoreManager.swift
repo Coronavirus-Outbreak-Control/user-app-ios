@@ -99,10 +99,11 @@ class CoreManager {
     }
     
     private static func getTokenAndProceed(_ ibeacons: [IBeaconDto], isBackground : Bool){
-        ApiManager.shared.handshakeNewDevice(id: DeviceInfoManager.getId(), model: DeviceInfoManager.getModel(), version: DeviceInfoManager.getVersion()) {
-            deviceID, token in
-
-            CoreManager.prepareAndPush(ibeacons, isBackground: isBackground, tokenJWT: token)
+        ApiManager.shared.handshakeNewDevice(googleToken: nil) {
+            deviceID, token, error in
+            if let jwt = token{
+                CoreManager.prepareAndPush(ibeacons, isBackground: isBackground, tokenJWT: jwt)
+            }
         }
     }
     
