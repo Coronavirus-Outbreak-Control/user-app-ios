@@ -8,6 +8,7 @@
 
 import UIKit
 import Sentry
+import BackgroundTasks
 
 //background fetch: https://www.hackingwithswift.com/example-code/system/how-to-run-code-when-your-app-is-terminated
 // scrollview: https://fluffy.es/scrollview-storyboard-xcode-11/
@@ -31,6 +32,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.startup()
         
+        // MARK: Registering Launch Handlers for Tasks
+        if #available(iOS 13.0, *) {
+            BGTaskScheduler.shared.register(forTaskWithIdentifier: Constants.Setup.backgroundPushIdentifier, using: nil) { task in
+                // Downcast the parameter to an app refresh task as this identifier is used for a refresh request.
+                print("HANDLE PUSH scheduled called")
+                self.handlePushInteractions(task: task as! BGAppRefreshTask)
+            }
+        } else {
+            // Fallback on earlier versions
+        }
+        
         do {
             Client.shared = try Client(dsn: "https://2d08d421fc5e40f1ba4a04ee468b5898@sentry.io/4506990")
             try Client.shared?.startCrashHandler()
@@ -47,6 +59,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.registerListeners()
         
         return true
+    }
+    
+    @available(iOS 13.0, *)
+    func schedulePushInteractions() {
+        BGTaskScheduler.shared.cancelAllTaskRequests()
+        let request = BGAppRefreshTaskRequest(identifier: Constants.Setup.backgroundPushIdentifier)
+        // Push again no earlier than 15 minutes from now
+        request.earliestBeginDate = Date(timeIntervalSinceNow: 15*60)
+        do {
+           try BGTaskScheduler.shared.submit(request)
+            print("Push scheduled!")
+        } catch {
+           print("Could not schedule push: \(error)")
+        }
+    }
+    
+    @available(iOS 13.0, *)
+    func handlePushInteractions(task: BGAppRefreshTask) {
+        print("Processing scheduled push!")
+        // Schedule a new refresh task
+        self.schedulePushInteractions()
+        
+        BackgroundManager.backgroundOperations()
+        task.expirationHandler = {}
+        task.setTaskCompleted(success: true)
+
     }
     
     private func startup(){
@@ -97,6 +135,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidEnterBackground(_ application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+        if #available(iOS 13.0, *) {
+            self.schedulePushInteractions()
+        } else {
+            // Fallback on earlier versions
+        }
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
