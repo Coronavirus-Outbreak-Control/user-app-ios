@@ -21,8 +21,7 @@ class HowItWorksViewController: StatusBarViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        scrollView.contentSize = CGSize(width: view.bounds.width,
-                                        height: 800)
+        scrollView.contentSize = CGSize(width: view.bounds.width, height: 1566)
     }
     
     @IBAction func backButton(_ sender: Any) {
