@@ -14,8 +14,6 @@ class CoreManager {
     
     private static func groupIBeacon(_ ibeacons: [IBeaconDto]) -> IBeaconDto?{
         
-//        print("ASK TO GROUP", ibeacons)
-        
         if ibeacons.count == 0{
             return nil
         }
@@ -25,6 +23,7 @@ class CoreManager {
         }
         
         var rssis = [Int64]()
+        var accuracies = [Double]()
         var distances = [Int]()
         var interval = 0.0
         var lastDate : Date? = nil
@@ -35,6 +34,7 @@ class CoreManager {
                 interval += abs(d.timeIntervalSince(beacon.timestamp))
             }
             rssis.append(beacon.rssi)
+            accuracies.append(beacon.accuracy)
             distances.append(beacon.distance)
             lastDate = beacon.timestamp
         }
@@ -45,6 +45,7 @@ class CoreManager {
                              timestamp: ibeacons[0].timestamp,
                              rssi: rssis.sorted(by: <)[rssis.count / 2],
                              distance: distances.sorted(by: <)[distances.count / 2],
+                             accuracy: accuracies.sorted(by: <)[accuracies.count / 2],
                              lat: ibeacons[ibeacons.count-1].lat,
                              lon: ibeacons[ibeacons.count-1].lon,
                              interval: max(interval, Constants.Setup.minimumIntervalTime))
@@ -142,7 +143,8 @@ class CoreManager {
             identifier: uuid,
             timestamp: Date(),
             rssi: Int64(iBeacon.rssi),
-            distance: iBeacon.proximity.rawValue)
+            distance: iBeacon.proximity.rawValue,
+            accuracy: iBeacon.accuracy)
         
         if StorageManager.shared.getShareLocation(){
             if let cl = LocationManager.shared.getLocationAndUpdate(){

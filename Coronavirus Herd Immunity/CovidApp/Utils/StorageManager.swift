@@ -21,6 +21,7 @@ class StorageManager{
         static let entityName = "IBeacon"
         static let identifierKey = "identifier"
         static let distanceKey = "distance"
+        static let accuracyKey = "accuracy"
         static let rssiKey = "rssi"
         static let timestampKey = "timestamp"
         static let latKey = "lat"
@@ -65,6 +66,7 @@ class StorageManager{
             timestamp: object.value(forKey: IBeaconEntity.timestampKey) as! Date,
             rssi: object.value(forKey: IBeaconEntity.rssiKey) as! Int64,
             distance: object.value(forKey: IBeaconEntity.distanceKey) as! Int,
+            accuracy: object.value(forKey: IBeaconEntity.accuracyKey) as! Double,
             lat: object.value(forKey: IBeaconEntity.latKey) as! Double,
             lon: object.value(forKey: IBeaconEntity.lonKey) as! Double
         )
@@ -79,6 +81,7 @@ class StorageManager{
         ibeacon.setValue(iBeaconInput.rssi, forKeyPath: IBeaconEntity.rssiKey)
         ibeacon.setValue(iBeaconInput.timestamp, forKeyPath: IBeaconEntity.timestampKey)
         ibeacon.setValue(iBeaconInput.distance, forKeyPath: IBeaconEntity.distanceKey)
+        ibeacon.setValue(iBeaconInput.accuracy, forKey: IBeaconEntity.accuracyKey)
         ibeacon.setValue(iBeaconInput.lat, forKey: IBeaconEntity.latKey)
         ibeacon.setValue(iBeaconInput.lon, forKey: IBeaconEntity.lonKey)
         
