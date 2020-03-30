@@ -60,6 +60,7 @@ class Constants {
         public static let maxRSSIPower : Double = 100
         public static let minCounterIdentifierToPush = 1
         public static let timeAggregationIBeacons : TimeInterval = 180
+        public static let minTimeSecondAggregation : TimeInterval = 30
         public static let minimumIntervalTime : Double = 10
         
         public static let moduleMinorMajorVersion : Int = 65536
