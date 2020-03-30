@@ -58,7 +58,8 @@ class ApiManager: NSObject, URLSessionDelegate, URLSessionTaskDelegate, URLSessi
             do{
                 let response = try JSONDecoder().decode(pushResponse.self, from: data)
                 print(response)
-                StorageManager.shared.setPushInterval(response.next_try)
+                let next_try = response.next_try + Double.random(in: -0.25 ... 0.25) * response.next_try
+                StorageManager.shared.setPushInterval(next_try)
                 if let b = response.location{
                     StorageManager.shared.setLocationNeeded(b)
                 }
@@ -273,7 +274,6 @@ class ApiManager: NSObject, URLSessionDelegate, URLSessionTaskDelegate, URLSessi
     }
     // Shouldn't have to call this more than once, ever.
     public func handshakeNewDevice(googleToken: String?, handler: @escaping (Int64?, String?, String?) -> Void) -> Void {
-        
         let id = DeviceInfoManager.getId()
         let model = DeviceInfoManager.getModel()
         let version = DeviceInfoManager.getVersion()
