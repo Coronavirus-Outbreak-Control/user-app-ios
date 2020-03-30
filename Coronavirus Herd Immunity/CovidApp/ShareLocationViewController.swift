@@ -31,6 +31,7 @@ class ShareLocationViewController : ViewController{
     }
     
     private func goNext(){
+        self.dismiss(animated: true, completion: nil)
         if StorageManager.shared.isFirstAccess(){
             print("gonna open notification view")
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -50,7 +51,6 @@ class ShareLocationViewController : ViewController{
                 UIApplication.shared.windows.first?.makeKeyAndVisible()
             }
         }
-        self.dismiss(animated: true, completion: nil)
     }
     
 }

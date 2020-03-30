@@ -43,7 +43,6 @@ class LocationAlwaysViewController : StatusBarViewController{
         let controller = storyboard.instantiateViewController(withIdentifier: "ShareLocationViewController")
         UIApplication.shared.windows.first?.rootViewController = controller
         UIApplication.shared.windows.first?.makeKeyAndVisible()
-
     }
     
     private func handleChangeAuthorizationStatus(_ status : LocationManager.AuthorizationStatus){

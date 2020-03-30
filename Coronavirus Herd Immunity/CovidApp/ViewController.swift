@@ -20,9 +20,14 @@ class ViewController: StatusBarViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        if let did = StorageManager.shared.getIdentifierDevice(){
+            print("VIEW CONTROLLER FOUND DID", did)
+            self.continueNavigation()
+        }
         
         NotificationCenter.default.addObserver(self, selector: #selector(handleBluetoothChangeStatus), name: NSNotification.Name(Constants.Notification.bluetoothChangeStatus), object: nil)
     }
@@ -80,6 +85,7 @@ class ViewController: StatusBarViewController {
     }
     
     private func continueNavigation(){
+        self.dismiss(animated: true, completion: nil)
         if StorageManager.shared.isFirstAccess(){
             print("FIRST ACCESS")
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
