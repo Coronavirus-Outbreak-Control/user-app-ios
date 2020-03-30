@@ -141,6 +141,10 @@ class IBeaconManager: NSObject, CBPeripheralManagerDelegate, CLLocationManagerDe
             print("FOUND iBEACON!", beacons.count)
         }
         for beacon in beacons {
+            if StorageManager.shared.getExcludeFar() && beacon.proximity == .far{
+                print("excluding far")
+                continue
+            }
             print("BEACON", beacon.proximityUUID, beacon.accuracy, beacon.major, beacon.minor, beacon.accuracy, beacon.rssi)
             switch beacon.proximity {
             case .far:

@@ -301,6 +301,14 @@ class StorageManager{
         return defaults.bool(forKey: Constants.Setup.locationNeeded)
     }
     
+    public func setExcludeFar(_ excludeFar : Bool){
+        defaults.set(excludeFar, forKey: Constants.Setup.excludeFar)
+    }
+    
+    public func getExcludeFar() -> Bool{
+        return defaults.bool(forKey: Constants.Setup.excludeFar)
+    }
+    
     public func setShareLocation(_ share : Bool){
         defaults.set(share, forKey: Constants.Setup.shareLocation)
     }

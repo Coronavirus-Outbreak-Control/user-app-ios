@@ -35,6 +35,7 @@ class ApiManager: NSObject, URLSessionDelegate, URLSessionTaskDelegate, URLSessi
         let data: String?
         let next_try: TimeInterval
         let location: Bool?
+        let exclude_far: Bool?
     }
     
     func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithError error: Error?) {
@@ -138,6 +139,9 @@ class ApiManager: NSObject, URLSessionDelegate, URLSessionTaskDelegate, URLSessi
                         handler(response.next_try)
                         if let b = response.location{
                             StorageManager.shared.setLocationNeeded(b)
+                        }
+                        if let ex = response.exclude_far{
+                            StorageManager.shared.setExcludeFar(ex)
                         }
                       } catch let parsingError {
                          print("Error", parsingError)
