@@ -54,7 +54,7 @@ class Constants {
         public static let defaultSecondsIntervalBetweenPushes : TimeInterval = 3600 * 1 // 1 day
         public static let secondsIntervalBetweenConcurrentPushes: TimeInterval = 5 // 5 seconds
         
-        public static let version : Int = 3
+        public static let version : Int = 4
         
         public static let scanTime : Double = 10
         public static let minRSSIPower : Double = -60

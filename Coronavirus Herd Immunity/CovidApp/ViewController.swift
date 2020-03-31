@@ -24,11 +24,6 @@ class ViewController: StatusBarViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        if let did = StorageManager.shared.getIdentifierDevice(){
-            print("VIEW CONTROLLER FOUND DID", did)
-            self.continueNavigation()
-        }
-        
         NotificationCenter.default.addObserver(self, selector: #selector(handleBluetoothChangeStatus), name: NSNotification.Name(Constants.Notification.bluetoothChangeStatus), object: nil)
     }
     

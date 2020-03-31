@@ -65,14 +65,11 @@ class CoreManager {
         let identifier = beacons[0].identifier
         
         for beacon in beacons{
-            if let d = lastDate{
-                interval += abs(d.timeIntervalSince(beacon.timestamp))
-            }
+            interval += beacon.interval
             rssis += beacon.rssi
             accuracies += beacon.accuracy
             lastDate = beacon.timestamp
         }
-        interval += Constants.Setup.minimumIntervalTime
         return IBeaconDto(identifier: identifier, timestamp: beacons[0].timestamp, rssi: Int64(Int(rssis) / beacons.count),
                           distance: distance, accuracy: accuracies / Double(beacons.count), interval: interval)
     }
@@ -87,15 +84,14 @@ class CoreManager {
                 currentIterations.append(beacon)
                 continue
             }
-            
-            if beacon.distance == currentIterations[0].distance &&
-                abs(currentIterations[currentIterations.count-1].timestamp.timeIntervalSince(beacon.timestamp)) < Constants.Setup.minTimeSecondAggregation{
+            let last = currentIterations[currentIterations.count-1]
+            if beacon.distance == currentIterations[0].distance && abs(last.timestamp.addingTimeInterval(last.interval).timeIntervalSince(beacon.timestamp)) < Constants.Setup.minTimeSecondAggregation{
+                currentIterations.append(beacon)
+            }else{
                 if let i = meanFromBeacons(currentIterations){
                     aggregation.append(i)
                 }
                 currentIterations = [beacon]
-            }else{
-                currentIterations.append(beacon)
             }
         }
         if let i = meanFromBeacons(currentIterations){

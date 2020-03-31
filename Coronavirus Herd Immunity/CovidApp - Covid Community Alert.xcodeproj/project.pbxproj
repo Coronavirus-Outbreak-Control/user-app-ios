@@ -48,6 +48,7 @@
 		C8B2CF42240D9BAF005248B8 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B2CF41240D9BAF005248B8 /* LocationViewController.swift */; };
 		C8B861E9240ABD0600B35CF2 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B861E8240ABD0600B35CF2 /* Utils.swift */; };
 		C8C72E53241062210023797E /* CoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C72E52241062210023797E /* CoreManager.swift */; };
+		C8D11A212433B81000F3F263 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D11A202433B81000F3F263 /* LaunchViewController.swift */; };
 		C8D61A24240C575800895DA9 /* IBeaconManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D61A23240C575800895DA9 /* IBeaconManager.swift */; };
 		C8DD58CA24262755004C54CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8B188DA2402B14400CFEE98 /* Main.storyboard */; };
 		C8DD58D324263122004C54CA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C8DD58D124263122004C54CA /* Localizable.strings */; };
@@ -64,6 +65,7 @@
 		ADD969502413B13F00F08295 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		ADD969522413B5F900F08295 /* DeviceInfoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfoManager.swift; sourceTree = "<group>"; };
 		C80170572405D19F002FC397 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		C803E7C42433D682001DDA1E /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		C813D00F2430A08300FEC6AF /* ShareManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareManager.swift; sourceTree = "<group>"; };
 		C81BA5CF240D969C00CFFA6F /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		C827F82B241C0A390026CF05 /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
@@ -101,8 +103,8 @@
 		C8B188E22402B14600CFEE98 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C8B2CF41240D9BAF005248B8 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		C8B861E8240ABD0600B35CF2 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
-		C8B861EA240ABD9C00B35CF2 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		C8C72E52241062210023797E /* CoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreManager.swift; sourceTree = "<group>"; };
+		C8D11A202433B81000F3F263 /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		C8D61A23240C575800895DA9 /* IBeaconManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBeaconManager.swift; sourceTree = "<group>"; };
 		C8DD58D024262F1B004C54CA /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		C8DD58D224263122004C54CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = CovidApp/Base.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 		C8B188CA2402B14400CFEE98 = {
 			isa = PBXGroup;
 			children = (
+				C803E7C42433D682001DDA1E /* MyPlayground.playground */,
 				C86F54CC242F62390034F094 /* Podfile */,
 				C867F4102428DD4A0052E2C2 /* CovidApp - Covid Community Alert.entitlements */,
 				C8B188D52402B14400CFEE98 /* CovidApp */,
@@ -215,6 +218,7 @@
 				C88D06A6240715080005E029 /* HelpMoreViewController.swift */,
 				C8368CC3241D303A000D32FB /* HowItWorks.swift */,
 				C8FD2DD4242251B0004D2E84 /* InactiveViewController.swift */,
+				C8D11A202433B81000F3F263 /* LaunchViewController.swift */,
 				C8B2CF41240D9BAF005248B8 /* LocationViewController.swift */,
 				C82F96742429088A0031B91E /* LocationAlwaysViewController.swift */,
 				C80170572405D19F002FC397 /* MainViewController.swift */,
@@ -228,7 +232,6 @@
 				C8B188DD2402B14600CFEE98 /* Assets.xcassets */,
 				C8B188DF2402B14600CFEE98 /* LaunchScreen.storyboard */,
 				C8B188E22402B14600CFEE98 /* Info.plist */,
-				C8B861EA240ABD9C00B35CF2 /* MyPlayground.playground */,
 			);
 			path = CovidApp;
 			sourceTree = "<group>";
@@ -435,6 +438,7 @@
 				C8A892EA240866CC007EA317 /* BluetoothManager.swift in Sources */,
 				C8B188D72402B14400CFEE98 /* AppDelegate.swift in Sources */,
 				C8FD2DD5242251B0004D2E84 /* InactiveViewController.swift in Sources */,
+				C8D11A212433B81000F3F263 /* LaunchViewController.swift in Sources */,
 				C8368CC4241D303A000D32FB /* HowItWorks.swift in Sources */,
 				C84DAEDF241990C30043A1E4 /* BackgroundManager.swift in Sources */,
 				C842066F240BB23E00B8B45B /* Models.xcdatamodeld in Sources */,
@@ -607,7 +611,7 @@
 				CODE_SIGN_ENTITLEMENTS = "CovidApp - Covid Community Alert.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 652YXNAPUW;
 				INFOPLIST_FILE = CovidApp/Info.plist;
@@ -631,7 +635,7 @@
 				CODE_SIGN_ENTITLEMENTS = "CovidApp - Covid Community Alert.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 652YXNAPUW;
 				INFOPLIST_FILE = CovidApp/Info.plist;

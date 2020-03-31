@@ -250,3 +250,9 @@
 
 /* Class = "UIButton"; normalTitle = "Email"; ObjectID = "rg2-WT-1EH"; */
 "rg2-WT-1EH.normalTitle" = "Email";
+
+/* Class = "UILabel"; text = "CovidApp"; ObjectID = "Goy-3v-thC"; */
+"Goy-3v-thC.text" = "CovidApp";
+
+/* Class = "UILabel"; text = "Covid Community Alert"; ObjectID = "ew1-8V-zCk"; */
+"ew1-8V-zCk.text" = "Covid Community Alert";
