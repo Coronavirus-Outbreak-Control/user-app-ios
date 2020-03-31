@@ -88,6 +88,7 @@ class NotificationViewController : StatusBarViewController{
     
     private func goNext(){
         print("going next notification")
+        self.dismiss(animated: true, completion: nil)
         if Utils.isActive(){
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let controller = storyboard.instantiateViewController(withIdentifier: "MainViewController")

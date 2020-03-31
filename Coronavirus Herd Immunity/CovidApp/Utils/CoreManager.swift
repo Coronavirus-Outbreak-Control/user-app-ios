@@ -14,8 +14,6 @@ class CoreManager {
     
     private static func groupIBeacon(_ ibeacons: [IBeaconDto]) -> IBeaconDto?{
         
-//        print("ASK TO GROUP", ibeacons)
-        
         if ibeacons.count == 0{
             return nil
         }
@@ -25,6 +23,7 @@ class CoreManager {
         }
         
         var rssis = [Int64]()
+        var accuracies = [Double]()
         var distances = [Int]()
         var interval = 0.0
         var lastDate : Date? = nil
@@ -35,6 +34,7 @@ class CoreManager {
                 interval += abs(d.timeIntervalSince(beacon.timestamp))
             }
             rssis.append(beacon.rssi)
+            accuracies.append(beacon.accuracy)
             distances.append(beacon.distance)
             lastDate = beacon.timestamp
         }
@@ -45,11 +45,60 @@ class CoreManager {
                              timestamp: ibeacons[0].timestamp,
                              rssi: rssis.sorted(by: <)[rssis.count / 2],
                              distance: distances.sorted(by: <)[distances.count / 2],
+                             accuracy: accuracies.sorted(by: <)[accuracies.count / 2],
                              lat: ibeacons[ibeacons.count-1].lat,
                              lon: ibeacons[ibeacons.count-1].lon,
                              interval: max(interval, Constants.Setup.minimumIntervalTime))
-//        print("WILL RETURN", res)
         return res
+    }
+    
+    private static func meanFromBeacons(_ beacons : [IBeaconDto]) -> IBeaconDto?{
+        if beacons.count == 0{
+            return nil
+        }
+        
+        var rssis : Int64 = 0
+        var accuracies : Double = 0
+        let distance = beacons[0].distance
+        var interval = 0.0
+        var lastDate : Date? = nil
+        let identifier = beacons[0].identifier
+        
+        for beacon in beacons{
+            interval += beacon.interval
+            rssis += beacon.rssi
+            accuracies += beacon.accuracy
+            lastDate = beacon.timestamp
+        }
+        return IBeaconDto(identifier: identifier, timestamp: beacons[0].timestamp, rssi: Int64(Int(rssis) / beacons.count),
+                          distance: distance, accuracy: accuracies / Double(beacons.count), interval: interval)
+    }
+    
+    private static func secondAggregation(_ beacons : [IBeaconDto]) -> [IBeaconDto]{
+        
+        var aggregation = [IBeaconDto]()
+        var currentIterations = [IBeaconDto]()
+        
+        for beacon in beacons{
+            if currentIterations.count == 0{
+                currentIterations.append(beacon)
+                continue
+            }
+            let last = currentIterations[currentIterations.count-1]
+            if beacon.distance == currentIterations[0].distance && abs(last.timestamp.addingTimeInterval(last.interval).timeIntervalSince(beacon.timestamp)) < Constants.Setup.minTimeSecondAggregation{
+                currentIterations.append(beacon)
+            }else{
+                if let i = meanFromBeacons(currentIterations){
+                    aggregation.append(i)
+                }
+                currentIterations = [beacon]
+            }
+        }
+        if let i = meanFromBeacons(currentIterations){
+            aggregation.append(i)
+        }
+        
+        return aggregation
     }
     
     private static func prepareAndPush(_ ibeacons: [IBeaconDto], isBackground : Bool, tokenJWT : String){
@@ -80,16 +129,19 @@ class CoreManager {
             }
         }
         
+        print("first iterations", validIbeacons)
+        let secondAggregation = CoreManager.secondAggregation(validIbeacons)
+        
         let timeOfPush = Date()
-        print("gonna push", validIbeacons)
+        print("gonna push aggregated", secondAggregation)
         
         if isBackground {
             print("pushing positions on background")
-            ApiManager.shared.uploadInteractionsInBackground(validIbeacons, token: tokenJWT)
+            ApiManager.shared.uploadInteractionsInBackground(secondAggregation, token: tokenJWT)
             print("updating last time push")
             StorageManager.shared.setLastTimePush(timeOfPush)
         } else {
-            ApiManager.shared.uploadInteractions(validIbeacons, token: tokenJWT) { pushDelay in
+            ApiManager.shared.uploadInteractions(secondAggregation, token: tokenJWT) { pushDelay in
                 print("updating last time push")
                 StorageManager.shared.setLastTimePush(timeOfPush)
                 StorageManager.shared.setPushInterval(pushDelay)
@@ -142,7 +194,8 @@ class CoreManager {
             identifier: uuid,
             timestamp: Date(),
             rssi: Int64(iBeacon.rssi),
-            distance: iBeacon.proximity.rawValue)
+            distance: iBeacon.proximity.rawValue,
+            accuracy: iBeacon.accuracy)
         
         if StorageManager.shared.getShareLocation(){
             if let cl = LocationManager.shared.getLocationAndUpdate(){

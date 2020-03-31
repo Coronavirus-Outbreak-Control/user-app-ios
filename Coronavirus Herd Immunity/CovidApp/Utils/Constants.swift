@@ -49,17 +49,19 @@ class Constants {
         public static let shareLocation = "chi.preference.shareLocation"
         public static let pushInProgress = "chi.push.inProgress"
         public static let pushInProgressSince = "chi.push.inProgressSince"
+        public static let excludeFar = "chi.push.excludeFar"
         
         public static let defaultSecondsIntervalBetweenPushes : TimeInterval = 3600 * 1 // 1 day
         public static let secondsIntervalBetweenConcurrentPushes: TimeInterval = 5 // 5 seconds
         
-        public static let version : Int = 3
+        public static let version : Int = 4
         
         public static let scanTime : Double = 10
         public static let minRSSIPower : Double = -60
         public static let maxRSSIPower : Double = 100
         public static let minCounterIdentifierToPush = 1
         public static let timeAggregationIBeacons : TimeInterval = 180
+        public static let minTimeSecondAggregation : TimeInterval = 30
         public static let minimumIntervalTime : Double = 10
         
         public static let moduleMinorMajorVersion : Int = 65536

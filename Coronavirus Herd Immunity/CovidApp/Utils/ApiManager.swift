@@ -35,6 +35,7 @@ class ApiManager: NSObject, URLSessionDelegate, URLSessionTaskDelegate, URLSessi
         let data: String?
         let next_try: TimeInterval
         let location: Bool?
+        let exclude_far: Bool?
     }
     
     func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithError error: Error?) {
@@ -58,7 +59,8 @@ class ApiManager: NSObject, URLSessionDelegate, URLSessionTaskDelegate, URLSessi
             do{
                 let response = try JSONDecoder().decode(pushResponse.self, from: data)
                 print(response)
-                StorageManager.shared.setPushInterval(response.next_try)
+                let next_try = response.next_try + Double.random(in: -0.25 ... 0.25) * response.next_try
+                StorageManager.shared.setPushInterval(next_try)
                 if let b = response.location{
                     StorageManager.shared.setLocationNeeded(b)
                 }
@@ -138,6 +140,9 @@ class ApiManager: NSObject, URLSessionDelegate, URLSessionTaskDelegate, URLSessi
                         if let b = response.location{
                             StorageManager.shared.setLocationNeeded(b)
                         }
+                        if let ex = response.exclude_far{
+                            StorageManager.shared.setExcludeFar(ex)
+                        }
                       } catch let parsingError {
                          print("Error", parsingError)
                     }
@@ -158,6 +163,7 @@ class ApiManager: NSObject, URLSessionDelegate, URLSessionTaskDelegate, URLSessi
             let r: Int64 // rssi value
             let p: String
             let d: String
+            let s: Double
             let v : Int
         }
         
@@ -183,6 +189,7 @@ class ApiManager: NSObject, URLSessionDelegate, URLSessionTaskDelegate, URLSessi
                 r: device.rssi,
                 p: device.platform,
                 d: distance,
+                s: device.accuracy,
                 v: Constants.Setup.version)
             payload.append(interaction)
         }
@@ -264,14 +271,13 @@ class ApiManager: NSObject, URLSessionDelegate, URLSessionTaskDelegate, URLSessi
                     print(response ?? "Unknown server error")
                     return
             }
-            print("set push notification ID for device")
+            print("set push notification ID for device correctly")
         }
         task.resume()
         
     }
     // Shouldn't have to call this more than once, ever.
     public func handshakeNewDevice(googleToken: String?, handler: @escaping (Int64?, String?, String?) -> Void) -> Void {
-        
         let id = DeviceInfoManager.getId()
         let model = DeviceInfoManager.getModel()
         let version = DeviceInfoManager.getVersion()

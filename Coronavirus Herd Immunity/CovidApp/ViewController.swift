@@ -12,6 +12,7 @@ import RxSwift
 
 class ViewController: StatusBarViewController {
 
+    @IBOutlet weak var spinnerLoadingIndicator: UIActivityIndicatorView!
     let recaptcha = try? ReCaptcha(
         apiKey: "6Ldiu-QUAAAAAE8oOqLZizOnEq42Ar9tNMIj8WXQ",
         baseURL: URL(string: "http://recaptcha.covidapp-alert.com/index.html")!
@@ -20,10 +21,10 @@ class ViewController: StatusBarViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        
         NotificationCenter.default.addObserver(self, selector: #selector(handleBluetoothChangeStatus), name: NSNotification.Name(Constants.Notification.bluetoothChangeStatus), object: nil)
     }
     
@@ -39,6 +40,7 @@ class ViewController: StatusBarViewController {
         if let _ = StorageManager.shared.getIdentifierDevice(){
             self.continueNavigation()
         }else{
+            self.spinnerLoadingIndicator.isHidden = false
             recaptcha?.configureWebView { [weak self] webview in
                 webview.frame = self?.view.bounds ?? CGRect.zero
             }
@@ -80,6 +82,7 @@ class ViewController: StatusBarViewController {
     }
     
     private func continueNavigation(){
+        self.dismiss(animated: true, completion: nil)
         if StorageManager.shared.isFirstAccess(){
             print("FIRST ACCESS")
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
