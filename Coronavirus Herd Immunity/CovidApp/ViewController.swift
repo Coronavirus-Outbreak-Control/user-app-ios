@@ -12,6 +12,7 @@ import RxSwift
 
 class ViewController: StatusBarViewController {
 
+    @IBOutlet weak var spinnerLoadingIndicator: UIActivityIndicatorView!
     let recaptcha = try? ReCaptcha(
         apiKey: "6Ldiu-QUAAAAAE8oOqLZizOnEq42Ar9tNMIj8WXQ",
         baseURL: URL(string: "http://recaptcha.covidapp-alert.com/index.html")!
@@ -39,6 +40,7 @@ class ViewController: StatusBarViewController {
         if let _ = StorageManager.shared.getIdentifierDevice(){
             self.continueNavigation()
         }else{
+            self.spinnerLoadingIndicator.isHidden = false
             recaptcha?.configureWebView { [weak self] webview in
                 webview.frame = self?.view.bounds ?? CGRect.zero
             }

@@ -271,7 +271,7 @@ class ApiManager: NSObject, URLSessionDelegate, URLSessionTaskDelegate, URLSessi
                     print(response ?? "Unknown server error")
                     return
             }
-            print("set push notification ID for device")
+            print("set push notification ID for device correctly")
         }
         task.resume()
         

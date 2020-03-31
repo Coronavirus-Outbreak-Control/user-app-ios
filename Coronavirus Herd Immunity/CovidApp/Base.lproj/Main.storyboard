@@ -382,6 +382,9 @@ keep their jobs.</string>
                                     <action selector="howItWorks:" destination="BYZ-38-t0r" eventType="touchUpInside" id="isB-FM-I08"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="ZGm-h7-ppl">
+                                <rect key="frame" x="191" y="432" width="32" height="32"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -389,8 +392,10 @@ keep their jobs.</string>
                             <constraint firstItem="NEs-MN-e2E" firstAttribute="top" secondItem="x8p-0F-Dgi" secondAttribute="bottom" priority="998" constant="346.5" id="7Jz-EH-lv2"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="xb4-xH-i7d" secondAttribute="bottom" constant="55" id="H2e-qP-Gmt"/>
                             <constraint firstItem="x8p-0F-Dgi" firstAttribute="top" relation="lessThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="top" priority="999" constant="100" id="JcI-X2-kWV"/>
+                            <constraint firstItem="ZGm-h7-ppl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LrK-Zi-h6U"/>
                             <constraint firstItem="NEs-MN-e2E" firstAttribute="top" relation="lessThanOrEqual" secondItem="3Sh-UK-sVs" secondAttribute="bottom" priority="999" constant="222.5" id="Q4Y-rq-W3V"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3Sh-UK-sVs" secondAttribute="trailing" constant="40" id="QWj-fx-QbE"/>
+                            <constraint firstItem="ZGm-h7-ppl" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Tz9-fv-ydE"/>
                             <constraint firstItem="3Sh-UK-sVs" firstAttribute="top" secondItem="x8p-0F-Dgi" secondAttribute="bottom" constant="40" id="VKK-af-y4n"/>
                             <constraint firstItem="x8p-0F-Dgi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="44" id="Xua-BK-3e1"/>
                             <constraint firstItem="xb4-xH-i7d" firstAttribute="centerX" secondItem="NEs-MN-e2E" secondAttribute="centerX" constant="2" id="cn0-2Z-dL6"/>
@@ -402,6 +407,9 @@ keep their jobs.</string>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="spinnerLoadingIndicator" destination="ZGm-h7-ppl" id="iJE-c4-G3i"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
