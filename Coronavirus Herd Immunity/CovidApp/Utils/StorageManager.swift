@@ -258,7 +258,7 @@ class StorageManager{
     }
     
     public func getPushId() -> String?{
-        defaults.string(forKey: Constants.Setup.pushIdentifier)
+        return defaults.string(forKey: Constants.Setup.pushIdentifier)
     }
     
     public func setTokenJWT(_ id : String){
@@ -266,7 +266,7 @@ class StorageManager{
     }
     
     public func getTokenJWT() -> String?{
-        defaults.string(forKey: Constants.Setup.tokenJWT)
+        return defaults.string(forKey: Constants.Setup.tokenJWT)
     }
     
     public func setStatusUser(_ status : Int){
@@ -274,15 +274,29 @@ class StorageManager{
     }
     
     public func getStatusUser() -> Int{
-        defaults.integer(forKey: Constants.Setup.statusDevice)
+        return defaults.integer(forKey: Constants.Setup.statusDevice)
     }
+    
+    
+    public func setLastNextTry(_ nextTry : Double){
+        defaults.set(nextTry, forKey: Constants.Setup.lastNextTry)
+    }
+    
+    public func getLastNextTry() -> Double{
+        let nt = defaults.double(forKey: Constants.Setup.lastNextTry)
+        if nt.isZero{
+            return Constants.Setup.defaultSecondsIntervalBetweenPushes
+        }
+        return nt
+    }
+    
     
     public func setWarningLevel(_ status : Int){
         defaults.set(status, forKey: Constants.Setup.warningLevel)
     }
     
     public func getWarningLevel() -> Int{
-        defaults.integer(forKey: Constants.Setup.warningLevel)
+        return defaults.integer(forKey: Constants.Setup.warningLevel)
     }
     
     public func isFirstAccess() -> Bool{

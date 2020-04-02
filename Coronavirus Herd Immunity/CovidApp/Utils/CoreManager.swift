@@ -135,6 +135,15 @@ class CoreManager {
         let timeOfPush = Date()
         print("gonna push aggregated", secondAggregation)
         
+        if secondAggregation.count == 0{
+            StorageManager.shared.setLastTimePush(timeOfPush)
+            let lastNT = StorageManager.shared.getLastNextTry()
+            let next_try = lastNT + Double.random(in: -0.25 ... 0.25) * lastNT
+            StorageManager.shared.setPushInterval(next_try)
+            StorageManager.shared.resetPushInProgress()
+            return
+        }
+        
         if isBackground {
             print("pushing positions on background")
             ApiManager.shared.uploadInteractionsInBackground(secondAggregation, token: tokenJWT)
@@ -144,7 +153,6 @@ class CoreManager {
             ApiManager.shared.uploadInteractions(secondAggregation, token: tokenJWT) { pushDelay in
                 print("updating last time push")
                 StorageManager.shared.setLastTimePush(timeOfPush)
-                StorageManager.shared.setPushInterval(pushDelay)
                 StorageManager.shared.resetPushInProgress()
             }
         }

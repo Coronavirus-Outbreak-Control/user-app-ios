@@ -55,15 +55,22 @@ class ApiManager: NSObject, URLSessionDelegate, URLSessionTaskDelegate, URLSessi
     }
     
     func urlSession(_ session: URLSession, dataTask: URLSessionDataTask, didReceive data: Data) {
+        // response background push interaction
         DispatchQueue.main.async {
             do{
                 let response = try JSONDecoder().decode(pushResponse.self, from: data)
                 print(response)
                 let next_try = response.next_try + Double.random(in: -0.25 ... 0.25) * response.next_try
+                StorageManager.shared.setLastNextTry(response.next_try)
                 StorageManager.shared.setPushInterval(next_try)
+                
                 if let b = response.location{
                     StorageManager.shared.setLocationNeeded(b)
                 }
+                if let ex = response.exclude_far{
+                    StorageManager.shared.setExcludeFar(ex)
+                }
+                
                 StorageManager.shared.resetPushInProgress()
               } catch let parsingError {
                  print("Error", parsingError)
@@ -80,6 +87,10 @@ class ApiManager: NSObject, URLSessionDelegate, URLSessionTaskDelegate, URLSessi
         if devices.isEmpty {
             print("Ending task. No interactions.")
             return
+        }
+        
+        if devices.count == 0{
+            StorageManager.shared.resetPushInProgress()
         }
         
         let endpoint = URL(string: "\(endpoint_string)/interaction/report")
@@ -105,6 +116,10 @@ class ApiManager: NSObject, URLSessionDelegate, URLSessionTaskDelegate, URLSessi
     public func uploadInteractions(_ devices: [IBeaconDto], token: String, handler: @escaping (TimeInterval) -> Void) -> Void {
         print("Upload called")
 
+        if devices.count == 0{
+            handler(Constants.Setup.defaultSecondsIntervalBetweenPushes)
+        }
+        
         if devices.isEmpty {
             print("Ending task. No interactions.")
             handler(Constants.Setup.defaultSecondsIntervalBetweenPushes)
@@ -136,13 +151,15 @@ class ApiManager: NSObject, URLSessionDelegate, URLSessionTaskDelegate, URLSessi
                     do{
                         let response = try JSONDecoder().decode(pushResponse.self, from: data)
                         print(response)
-                        handler(response.next_try)
+                        let next_try = response.next_try + Double.random(in: -0.25 ... 0.25) * response.next_try
+                        StorageManager.shared.setLastNextTry(response.next_try)
                         if let b = response.location{
                             StorageManager.shared.setLocationNeeded(b)
                         }
                         if let ex = response.exclude_far{
                             StorageManager.shared.setExcludeFar(ex)
                         }
+                        handler(next_try)
                       } catch let parsingError {
                          print("Error", parsingError)
                     }
