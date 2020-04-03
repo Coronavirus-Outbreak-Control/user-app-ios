@@ -35,8 +35,8 @@
 /* Class = "UILabel"; text = "alert 👋"; ObjectID = "Fdy-am-YdY"; */
 "Fdy-am-YdY.text" = "alert 👋";
 
-/* Class = "UILabel"; text = "Location"; ObjectID = "G2h-W9-Xd9"; */
-"G2h-W9-Xd9.text" = "Localização";
+/* Class = "UILabel"; text = "Distance Monitoring"; ObjectID = "G2h-W9-Xd9"; */
+"G2h-W9-Xd9.text" = "Monitoramento de distância";
 
 /* Class = "UILabel"; text = "Detail"; ObjectID = "Lsy-SV-AyG"; */
 "Lsy-SV-AyG.text" = "Detalhe";
@@ -153,7 +153,7 @@
 "xb4-xH-i7d.normalTitle" = "COMO FUNCIONA?";
 
 /* Class = "UILabel"; text = "Distance Monitoring"; ObjectID = "52N-iN-Ntq"; */
-"52N-iN-Ntq.text" = "Localização";
+"52N-iN-Ntq.text" = "Monitoramento de distância";
 
 /* Class = "UILabel"; text = "Step 2"; ObjectID = "AHg-4W-og8"; */
 "AHg-4W-og8.text" = "Passo 2";

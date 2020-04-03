@@ -49,6 +49,7 @@ class CoreManager {
                              lat: ibeacons[ibeacons.count-1].lat,
                              lon: ibeacons[ibeacons.count-1].lon,
                              interval: max(interval, Constants.Setup.minimumIntervalTime))
+        res.setTimestampEnd(lastDate!)
         return res
     }
     
@@ -70,8 +71,10 @@ class CoreManager {
             accuracies += beacon.accuracy
             lastDate = beacon.timestamp
         }
-        return IBeaconDto(identifier: identifier, timestamp: beacons[0].timestamp, rssi: Int64(Int(rssis) / beacons.count),
+        let res = IBeaconDto(identifier: identifier, timestamp: beacons[0].timestamp, rssi: Int64(Int(rssis) / beacons.count),
                           distance: distance, accuracy: accuracies / Double(beacons.count), interval: interval)
+        res.setTimestampEnd(lastDate!)
+        return res
     }
     
     private static func secondAggregation(_ beacons : [IBeaconDto]) -> [IBeaconDto]{
@@ -132,11 +135,10 @@ class CoreManager {
         print("first iterations", validIbeacons)
         let secondAggregation = CoreManager.secondAggregation(validIbeacons)
         
-        let timeOfPush = Date()
         print("gonna push aggregated", secondAggregation)
         
         if secondAggregation.count == 0{
-            StorageManager.shared.setLastTimePush(timeOfPush)
+            StorageManager.shared.setLastTimePush(Date())
             let lastNT = StorageManager.shared.getLastNextTry()
             let next_try = lastNT + Double.random(in: -0.25 ... 0.25) * lastNT
             StorageManager.shared.setPushInterval(next_try)
@@ -148,11 +150,11 @@ class CoreManager {
             print("pushing positions on background")
             ApiManager.shared.uploadInteractionsInBackground(secondAggregation, token: tokenJWT)
             print("updating last time push")
-            StorageManager.shared.setLastTimePush(timeOfPush)
+            StorageManager.shared.setLastTimePush(secondAggregation[secondAggregation.count-1].timestampEnd)
         } else {
             ApiManager.shared.uploadInteractions(secondAggregation, token: tokenJWT) { pushDelay in
                 print("updating last time push")
-                StorageManager.shared.setLastTimePush(timeOfPush)
+                StorageManager.shared.setLastTimePush(secondAggregation[secondAggregation.count-1].timestampEnd)
                 StorageManager.shared.resetPushInProgress()
             }
         }

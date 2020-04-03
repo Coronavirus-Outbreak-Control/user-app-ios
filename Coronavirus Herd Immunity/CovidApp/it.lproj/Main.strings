@@ -62,8 +62,8 @@
 /* Class = "UIButton"; normalTitle = "SKIP TO NEXT STEP"; ObjectID = "FMk-EN-B47"; */
 "FMk-EN-B47.normalTitle" = "SALTA QUESTA RICHIESTA";
 
-/* Class = "UILabel"; text = "Location"; ObjectID = "G2h-W9-Xd9"; */
-"G2h-W9-Xd9.text" = "Posizione";
+/* Class = "UILabel"; text = "Distance Monitoring"; ObjectID = "G2h-W9-Xd9"; */
+"G2h-W9-Xd9.text" = "Rilevamento Distanza";
 
 /* Class = "UILabel"; text = "Step 2"; ObjectID = "Olv-kI-5Pz"; */
 "Olv-kI-5Pz.text" = "Step 2";

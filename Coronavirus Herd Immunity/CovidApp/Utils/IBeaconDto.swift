@@ -20,6 +20,7 @@ class IBeaconDto: Codable, CustomDebugStringConvertible {
     public var accuracy : Double
     public var lat : Double
     public var lon : Double
+    public var timestampEnd : Date
     /* TODO: add lat and lng of type Double */
     
     public init(identifier : Int64, timestamp : Date, rssi: Int64, distance : Int, accuracy: Double, interval : Double = Constants.Setup.minimumIntervalTime){
@@ -32,6 +33,7 @@ class IBeaconDto: Codable, CustomDebugStringConvertible {
         self.accuracy = accuracy
         self.lat = 0.0
         self.lon = 0.0
+        self.timestampEnd = timestamp
     }
     
     public init(identifier : Int64, timestamp : Date, rssi: Int64, distance : Int, accuracy: Double, lat: Double, lon: Double, interval : Double = Constants.Setup.minimumIntervalTime){
@@ -44,11 +46,16 @@ class IBeaconDto: Codable, CustomDebugStringConvertible {
         self.accuracy = accuracy
         self.lat = lat
         self.lon = lon
+        self.timestampEnd = timestamp
     }
     
     public func setLocation(_ location : CLLocation){
         self.lat = location.coordinate.latitude
         self.lon = location.coordinate.longitude
+    }
+    
+    public func setTimestampEnd(_ timestampEnd : Date){
+        self.timestampEnd = timestampEnd
     }
     
     var debugDescription: String{

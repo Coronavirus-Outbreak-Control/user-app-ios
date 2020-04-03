@@ -96,7 +96,7 @@
 "Share Text Social" = "Try CovidApp!";
 
 /* No risk detected */
-"No risk detected" = "No risk detected";
+"No risk detected" = "\nNo risk detected";
 
 /* Error response code from api
    Google validation not passed */
