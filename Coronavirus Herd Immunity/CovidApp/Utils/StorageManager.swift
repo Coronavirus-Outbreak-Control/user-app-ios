@@ -182,6 +182,7 @@ class StorageManager{
     }
     
     public func readIBeaconsNewerThanDate(_ date: Date) -> [IBeaconDto]?{
+        print("returning newer than", date)
         let predicate = NSPredicate(format: "(%K > %@)", IBeaconEntity.timestampKey, date as NSDate)
         return fetchIBeacons(predicate)
     }
@@ -315,12 +316,20 @@ class StorageManager{
         return defaults.bool(forKey: Constants.Setup.locationNeeded)
     }
     
-    public func setExcludeFar(_ excludeFar : Bool){
-        defaults.set(excludeFar, forKey: Constants.Setup.excludeFar)
+    public func setDistanceFilter(_ distanceFilter : Double){
+        defaults.set(distanceFilter, forKey: Constants.Setup.distanceFilter)
     }
     
-    public func getExcludeFar() -> Bool{
-        return defaults.bool(forKey: Constants.Setup.excludeFar)
+    public func getDistanceFilter() -> Double?{
+        let d = defaults.double(forKey: Constants.Setup.distanceFilter)
+        if d.isZero{
+            return nil
+        }
+        return nil
+    }
+    
+    public func removeDistanceFilter(){
+        defaults.removeObject(forKey: Constants.Setup.distanceFilter)
     }
     
     public func setShareLocation(_ share : Bool){

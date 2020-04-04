@@ -65,7 +65,7 @@ class ApiManager: NSObject, URLSessionDelegate, URLSessionTaskDelegate, URLSessi
                     StorageManager.shared.setLocationNeeded(b)
                 }
                 if let ex = response.exclude_far{
-                    StorageManager.shared.setExcludeFar(ex)
+//                    StorageManager.shared.setExcludeFar(ex)
                 }
                 
                 StorageManager.shared.resetPushInProgress()
@@ -154,7 +154,7 @@ class ApiManager: NSObject, URLSessionDelegate, URLSessionTaskDelegate, URLSessi
                             StorageManager.shared.setLocationNeeded(b)
                         }
                         if let ex = response.exclude_far{
-                            StorageManager.shared.setExcludeFar(ex)
+//                            StorageManager.shared.setExcludeFar(ex)
                         }
                         handler(next_try)
                       } catch let parsingError {

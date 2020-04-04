@@ -20,11 +20,9 @@ class IBeaconManager: NSObject, CBPeripheralManagerDelegate, CLLocationManagerDe
     
     public static let shared = IBeaconManager()
     var peripheralManager : CBPeripheralManager?
-    var shouldAdvertise : Bool
     var locationManager: CLLocationManager
     
     private override init(){
-        self.shouldAdvertise = false
         locationManager = CLLocationManager()
         super.init()
         locationManager.delegate = self
@@ -47,14 +45,13 @@ class IBeaconManager: NSObject, CBPeripheralManagerDelegate, CLLocationManagerDe
     
     public func startAdvertiseDevice(){
         print("asked to advertise")
-        self.shouldAdvertise = true
         self.advertiseDevice()
     }
     
     private func advertiseDevice() {
         print("gonna advertise")
         
-        if !self.shouldAdvertise || self.peripheralManager!.state != .poweredOn{
+        if self.peripheralManager!.state != .poweredOn{
             print("should not advertise")
             return
         }
@@ -69,8 +66,24 @@ class IBeaconManager: NSObject, CBPeripheralManagerDelegate, CLLocationManagerDe
             print("started advertise")
             let peripheralData = region.peripheralData(withMeasuredPower: nil)
             self.peripheralManager!.startAdvertising(((peripheralData as NSDictionary) as! [String : Any]))
+            self.scheduleRestart()
         }else{
             print("COULDN'T create a region!")
+        }
+    }
+    
+    private func scheduleRestart(){
+        let _ = Timer.scheduledTimer(withTimeInterval: 12, repeats: false) {
+            timer in
+            print("stopping advertising")
+            self.peripheralManager?.stopAdvertising()
+            
+            let _ = Timer.scheduledTimer(withTimeInterval: 3, repeats: false) {
+                timer in
+                print("Timer restarting advertising!")
+                self.startAdvertiseDevice()
+            }
+            
         }
     }
     
@@ -141,10 +154,6 @@ class IBeaconManager: NSObject, CBPeripheralManagerDelegate, CLLocationManagerDe
             print("FOUND iBEACON!", beacons.count)
         }
         for beacon in beacons {
-            if StorageManager.shared.getExcludeFar() && beacon.proximity == .far{
-                print("excluding far")
-                continue
-            }
             print("BEACON", beacon.proximityUUID, beacon.accuracy, beacon.major, beacon.minor, beacon.accuracy, beacon.rssi)
             switch beacon.proximity {
             case .far:

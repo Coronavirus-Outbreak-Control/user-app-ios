@@ -53,6 +53,8 @@
 		C8DD58CA24262755004C54CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8B188DA2402B14400CFEE98 /* Main.storyboard */; };
 		C8DD58D324263122004C54CA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C8DD58D124263122004C54CA /* Localizable.strings */; };
 		C8FA58772427A5E900821DF0 /* ShareLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FA58762427A5E900821DF0 /* ShareLocationViewController.swift */; };
+		C8FC40902437D905001F8A0B /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = C8FC408F2437D905001F8A0B /* Alamofire */; };
+		C8FC40922437D921001F8A0B /* AlamofireManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FC40912437D921001F8A0B /* AlamofireManager.swift */; };
 		C8FD2DD5242251B0004D2E84 /* InactiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FD2DD4242251B0004D2E84 /* InactiveViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -111,6 +113,7 @@
 		C8DD58D52426317B004C54CA /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = CovidApp/it.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C8DD58D7242634BB004C54CA /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Main.strings; sourceTree = "<group>"; };
 		C8FA58762427A5E900821DF0 /* ShareLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareLocationViewController.swift; sourceTree = "<group>"; };
+		C8FC40912437D921001F8A0B /* AlamofireManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireManager.swift; sourceTree = "<group>"; };
 		C8FCC8AB2426B742006044C1 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Main.strings"; sourceTree = "<group>"; };
 		C8FCC8AC2426B742006044C1 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		C8FCC8AD2426B742006044C1 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "CovidApp/pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
@@ -122,6 +125,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8FC40902437D905001F8A0B /* Alamofire in Frameworks */,
 				C80C3B37241AC9B70047B1DC /* Sentry in Frameworks */,
 				C7A4224CA171867D837D1F7D /* Pods_CovidApp___Covid_Community_Alert.framework in Frameworks */,
 			);
@@ -166,6 +170,7 @@
 		C8A892E8240866A7007EA317 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				C8FC40912437D921001F8A0B /* AlamofireManager.swift */,
 				C8A892EB24086AC8007EA317 /* AlertManager.swift */,
 				ADD969502413B13F00F08295 /* ApiManager.swift */,
 				C84DAEDE241990C30043A1E4 /* BackgroundManager.swift */,
@@ -266,6 +271,7 @@
 			name = "CovidApp - Covid Community Alert";
 			packageProductDependencies = (
 				C80C3B36241AC9B70047B1DC /* Sentry */,
+				C8FC408F2437D905001F8A0B /* Alamofire */,
 			);
 			productName = "Coronavirus Herd Immunity";
 			productReference = C8B188D32402B14400CFEE98 /* CovidApp - Covid Community Alert.app */;
@@ -299,6 +305,7 @@
 			mainGroup = C8B188CA2402B14400CFEE98;
 			packageReferences = (
 				C80C3B35241AC9B70047B1DC /* XCRemoteSwiftPackageReference "sentry-cocoa" */,
+				C8FC408E2437D905001F8A0B /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = C8B188D42402B14400CFEE98 /* Products */;
 			projectDirPath = "";
@@ -443,6 +450,7 @@
 				C84DAEDF241990C30043A1E4 /* BackgroundManager.swift in Sources */,
 				C842066F240BB23E00B8B45B /* Models.xcdatamodeld in Sources */,
 				C8A892EE24087226007EA317 /* Constants.swift in Sources */,
+				C8FC40922437D921001F8A0B /* AlamofireManager.swift in Sources */,
 				ADD969512413B13F00F08295 /* ApiManager.swift in Sources */,
 				C88D06A7240715080005E029 /* HelpMoreViewController.swift in Sources */,
 				C8B2CF42240D9BAF005248B8 /* LocationViewController.swift in Sources */,
@@ -683,6 +691,14 @@
 				minimumVersion = 4.5.0;
 			};
 		};
+		C8FC408E2437D905001F8A0B /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.5;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -690,6 +706,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C80C3B35241AC9B70047B1DC /* XCRemoteSwiftPackageReference "sentry-cocoa" */;
 			productName = Sentry;
+		};
+		C8FC408F2437D905001F8A0B /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C8FC408E2437D905001F8A0B /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
 
