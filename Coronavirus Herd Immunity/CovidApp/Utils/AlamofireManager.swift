@@ -35,13 +35,14 @@ class AlamofireManager{
             }
             p["o"] = interaction.identifier
             p["w"] = Int64(interaction.timestamp.timeIntervalSince1970)
-            p["t"] = interaction.interval
+            p["t"] = Int(interaction.interval)
             p["r"] = abs(interaction.rssi)
-            p["s"] = interaction.accuracy
+            p["s"] = Utils.roundToDecimals(interaction.accuracy, digits: 1)
             p["d"] = distance
+            print("LON", interaction.lon)
             if !interaction.lon.isZero{
-                p["x"] = interaction.lon
-                p["y"] = interaction.lat
+                p["x"] = Utils.roundToDecimals(interaction.lon, digits: 5)
+                p["y"] = Utils.roundToDecimals(interaction.lat, digits: 5)
             }
             its.append(p)
         }

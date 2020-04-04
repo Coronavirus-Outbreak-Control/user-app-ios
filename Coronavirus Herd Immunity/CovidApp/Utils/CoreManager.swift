@@ -73,7 +73,10 @@ class CoreManager {
             lastDate = beacon.timestampEnd
         }
         let res = IBeaconDto(identifier: identifier, timestamp: beacons[0].timestamp, rssi: Int64(Int(rssis) / beacons.count),
-                          distance: distance, accuracy: accuracies / Double(beacons.count), interval: interval)
+                          distance: distance, accuracy: accuracies / Double(beacons.count),
+                            lat: beacons[beacons.count-1].lat,
+                            lon: beacons[beacons.count-1].lon,
+                            interval: interval)
         res.setTimestampEnd(lastDate!)
         return res
     }
@@ -227,9 +230,13 @@ class CoreManager {
             accuracy: iBeacon.accuracy)
         
         if StorageManager.shared.getShareLocation(){
+            print("ASKING LOCATION")
             if let cl = LocationManager.shared.getLocationAndUpdate(){
+                print("CL", cl)
                 ib.setLocation(cl)
             }
+        }else{
+            print("NO LOCATION")
         }
         print("WILL BE ", ib)
         

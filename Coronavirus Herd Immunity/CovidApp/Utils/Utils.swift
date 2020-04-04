@@ -72,4 +72,8 @@ class Utils{
         LocationManager.shared.getPermessionStatus() == .allowedAlways && notification
     }
     
+    public static func roundToDecimals(_ value : Double, digits : Double) -> Double{
+        return Double(round(value * pow(10, digits)) / pow(10, digits))
+    }
+    
 }
