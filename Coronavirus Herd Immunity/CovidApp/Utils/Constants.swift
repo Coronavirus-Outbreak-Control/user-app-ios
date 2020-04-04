@@ -35,7 +35,7 @@ class Constants {
         
         public static let alreadyAccessed = "chi.identifier.access"
 
-        public static let backgroundPushIdentifier = "com.coronaherdimmunity.backgroundInteractionPush"
+        public static let backgroundPushIdentifier = "org.covidapp-coronavirus-outbreak-control.ios.backgroundInteractionPush"
         
         public static let statusDevice = "chi.identifier.status"
         public static let warningLevel = "chi.identifier.warning_level"
@@ -49,13 +49,13 @@ class Constants {
         public static let shareLocation = "chi.preference.shareLocation"
         public static let pushInProgress = "chi.push.inProgress"
         public static let pushInProgressSince = "chi.push.inProgressSince"
-        public static let excludeFar = "chi.push.excludeFar"
+        public static let distanceFilter = "chi.push.distanceFilter"
         public static let lastNextTry = "chi.push.lastNextTry"
         
         public static let defaultSecondsIntervalBetweenPushes : TimeInterval = 3600 * 1 // 1 day
         public static let secondsIntervalBetweenConcurrentPushes: TimeInterval = 5 // 5 seconds
         
-        public static let version : Int = 4
+        public static let version : Int = 5
         
         public static let scanTime : Double = 10
         public static let minRSSIPower : Double = -60

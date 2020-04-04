@@ -4,7 +4,7 @@
 <dict>
 	<key>BGTaskSchedulerPermittedIdentifiers</key>
 	<array>
-		<string>com.coronaherdimmunity.backgroundInteractionPush</string>
+		<string>org.covidapp-coronavirus-outbreak-control.ios.backgroundInteractionPush</string>
 	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>

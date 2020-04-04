@@ -11,6 +11,7 @@ import Sentry
 import BackgroundTasks
 
 // background fetch: https://www.hackingwithswift.com/example-code/system/how-to-run-code-when-your-app-is-terminated
+// https://medium.com/snowdog-labs/managing-background-tasks-with-new-task-scheduler-in-ios-13-aaabdac0d95b
 // scrollview: https://fluffy.es/scrollview-storyboard-xcode-11/
 
 @UIApplicationMain
@@ -34,10 +35,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // MARK: Registering Launch Handlers for Tasks
         if #available(iOS 13.0, *) {
-            BGTaskScheduler.shared.register(forTaskWithIdentifier: Constants.Setup.backgroundPushIdentifier, using: nil) { task in
+            BGTaskScheduler.shared.register(
+            forTaskWithIdentifier: Constants.Setup.backgroundPushIdentifier,
+            using: DispatchQueue.global()) {
+                task in
                 // Downcast the parameter to an app refresh task as this identifier is used for a refresh request.
                 print("HANDLE PUSH scheduled called")
-                self.handlePushInteractions(task: task as! BGAppRefreshTask)
+                self.handlePushInteractions(task)
             }
         } else {
             // Fallback on earlier versions
@@ -66,7 +70,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         BGTaskScheduler.shared.cancelAllTaskRequests()
         let request = BGAppRefreshTaskRequest(identifier: Constants.Setup.backgroundPushIdentifier)
         // Push again no earlier than 15 minutes from now
-        request.earliestBeginDate = Date(timeIntervalSinceNow: 15*60)
+        request.earliestBeginDate = Date(timeIntervalSinceNow: 10 * 60)
         do {
            try BGTaskScheduler.shared.submit(request)
             print("Push scheduled!")
@@ -76,15 +80,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     @available(iOS 13.0, *)
-    func handlePushInteractions(task: BGAppRefreshTask) {
+    func handlePushInteractions(_ task: BGTask) {
         print("Processing scheduled push!")
         // Schedule a new refresh task
-        self.schedulePushInteractions()
         
         BackgroundManager.backgroundOperations()
         task.expirationHandler = {}
-        task.setTaskCompleted(success: true)
-
+        
+        let _ = Timer.scheduledTimer(withTimeInterval: 2, repeats: false) {
+            timer in
+            print("Timer fired!")
+            task.setTaskCompleted(success: true)
+            self.schedulePushInteractions()
+        }
+        
+        self.schedulePushInteractions()
     }
     
     private func startup(){

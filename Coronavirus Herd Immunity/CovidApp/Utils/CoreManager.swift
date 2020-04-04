@@ -54,6 +54,7 @@ class CoreManager {
     }
     
     private static func meanFromBeacons(_ beacons : [IBeaconDto]) -> IBeaconDto?{
+        print("mean from beacons")
         if beacons.count == 0{
             return nil
         }
@@ -69,7 +70,7 @@ class CoreManager {
             interval += beacon.interval
             rssis += beacon.rssi
             accuracies += beacon.accuracy
-            lastDate = beacon.timestamp
+            lastDate = beacon.timestampEnd
         }
         let res = IBeaconDto(identifier: identifier, timestamp: beacons[0].timestamp, rssi: Int64(Int(rssis) / beacons.count),
                           distance: distance, accuracy: accuracies / Double(beacons.count), interval: interval)
@@ -109,7 +110,12 @@ class CoreManager {
         var id2list = [Int64: [IBeaconDto]]()
         var validIbeacons = [IBeaconDto]()
         
+        let distanceFilter = StorageManager.shared.getDistanceFilter() ?? 10000.0
+        
         for beacon in ibeacons{
+            if beacon.accuracy > distanceFilter{
+                continue
+            }
             if id2list[beacon.identifier] != nil{
                 if let last = id2list[beacon.identifier]?.first{
                     if abs(last.timestamp.timeIntervalSince(beacon.timestamp)) <= Constants.Setup.timeAggregationIBeacons{
@@ -137,26 +143,30 @@ class CoreManager {
         
         print("gonna push aggregated", secondAggregation)
         
+//        return
+        
         if secondAggregation.count == 0{
-            StorageManager.shared.setLastTimePush(Date())
-            let lastNT = StorageManager.shared.getLastNextTry()
-            let next_try = lastNT + Double.random(in: -0.25 ... 0.25) * lastNT
-            StorageManager.shared.setPushInterval(next_try)
+//            StorageManager.shared.setLastTimePush(Date())
+//            let lastNT = StorageManager.shared.getLastNextTry()
+//            let next_try = lastNT + Double.random(in: -0.25 ... 0.25) * lastNT
+//            StorageManager.shared.setPushInterval(next_try)
             StorageManager.shared.resetPushInProgress()
             return
         }
         
         if isBackground {
             print("pushing positions on background")
-            ApiManager.shared.uploadInteractionsInBackground(secondAggregation, token: tokenJWT)
+            AlamofireManager.shared.pushInteractions(secondAggregation, token: tokenJWT)
+//            ApiManager.shared.uploadInteractionsInBackground(secondAggregation, token: tokenJWT)
             print("updating last time push")
-            StorageManager.shared.setLastTimePush(secondAggregation[secondAggregation.count-1].timestampEnd)
+//            StorageManager.shared.setLastTimePush(secondAggregation[secondAggregation.count-1].timestampEnd)
         } else {
-            ApiManager.shared.uploadInteractions(secondAggregation, token: tokenJWT) { pushDelay in
-                print("updating last time push")
-                StorageManager.shared.setLastTimePush(secondAggregation[secondAggregation.count-1].timestampEnd)
-                StorageManager.shared.resetPushInProgress()
-            }
+            AlamofireManager.shared.pushInteractions(secondAggregation, token: tokenJWT)
+//            ApiManager.shared.uploadInteractions(secondAggregation, token: tokenJWT) { pushDelay in
+//                print("updating last time push")
+//                StorageManager.shared.setLastTimePush(secondAggregation[secondAggregation.count-1].timestampEnd)
+//                StorageManager.shared.resetPushInProgress()
+//            }
         }
     }
     
@@ -168,6 +178,7 @@ class CoreManager {
             }
         }
     }
+    
     
     public static func pushInteractions(isBackground : Bool){
         
@@ -181,15 +192,23 @@ class CoreManager {
                 print("interval elapsed, time to PUSH")
                 //push old interactions
                 if let ibeacons = StorageManager.shared.readIBeaconsNewerThanDate(lastDatePush){
+                    if ibeacons.count == 0{
+                        print("no beacons from last push, ignoring")
+                        return
+                    }
                     StorageManager.shared.setPushInProgress()
                     CoreManager.getTokenAndProceed(ibeacons, isBackground: isBackground)
                 }
             }else{
-                print("no need to push yet last time was", lastDatePush, "next at", lastDatePush.addingTimeInterval(StorageManager.shared.getPushInterval()))
+                print("no need to push yet last time was", lastDatePush, "next at", lastDatePush.addingTimeInterval(StorageManager.shared.getPushInterval()), "now is \(Date()), next try in \(StorageManager.shared.getPushInterval())")
             }
         }else{
             print("no last push found, pushing everything")
             if let ibeacons = StorageManager.shared.readAllIBeacons(){
+                if ibeacons.count == 0{
+                    print("no beacons from no push, ignoring")
+                    return
+                }
                 StorageManager.shared.setPushInProgress()
                 CoreManager.getTokenAndProceed(ibeacons, isBackground: isBackground)
             }

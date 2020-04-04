@@ -67,7 +67,7 @@ class IBeaconDto: Codable, CustomDebugStringConvertible {
             d = "n"
         }
         
-        return "id: \(self.identifier), timestamp: \(self.timestamp), rssi: \(self.rssi), distance: \(d), interval: \(self.interval)"
+        return "id: \(self.identifier), timestamp: \(self.timestamp), rssi: \(self.rssi), distance: \(d), interval: \(self.interval), space: \(self.accuracy), endedAt: \(self.timestampEnd) "
     }
     
 }
