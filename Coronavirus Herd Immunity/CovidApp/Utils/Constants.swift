@@ -41,7 +41,7 @@ class Constants {
         public static let warningLevel = "chi.identifier.warning_level"
         public static let identifierDevice = "chi.identifier.device"
         public static let tokenJWT = "chi.identifier.tokenJWT"
-        public static let pushIdentifier = "chi.identifier.push-notification"
+        public static let pushIdentifier = "chi.identifier.push-notification-token"
         public static let totalInteractionsKey = "chi.interactions.total"
         public static let lastDatePushPreference = "chi.preference.lastDatePush"
         public static let pushDelay = "chi.preference.pushDelay"
