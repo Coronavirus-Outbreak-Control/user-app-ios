@@ -12,6 +12,7 @@ import RxSwift
 
 class ViewController: StatusBarViewController {
 
+    @IBOutlet weak var getStartedButton: RoundButton!
     @IBOutlet weak var spinnerLoadingIndicator: UIActivityIndicatorView!
     let recaptcha = try? ReCaptcha(
         apiKey: "6Ldiu-QUAAAAAE8oOqLZizOnEq42Ar9tNMIj8WXQ",
@@ -40,6 +41,7 @@ class ViewController: StatusBarViewController {
         if let _ = StorageManager.shared.getIdentifierDevice(){
             self.continueNavigation()
         }else{
+            self.getStartedButton.isEnabled = false
             self.spinnerLoadingIndicator.isHidden = false
             recaptcha?.configureWebView { [weak self] webview in
                 webview.frame = self?.view.bounds ?? CGRect.zero
@@ -56,11 +58,13 @@ class ViewController: StatusBarViewController {
                         print("REGISTERED")
                         if let did = deviceID{
                             DispatchQueue.main.sync {
+                                self?.getStartedButton.isEnabled = true
                                 StorageManager.shared.setIdentifierDevice(Int(did))
                                 self?.continueNavigation()
                             }
                         }else{
                             DispatchQueue.main.sync {
+                                self?.getStartedButton.isEnabled = true
                                 let title = NSLocalizedString("Alert", comment: "Generic alert")
                                 let message = NSLocalizedString("We couldn't verify your identity, please check your internet connection and try again later.", comment: "Error response code from api")
                                 let alert = AlertManager.getAlert(title: title, message: message)
@@ -71,6 +75,7 @@ class ViewController: StatusBarViewController {
                 }catch let error{
                     print("ERROR ON REGISTRATION", error)
                     DispatchQueue.main.sync {
+                        self?.getStartedButton.isEnabled = true
                         let title = NSLocalizedString("Alert", comment: "Generic alert")
                         let message = NSLocalizedString("We couldn't verify your identity, please check your internet connection and try again later.", comment: "Google validation not passed")
                         let alert = AlertManager.getAlert(title: title, message: message)

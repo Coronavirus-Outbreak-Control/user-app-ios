@@ -14,9 +14,11 @@ class InactiveViewController : StatusBarViewController{
     
     @IBOutlet weak var bluetoothButton: UIButton!
     @IBOutlet weak var bluetoothLabelButton: UIButton!
+    @IBOutlet weak var bluetoothSeparator: UIView!
     
     @IBOutlet weak var locationButton: UIButton!
     @IBOutlet weak var LocationLabelButton: UIButton!
+    @IBOutlet weak var locationSeparator: UIView!
     
     @IBOutlet weak var notificationButton: UIButton!
     @IBOutlet weak var notificationLabelButton: UIButton!

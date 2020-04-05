@@ -408,6 +408,7 @@ keep their jobs.</string>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="getStartedButton" destination="NEs-MN-e2E" id="rQA-B1-sDY"/>
                         <outlet property="spinnerLoadingIndicator" destination="ZGm-h7-ppl" id="iJE-c4-G3i"/>
                     </connections>
                 </viewController>
@@ -1168,7 +1169,7 @@ is</string>
                                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hdP-oP-fKL">
                                                 <rect key="frame" x="40" y="490" width="298" height="32"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                <state key="normal" title="Location">
+                                                <state key="normal" title="Distance Monitoring">
                                                     <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <connections>
@@ -1492,7 +1493,9 @@ is</string>
                         <outlet property="LocationLabelButton" destination="hdP-oP-fKL" id="xfb-DP-HWk"/>
                         <outlet property="bluetoothButton" destination="rOm-K1-eiN" id="VbD-0e-lh8"/>
                         <outlet property="bluetoothLabelButton" destination="VTR-mB-wT6" id="IUd-Aa-huu"/>
+                        <outlet property="bluetoothSeparator" destination="xqa-92-70z" id="K65-TI-16b"/>
                         <outlet property="locationButton" destination="t48-2W-8Gd" id="AtE-hd-Jea"/>
+                        <outlet property="locationSeparator" destination="p9Z-yX-rwm" id="35z-bV-jFd"/>
                         <outlet property="notificationButton" destination="NEl-AG-Fwq" id="dCh-ML-fll"/>
                         <outlet property="notificationLabelButton" destination="gIo-tP-VRu" id="CSv-6S-ngt"/>
                         <outlet property="scrollView" destination="eGe-oK-Pip" id="Yho-9F-qNW"/>
