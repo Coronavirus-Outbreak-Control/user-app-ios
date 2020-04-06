@@ -325,7 +325,7 @@ class ApiManager: NSObject, URLSessionDelegate, URLSessionTaskDelegate, URLSessi
         let deviceModel = DeviceModel(manufacturer: "Apple", model: model)
         let deviceOS = DeviceOS(name: "iOS", version: version)
         let deviceInfo = DeviceInfo(id: id, device: deviceModel, os: deviceOS, challenge: googleToken)
-        
+        print(deviceInfo)
         guard let uploadData = try? JSONEncoder().encode(deviceInfo) else {
             print("Failed to encode deviceInfo")
             handler(nil, nil, "Failed to encode deviceInfo")

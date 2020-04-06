@@ -33,6 +33,9 @@ class Constants {
         public static let uuidCHIdevice = "451720ea-5e62-11ea-bc55-0242ac130003"
         public static let beaconCHIidentifier = "com.coronaherdimmunity.myDeviceRegion"
         
+        public static let keySite = "6Ldiu-QUAAAAAE8oOqLZizOnEq42Ar9tNMIj8WXQ"
+        public static let keyDomain = "http://recaptcha.covidapp-alert.com/index.html"
+        
         public static let alreadyAccessed = "chi.identifier.access"
 
         public static let backgroundPushIdentifier = "org.covidapp-coronavirus-outbreak-control.ios.backgroundInteractionPush"

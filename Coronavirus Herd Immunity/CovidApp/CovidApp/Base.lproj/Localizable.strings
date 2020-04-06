@@ -48,13 +48,13 @@
 "Bluetooth permission" = "Bluetooth permission";
 
 /* Enable location access */
-"Enable location access" = "Enable location access";
+"Enable location access" = "Enable distance monitoring";
 
 /* Enable notifications */
 "Enable notifications" = "Enable notifications";
 
 /* Location access */
-"Location access" = "Location access";
+"Location access" = "Distance monitoring";
 
 /* Notifications */
 "Notifications" = "Notifications";
@@ -96,7 +96,7 @@
 "Share Text Social" = "Try CovidApp!";
 
 /* No risk detected */
-"No risk detected" = "\nNo risk detected";
+"No risk detected" = "No risk\ndetected";
 
 /* Error response code from api
    Google validation not passed */

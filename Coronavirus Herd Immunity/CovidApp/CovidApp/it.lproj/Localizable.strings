@@ -48,13 +48,13 @@
 "Bluetooth permission" = "Permessi bluetooth";
 
 /* Enable location access */
-"Enable location access" = "Abilita accesso posizione";
+"Enable location access" = "Abilita monitoraggio distanza";
 
 /* Enable notifications */
 "Enable notifications" = "Abilita notifiche";
 
 /* Location access */
-"Location access" = "Accesso posizione";
+"Location access" = "Monitoraggio distanza";
 
 /* Notifications */
 "Notifications" = "Notifiche";
