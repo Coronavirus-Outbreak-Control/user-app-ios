@@ -1,6 +1,6 @@
 
-/* Class = "UILabel"; text = "\nNo risk detected"; ObjectID = "1Nv-Ey-WFv"; */
-"1Nv-Ey-WFv.text" = "Nenhum risco detectado";
+/* Class = "UILabel"; text = "No risk\ndetected"; ObjectID = "1Nv-Ey-WFv"; */
+"1Nv-Ey-WFv.text" = "Nenhum risco\ndetectado";
 
 /* Class = "UILabel"; text = "inactive"; ObjectID = "1yP-sm-Glj"; */
 "1yP-sm-Glj.text" = "inativo";
@@ -256,3 +256,6 @@
 
 /* Class = "UILabel"; text = "Covid Community Alert"; ObjectID = "ew1-8V-zCk"; */
 "ew1-8V-zCk.text" = "Covid Community Alert";
+
+/* Class = "UIButton"; normalTitle = "DEBUG"; ObjectID = "uER-dR-bTm"; */
+"uER-dR-bTm.normalTitle" = "DEBBUG";

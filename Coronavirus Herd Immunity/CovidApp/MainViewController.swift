@@ -18,6 +18,7 @@ class MainViewController: StatusBarViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var alertLabel: UILabel!
     private var counterHidden : Int = 0
+    @IBOutlet weak var debugButton: UIButton!
     
     
     override func viewDidLoad() {
@@ -41,6 +42,12 @@ class MainViewController: StatusBarViewController {
         
         scrollView.contentSize = CGSize(width: view.bounds.width, height: 1175)
         self.updateStatus()
+        
+        print("IDENTIFIER", Bundle.main.bundleIdentifier)
+        if Bundle.main.bundleIdentifier!.contains("debug"){
+            self.debugButton.isHidden = false
+            self.debugButton.isEnabled = true
+        }
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -181,4 +188,11 @@ class MainViewController: StatusBarViewController {
         print("copylink")
         ShareManager.copyLink(self)
     }
+    
+    @IBAction func debugInteractions(_ sender: Any) {
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "BluetoothTableViewController") as! BluetoothTableViewController
+        self.present(nextViewController, animated:true, completion: nil)
+    }
+    
 }
