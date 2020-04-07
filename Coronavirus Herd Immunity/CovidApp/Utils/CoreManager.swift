@@ -146,31 +146,12 @@ class CoreManager {
         
         print("gonna push aggregated", secondAggregation)
         
-//        return
-        
         if secondAggregation.count == 0{
-//            StorageManager.shared.setLastTimePush(Date())
-//            let lastNT = StorageManager.shared.getLastNextTry()
-//            let next_try = lastNT + Double.random(in: -0.25 ... 0.25) * lastNT
-//            StorageManager.shared.setPushInterval(next_try)
             StorageManager.shared.resetPushInProgress()
             return
         }
         
-        if isBackground {
-            print("pushing positions on background")
-            AlamofireManager.shared.pushInteractions(secondAggregation, token: tokenJWT)
-//            ApiManager.shared.uploadInteractionsInBackground(secondAggregation, token: tokenJWT)
-            print("updating last time push")
-//            StorageManager.shared.setLastTimePush(secondAggregation[secondAggregation.count-1].timestampEnd)
-        } else {
-            AlamofireManager.shared.pushInteractions(secondAggregation, token: tokenJWT)
-//            ApiManager.shared.uploadInteractions(secondAggregation, token: tokenJWT) { pushDelay in
-//                print("updating last time push")
-//                StorageManager.shared.setLastTimePush(secondAggregation[secondAggregation.count-1].timestampEnd)
-//                StorageManager.shared.resetPushInProgress()
-//            }
-        }
+        AlamofireManager.shared.pushInteractions(secondAggregation, token: tokenJWT)
     }
     
     private static func getTokenAndProceed(_ ibeacons: [IBeaconDto], isBackground : Bool){
@@ -231,9 +212,22 @@ class CoreManager {
         
         if StorageManager.shared.getShareLocation(){
             print("ASKING LOCATION")
-            if let cl = LocationManager.shared.getLocationAndUpdate(){
-                print("CL", cl)
-                ib.setLocation(cl)
+            var stored : Bool = false
+            if let lastTimeLocation = StorageManager.shared.getLastTimeLocationAccessed(){
+                if abs(lastTimeLocation.timeIntervalSinceNow) < Constants.Setup.secondsBetweenPollingLocations{
+                    if let loc = StorageManager.shared.getLastLocationAccessed(){
+                        stored = true
+                        ib.setLocation(loc)
+                    }
+                }
+            }
+            if !stored{
+                if let cl = LocationManager.shared.getLocationAndUpdate(){
+                    print("CL", cl)
+                    ib.setLocation(cl)
+                    StorageManager.shared.setLastTimeLocationAccessed(cl.timestamp)
+                    StorageManager.shared.setLastLocationAccessed(cl)
+                }
             }
         }else{
             print("NO LOCATION")

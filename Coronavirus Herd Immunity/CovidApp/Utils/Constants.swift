@@ -58,6 +58,12 @@ class Constants {
         public static let defaultSecondsIntervalBetweenPushes : TimeInterval = 3600 * 1 // 1 day
         public static let secondsIntervalBetweenConcurrentPushes: TimeInterval = 5 // 5 seconds
         
+        public static let secondsBetweenPollingLocations : TimeInterval = 600
+        public static let locLongitudeKey = "chi.location.lon"
+        public static let locLatitudeKey = "chi.location.lat"
+        public static let locDateKey = "chi.location.timestamp"
+        public static let lastTimeLocationAccessed = "chi.location.lastAccess"
+        
         public static let version : Int = 5
         
         public static let scanTime : Double = 10

@@ -8,6 +8,7 @@
 
 import Foundation
 import CoreData
+import CoreLocation
 
 // https://medium.com/@maddy.lucky4u/swift-4-core-data-part-3-creating-a-singleton-core-data-refactoring-insert-update-delete-9811af2fcf75
 
@@ -339,6 +340,42 @@ class StorageManager{
     public func getShareLocation() -> Bool{
         return defaults.bool(forKey: Constants.Setup.shareLocation)
     }
+    
+    public func setLastTimeLocationAccessed(_ date : Date){
+        defaults.set(date.timeIntervalSince1970, forKey: Constants.Setup.lastTimeLocationAccessed)
+    }
+    
+    public func getLastTimeLocationAccessed() -> Date?{
+        let timestamp = defaults.double(forKey: Constants.Setup.lastTimeLocationAccessed)
+        if timestamp == .zero{
+            return nil
+        }
+        return Date(timeIntervalSince1970: timestamp)
+    }
+    
+    public func setLastLocationAccessed(_ location : CLLocation){
+        defaults.set(location.coordinate.longitude, forKey: Constants.Setup.locLongitudeKey)
+        defaults.set(location.coordinate.latitude, forKey: Constants.Setup.locLatitudeKey)
+        defaults.set(location.timestamp.timeIntervalSince1970, forKey: Constants.Setup.locDateKey)
+    }
+    
+    public func getLastLocationAccessed() -> CLLocation?{
+        let lon = defaults.double(forKey: Constants.Setup.locLongitudeKey)
+        let lat = defaults.double(forKey: Constants.Setup.locLatitudeKey)
+        let timestamp = defaults.double(forKey: Constants.Setup.locDateKey)
+        if lon == .zero || lat == .zero || timestamp == .zero{
+            return nil
+        }
+        return CLLocation(coordinate: CLLocationCoordinate2D(latitude: lat, longitude: lon), altitude: 0, horizontalAccuracy: 0, verticalAccuracy: 0, timestamp: Date(timeIntervalSince1970: timestamp))
+    }
+    
+    /*
+     let i = defaults.double(forKey: Constants.Setup.lastDatePushPreference)
+     if i.isZero {
+         return nil
+     }
+     return Date(timeIntervalSince1970: i)
+     */
     
     public func countDailyInteractions() -> Int{
         let d : Date = Calendar.current.date(bySettingHour: 0, minute: 0, second: 0, of: Date())!
