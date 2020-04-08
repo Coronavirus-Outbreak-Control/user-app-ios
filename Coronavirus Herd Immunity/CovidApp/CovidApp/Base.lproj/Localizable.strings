@@ -36,10 +36,10 @@
 "You need to enable the location, please Open Settings -> Privacy -> Location services" = "CovidApp needs to access the location, please Open Settings -> Privacy -> Location services";
 
 /* Infected status */
-"Infected" = "Infected";
+"Infected" = "You tested positive to Coronavirus";
 
 /* Suspect status */
-"Suspect" = "Suspect";
+"Suspect" = "You have been marked as suspect";
 
 /* Give bluetooth permission */
 "Give bluetooth permission" = "Give bluetooth permission";
@@ -63,7 +63,7 @@
 "We need to access always the location, please Open Settings -> CovidApp -> Location -> Always" = "CovidApp needs to access always the location, please Open Settings -> CovidApp -> Location -> Always";
 
 /* Healed status */
-"Healed" = "Healed";
+"Healed" = "You're healed";
 
 /* Quarantine status */
 "Quarantine" = "Quarantine";
@@ -104,3 +104,36 @@
 
 /* Generic alert */
 "Alert" = "Alert";
+
+/* High risk */
+"High risk" = "High risk detected";
+
+/* Low risk */
+"Low risk" = "Low risk detected";
+
+/* Mid risk */
+"Mid risk" = "Mid risk detected";
+
+/* Content description infected virologist panel */
+"Content description infected" = "We recommend you to follow your doctor's instructions.";
+
+/* Healed Status message */
+"Healed Status message" = "You haven't been near any infected person.";
+
+/* Infected Status message */
+"Infected Status message" = "You tested positive to Coronavirus. Stay at home to protect you and the others around you.";
+
+/* Normal Status message */
+"Normal Status message" = "You haven't been near any infected person.";
+
+/* Quarantine Status message */
+"Quarantine Status message" = "You tested positive to Coronavirus. Stay at home to protect you and the others around you.";
+
+/* Short description infected virologist panel */
+"Short description infected" = "You tested positive to Coronavirus. Stay at home to protect you and the others around you.";
+
+/* Content description infected virologist panel */
+"Content description normal" = "If you got close to an infected person during your day, we'll let you know.";
+
+/* Short description infected virologist panel */
+"Short description normal" = "You haven't been near any infected person.";

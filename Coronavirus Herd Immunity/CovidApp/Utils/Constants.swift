@@ -40,11 +40,19 @@ class Constants {
 
         public static let backgroundPushIdentifier = "org.covidapp-coronavirus-outbreak-control.ios.backgroundInteractionPush"
         
-        public static let statusDevice = "chi.identifier.status"
-        public static let warningLevel = "chi.identifier.warning_level"
+        public static let statusDevice = "chi.identifier.notification.status"
+        public static let warningLevel = "chi.identifier.notification.warning_level"
+        public static let title = "chi.identifier.notification.title"
+        public static let message = "chi.identifier.notification.message"
+        public static let filterId = "chi.identifier.notification.filterId"
+        public static let link = "chi.identifier.notification.link"
+        public static let language = "chi.identifier.notification.language"
+        public static let contentLanguage = "chi.identifier.notification.contentLanguage"
+        public static let pushNotificationData = "chi.identifier.notification.data"
+        
         public static let identifierDevice = "chi.identifier.device"
         public static let tokenJWT = "chi.identifier.tokenJWT"
-        public static let pushIdentifier = "chi.identifier.push-notification-token"
+        public static let pushIdentifier = "chi.identifier.push-notification-id-token"
         public static let totalInteractionsKey = "chi.interactions.total"
         public static let lastDatePushPreference = "chi.preference.lastDatePush"
         public static let pushDelay = "chi.preference.pushDelay"
@@ -72,7 +80,7 @@ class Constants {
         public static let minCounterIdentifierToPush = 1
         public static let timeAggregationIBeacons : TimeInterval = 180
         public static let minTimeSecondAggregation : TimeInterval = 30
-        public static let minimumIntervalTime : Double = 10
+        public static let minimumIntervalTime : Double = 5
         
         public static let moduleMinorMajorVersion : Int = 65536
     }

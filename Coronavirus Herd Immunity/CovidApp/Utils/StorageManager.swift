@@ -279,6 +279,63 @@ class StorageManager{
         return defaults.integer(forKey: Constants.Setup.statusDevice)
     }
     
+    public func setNotificationData(_ value: Any){
+        defaults.setValue(value, forKey: Constants.Setup.pushNotificationData)
+    }
+    
+    public func getNotificationData() -> Any?{
+        return defaults.value(forKey: Constants.Setup.pushNotificationData)
+    }
+    
+    public func setTitle(_ status : String){
+        defaults.set(status, forKey: Constants.Setup.title)
+    }
+    
+    public func getTitle() -> String?{
+        return defaults.string(forKey: Constants.Setup.title)
+    }
+    
+    public func setMessage(_ status : String){
+        defaults.set(status, forKey: Constants.Setup.message)
+    }
+    
+    public func getMessage() -> String?{
+        return defaults.string(forKey: Constants.Setup.message)
+    }
+    
+    public func setFilterId(_ status : Int){
+        defaults.set(status, forKey: Constants.Setup.filterId)
+    }
+    
+    public func getFilterId() -> Int?{
+        let fid = defaults.integer(forKey: Constants.Setup.filterId)
+        if fid == .zero{
+            return nil
+        }
+        return nil
+    }
+    public func setLink(_ status : String){
+        defaults.set(status, forKey: Constants.Setup.link)
+    }
+    
+    public func getlink() -> String?{
+        return defaults.string(forKey: Constants.Setup.link)
+    }
+    public func setLanguage(_ status : String){
+        defaults.set(status, forKey: Constants.Setup.language)
+    }
+    
+    public func getLanguage() -> String?{
+        return defaults.string(forKey: Constants.Setup.language)
+    }
+    
+    public func setContentLanguage(_ status : String){
+        defaults.set(status, forKey: Constants.Setup.contentLanguage)
+    }
+    
+    public func getContentLanguage() -> String?{
+        return defaults.string(forKey: Constants.Setup.contentLanguage)
+    }
     
     public func setLastNextTry(_ nextTry : Double){
         defaults.set(nextTry, forKey: Constants.Setup.lastNextTry)

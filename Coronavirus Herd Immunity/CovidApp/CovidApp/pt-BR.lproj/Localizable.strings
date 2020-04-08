@@ -110,3 +110,36 @@
 
 /* Generic alert */
 "Alert" = "Alerta";
+
+/* High risk */
+"High risk" = "Alto risco";
+
+/* Low risk */
+"Low risk" = "Baixo risco";
+
+/* Mid risk */
+"Mid risk" = "Risco médio";
+
+/* Content description infected virologist panel */
+"Content description infected" = "Recomendamos que você siga as instruções do seu médico.";
+
+/* Healed Status message */
+"Healed Status message" = "Você não esteve perto de nenhuma pessoa infectada.";
+
+/* Infected Status message */
+"Infected Status message" = "Você testou positivo para Coronavírus. Fique em casa para proteger você e os outros ao seu redor.";
+
+/* Normal Status message */
+"Normal Status message" = "Você não esteve perto de nenhuma pessoa infectada.";
+
+/* Quarantine Status message */
+"Quarantine Status message" = "Você testou positivo para Coronavírus. Fique em casa para proteger você e os outros ao seu redor.";
+
+/* Short description infected virologist panel */
+"Short description infected" = "Você testou positivo para Coronavírus. Fique em casa para proteger você e os outros ao seu redor.";
+
+/* Content description infected virologist panel */
+"Content description normal" = "Se você se aproximar de uma pessoa infectada durante o dia, informaremos você.";
+
+/* Short description infected virologist panel */
+"Short description normal" = "Você não esteve perto de nenhuma pessoa infectada.";

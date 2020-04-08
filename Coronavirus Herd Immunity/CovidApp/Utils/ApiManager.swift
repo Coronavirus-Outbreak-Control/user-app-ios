@@ -263,6 +263,9 @@ class ApiManager: NSObject, URLSessionDelegate, URLSessionTaskDelegate, URLSessi
             let push_id: String
             let platform: String
         }
+        print("ID \(deviceId)")
+        print("JWT \(token)")
+        print("PUSH \(notificationId)")
         
         let apiRequest = ApiRequest(id: deviceId, push_id: notificationId, platform: "iOS")
         

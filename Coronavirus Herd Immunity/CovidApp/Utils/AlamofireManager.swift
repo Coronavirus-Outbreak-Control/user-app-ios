@@ -66,9 +66,8 @@ class AlamofireManager{
                 switch response.result{
                 case .success(let j):
                     print("success", j)
-                    StorageManager.shared.setLastTimePush(interactions[interactions.count-1].timestampEnd.addingTimeInterval(0))
-                    print("last time pushed", interactions[interactions.count-1].timestampEnd.addingTimeInterval(1))
-                    print("UNIX", interactions[interactions.count-1].timestampEnd.addingTimeInterval(1).timeIntervalSince1970)
+                    StorageManager.shared.setLastTimePush(interactions[interactions.count-1].timestampEnd.addingTimeInterval(Constants.Setup.minimumIntervalTime))
+                    print("last time pushed", interactions[interactions.count-1].timestampEnd.addingTimeInterval(Constants.Setup.minimumIntervalTime))
                     
                     if let json = j as? [String: Any]{
                         print("JSON", json)
@@ -96,6 +95,28 @@ class AlamofireManager{
                 
                 StorageManager.shared.resetPushInProgress()
             }
+    }
+    
+    public func downloadDataNotification(_ url : String, callback: @escaping((Any, Bool) -> Void)){
+
+        AF.request(url)
+        .responseJSON{
+            response in
+            print("RESPONE", response)
+            
+            switch response.result{
+            case .success(let j):
+                print("success", j)
+                callback(j, true)
+                break
+            case .failure(let e):
+                print("error upload", e)
+                callback(0, false)
+                break
+            }
+            
+        }
+
     }
     
 }

@@ -9,6 +9,7 @@
 import UIKit
 
 // https://fluffy.es/scrollview-storyboard-xcode-11/
+// https://medium.com/@tingyishih/ios-scrollview-constraints-8d8140d329a0
 
 class InactiveViewController : StatusBarViewController{
     
