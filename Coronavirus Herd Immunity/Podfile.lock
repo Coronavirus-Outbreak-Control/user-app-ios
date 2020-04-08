@@ -9,7 +9,7 @@ DEPENDENCIES:
   - ReCaptcha/RxSwift
 
 SPEC REPOS:
-  trunk:
+  https://github.com/CocoaPods/Specs.git:
     - ReCaptcha
     - RxSwift
 
@@ -17,6 +17,6 @@ SPEC CHECKSUMS:
   ReCaptcha: 40ae1dc390fd5837267674b9a6ae0978abb5eeeb
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
 
-PODFILE CHECKSUM: c12f2a4718eac81c311fb842cb143943bb7b62db
+PODFILE CHECKSUM: 0736928d34c7e8866f20ab98f086647addabe76a
 
 COCOAPODS: 1.9.1
