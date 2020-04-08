@@ -11,15 +11,16 @@ import CoreBluetooth
 
 class MainViewController: StatusBarViewController {
     
-    @IBOutlet weak var statusApp: UILabel!
-    @IBOutlet weak var statusPatientLabel: UILabel!
     @IBOutlet weak var qrCodeImage: UIImageView!
-    @IBOutlet weak var activeButton: UIButton!
     @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var alertLabel: UILabel!
     private var counterHidden : Int = 0
     @IBOutlet weak var debugButton: UIButton!
+    @IBOutlet weak var viewBackgroundTitle: UIView!
+    @IBOutlet weak var titleLabel: UILabel!
     
+    
+    @IBOutlet weak var messageLabel: UILabel!
+    @IBOutlet weak var messageButton: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +41,7 @@ class MainViewController: StatusBarViewController {
         print("LOADING MAIN")
         self.run()
         
-        scrollView.contentSize = CGSize(width: view.bounds.width, height: 1175)
+//        scrollView.contentSize = CGSize(width: view.bounds.width, height: 1175)
         self.updateStatus()
         
         print("IDENTIFIER", Bundle.main.bundleIdentifier)
@@ -66,9 +67,6 @@ class MainViewController: StatusBarViewController {
             print("identifier device:", identifierDevice)
             self.qrCodeImage.image = Utils.generateQRCode(identifierDevice.description)
         }
-//        let countInteractions = StorageManager.shared.countTotalInteractions().description
-//        self.statusPatientLabel.text = countInteractions
-//        print("TOTAL UNIQUE INTERACTIONS", countInteractions)
 
         NotificationCenter.default.addObserver(self, selector: #selector(statusChanged), name: NSNotification.Name(Constants.Notification.bluetoothChangeStatus), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(statusChanged), name: NSNotification.Name(Constants.Notification.locationChangeStatus), object: nil)
@@ -118,39 +116,70 @@ class MainViewController: StatusBarViewController {
             }
         }
         
-        let statusUser = StorageManager.shared.getStatusUser()
-        let warningLevel = StorageManager.shared.getWarningLevel()
-        
-        var text : String = NSLocalizedString("No risk detected", comment: "No risk detected")
-        var color = Constants.UI.colorStandard
-        
-        if warningLevel < Constants.UI.warningLevelColors.count{
-            color = Constants.UI.warningLevelColors[warningLevel]
+        if let data = PushNotificationData.readNotificationDate(){
+            
+            if let status = data.status{
+                let warningLevel = data.warningLevel ?? 0
+                
+                var text : String = NSLocalizedString("No risk detected", comment: "No risk detected")
+                var msg : String = NSLocalizedString("Normal Status message", comment: "Normal Status message")
+                var color = Constants.UI.colorStandard
+                
+                if warningLevel < Constants.UI.warningLevelColors.count{
+                    color = Constants.UI.warningLevelColors[warningLevel]
+                }
+                
+                var titleColor = UIColor(red: 51 / 255, green: 51 / 255, blue: 51 / 255, alpha: 1)
+                
+                switch status {
+                case 1:
+                    print("infected status")
+                    text = NSLocalizedString("Infected", comment: "Infected")
+                    msg = NSLocalizedString("Infected Status message", comment: "Infected Status message")
+                    break
+                case 2:
+                    print("suspect status")
+                    text = NSLocalizedString("Suspect", comment: "Suspect status")
+                    break
+                case 3:
+                    print("healed status")
+                    text = NSLocalizedString("Healed", comment: "Healed status")
+                    msg = NSLocalizedString("Healed Status message", comment: "Healed Status message")
+                    titleColor = .white
+                    break
+                case 4:
+                    print("low risk")
+                    text = NSLocalizedString("Low risk", comment: "Low risk")
+                    msg = NSLocalizedString("Quarantine Status message", comment: "Quarantine Status message")
+                    titleColor = .white
+                    break
+                case 5:
+                    print("mid risk")
+                    text = NSLocalizedString("Mid risk", comment: "Mid risk")
+                    msg = NSLocalizedString("Quarantine Status message", comment: "Quarantine Status message")
+                    titleColor = .white
+                    break
+                case 6:
+                    print("high risk")
+                    text = NSLocalizedString("High risk", comment: "High risk")
+                    msg = NSLocalizedString("Quarantine Status message", comment: "Quarantine Status message")
+                    titleColor = .white
+                    break
+                default:
+                    text = NSLocalizedString("No risk detected", comment: "No risk detected")
+                    msg = NSLocalizedString("Normal Status message", comment: "Normal Status message")
+                    color = Constants.UI.colorStandard
+                }
+                self.titleLabel.text = text
+                self.titleLabel.textColor = titleColor
+                self.viewBackgroundTitle.backgroundColor = color
+                if let message = data.message{
+                    self.messageLabel.text = message
+                }else{
+                    self.messageLabel.text = msg
+                }
+            }
         }
-        
-        switch statusUser {
-        case 1:
-            print("infected status")
-            text = "\n" + NSLocalizedString("Infected", comment: "Infected status")
-            break
-        case 2:
-            print("suspect status")
-            text = "\n" + NSLocalizedString("Suspect", comment: "Suspect status")
-            break
-        case 3:
-            print("healed status")
-            text = "\n" + NSLocalizedString("Healed", comment: "Healed status")
-            break
-        case 4, 5, 6:
-            print("quarantine status")
-            text = "\n" + NSLocalizedString("Quarantine", comment: "Quarantine status")
-            break
-        default:
-            text = NSLocalizedString("No risk detected", comment: "No risk detected")
-        }
-        
-        self.statusPatientLabel.text = text
-        self.statusPatientLabel.textColor = color
     }
     
     @IBAction func howItWorks(_ sender: Any) {
@@ -195,4 +224,24 @@ class MainViewController: StatusBarViewController {
         self.present(nextViewController, animated:true, completion: nil)
     }
     
+    @IBAction func messageActionMoreInfo(_ sender: Any) {
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "VirologistInformationViewController") as! VirologistInformationViewController
+        self.present(nextViewController, animated:true, completion: nil)
+    }
+    
+    @IBAction func showID(_ sender: Any) {
+        if let did = StorageManager.shared.getIdentifierDevice(){
+            
+            var sum = 0
+            for char in did.description{
+                sum += Int(char.description) ?? 0
+            }
+            let didChecksum = sum.description.last ?? "0"
+            
+            let alert : UIAlertController = AlertManager.getAlert(title: "ID", message: did.description + didChecksum.description)
+            self.present(alert, animated: true)
+        }
+        //TODO handle no id ?
+    }
 }

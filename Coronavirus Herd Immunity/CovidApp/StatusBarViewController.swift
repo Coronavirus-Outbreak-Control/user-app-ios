@@ -17,7 +17,8 @@ class StatusBarViewController : UIViewController, MFMailComposeViewControllerDel
             return .darkContent
         } else {
             // Fallback on earlier versions
-            return .lightContent
+            return .default
+//            return .lightContent
         }
     }
     

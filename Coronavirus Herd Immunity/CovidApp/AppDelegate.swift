@@ -98,6 +98,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     private func startup(){
+        
         NotificationManager.shared.getStatus()
         if StorageManager.shared.getIdentifierDevice() == nil{
             print("Device not yet registered")
@@ -111,6 +112,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             status in
             if status == .allowed{
                 DispatchQueue.main.async{
+                    print("FORCE REGISTER PUSH")
                     UIApplication.shared.registerForRemoteNotifications()
                 }
             }
@@ -174,8 +176,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if let idDevice = StorageManager.shared.getIdentifierDevice(){
             ApiManager.shared.handshakeNewDevice(googleToken: nil) {
                 deviceID, tokenJWT, error in
-                if let token = tokenJWT{
-                    ApiManager.shared.setPushNotificationId(deviceId: Int64(idDevice), notificationId: token, token: token)
+                if let jwt = tokenJWT{
+                    ApiManager.shared.setPushNotificationId(deviceId: Int64(idDevice), notificationId: token, token: jwt)
                 }
             }
         }
@@ -217,10 +219,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print("REMOTE NOTIFICATION - fetch")
         self.handleRemoteContent(userInfo)
         completionHandler(.newData)
-//      URLSession.shared.dataTask(with: URL(string: "https://donnywals.com")!) { data, response, error in
-//        print(data)
-//        completionHandler(.newData)
-//      }.resume()
     }
     
     private func handleRemoteContent(_ userInfo: [AnyHashable : Any]){
@@ -231,6 +229,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if let d = userInfo["data"] as? [String: Any]{
             print("DATA FOUND", d)
             //avoid updating status
+            
+            PushNotificationData.saveNotificationData(d)
+            
             if let status = d["status"] as? Int{
                 StorageManager.shared.setStatusUser(status)
             }

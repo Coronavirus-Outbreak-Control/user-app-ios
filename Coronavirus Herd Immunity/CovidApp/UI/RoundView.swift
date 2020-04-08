@@ -1,34 +1,15 @@
 //
-//  RoundButton.swift
-//  Coronavirus Herd Immunity
+//  RoundView.swift
+//  CovidApp - Covid Community Alert
 //
-//  Created by Antonio Romano on 13/03/2020.
+//  Created by Antonio Romano on 06/04/2020.
 //  Copyright © 2020 Coronavirus-Herd-Immunity. All rights reserved.
 //
 
 import UIKit
 
 @IBDesignable
-class RoundButton: UIButton {
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
-    
-    override var isEnabled: Bool {
-        didSet{
-            if self.isEnabled {
-                self.tintColor = UIColor.white
-            }
-            else{
-                self.tintColor = UIColor.white
-            }
-        }
-    }
+class RoundView: UIView{
     
     @IBInspectable var cornerRadius: CGFloat = 10{
         didSet{
@@ -71,5 +52,5 @@ class RoundButton: UIButton {
             self.layer.shadowRadius = shadowRadius
         }
     }
-
+    
 }

@@ -1,12 +1,10 @@
 import UIKit
 
-var str = "Hello, playground"
-
-class IBeaconDto: Codable, CustomDebugStringConvertible {
-    public var identifier : Int64
-    public var rssi : Int64
-    public var interval : Double
-    public var distance : Int
-    public var lat : Double
-    public var lon : Double
+var str = "12345"
+var sum = 0
+for char in str{
+    sum += Int(char.description) ?? 0
 }
+print(sum)
+let x = sum.description.last ?? "0"
+print(x)
