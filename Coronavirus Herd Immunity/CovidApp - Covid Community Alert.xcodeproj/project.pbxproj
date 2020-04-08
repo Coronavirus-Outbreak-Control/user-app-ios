@@ -263,6 +263,7 @@
 				C80C3B38241ACBA80047B1DC /* ShellScript */,
 				C8DD58D424263141004C54CA /* ShellScript */,
 				EA0F3AB45991955C187BE2C5 /* [CP] Embed Pods Frameworks */,
+				30C11CA5243DF6F000E21645 /* Storyboard string update */,
 			);
 			buildRules = (
 			);
@@ -341,6 +342,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		30C11CA5243DF6F000E21645 /* Storyboard string update */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Storyboard string update";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which bartycrouch > /dev/null; then\n    bartycrouch update -x    \nelse\n    echo \"warning: BartyCrouch not installed, download it from https://github.com/Flinesoft/BartyCrouch\"\nfi\n";
+		};
 		C80C3B38241ACBA80047B1DC /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
