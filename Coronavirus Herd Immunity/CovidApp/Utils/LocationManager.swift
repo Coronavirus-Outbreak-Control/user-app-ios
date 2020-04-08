@@ -49,7 +49,7 @@ class LocationManager : NSObject, CLLocationManagerDelegate{
     
     public func requestAlwaysPermission(){
         print("requesting always permission auth")
-        self.locationManager.requestWhenInUseAuthorization()
+        self.locationManager.requestAlwaysAuthorization()
     }
     
     public func startMonitoring(){
