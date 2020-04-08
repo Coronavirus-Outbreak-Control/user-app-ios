@@ -261,7 +261,7 @@
 				C8B188D02402B14400CFEE98 /* Frameworks */,
 				C8B188D12402B14400CFEE98 /* Resources */,
 				C80C3B38241ACBA80047B1DC /* ShellScript */,
-				C8DD58D424263141004C54CA /* ShellScript */,
+				C8DD58D424263141004C54CA /* Run Storyboard string update */,
 				EA0F3AB45991955C187BE2C5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
@@ -359,7 +359,7 @@
 			shellPath = /bin/sh;
 			shellScript = "if which sentry-cli >/dev/null; then\nexport SENTRY_ORG=coronavirus-herd-immunity\nexport SENTRY_PROJECT=coronavirus-herd-immunity\nexport SENTRY_AUTH_TOKEN=a4ef67e276344189a4a4e0b44aef0e44a58d4411d79549cf845b134791672765\nERROR=$(sentry-cli upload-dif \"$DWARF_DSYM_FOLDER_PATH\" 2>&1 >/dev/null)\nif [ ! $? -eq 0 ]; then\necho \"warning: sentry-cli - $ERROR\"\nfi\nelse\necho \"warning: sentry-cli not installed, download from https://github.com/getsentry/sentry-cli/releases\"\nfi\n";
 		};
-		C8DD58D424263141004C54CA /* ShellScript */ = {
+		C8DD58D424263141004C54CA /* Run Storyboard string update */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -368,6 +368,7 @@
 			);
 			inputPaths = (
 			);
+			name = "Run Storyboard string update";
 			outputFileListPaths = (
 			);
 			outputPaths = (

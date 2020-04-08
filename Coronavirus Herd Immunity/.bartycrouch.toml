@@ -1,5 +1,5 @@
 [update]
-tasks = ["interfaces", "code", "transform", "normalize"]
+tasks = ["interfaces"]
 #tasks = ["interfaces", "transform", "normalize"]
 
 [update.interfaces]
