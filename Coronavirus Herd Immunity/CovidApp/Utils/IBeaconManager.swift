@@ -125,7 +125,7 @@ class IBeaconManager: NSObject, CBPeripheralManagerDelegate, CLLocationManagerDe
         print("registering region for iBeacon")
         
         locationManager.stopMonitoring(for: self.regionToMonitor())
-        locationManager.stopMonitoring(for: self.regionToMonitor())
+        locationManager.stopRangingBeacons(in: self.regionToMonitor())
         
         locationManager.startMonitoring(for: self.regionToMonitor())
         locationManager.startRangingBeacons(in: self.regionToMonitor())
