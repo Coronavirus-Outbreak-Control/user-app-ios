@@ -30,6 +30,13 @@ extension Date
     func dateByRemovingDays(_ days: Int) -> Date {
         return self.dateByAddingDays(-days)
     }
+    
+     var isPassed: Bool {
+         if self.compare(Date()) == ComparisonResult.orderedDescending {
+             return false
+         } else {
+             return true
+         }
+     }
 
 }
-
