@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AD47449C2419663400717E77 /* BluetoothTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD47449B2419663400717E77 /* BluetoothTableViewController.swift */; };
-		AD47449E241968D900717E77 /* Date+strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD47449D241968D900717E77 /* Date+strings.swift */; };
+		AD47449E241968D900717E77 /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD47449D241968D900717E77 /* Date+.swift */; };
 		ADD969512413B13F00F08295 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD969502413B13F00F08295 /* ApiManager.swift */; };
 		ADD969532413B5F900F08295 /* DeviceInfoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD969522413B5F900F08295 /* DeviceInfoManager.swift */; };
 		C7A4224CA171867D837D1F7D /* Pods_CovidApp___Covid_Community_Alert.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14CB9B8DB2731051E0CAB3EA /* Pods_CovidApp___Covid_Community_Alert.framework */; };
@@ -66,7 +66,7 @@
 		4CB95A24E8FE6BBC639C0268 /* Pods-CovidApp - Covid Community Alert.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CovidApp - Covid Community Alert.debug.xcconfig"; path = "Target Support Files/Pods-CovidApp - Covid Community Alert/Pods-CovidApp - Covid Community Alert.debug.xcconfig"; sourceTree = "<group>"; };
 		7E5E881CCD74AC32DDA522E4 /* Pods-CovidApp - Covid Community Alert.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CovidApp - Covid Community Alert.release.xcconfig"; path = "Target Support Files/Pods-CovidApp - Covid Community Alert/Pods-CovidApp - Covid Community Alert.release.xcconfig"; sourceTree = "<group>"; };
 		AD47449B2419663400717E77 /* BluetoothTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothTableViewController.swift; sourceTree = "<group>"; };
-		AD47449D241968D900717E77 /* Date+strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+strings.swift"; sourceTree = "<group>"; };
+		AD47449D241968D900717E77 /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
 		ADD969502413B13F00F08295 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		ADD969522413B5F900F08295 /* DeviceInfoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfoManager.swift; sourceTree = "<group>"; };
 		C80170572405D19F002FC397 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -182,7 +182,7 @@
 				ADD969502413B13F00F08295 /* ApiManager.swift */,
 				C84DAEDE241990C30043A1E4 /* BackgroundManager.swift */,
 				C8A892E9240866CC007EA317 /* BluetoothManager.swift */,
-				AD47449D241968D900717E77 /* Date+strings.swift */,
+				AD47449D241968D900717E77 /* Date+.swift */,
 				ADD969522413B5F900F08295 /* DeviceInfoManager.swift */,
 				C8A892ED24087226007EA317 /* Constants.swift */,
 				C8C72E52241062210023797E /* CoreManager.swift */,
@@ -432,7 +432,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD47449E241968D900717E77 /* Date+strings.swift in Sources */,
+				AD47449E241968D900717E77 /* Date+.swift in Sources */,
 				C8560D54243B3C4700C67FFF /* RoundView.swift in Sources */,
 				C8FA58772427A5E900821DF0 /* ShareLocationViewController.swift in Sources */,
 				C8C72E53241062210023797E /* CoreManager.swift in Sources */,
