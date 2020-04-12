@@ -93,20 +93,6 @@ class StorageManager{
         }
     }
     
-    public func deleteIBeaconsOlderThan(date: Date) {
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: IBeaconEntity.entityName)
-        fetchRequest.predicate = NSPredicate(format: "(timestamp < %@)", date as NSDate)
-
-        do {
-
-            let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
-            try self.persistentContainer.viewContext.execute(deleteRequest)
-
-        } catch let error as NSError {//handle error here }
-            print("Could not delete IBeacons. \(error), \(error.userInfo)")
-        }
-    }
-    
     private func fetchIBeacons(_ predicate : NSPredicate? = nil, sort : NSSortDescriptor? = nil) -> [IBeaconDto]?{
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: IBeaconEntity.entityName)
         if let p = predicate{
@@ -464,5 +450,28 @@ class StorageManager{
         }
         return 0
     }
+    
+}
+
+//********************************
+// BEACONS DELETE
+//********************************
+
+extension StorageManager {
+    
+    public func deleteIBeaconsOlderThan(date: Date) {
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: IBeaconEntity.entityName)
+        fetchRequest.predicate = NSPredicate(format: "(timestamp < %@)", date as NSDate)
+
+        do {
+
+            let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+            try self.persistentContainer.viewContext.execute(deleteRequest)
+
+        } catch let error as NSError {//handle error here }
+            print("Could not delete IBeacons. \(error), \(error.userInfo)")
+        }
+    }
+    
     
 }

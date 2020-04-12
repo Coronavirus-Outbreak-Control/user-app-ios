@@ -634,13 +634,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 23;
 				DEVELOPMENT_ASSET_PATHS = "";
-				DEVELOPMENT_TEAM = 652YXNAPUW;
+				DEVELOPMENT_TEAM = 5BH24BUK46;
 				INFOPLIST_FILE = CovidApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.covidapp-coronavirus-outbreak-control.ios";
+				PRODUCT_BUNDLE_IDENTIFIER = com.psafe.dfndrvault;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
@@ -658,13 +658,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 23;
 				DEVELOPMENT_ASSET_PATHS = "";
-				DEVELOPMENT_TEAM = 652YXNAPUW;
+				DEVELOPMENT_TEAM = 5BH24BUK46;
 				INFOPLIST_FILE = CovidApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.covidapp-coronavirus-outbreak-control.ios";
+				PRODUCT_BUNDLE_IDENTIFIER = com.psafe.dfndrvault;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
