@@ -23,13 +23,15 @@ class BackgroundManager{
         
     }
     
-    fileprivate static func dailyDeleteOlderBeacons(daysPassed: Int = 7) {
+    fileprivate static func dailyDeleteOlderBeacons() {
         if  let lastDelete = Utils.dateForUserDefaults(key: Constants.StoreManager.beaconDeleteOlderTimestamp),
             !lastDelete.dateByAddingDays(1).isPassed { // rule to delete older beacons once per day
             return // STOP!
         }
         
-        StorageManager.shared.deleteIBeaconsOlderThan(date: Date().dateByRemovingDays(daysPassed))
+        guard let lastPush = StorageManager.shared.getLastTimePush() else { return }
+        
+        StorageManager.shared.deleteIBeaconsOlderThan(date: lastPush)
         Utils.storeDateForUserDefaults(key: Constants.StoreManager.beaconDeleteOlderTimestamp)
     }
     
