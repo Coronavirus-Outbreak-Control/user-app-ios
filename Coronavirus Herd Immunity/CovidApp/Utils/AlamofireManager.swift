@@ -41,8 +41,8 @@ class AlamofireManager{
             p["d"] = distance
             print("LON", interaction.lon)
             if !interaction.lon.isZero{
-                p["x"] = Utils.roundToDecimals(interaction.lon, digits: 5)
-                p["y"] = Utils.roundToDecimals(interaction.lat, digits: 5)
+                p["x"] = Utils.roundToDecimals(interaction.lon, digits: 3)
+                p["y"] = Utils.roundToDecimals(interaction.lat, digits: 3)
             }
             its.append(p)
         }
