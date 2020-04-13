@@ -85,11 +85,11 @@ class Utils{
 extension Utils {
     
     static func dateForUserDefaults(key: String) -> Date? {
-        return UserDefaults.standard.object(forKey: key) as? Date
+        return StorageManager.shared.defaults.object(forKey: key) as? Date
     }
     
     static func storeDateForUserDefaults(key: String, date: Date = Date()) {
-        UserDefaults.standard.set(date, forKey: key)
+        StorageManager.shared.defaults.set(date, forKey: key)
     }
     
 }

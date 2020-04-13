@@ -30,7 +30,7 @@ class StorageManager{
     }
     
     public static var shared : StorageManager = StorageManager()
-    private let defaults = UserDefaults.standard
+    public let defaults = UserDefaults.standard
     
     lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "Models")
