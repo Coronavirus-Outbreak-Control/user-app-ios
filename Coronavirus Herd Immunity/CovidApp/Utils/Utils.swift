@@ -77,3 +77,19 @@ class Utils{
     }
     
 }
+
+//********************
+// DATE BASED ACTIONS
+//********************
+
+extension Utils {
+    
+    static func dateForUserDefaults(key: String) -> Date? {
+        return StorageManager.shared.defaults.object(forKey: key) as? Date
+    }
+    
+    static func storeDateForUserDefaults(key: String, date: Date = Date()) {
+        StorageManager.shared.defaults.set(date, forKey: key)
+    }
+    
+}

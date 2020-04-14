@@ -95,4 +95,7 @@ class Constants {
         public static let warningLevelColors : [UIColor] = [colorStandard, colorGreen, colorYellow, colorOrange, colorRed]
     }
     
+    class StoreManager {
+        public static let beaconDeleteOlderTimestamp = "storeManager.beacon.delete.older.timestamp"
+    }
 }

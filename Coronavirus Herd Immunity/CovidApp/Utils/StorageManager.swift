@@ -30,7 +30,7 @@ class StorageManager{
     }
     
     public static var shared : StorageManager = StorageManager()
-    private let defaults = UserDefaults.standard
+    public let defaults = UserDefaults.standard
     
     lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "Models")
@@ -450,5 +450,28 @@ class StorageManager{
         }
         return 0
     }
+    
+}
+
+//********************************
+// BEACONS DELETE
+//********************************
+
+extension StorageManager {
+    
+    public func deleteIBeaconsOlderThan(date: Date) {
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: IBeaconEntity.entityName)
+        fetchRequest.predicate = NSPredicate(format: "(timestamp < %@)", date as NSDate)
+
+        do {
+
+            let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+            try self.persistentContainer.viewContext.execute(deleteRequest)
+
+        } catch let error as NSError {//handle error here }
+            print("Could not delete IBeacons. \(error), \(error.userInfo)")
+        }
+    }
+    
     
 }
